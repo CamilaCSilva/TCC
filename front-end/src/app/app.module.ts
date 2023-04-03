@@ -9,6 +9,7 @@ import { FichaAnamneseComponent } from './ficha-anamnese/ficha-anamnese.componen
 import { IdentificacaoPacienteComponent } from './ficha-anamnese/identificacao-paciente/identificacao-paciente.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RouterModule } from '@angular/router';
+import { DadosAtendimentoComponent } from './ficha-anamnese/dados-atendimento/dados-atendimento.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     FichaAnamneseComponent,
     IdentificacaoPacienteComponent,
-    PerfilComponent
+    PerfilComponent,
+    DadosAtendimentoComponent
   ],
   imports: [
     BrowserModule,

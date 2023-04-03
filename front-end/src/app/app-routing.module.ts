@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DadosAtendimentoComponent } from './ficha-anamnese/dados-atendimento/dados-atendimento.component';
 import { FichaAnamneseComponent } from './ficha-anamnese/ficha-anamnese.component';
 import { IdentificacaoPacienteComponent } from './ficha-anamnese/identificacao-paciente/identificacao-paciente.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'ficha', component: FichaAnamneseComponent },
   { path: 'ficha/identificacao-paciente', component: IdentificacaoPacienteComponent },
-  { path: '**', component: LoginComponent },
+  { path: 'ficha/dados-atendimento', component: DadosAtendimentoComponent }
+  // { path: '**', component: LoginComponent },
 ];
 
 @NgModule({

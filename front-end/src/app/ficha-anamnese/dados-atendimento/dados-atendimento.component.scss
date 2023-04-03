@@ -3,7 +3,7 @@ $white: #ffff;
 
 @media screen and (min-width:1025px) {
 
-  .idPaciente {
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 14px;
@@ -25,14 +25,15 @@ $white: #ffff;
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
-  .idPaciente {
+
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 14px;
 
     //Spacing
     width: 75vw;
-    height: 85vh;
+    height: 95vh;
     margin-top: 3em;
     padding: 3em;
 
@@ -44,17 +45,19 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
   }
+
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
-  .idPaciente {
+
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 14px;
 
     //Spacing
     width: 90vw;
-    height: 80vh;
+    height: 95vh;
     margin-top: 3em;
     padding: 3em;
 
@@ -66,4 +69,5 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
   }
+
 }
