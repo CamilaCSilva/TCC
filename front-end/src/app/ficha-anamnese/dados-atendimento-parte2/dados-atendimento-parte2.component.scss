@@ -26,18 +26,7 @@ $white: #ffff;
 
       align-items: center;
 
-      .idade {
-        width: 4em;
-        font-size: 18px;
-        align-items: center;
-
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .tipoSangue {
+      .nivelDor {
         width: 7.5em;
         font-size: 18px;
         align-items: center;
@@ -48,28 +37,24 @@ $white: #ffff;
         }
       }
 
-      .sexo {
-        margin-bottom: 1.25em;
+      .prioridade {
+        width: 7.5em;
+        font-size: 18px;
         align-items: center;
 
-        & label {
+        & p {
           font-size: 18px;
         }
 
-        & div {
-          height: 0.5em;
-
-          & div {
-            & label {
-              font-size: 15px;
-              margin-bottom: 0px;
-            }
-          }
+        & input {
+          width: 4em;
+          border-radius: 20px;
         }
       }
+
     }
 
-    .alergias , .medicacoesUsadas, .historicoDoencas {
+    .sintomas, .observacoes {
       font-size: 18px;
 
       & textarea {
@@ -112,18 +97,7 @@ $white: #ffff;
 
       align-items: center;
 
-      .idade {
-        width: 4em;
-        font-size: 18px;
-        align-items: center;
-
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .tipoSangue {
+      .nivelDor {
         width: 7.5em;
         font-size: 18px;
         align-items: center;
@@ -134,32 +108,28 @@ $white: #ffff;
         }
       }
 
-      .sexo {
-        margin-bottom: 1.25em;
+      .prioridade {
+        width: 7.5em;
+        font-size: 18px;
         align-items: center;
 
-        & label {
+        & p {
           font-size: 18px;
         }
 
-        & div {
-          height: 0.5em;
-
-          & div {
-            & label {
-              font-size: 15px;
-              margin-bottom: 0px;
-            }
-          }
+        & input {
+          width: 4em;
+          border-radius: 20px;
         }
       }
+
     }
 
-    .alergias , .medicacoesUsadas, .historicoDoencas {
+    .sintomas, .observacoes {
       font-size: 18px;
 
       & textarea {
-        width: 12em;
+        width: 15em;
         height: 4.5em;
 
         border-radius: 20px;
@@ -198,18 +168,7 @@ $white: #ffff;
 
       align-items: center;
 
-      .idade {
-        width: 4em;
-        font-size: 18px;
-        align-items: center;
-
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .tipoSangue {
+      .nivelDor {
         width: 7.5em;
         font-size: 18px;
         align-items: center;
@@ -220,32 +179,28 @@ $white: #ffff;
         }
       }
 
-      .sexo {
-        margin-bottom: 1.25em;
+      .prioridade {
+        width: 7.5em;
+        font-size: 18px;
         align-items: center;
 
-        & label {
+        & p {
           font-size: 18px;
         }
 
-        & div {
-          height: 0.5em;
-
-          & div {
-            & label {
-              font-size: 15px;
-              margin-bottom: 0px;
-            }
-          }
+        & input {
+          width: 4em;
+          border-radius: 20px;
         }
       }
+
     }
 
-    .alergias , .medicacoesUsadas, .historicoDoencas {
+    .sintomas, .observacoes {
       font-size: 18px;
 
       & textarea {
-        width: 12em;
+        width: 15em;
         height: 4.5em;
 
         border-radius: 20px;

@@ -11,20 +11,27 @@
   <form class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center">
     <h4>Identificação do Paciente</h4>
 
-    <div class="nomeCompleto d-flex flex-column mt-5">
+    <!-- NOME COMPLETO -->
+    <div class="nomeCompleto d-flex flex-column mt-3">
       <label for="nomeCompleto">Nome Completo</label>
-      <input name="nomeCompleto" type="text">
+      <input name="nomeCompleto" class="form-control" type="text">
     </div>
-    <div class="cpf d-flex flex-column mt-5">
+
+    <!-- CPF -->
+    <div class="cpf d-flex flex-column mt-3">
       <label for="cpf">CPF</label>
-      <input name="cpf" type="text">
+      <input name="cpf" class="form-control" type="text">
     </div>
-    <div class="celular d-flex flex-column mt-5">
+
+    <!-- CELULAR -->
+    <div class="celular d-flex flex-column mt-3">
       <label for="celular">Celular</label>
-      <input name="celular" type="text">
+      <input name="celular" class="form-control" type="text">
     </div>
-    <div class="mt-5">
-      <button class="btn">Próximo</button>
+
+    <!-- BOTÕES -->
+    <div class="btns mt-5">
+      <button class="btnProximo btn btn-primary rounded-circle"><</button>
     </div>
   </form>
 </body>

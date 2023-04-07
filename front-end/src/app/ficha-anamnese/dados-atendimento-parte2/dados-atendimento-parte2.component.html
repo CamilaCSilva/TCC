@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados para Atendimento</title>
+</head>
+<body>
+  <form class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center">
+    <h4>Dados para Atendimento</h4>
+
+    <div class="d-flex flex-column align-items-center">
+      <!-- SINTOMAS -->
+      <div class="sintomas d-flex flex-column mt-2">
+        <label for="alergias">Sintomas/Queixas:</label>
+        <textarea class="form-control" name="alergias" type="text"></textarea>
+      </div>
+
+      <div class="smallFields d-flex flex-row">
+        <!-- NÍVEL DE DOR -->
+        <div class="nivelDor d-flex flex-column mt-2 ml-3">
+          <label for="nivelDor">Nível de Dor:</label>
+          <input class="form-control" name="nivelDor" type="text">
+        </div>
+
+        <!-- PRIORIDADE -->
+        <div class="prioridade d-flex flex-column align-itens-center mt-2 ml-3">
+          <p>Prioridade:</p>
+          <select class="form-select" name="selectPrioridade">
+            <option value="nao-urgente" selected>Não Urgente</option>
+            <option value="pouco-urgente">Pouco Urgente</option>
+            <option value="urgente">Urgente</option>
+            <option value="emergencia">Emergência</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- OBSERVAÇÃO -->
+      <div class="mt-2 d-flex justify-content-end">
+        <p>Obs.: No nível de dor coloque um número entre 1 e 10</p>
+      </div>
+
+      <!-- OBSERVAÇÕES -->
+      <div class="observacoes d-flex flex-column mt-2">
+        <label for="observacoes">Observações:</label>
+        <textarea class="form-control"></textarea>
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-between m-3">
+        <button class="btnAnterior btn btn-primary rounded-circle"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle">></button>
+      </div>
+
+    </div>
+  </form>
+</body>
+</html>

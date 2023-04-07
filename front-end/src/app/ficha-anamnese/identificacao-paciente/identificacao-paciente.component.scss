@@ -6,11 +6,11 @@ $white: #ffff;
   .idPaciente {
     background-color: $dark-blue;
     color: $white;
-    border-radius: 14px;
+    border-radius: 20px;
 
     //Spacing
-    width: 70vw;
-    height: 80vh;
+    width: 60vw;
+    height: 85vh;
     margin-top: 3em;
     padding: 3em;
 
@@ -21,6 +21,20 @@ $white: #ffff;
     top: 0;
     bottom: 0;
     margin: auto;
+
+    .nomeCompleto, .cpf, .celular {
+      font-size: 18px;
+
+      & input {
+        width: 15em;
+        border-radius: 20px;
+      }
+    }
+
+    .btns {
+      font-size: 18px;
+      column-gap: 8em;
+    }
   }
 }
 
@@ -28,7 +42,7 @@ $white: #ffff;
   .idPaciente {
     background-color: $dark-blue;
     color: $white;
-    border-radius: 14px;
+    border-radius: 20px;
 
     //Spacing
     width: 75vw;
@@ -43,6 +57,19 @@ $white: #ffff;
     top: 0;
     bottom: 0;
     margin: auto;
+
+    .nomeCompleto, .cpf, .celular {
+      font-size: 18px;
+
+      & input {
+        border-radius: 20px;
+      }
+    }
+
+    .btns {
+      font-size: 18px;
+      column-gap: 8em;
+    }
   }
 }
 
@@ -50,7 +77,7 @@ $white: #ffff;
   .idPaciente {
     background-color: $dark-blue;
     color: $white;
-    border-radius: 14px;
+    border-radius: 20px;
 
     //Spacing
     width: 90vw;
@@ -65,5 +92,18 @@ $white: #ffff;
     top: 0;
     bottom: 0;
     margin: auto;
+
+    .nomeCompleto, .cpf, .celular {
+      font-size: 18px;
+
+      & input {
+        border-radius: 20px;
+      }
+    }
+
+    .btns {
+      font-size: 18px;
+      column-gap: 8em;
+    }
   }
 }
