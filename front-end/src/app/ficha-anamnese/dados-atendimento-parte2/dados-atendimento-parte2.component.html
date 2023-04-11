@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados para Atendimento</title>
+  <title>Dados para Atendimento 2</title>
 </head>
 <body>
   <form class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center">
@@ -14,14 +14,14 @@
       <!-- SINTOMAS -->
       <div class="sintomas d-flex flex-column mt-2">
         <label for="alergias">Sintomas/Queixas:</label>
-        <textarea class="form-control" name="alergias" type="text"></textarea>
+        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="sintomas"></textarea>
       </div>
 
       <div class="smallFields d-flex flex-row">
         <!-- NÍVEL DE DOR -->
         <div class="nivelDor d-flex flex-column mt-2 ml-3">
           <label for="nivelDor">Nível de Dor:</label>
-          <input class="form-control" name="nivelDor" type="text">
+          <input class="form-control" name="nivelDor" type="text" [(ngModel)]="nivelDor">
         </div>
 
         <!-- PRIORIDADE -->
@@ -44,13 +44,13 @@
       <!-- OBSERVAÇÕES -->
       <div class="observacoes d-flex flex-column mt-2">
         <label for="observacoes">Observações:</label>
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control" [(ngModel)]="observacoes"></textarea>
       </div>
 
       <!-- BOTÕES -->
-      <div class="btns d-flex flex-row justify-content-between m-3">
-        <button class="btnAnterior btn btn-primary rounded-circle"><</button>
-        <button class="btnProximo btn btn-primary rounded-circle">></button>
+      <div class="btns d-flex flex-row justify-content-between">
+        <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
       </div>
 
     </div>

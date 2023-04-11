@@ -22,7 +22,7 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
+    .nomeParamedico, .crmCorenDrf {
       font-size: 18px;
 
       & input {
@@ -35,6 +35,10 @@ $white: #ffff;
       font-size: 18px;
       column-gap: 8em;
       margin: 40px;
+
+      .btnAssinarEnviar {
+        border-radius: 20px;
+      }
     }
   }
 }
@@ -59,7 +63,7 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
+    .nomeParamedico, .crmCorenDrf {
       font-size: 18px;
 
       & input {
@@ -71,6 +75,10 @@ $white: #ffff;
       font-size: 18px;
       column-gap: 8em;
       margin: 40px;
+
+      .btnAssinarEnviar {
+        border-radius: 20px;
+      }
     }
   }
 }
@@ -95,7 +103,7 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
+    .nomeParamedico, .crmCorenDrf {
       font-size: 18px;
 
       & input {
@@ -107,6 +115,10 @@ $white: #ffff;
       font-size: 18px;
       column-gap: 8em;
       margin: 40px;
+
+      .btnAssinarEnviar {
+        border-radius: 20px;
+      }
     }
   }
 }

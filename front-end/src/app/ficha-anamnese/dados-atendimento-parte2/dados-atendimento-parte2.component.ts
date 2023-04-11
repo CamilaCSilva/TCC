@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dados-atendimento-parte2',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DadosAtendimentoParte2Component implements OnInit {
 
-  constructor() { }
+  path1: string = 'ficha/identificacao-paciente/dados-atendimento';
+  path2: string = 'ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
+  sintomas: string;
+  nivelDor: number;
+  prioridade: string;
+  observacoes: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  voltar(){
+    this.router.navigateByUrl(this.path1);
+  }
+
+  seguir() {
+    if(this.nivelDor) {
+      this.router.navigateByUrl(this.path2);
+    }
   }
 
 }

@@ -11,6 +11,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { RouterModule } from '@angular/router';
 import { DadosAtendimentoComponent } from './ficha-anamnese/dados-atendimento/dados-atendimento.component';
 import { DadosAtendimentoParte2Component } from './ficha-anamnese/dados-atendimento-parte2/dados-atendimento-parte2.component';
+import { DadosVitaisPacienteComponent } from './ficha-anamnese/dados-vitais-paciente/dados-vitais-paciente.component';
+import { DadosGeraisComponent } from './ficha-anamnese/dados-gerais/dados-gerais.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DadosAtendimentoParte2Component } from './ficha-anamnese/dados-atendime
     IdentificacaoPacienteComponent,
     PerfilComponent,
     DadosAtendimentoComponent,
-    DadosAtendimentoParte2Component
+    DadosAtendimentoParte2Component,
+    DadosVitaisPacienteComponent,
+    DadosGeraisComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ $white: #ffff;
 
 @media screen and (min-width:1025px) {
 
-  .idPaciente {
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 20px;
@@ -22,12 +22,19 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+    .smallFields {
 
-      & input {
-        width: 15em;
-        border-radius: 20px;
+      align-items: center;
+
+      .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+        width: 9.5em;
+        font-size: 18px;
+        align-items: center;
+
+        & input {
+          width: 4em;
+          border-radius: 20px;
+        }
       }
     }
 
@@ -40,14 +47,15 @@ $white: #ffff;
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
-  .idPaciente {
+
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 20px;
 
     //Spacing
     width: 75vw;
-    height: 85vh;
+    height: 95vh;
     margin-top: 3em;
     padding: 3em;
 
@@ -59,11 +67,19 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+    .smallFields {
 
-      & input {
-        border-radius: 20px;
+      align-items: center;
+
+      .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+        width: 7.5em;
+        font-size: 18px;
+        align-items: center;
+
+        & input {
+          width: 4em;
+          border-radius: 20px;
+        }
       }
     }
 
@@ -76,14 +92,15 @@ $white: #ffff;
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
-  .idPaciente {
+
+  .dadosAtendimento {
     background-color: $dark-blue;
     color: $white;
     border-radius: 20px;
 
     //Spacing
     width: 90vw;
-    height: 80vh;
+    height: 95vh;
     margin-top: 3em;
     padding: 3em;
 
@@ -95,11 +112,19 @@ $white: #ffff;
     bottom: 0;
     margin: auto;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+    .smallFields {
 
-      & input {
-        border-radius: 20px;
+      align-items: center;
+
+      .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+        width: 7.5em;
+        font-size: 18px;
+        align-items: center;
+
+        & input {
+          width: 4em;
+          border-radius: 20px;
+        }
       }
     }
 
@@ -109,4 +134,5 @@ $white: #ffff;
       margin: 40px;
     }
   }
+
 }

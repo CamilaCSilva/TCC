@@ -15,13 +15,13 @@
         <!-- IDADE -->
         <div class="idade d-flex flex-column mt-2 ml-3">
           <label for="idade">Idade:</label>
-          <input class="form-control" name="idade" type="text">
+          <input class="form-control" name="idade" type="text" [(ngModel)]="idade">
         </div>
 
         <!-- TIPO SANGUÍNEO -->
         <div class="tipoSangue d-flex flex-column align-itens-center mt-2 ml-3">
           <label for="tipoSangue">Tipo sanguíneo:</label>
-          <input class="form-control" name="tipoSangue" type="text">
+          <input class="form-control" name="tipoSangue" type="text" [(ngModel)]="tipoSangue">
         </div>
 
         <!-- SEXO -->
@@ -55,25 +55,25 @@
       <!-- ALERGIAS -->
       <div class="alergias d-flex flex-column mt-2">
         <label for="alergias">Alergias:</label>
-        <textarea class="form-control" name="alergias" type="text"></textarea>
+        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="alergias" rows="30" cols="120"></textarea>
       </div>
 
       <!-- MEDICAÇÕES -->
       <div class="medicacoesUsadas d-flex flex-column mt-2">
         <label for="medicacoesUsadas">Medicações Utilizadas:</label>
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control" [(ngModel)]="medicacoesUsadas" rows="30" cols="120"></textarea>
       </div>
 
       <!-- HISTÓRICO DE DOENÇAS -->
       <div class="historicoDoencas d-flex flex-column mt-2">
         <label for="historicoDoencas">Histórico de Doenças:</label>
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control" [(ngModel)]="historicoDoencas" rows="30" cols="120"></textarea>
       </div>
 
       <!-- BOTÕES -->
-      <div class="btns d-flex flex-row justify-content-between m-3">
-        <button class="btnAnterior btn btn-primary rounded-circle"><</button>
-        <button class="btnProximo btn btn-primary rounded-circle">></button>
+      <div class="btns d-flex flex-row justify-content-between">
+        <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
       </div>
     </div>
   </form>

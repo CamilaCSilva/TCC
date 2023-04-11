@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="identificacao-paciente.component.scss" media="(max-width: 600px)"> -->
+  <title>Dados Gerais</title>
+</head>
+<body>
+  <form class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center">
+    <h4>Dados Gerais</h4>
+
+    <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
+    <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+      <label for="nomeParamedico">Nome do Paramédico Responsável:</label>
+      <input name="nomeParamedico" class="form-control" type="text" [(ngModel)]="nomeParamedico">
+    </div>
+
+    <!-- CRM/COREN/DRF -->
+    <div class="crmCorenDrf d-flex flex-column mt-3 align-items-center">
+      <label for="crmCorenDrf">CRM/COREN/DRF:</label>
+      <input name="crmCorenDrf" class="form-control" type="text" [(ngModel)]="crmCorenDrf">
+    </div>
+
+    <!-- DATA E ENDEREÇO -->
+    <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
+      <p>22 de Março de 2023, 18:00</p>
+      <p>Av. João de Camargo, 510, Centro</p>
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="btns d-flex flex-row justify-content-between">
+      <button class="btnAssinarEnviar btn btn-primary" (click)="voltar()">Assinar e Enviar</button>
+    </div>
+  </form>
+</body>
+</html>

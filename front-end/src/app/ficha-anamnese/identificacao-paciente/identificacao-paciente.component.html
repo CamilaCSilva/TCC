@@ -13,25 +13,25 @@
 
     <!-- NOME COMPLETO -->
     <div class="nomeCompleto d-flex flex-column mt-3">
-      <label for="nomeCompleto">Nome Completo</label>
-      <input name="nomeCompleto" class="form-control" type="text">
+      <label for="nomeCompleto">Nome Completo:</label>
+      <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto">
     </div>
-
     <!-- CPF -->
     <div class="cpf d-flex flex-column mt-3">
-      <label for="cpf">CPF</label>
-      <input name="cpf" class="form-control" type="text">
+      <label for="cpf">CPF:</label>
+      <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf">
     </div>
 
     <!-- CELULAR -->
     <div class="celular d-flex flex-column mt-3">
-      <label for="celular">Celular</label>
-      <input name="celular" class="form-control" type="text">
+      <label for="celular">Celular:</label>
+      <input name="celular" class="form-control" type="text" [(ngModel)]="celular">
     </div>
 
     <!-- BOTÕES -->
-    <div class="btns mt-5">
-      <button class="btnProximo btn btn-primary rounded-circle"><</button>
+    <div class="btns d-flex flex-row justify-content-between">
+      <button class="btnProximo btn btn-primary rounded-circle" (click)="voltar()"><</button>
+      <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
     </div>
   </form>
 </body>
