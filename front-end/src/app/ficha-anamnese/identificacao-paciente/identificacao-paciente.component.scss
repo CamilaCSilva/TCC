@@ -1,112 +1,128 @@
 $dark-blue: #00195A;
 $white: #ffff;
+$ciano: #56D4FC;
 
 @media screen and (min-width:1025px) {
 
-  .idPaciente {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
 
-    //Spacing
-    width: 60vw;
-    height: 85vh;
-    margin-top: 3em;
-    padding: 3em;
+    background-color: $ciano;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    .idPaciente {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+      //Spacing
+      width: 50vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
 
-      & input {
-        width: 15em;
-        border-radius: 20px;
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .nomeCompleto, .cpf, .celular {
+        font-size: 18px;
+
+        & input {
+          width: 15em;
+          border-radius: 20px;
+        }
       }
-    }
 
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
     }
   }
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
-  .idPaciente {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
 
-    //Spacing
-    width: 75vw;
-    height: 85vh;
-    margin-top: 3em;
-    padding: 3em;
+    background-color: $ciano;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    .idPaciente {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+      //Spacing
+      width: 60vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
 
-      & input {
-        border-radius: 20px;
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .nomeCompleto, .cpf, .celular {
+        font-size: 18px;
+
+        & input {
+          border-radius: 20px;
+        }
       }
-    }
 
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
     }
   }
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
-  .idPaciente {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
 
-    //Spacing
-    width: 90vw;
-    height: 80vh;
-    margin-top: 3em;
-    padding: 3em;
+    background-color: $ciano;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    .idPaciente {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    .nomeCompleto, .cpf, .celular {
-      font-size: 18px;
+      //Spacing
+      width: 90%;
+      height: 80%;
+      margin-top: 3em;
+      padding: 3em;
 
-      & input {
-        border-radius: 20px;
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .nomeCompleto, .cpf, .celular {
+        font-size: 18px;
+
+        & input {
+          border-radius: 20px;
+        }
       }
-    }
 
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
     }
   }
 }

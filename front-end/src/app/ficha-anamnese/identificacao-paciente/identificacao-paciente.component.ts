@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class IdentificacaoPacienteComponent implements OnInit {
 
-  path1: string = 'ficha';
-  path2: string = 'ficha/identificacao-paciente/dados-atendimento';
+  path2: string = 'login/ficha/identificacao-paciente/dados-atendimento';
   nomeCompleto: string;
   cpf: string;
   celular: number;
@@ -17,10 +16,6 @@ export class IdentificacaoPacienteComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  voltar(){
-    this.router.navigateByUrl(this.path1);
   }
 
   seguir() {

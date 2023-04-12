@@ -9,14 +9,34 @@ import { IdentificacaoPacienteComponent } from './ficha-anamnese/identificacao-p
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'login/ficha', component: FichaAnamneseComponent },
-  { path: 'ficha/identificacao-paciente', component: IdentificacaoPacienteComponent },
-  { path: 'ficha/identificacao-paciente/dados-atendimento', component: DadosAtendimentoComponent },
-  { path: 'ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2', component: DadosAtendimentoParte2Component },
-  { path: 'ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente', component: DadosVitaisPacienteComponent },
-  { path: 'ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente/dados-gerais', component: DadosGeraisComponent }
-  // { path: '**', component: LoginComponent },
+  {
+    path: 'login/ficha',
+    component: FichaAnamneseComponent,
+    children: [
+      {
+        path: 'identificacao-paciente', // child route path
+        component: IdentificacaoPacienteComponent // child route component that the router renders
+      },
+      {
+        path: 'identificacao-paciente/dados-atendimento',
+        component: DadosAtendimentoComponent
+      },
+      {
+        path: 'identificacao-paciente/dados-atendimento/dados-atendimento-parte2',
+        component: DadosAtendimentoParte2Component
+      },
+      {
+        path: 'identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente',
+        component: DadosVitaisPacienteComponent
+      },
+      {
+        path: 'identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente/dados-gerais',
+        component: DadosGeraisComponent
+      }
+    ]
+  },
 ];
 
 @NgModule({

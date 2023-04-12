@@ -1,8 +1,67 @@
-// $ciano: #56D4FC;
+$dark-blue: #00195A;
+$white: #ffff;
+$ciano: #56D4FC;
 
-// $bg-info: $ciano;
+@media screen and (min-width:1025px) {
+  .ficha {
+    position: absolute;
+    background-color: $ciano;
+    color: $dark-blue;
+    width: 100vw;
+    height: auto;
+  }
 
-.ficha {
-  background-color: #56D4FC;
-  width: 100%;
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-blue;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  .ficha {
+    background-color: $ciano;
+    color: $dark-blue;
+    width: 100vw;
+    height: auto;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-blue;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px)  {
+  .ficha {
+    background-color: $ciano;
+    color: $dark-blue;
+    width: 100vw;
+    height: auto;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-blue;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
 }

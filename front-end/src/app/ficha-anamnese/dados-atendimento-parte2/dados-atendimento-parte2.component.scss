@@ -1,219 +1,231 @@
 $dark-blue: #00195A;
 $white: #ffff;
+$ciano: #56D4FC;
 
 @media screen and (min-width:1025px) {
 
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
+    background-color: $ciano;
 
-    //Spacing
-    width: 60vw;
-    height: 85vh;
-    margin-top: 3em;
-    padding: 3em;
+    .dadosAtendimento {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+      //Spacing
+      width: 50vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
 
-    .smallFields {
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-      align-items: center;
+      .smallFields {
 
-      .nivelDor {
-        width: 7.5em;
-        font-size: 18px;
         align-items: center;
 
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .prioridade {
-        width: 7.5em;
-        font-size: 18px;
-        align-items: center;
-
-        & p {
+        .nivelDor {
+          width: 7.5em;
           font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
         }
 
-        & input {
-          width: 4em;
+        .prioridade {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & p {
+            font-size: 18px;
+          }
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+      }
+
+      .sintomas, .observacoes {
+        font-size: 18px;
+
+        & textarea {
+          width: 15em;
+          height: 4.5em;
+
           border-radius: 20px;
         }
       }
 
-    }
-
-    .sintomas, .observacoes {
-      font-size: 18px;
-
-      & textarea {
-        width: 15em;
-        height: 4.5em;
-
-        border-radius: 20px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
       }
-    }
-
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
     }
   }
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
+    background-color: $ciano;
 
-    //Spacing
-    width: 75vw;
-    height: 95vh;
-    margin-top: 3em;
-    padding: 3em;
+    .dadosAtendimento {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+      //Spacing
+      width: 65vw;
+      height: 80vh;
+      margin-top: 3em;
+      padding: 3em;
 
-    .smallFields {
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-      align-items: center;
+      .smallFields {
 
-      .nivelDor {
-        width: 7.5em;
-        font-size: 18px;
         align-items: center;
 
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .prioridade {
-        width: 7.5em;
-        font-size: 18px;
-        align-items: center;
-
-        & p {
+        .nivelDor {
+          width: 7.5em;
           font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
         }
 
-        & input {
-          width: 4em;
+        .prioridade {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & p {
+            font-size: 18px;
+          }
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+      }
+
+      .sintomas, .observacoes {
+        font-size: 18px;
+
+        & textarea {
+          width: 15em;
+          height: 4.5em;
+
           border-radius: 20px;
         }
       }
 
-    }
-
-    .sintomas, .observacoes {
-      font-size: 18px;
-
-      & textarea {
-        width: 15em;
-        height: 4.5em;
-
-        border-radius: 20px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
       }
-    }
-
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
     }
   }
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
 
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 20px;
+  body {
+    background-color: $ciano;
 
-    //Spacing
-    width: 90vw;
-    height: 95vh;
-    margin-top: 3em;
-    padding: 3em;
+    .dadosAtendimento {
+      background-color: $dark-blue;
+      color: $white;
+      border-radius: 20px;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+      //Spacing
+      width: 95vw;
+      height: 100vh;
+      margin-top: 3em;
+      padding: 3em;
 
-    .smallFields {
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-      align-items: center;
+      .smallFields {
 
-      .nivelDor {
-        width: 7.5em;
-        font-size: 18px;
         align-items: center;
 
-        & input {
-          width: 4em;
-          border-radius: 20px;
-        }
-      }
-
-      .prioridade {
-        width: 7.5em;
-        font-size: 18px;
-        align-items: center;
-
-        & p {
+        .nivelDor {
+          width: 7.5em;
           font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
         }
 
-        & input {
-          width: 4em;
+        .prioridade {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & p {
+            font-size: 18px;
+          }
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+      }
+
+      .sintomas, .observacoes {
+        font-size: 18px;
+
+        & textarea {
+          width: 15em;
+          height: 4.5em;
+
           border-radius: 20px;
         }
       }
 
-    }
-
-    .sintomas, .observacoes {
-      font-size: 18px;
-
-      & textarea {
-        width: 15em;
-        height: 4.5em;
-
-        border-radius: 20px;
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
       }
-    }
-
-    .btns {
-      font-size: 18px;
-      column-gap: 8em;
-      margin: 40px;
     }
   }
-
 }

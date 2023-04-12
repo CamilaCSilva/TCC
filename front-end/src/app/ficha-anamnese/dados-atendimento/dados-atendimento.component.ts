@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class DadosAtendimentoComponent implements OnInit {
 
-  path1: string = 'ficha/identificacao-paciente';
-  path2: string = 'ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
+  path1: string = 'login/ficha/identificacao-paciente';
+  path2: string = 'login/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
   idade: number;
   tipoSangue: string;
   sexo: string;
@@ -27,7 +27,7 @@ export class DadosAtendimentoComponent implements OnInit {
   }
 
   seguir() {
-    if(this.idade && this.tipoSangue && this.alergias && this.medicacoesUsadas && this.historicoDoencas) {
+    if(this.idade && this.tipoSangue) {
       this.router.navigateByUrl(this.path2);
     }
   }
