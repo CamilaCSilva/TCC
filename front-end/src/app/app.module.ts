@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormularioCadastroComponent } from './formulario-cadastro/formulario-cadastro.component';
 import { HomeComponent } from './home/home.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FormularioCadastroComponent,
     HomeComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

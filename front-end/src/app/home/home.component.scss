@@ -52,3 +52,20 @@ p {
 	color: $color_2;
 	margin-top: 2px;
 }
+
+.acoes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.botao {
+	border-radius: 25px;
+	width: 70px;
+	border: none;
+
+	&:hover {
+		background-color: $background-color_1;
+	}
+}

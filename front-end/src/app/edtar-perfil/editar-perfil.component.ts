@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-perfil',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  string = 'Perfil'
+    path: string = 'perfil';
+
+
+  string = 'Edição Perfil'
 
   usuario = {
     nome: 'Isabela Eduarda Pereira',
@@ -18,13 +23,13 @@ export class EditarPerfilComponent implements OnInit {
     celular: '(35)99123-4567'
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   salvar(){
-    alert('Informações salvas')
+    this.router.navigateByUrl(this.path);
   }
 
 }
