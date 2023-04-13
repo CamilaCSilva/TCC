@@ -1,17 +1,19 @@
-<form (ngSubmit)="entrar(username)">
-  <h2>Login</h2>
-  <div class="username">
-    <label for="username">Username</label>
-    <input type="text" [(ngModel)]="username" name="username" placeholder="xxxx@gmail.com">
-  </div>
-  <div class="password">
-    <label for="password">Password</label>
-    <input type="password" [(ngModel)]="password" name="password">
-  </div>
-  <div class="btnEntrar">
-    <button type="submit">Entrar</button>
-  </div>
-  <div class="mensagem">
-    <p>{{ mensagem }}</p>
-  </div>
-</form>
+<main>
+  <section class="container login ff-inter">
+    <header class="header">
+      <h2>{{ string }}</h2>
+    </header>
+    <form>
+      <label for="cpf">CPF</label>
+      <input type="text" class="input" id="cpf" name="cpf" placeholder="Digite seu CPF" [value]="usuario.cpf">
+
+      <label for="senha">Senha</label>
+      <input type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha"
+        [value]="usuario.senha">
+
+      <div class="acoes">
+        <button routerLink="/home" class="botao">ENTRAR</button>
+      </div>
+    </form>
+  </section>
+</main>
