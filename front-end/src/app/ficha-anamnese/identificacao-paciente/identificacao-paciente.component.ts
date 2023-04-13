@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class IdentificacaoPacienteComponent implements OnInit {
 
+  path1: string = 'home';
   path2: string = 'login/ficha/identificacao-paciente/dados-atendimento';
   nomeCompleto: string;
   cpf: string;
@@ -32,6 +33,10 @@ export class IdentificacaoPacienteComponent implements OnInit {
     if(this.nomeCompleto && this.cpf && this.celular) {
       this.router.navigateByUrl(this.path2);
     }
+  }
+
+  voltar() {
+    this.router.navigateByUrl(this.path1);
   }
 
 }

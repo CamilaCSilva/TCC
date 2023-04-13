@@ -7,17 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = '';
-  password: string = '';
-  mensagem: string = '';
+  string = 'Faça o login!'
+
+  usuario = {
+    id: '1',
+    cpf: '',
+    senha: ''
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  entrar(userName: string) {
-    this.mensagem = "Bem vindo(a), " + userName + "!";
+  // entrar(userName: string) {
+  //   this.mensagem = "Bem vindo(a), " + userName + "!";
+  // }
+
+  logar(){
+    alert("Login realizado com sucesso")
   }
 
 }

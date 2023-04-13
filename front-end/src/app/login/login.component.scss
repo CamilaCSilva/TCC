@@ -1,30 +1,52 @@
+$color_1: #680909;
+$background-color_1: #5c0505;
 
-form {
+.acoes {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-content: center;
+}
 
-  .username {
+main {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 65vh;
+}
+
+.botao {
+  margin-top: 10px;
+  width: 200px;
+  border: none;
+
+  &:hover {
+    background-color: $background-color_1;
+  }
+}
+
+.login {
+  padding: 2rem 0;
+
+  form {
+    background: #b87676;
+    border: none;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 
-    & input {
-      width: 150px;
-      margin: 5px;
+    label {
+      color: $color_1;
+      font-weight: bold;
+      margin: 0 0 0.5rem;
     }
-  }
 
-  .password {
-    display: flex;
-    flex-direction: column;
-
-    & input {
-      width: 150px;
-      margin: 5px;
+    .input {
+      border: none;
+      height: 30px;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      margin: 0.5rem 0 1rem;
     }
-  }
-
-  .btnEntrar {
-    margin-top: 10px;
   }
 }

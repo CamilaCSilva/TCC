@@ -7,9 +7,17 @@ import { DadosVitaisPacienteComponent } from './ficha-anamnese/dados-vitais-paci
 import { FichaAnamneseComponent } from './ficha-anamnese/ficha-anamnese.component';
 import { IdentificacaoPacienteComponent } from './ficha-anamnese/identificacao-paciente/identificacao-paciente.component';
 import { LoginComponent } from './login/login.component';
+import { EditarPerfilComponent } from './edtar-perfil/editar-perfil.component';
+import { FormularioCadastroComponent } from './formulario-cadastro/formulario-cadastro.component';
+import { HomeComponent } from './home/home.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'editar-perfil',component: EditarPerfilComponent},
+  { path: 'cadastro', component: FormularioCadastroComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'perfil', component: PerfilComponent},
   { path: 'login', component: LoginComponent },
   {
     path: 'login/ficha',

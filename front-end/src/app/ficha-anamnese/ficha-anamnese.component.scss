@@ -1,22 +1,23 @@
-$dark-blue: #00195A;
+$dark-pink: #5c0505;
 $white: #ffff;
-$ciano: #56D4FC;
+$light-pink: #ffd6d6;
 
 @media screen and (min-width:1025px) {
   .ficha {
     position: absolute;
-    background-color: $ciano;
-    color: $dark-blue;
+    background-color: $light-pink;
+    color: $dark-pink;
     width: 100vw;
     height: auto;
   }
 
   .fotoPerfil {
     background-color: $white;
-    color: $dark-blue;
+    color: $dark-pink;
     border-radius: 100%;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
 
   .fichas {
@@ -26,15 +27,15 @@ $ciano: #56D4FC;
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {
   .ficha {
-    background-color: $ciano;
-    color: $dark-blue;
+    background-color: $light-pink;
+    color: $dark-pink;
     width: 100vw;
     height: auto;
   }
 
   .fotoPerfil {
     background-color: $white;
-    color: $dark-blue;
+    color: $dark-pink;
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -47,15 +48,15 @@ $ciano: #56D4FC;
 
 @media screen and (max-width: 480px) and (min-width: 0px)  {
   .ficha {
-    background-color: $ciano;
-    color: $dark-blue;
+    background-color: $light-pink;
+    color: $dark-pink;
     width: 100vw;
     height: auto;
   }
 
   .fotoPerfil {
     background-color: $white;
-    color: $dark-blue;
+    color: $dark-pink;
     border-radius: 100%;
     width: 40px;
     height: 40px;
