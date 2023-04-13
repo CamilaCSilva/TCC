@@ -15,6 +15,8 @@ import { DadosVitaisPacienteComponent } from './ficha-anamnese/dados-vitais-paci
 import { DadosGeraisComponent } from './ficha-anamnese/dados-gerais/dados-gerais.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { FormularioCadastroComponent } from './formulario-cadastro/formulario-cadastro.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HeaderComponent } from './header/header.component';
     DadosVitaisPacienteComponent,
     DadosGeraisComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormularioCadastroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<main>
+  <section class="container login ff-inter">
+
+    <header class="header">
+      <div class="cabecalho">
+        <h2>Bem Vindo, {{usuario.nome}}</h2>
+        <input type="date" name="data">
+        <a routerLink="/perfil"><img src="../../../assets/images/user.png" alt="Perfil"></a>
+        <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+      </div>
+    </header>
+
+
+    <ul id="anamnese">
+      <li>
+        <h3>{{paciente.nome}}</h3>
+        <p class="pri">{{paciente.prioridade}}</p>
+        <p class="obs">{{paciente.observacao}}</p>
+      </li>
+      <li>
+        <h3>{{paciente.nome}}</h3>
+        <p class="pri">{{paciente.prioridade}}</p>
+        <p class="obs">{{paciente.observacao}}</p>
+      </li>
+      <li>
+        <h3>{{paciente.nome}}</h3>
+        <p class="pri">{{paciente.prioridade}}</p>
+        <p class="obs">{{paciente.observacao}}</p>
+      </li>
+    </ul>
+
+  </section>
+
+</main>
