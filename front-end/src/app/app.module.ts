@@ -32,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     HeaderComponent,
     FormularioCadastroComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

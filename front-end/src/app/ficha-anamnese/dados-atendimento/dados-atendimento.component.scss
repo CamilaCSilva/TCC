@@ -1,14 +1,25 @@
-$dark-blue: #00195A;
+$dark-pink: #5c0505;
 $white: #ffff;
-$ciano: #56D4FC;
+$light-pink: #ffd6d6;
+$pink: #b83838;
+
+.btnProximo {
+  background-color: $pink;
+  border-style: none;
+}
+
+.btnAnterior{
+  background-color: $pink;
+  border-style: none;
+}
 
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $ciano;
+    background-color: $light-pink;
 
     .dadosAtendimento {
-      background-color: $dark-blue;
+      background-color: $dark-pink;
       color: $white;
       border-radius: 20px;
 
@@ -96,10 +107,10 @@ $ciano: #56D4FC;
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {
   body {
-    background-color: $ciano;
+    background-color: $light-pink;
 
     .dadosAtendimento {
-      background-color: $dark-blue;
+      background-color: $dark-pink;
       color: $white;
       border-radius: 20px;
 
@@ -187,10 +198,10 @@ $ciano: #56D4FC;
 @media screen and (max-width: 480px) and (min-width: 0px) {
 
   body {
-    background-color: $ciano;
+    background-color: $light-pink;
 
     .dadosAtendimento {
-      background-color: $dark-blue;
+      background-color: $dark-pink;
       color: $white;
       border-radius: 20px;
 
