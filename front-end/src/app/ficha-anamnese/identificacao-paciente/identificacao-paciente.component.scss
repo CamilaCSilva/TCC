@@ -28,11 +28,17 @@ $ciano: #56D4FC;
       margin: auto;
 
       .nomeCompleto, .cpf, .celular {
-        font-size: 18px;
+        & label {
+          font-size: 18px;
+        }
 
         & input {
           width: 15em;
           border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
         }
       }
 
@@ -70,10 +76,16 @@ $ciano: #56D4FC;
       margin: auto;
 
       .nomeCompleto, .cpf, .celular {
-        font-size: 18px;
+        & label {
+          font-size: 18px;
+        }
 
         & input {
           border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
         }
       }
 
@@ -111,10 +123,16 @@ $ciano: #56D4FC;
       margin: auto;
 
       .nomeCompleto, .cpf, .celular {
-        font-size: 18px;
+        & label {
+          font-size: 18px;
+        }
 
         & input {
           border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
         }
       }
 

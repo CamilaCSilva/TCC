@@ -12,10 +12,20 @@ export class IdentificacaoPacienteComponent implements OnInit {
   nomeCompleto: string;
   cpf: string;
   celular: number;
+  message: string = '';
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  validaNome(nomeCompleto: string): boolean {
+    if(nomeCompleto.length < 6) {
+      this.message = 'Preencha com o nome completo';
+      return true;
+    }
+
+    return false;
   }
 
   seguir() {

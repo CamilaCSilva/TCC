@@ -16,11 +16,14 @@
       <label for="nomeCompleto">Nome Completo:</label>
       <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto">
     </div>
+    <p class="text-danger" *ngIf="validaNome(nomeCompleto)">{{ message }}</p>
+
     <!-- CPF -->
     <div class="cpf d-flex flex-column mt-3">
       <label for="cpf">CPF:</label>
       <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf">
     </div>
+    <!-- <p class="text-danger" *ngIf="validaCpf(cpf)">{{ message }}</p> -->
 
     <!-- CELULAR -->
     <div class="celular d-flex flex-column mt-3">

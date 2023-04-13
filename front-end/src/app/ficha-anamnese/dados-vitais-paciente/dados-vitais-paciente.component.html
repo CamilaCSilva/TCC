@@ -11,15 +11,15 @@
     <h4>Dados Vitais do Paciente</h4>
 
     <div class="smallFields d-flex flex-column align-items-center">
-      <div class="d-flex flex-row align-items-center justify-content-center align-content-center">
+      <div class="d-flex flex-row align-items-center justify-content-around align-content-center">
         <!-- PRESSÃO SANGUÍNEA -->
-        <div class="pressao d-flex flex-column mt-2 ml-3">
+        <div class="pressao d-flex flex-column mt-2 ml-5">
           <label for="pressao">Pressão Sanguínea:</label>
           <input class="form-control" name="pressao" type="text" [(ngModel)]="pressao">
         </div>
 
         <!-- OXIGENAÇÃO -->
-        <div class="oxigenacao d-flex flex-column mt-2 ml-3">
+        <div class="oxigenacao d-flex flex-column mt-2 mr-5">
           <label for="oxigenacao">Oxigenação:</label>
           <input class="form-control" name="oxigenacao" type="text" [(ngModel)]="oxigenacao">
         </div>
@@ -27,13 +27,13 @@
 
       <div class="d-flex flex-row align-items-center justify-content-center align-content-center">
         <!-- TEMPERATURA -->
-        <div class="temperatura d-flex flex-column mt-2 ml-3">
+        <div class="temperatura d-flex flex-column mt-2 ml-5">
           <label for="temperatura">Temperatura:</label>
           <input class="form-control" name="temperatura" type="text" [(ngModel)]="temperatura">
         </div>
 
         <!-- FREQUÊNCIA RITMÍCA -->
-        <div class="frequenciaRitmica d-flex flex-column mt-2 ml-3">
+        <div class="frequenciaRitmica d-flex flex-column mt-2 mr-5">
           <label for="frequenciaRitmica">Frequência Ritmíca:</label>
           <input class="form-control" name="frequenciaRitmica" type="text" [(ngModel)]="frequenciaRitmica">
         </div>
