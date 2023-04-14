@@ -11,10 +11,9 @@
   <div class="container1 d-flex flex-column justify-content-center align-items-center">
     <div class="header">
         <header class="cabecalho d-flex flex-row">
-          <h2>Bem Vindo, {{ usuario.nome }}</h2>
+          <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
           <div class="botoesHeader d-flex flex-row justify-content-end">
             <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
-            <a routerLink="perfil/editar-perfil"><img class="logo" src="../../../assets/images/editar.png" alt="Perfil"></a>
             <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
           </div>
         </header>
@@ -22,7 +21,6 @@
 
     <div class="container2 d-flex flex-column justify-content-center align-items-center">
       <div class="cabecalho2 d-flex flex-row justify-content-center align-items-center">
-        <!-- <a routerLink="/perfil"><img class="left" src="../../../assets/images/left.png" alt="Sair"></a> -->
         <h2>{{ string }}</h2>
       </div>
       <div class="perfilInfos d-flex flex-column align-items-center">

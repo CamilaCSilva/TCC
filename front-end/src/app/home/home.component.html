@@ -3,12 +3,14 @@
 
     <header class="header">
       <div class="cabecalho">
-        <h2>Bem Vindo, {{ usuario.nome }}</h2>
-        <input type="date" name="data">
-        <div class="fotoPerfil d-flex align-items-center justify-content-center">
-          <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
+        <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+        <div class="botoesHeader d-flex flex-row justify-content-around align-items-center">
+          <input type="date" name="data">
+          <div class="fotoPerfil d-flex align-items-center justify-content-center">
+            <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
+          </div>
+          <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
         </div>
-        <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
       </div>
     </header>
 

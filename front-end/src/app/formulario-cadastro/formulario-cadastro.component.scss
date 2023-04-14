@@ -9,7 +9,7 @@ $border-color_1: #680909;
 	align-items: center;
 	align-content: center;
 }
-main {
+.main {
 	background: url(/assets/images/background.png);
 	background-size: cover;
 	min-height: 65vh;
@@ -48,11 +48,12 @@ select.minimal {
 	margin-top: 10px;
 	width: 200px;
 	border: none;
+  padding: 1rem;
 	&:hover {
 		background-color: $background-color_2;
 	}
 }
-.login {
+.cadastro {
 	padding: 2rem 0;
 	form {
 		background: #b87676;
@@ -74,4 +75,9 @@ select.minimal {
 			margin: 0.5rem 0 1rem;
 		}
 	}
+
+  .criarCadastro {
+    width: 50vw;
+    height: 110vh;
+  }
 }

@@ -13,7 +13,7 @@ export class PerfilComponent implements OnInit {
   string = 'Perfil'
 
   usuario: any = {
-    nome: 'Isabela Eduarda Pereira',
+    nome: 'Isabela',
     sexo: 'F',
     funcao: 'Equipe Medica',
     docmentro_trabalho: 78965,

@@ -1,13 +1,14 @@
 <app-header></app-header>
-<main>
-    <section class="container login ff-inter">
+<div class="main">
+    <div class="cadastro d-flex flex-column align-items-center">
         <header class="header">
             <h2>{{string}}</h2>
         </header>
-        <form>
+        <form class="criarCadastro">
             <label for="nome">Nome</label>
             <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo">
 
+            <label for="nome">Área de Atuação</label>
             <select class="minimal" name="seletor" >
                 <option value="med" selected>-SELECIONE-</option>
                 <option value="med">Equipe Médica</option>
@@ -38,5 +39,5 @@
                 <button class="botao">CADASTRAR</button>
             </div>
         </form>
-    </section>
-</main>
+    </div>
+</div>
