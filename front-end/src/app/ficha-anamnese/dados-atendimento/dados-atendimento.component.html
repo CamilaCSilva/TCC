@@ -4,55 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="identificacao-paciente.component.scss" media="(max-width: 600px)"> -->
   <title>Dados para Atendimento</title>
 </head>
 <body>
   <form class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center">
     <h4>Dados para Atendimento</h4>
 
-    <div class="idade d-flex flex-column mt-2">
-      <label for="idade">Idade:</label>
-      <input name="idade" type="text">
-    </div>
-    <div class="tipoSangue d-flex flex-column mt-2">
-      <label for="tipoSangue">Tipo sanguíneo:</label>
-      <input name="tipoSangue" type="text">
-    </div>
-    <div class="sexo d-flex flex-row mt-2">
-      <fieldset class="sexo d-flex flex-row mt-2">
-        <legend>Sexo:</legend>
-
-        <div class="ml-2">
-          <input type="checkbox" id="f" name="f" value="f" checked>
-          <label for="f">F</label>
+    <div class="d-flex flex-column align-items-center">
+      <div class="smallFields d-flex flex-row">
+        <!-- IDADE -->
+        <div class="idade d-flex flex-column mt-2">
+          <label for="idade">Idade:</label>
+          <input class="form-control" name="idade" type="text" [(ngModel)]="idade">
         </div>
 
-        <div class="ml-2">
-          <input type="checkbox" id="m" name="m" value="m">
-          <label for="m">M</label>
+        <!-- TIPO SANGUÍNEO -->
+        <div class="tipoSangue d-flex flex-column align-itens-center mt-2">
+          <label for="tipoSangue">Tipo sanguíneo:</label>
+          <input class="form-control" name="tipoSangue" type="text" [(ngModel)]="tipoSangue">
         </div>
 
-        <div class="ml-2">
-          <input type="checkbox" id="o" name="o" value="o">
-          <label for="o">O</label>
+        <!-- SEXO -->
+        <div class="sexo d-flex flex-column">
+          <label>Sexo:</label>
+
+          <div class="opcoes d-flex flex-row ml-3">
+            <div class="ml-2 d-flex flex-column">
+              <label for="f">F</label>
+              <input type="radio" id="f" name="opcao" value="f" checked>
+            </div>
+
+            <div class="ml-2 d-flex flex-column">
+              <label for="m">M</label>
+              <input type="radio" id="m" name="opcao" value="m">
+            </div>
+
+            <div class="ml-2 d-flex flex-column">
+              <label for="o">O</label>
+              <input type="radio" id="o" name="opcao" value="o">
+            </div>
+          </div>
         </div>
-    </fieldset>
-    </div>
-    <div class="alergias d-flex flex-column mt-2">
-      <label for="alergias">Alergias:</label>
-      <input name="alergias" type="text">
-    </div>
-    <div class="medicacoesUsadas d-flex flex-column mt-2">
-      <label for="medicacoesUsadas">Medicações Utilizadas:</label>
-      <textarea></textarea>
-    </div>
-    <div class="historicoDoencas d-flex flex-column mt-2">
-      <label for="historicoDoencas">Histórico de Doenças:</label>
-      <textarea></textarea>
-    </div>
-    <div class="mt-2">
-      <button class="btn">Próximo</button>
+      </div>
+
+      <!-- OBSERVAÇÃO -->
+      <div class="mt-2 d-flex justify-content-end">
+        <p>Obs.: O significa outro</p>
+      </div>
+
+      <!-- ALERGIAS -->
+      <div class="alergias d-flex flex-column mt-2">
+        <label for="alergias">Alergias:</label>
+        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="alergias" rows="30" cols="120"></textarea>
+      </div>
+
+      <!-- MEDICAÇÕES -->
+      <div class="medicacoesUsadas d-flex flex-column mt-2">
+        <label for="medicacoesUsadas">Medicações Utilizadas:</label>
+        <textarea class="form-control" [(ngModel)]="medicacoesUsadas" rows="30" cols="120"></textarea>
+      </div>
+
+      <!-- HISTÓRICO DE DOENÇAS -->
+      <div class="historicoDoencas d-flex flex-column mt-2">
+        <label for="historicoDoencas">Histórico de Doenças:</label>
+        <textarea class="form-control" [(ngModel)]="historicoDoencas" rows="30" cols="120"></textarea>
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-between">
+        <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
+      </div>
     </div>
   </form>
 </body>

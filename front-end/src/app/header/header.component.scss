@@ -1,0 +1,81 @@
+$color_1: #ffffff;
+$color_2: #5c0505;
+$color_3: #000000;
+$font-family_1: 'Sarala', sans-serif;
+$background-color_1: #b83838;
+$background-color_2: #ffd6d6;
+
+.cabecalho {
+
+  height: 28vh;
+
+  .imagem {
+    cursor: pointer;
+    width: 40%;
+  }
+
+  .logo {
+    width: 46%;
+    padding: 1rem 1.5rem;
+
+    img {
+      width: 80%;
+      max-width: 350px;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: $color_3;
+  }
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
+
+  .cabecalho-menu-item {
+    width: 13em;
+    height: 4em;
+    font-family: $font-family_1;
+    color: $color_1;
+    font-size: 18px;
+    padding: 25px;
+    cursor: pointer;
+    background-color: $background-color_1;
+    border-radius: 20px;
+    text-decoration: none;
+
+    &:hover {
+      color: $color_2;
+      background-color: $background-color_2;
+      transition: 0.5s ease;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .cabecalho {
+    .logo {
+      padding: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    .logo {
+      width: 90%;
+    }
+
+    .imagem {
+      display: none;
+    }
+  }
+}

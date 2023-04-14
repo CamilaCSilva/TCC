@@ -1,8 +1,68 @@
-// $ciano: #56D4FC;
+$dark-pink: #5c0505;
+$white: #ffff;
+$light-pink: #ffd6d6;
 
-// $bg-info: $ciano;
+@media screen and (min-width:1025px) {
+  .ficha {
+    position: absolute;
+    background-color: $light-pink;
+    color: $dark-pink;
+    width: 100vw;
+    height: auto;
+  }
 
-.ficha {
-  background-color: #56D4FC;
-  width: 100%;
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-pink;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  .ficha {
+    background-color: $light-pink;
+    color: $dark-pink;
+    width: 100vw;
+    height: auto;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-pink;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px)  {
+  .ficha {
+    background-color: $light-pink;
+    color: $dark-pink;
+    width: 100vw;
+    height: auto;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-pink;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fichas {
+    box-sizing: border-box;
+  }
 }

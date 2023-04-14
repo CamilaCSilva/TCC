@@ -1,0 +1,161 @@
+$dark-pink: #5c0505;
+$white: #ffff;
+$light-pink: #ffd6d6;
+$pink: #b83838;
+
+.btnProximo {
+  background-color: $pink;
+  border-style: none;
+}
+
+.btnAnterior {
+  background-color: $pink;
+  border-style: none;
+}
+
+@media screen and (min-width:1025px) {
+
+  body {
+    background-color: $light-pink;
+
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
+
+      //Spacing
+      width: 60vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 9.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 481px) {
+
+  body {
+    background-color: $light-pink;
+
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
+
+      //Spacing
+      width: 75vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 9.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) and (min-width: 0px) {
+
+  body {
+    background-color: $light-pink;
+
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
+
+      //Spacing
+      width: 90vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 8.8em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
+  }
+}

@@ -1,73 +1,287 @@
-$dark-blue: #00195A;
+$dark-pink: #5c0505;
 $white: #ffff;
+$light-pink: #ffd6d6;
+$pink: #b83838;
+
+.btnProximo {
+  background-color: $pink;
+  border-style: none;
+}
+
+.btnAnterior{
+  background-color: $pink;
+  border-style: none;
+}
 
 @media screen and (min-width:1025px) {
 
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 14px;
+  body {
+    background-color: $light-pink;
 
-    //Spacing
-    width: 70vw;
-    height: 80vh;
-    margin-top: 3em;
-    padding: 3em;
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+      //Spacing
+      width: 55vw;
+      height: 85vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .idade {
+          width: 4em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .tipoSangue {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .sexo {
+          margin-bottom: 1.25em;
+          align-items: center;
+
+          & label {
+            font-size: 18px;
+          }
+
+          & div {
+            height: 0.5em;
+
+            & div {
+              & label {
+                font-size: 15px;
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 15em;
+          height: 4.5em;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  body {
+    background-color: $light-pink;
+
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
+
+      //Spacing
+      width: 65vw;
+      height: 85vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .idade {
+          width: 4em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .tipoSangue {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .sexo {
+          margin-bottom: 1.25em;
+          align-items: center;
+
+          & label {
+            font-size: 18px;
+          }
+
+          & div {
+            height: 0.5em;
+
+            & div {
+              & label {
+                font-size: 15px;
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 12em;
+          height: 4.5em;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
   }
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
+@media screen and (max-width: 480px) and (min-width: 0px) {
 
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 14px;
+  body {
+    background-color: $light-pink;
 
-    //Spacing
-    width: 75vw;
-    height: 95vh;
-    margin-top: 3em;
-    padding: 3em;
+    .dadosAtendimento {
+      background-color: $dark-pink;
+      color: $white;
+      border-radius: 20px;
 
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+      //Spacing
+      width: 95vw;
+      height: 100vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .smallFields {
+
+        align-items: center;
+
+        .idade {
+          width: 4em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .tipoSangue {
+          width: 7.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+
+        .sexo {
+          margin-bottom: 1.25em;
+          align-items: center;
+
+          & label {
+            font-size: 18px;
+          }
+
+          & div {
+            height: 0.5em;
+
+            & div {
+              & label {
+                font-size: 15px;
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 12em;
+          height: 4.5em;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        font-size: 18px;
+        column-gap: 8em;
+        margin-top: 40px;
+      }
+    }
   }
-
-}
-
-@media (max-width: 480px) and (min-width: 0px) {
-
-  .dadosAtendimento {
-    background-color: $dark-blue;
-    color: $white;
-    border-radius: 14px;
-
-    //Spacing
-    width: 90vw;
-    height: 95vh;
-    margin-top: 3em;
-    padding: 3em;
-
-    //Position
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-
 }

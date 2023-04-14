@@ -1,12 +1,12 @@
-<div class="ficha d-flex flex-column justify-content-center align-items-center">
-  <div class="header d-flex flex-row align-items-center justify-content-around mb-5 mt-5 w-100">
+<div class="ficha d-flex flex-column align-items-center align-content-center">
+  <div class="header d-flex flex-row align-items-center justify-content-around mb-4 mt-4 w-100">
     <h3>Bem-vinda(o), {{ nomePaciente }}!</h3>
-    <app-perfil></app-perfil>
+    <div class="fotoPerfil d-flex align-items-center justify-content-center"><a routerLink="/perfil"><img src="../../assets/do-utilizador.png"></a></div>
   </div>
 
-  <h1>Ficha de Anamnese</h1>
+  <h2 class="mb-4">Ficha de Anamnese</h2>
 
-  <!-- <app-identificacao-paciente></app-identificacao-paciente> -->
-  <!-- <router-outlet></router-outlet>
-  <router-outlet name="idPaciente"></router-outlet> -->
+  <div class="mb-5">
+    <router-outlet></router-outlet>
+  </div>
 </div>
