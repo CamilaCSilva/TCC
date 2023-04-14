@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class IdentificacaoPacienteComponent implements OnInit {
 
   path1: string = 'home';
-  path2: string = 'login/ficha/identificacao-paciente/dados-atendimento';
+  path2: string = 'home/ficha/identificacao-paciente/dados-atendimento';
   nomeCompleto: string;
   cpf: string;
   celular: number;

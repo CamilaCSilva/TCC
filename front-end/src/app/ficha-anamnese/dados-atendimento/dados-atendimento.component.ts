@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class DadosAtendimentoComponent implements OnInit {
 
-  path1: string = 'login/ficha/identificacao-paciente';
-  path2: string = 'login/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
+  path1: string = 'home/ficha/identificacao-paciente';
+  path2: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
   idade: number;
   tipoSangue: string;
   sexo: string;

@@ -1,12 +1,26 @@
 $color_1: #5c0505;
 $color_2: #b83838;
 $background-color_1: #ffd6d6;
+$white: #ffff;
 
 .cabecalho {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-left: 10px;
+
+  .fotoPerfil {
+    background-color: $white;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    & img {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 main {
 	background: url(/assets/images/background.png);
@@ -30,27 +44,31 @@ img {
 	height: 50px;
 	cursor: pointer;
 }
-ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-}
-li {
-	align-items: center;
-	background-color: $background-color_1;
-	border-radius: 8px;
-	padding: 24px 26px;
-	box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
-	margin-top: 4px;
-}
-h3 {
-	font-size: 24px;
-	color: $color_1;
-}
-p {
-	font-size: 17px;
-	color: $color_2;
-	margin-top: 2px;
+
+#anamnese {
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  & li {
+    align-items: center;
+    background-color: $background-color_1;
+    border-radius: 8px;
+    padding: 18px 26px;
+    box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    list-style: none;
+  }
+  & h3 {
+    font-size: 24px;
+    color: $color_1;
+  }
+  & p {
+    font-size: 17px;
+    color: $color_2;
+    margin-top: 2px;
+  }
 }
 
 .acoes {
@@ -62,8 +80,10 @@ p {
 
 .botao {
 	border-radius: 25px;
-	width: 70px;
+	width: 65px;
+  height: 60px;
 	border: none;
+  font-size: 25px;
 
 	&:hover {
 		background-color: $background-color_1;

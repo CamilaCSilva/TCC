@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  usuario = {
+  path: string = 'perfil/editar-perfil';
+
+  string = 'Perfil'
+
+  usuario: any = {
     nome: 'Isabela Eduarda Pereira',
+    sexo: 'F',
     funcao: 'Equipe Medica',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',
@@ -16,25 +22,14 @@ export class PerfilComponent implements OnInit {
     celular: '(35)99123-4567'
   }
 
-  paciente = {
-    nome: 'Lucas Santos',
-    cpf: '987.234.567-45',
-    celular: '(35)99123-4567',
-    idade: 25,
-    tipo_sanguineo: 'O-',
-    sexo: 'M',
-    alegias: ['Polém', 'Aspirina'],
-    medicacoes_utilizadas: ['Ibuprofeno'],
-    historico_doencas: [ 'Fibromialgia'],
-    sintomas: ['Dor no estomago', 'Mal estar', 'Desmaios'],
-    nivel_dor: 8,
-    prioridade: 'Uregente',
-    observacao: 'O paciente não consegue ficar em pé'
-  }
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  editar(){
+    this.router.navigateByUrl(this.path);
+  }
+
 
 }

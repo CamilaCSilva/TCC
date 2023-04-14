@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class DadosGeraisComponent implements OnInit {
 
-  path1: string = 'login/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
+  path1: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
   path2: string = 'home';
   nomeParamedico: string;
   crmCorenDrf: string;

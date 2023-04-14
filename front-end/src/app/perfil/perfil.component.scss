@@ -1,67 +1,114 @@
 $color_1: #5c0505;
 $color_2: #b83838;
 $background-color_1: #ffd6d6;
+$white: #ffff;
+$pink: #b87676;
+$vinho: #680909;
+
+.container2 {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 55vh;
+  width: 100vw;
+  padding: 1rem 0;
+
+  .perfilInfos {
+    background: $pink;
+    border-radius: 20px;
+    padding: 1rem 5rem;
+
+    & label {
+      color: $vinho;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    & p {
+      color: $white;
+      font-size: 18px;
+    }
+  }
+}
 
 .cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 10px;
+  gap: 390px;
+  margin-left: 10px;
+
+  .botoesHeader {
+    gap: 20px;
+  }
+}
+
+.cabecalho2 {
+  gap: 400px;
+  margin-left: 10px;
+
+  & a {
+
+    & img {
+      max-width: 25px;
+      max-height: 25px;
+    }
+  }
 }
 
 main {
-    background: url(/assets/images/background.png);
-    background-size: cover;
-    min-height: 86vh;
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 86vh;
 }
 
 .exit {
-    max-width: 35px;
-    max-height: 35px;
+  max-width: 35px;
+  max-height: 35px;
 }
 
 .logo {
-    max-width: 40px;
-    max-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 input {
-    background: #b87676;
-    border: none;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
+  background: #b87676;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
 }
 
 img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 li {
-    align-items: center;
-    background-color: $background-color_1;
-    border-radius: 8px;
-    padding: 24px 26px;
-    box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
-    margin-top: 4px;
+  align-items: center;
+  background-color: $background-color_1;
+  border-radius: 8px;
+  padding: 24px 26px;
+  box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
 }
 
 h3 {
-    font-size: 24px;
-    color: $color_1;
+  font-size: 24px;
+  color: $color_1;
 }
 
 p {
-    font-size: 17px;
-    color: $color_2;
-    margin-top: 2px;
+  font-size: 17px;
+  color: $color_2;
+  margin-top: 2px;
+}
+
+.botao {
+  padding: 1rem;
 }
