@@ -5,12 +5,15 @@ $white: #ffff;
 $pink: #b87676;
 $vinho: #680909;
 
-.container2 {
+.container1 {
   background: url(/assets/images/background.png);
   background-size: cover;
   min-height: 55vh;
   width: 100vw;
   padding: 1rem 0;
+}
+
+.container2 {
 
   .perfilInfos {
     background: $pink;
@@ -41,7 +44,6 @@ $vinho: #680909;
 
 .cabecalho2 {
   gap: 400px;
-  margin-left: 10px;
 
   & a {
 

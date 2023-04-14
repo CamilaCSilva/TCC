@@ -32,7 +32,7 @@ describe('LoginComponent', () => {
       component.entrar(name);
 
       // Then
-      expect(component.mensagem).toEqual("Bem vindo(a), " + name + "!");
+      expect(component.mensagem).toEqual("Bem vinda(o), " + name + "!");
     });
   });
 });

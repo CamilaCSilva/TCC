@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   usuario = {
-    nome: 'Isabela Eduarda Pereira',
+    nome: 'Isabela',
     funcao: 'Equipe Medica',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',
