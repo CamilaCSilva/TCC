@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  verificaCpf() {
+
+  }
+
   logar() {
     if(this.cpf && this.senha) {
       this.router.navigateByUrl(this.path);
