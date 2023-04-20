@@ -26,15 +26,18 @@ $white: #ffff;
     gap: 20px;
   }
 }
-main {
+
+.main {
 	background: url(/assets/images/background.png);
 	background-size: cover;
 	min-height: 86vh;
 }
+
 .exit {
 	max-width: 35px;
 	max-height: 35px;
 }
+
 input {
 	background: #b87676;
 	border: none;
@@ -43,6 +46,7 @@ input {
 	flex-direction: row;
 	padding: 1rem;
 }
+
 img {
 	width: 50px;
 	height: 50px;
@@ -91,5 +95,6 @@ img {
 
 	&:hover {
 		background-color: $background-color_1;
+    color: $color_2;
 	}
 }

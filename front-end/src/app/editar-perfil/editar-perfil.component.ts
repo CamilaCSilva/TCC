@@ -9,19 +9,17 @@ import { Router } from '@angular/router';
 })
 export class EditarPerfilComponent implements OnInit {
 
-    path: string = 'perfil';
-
-
-  string = 'Edição Perfil'
+  path: string = 'perfil';
+  string = 'Edição Perfil';
 
   usuario = {
     nome: 'Isabela Eduarda Pereira',
-    funcao: 'Equipe Medica',
+    funcao: 'Equipe Médica',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',
     unidade_atendimento: 'Hospital Antônio Moreira da Costa',
     celular: '(35)99123-4567'
-  }
+  };
 
   constructor(private router: Router) { }
 

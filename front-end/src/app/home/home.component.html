@@ -1,42 +1,40 @@
-<main>
-  <section class="container login ff-inter">
-
-    <header class="header">
+<div class="main">
+  <div class="container">
+    <div class="header">
       <div class="cabecalho">
         <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
         <div class="botoesHeader d-flex flex-row justify-content-around align-items-center">
-          <input type="date" name="data">
+          <!-- DATA -->
+          <input type="date" name="data" [(ngModel)]="data" (keyup.enter)="filtrarPorData(data)">
+
+          <!-- PERFIL LINK -->
           <div class="fotoPerfil d-flex align-items-center justify-content-center">
             <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
           </div>
-          <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+
+          <!-- SAIR -->
+          <div class="iconeSair">
+            <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+          </div>
         </div>
       </div>
-    </header>
+    </div>
 
-
+    <!-- FICHAS DISPONÍVEIS -->
     <ul id="anamnese">
-      <li>
-        <h3>{{ paciente[0].nome }}</h3>
-        <p class="pri">{{ paciente[0].prioridade }}</p>
-        <p class="obs">{{ paciente[0].observacao }}</p>
-      </li>
-      <li>
-        <h3>{{ paciente[1].nome }}</h3>
-        <p class="pri">{{ paciente[1].prioridade }}</p>
-        <p class="obs">{{ paciente[1].observacao }}</p>
-      </li>
-      <li>
-        <h3>{{ paciente[2].nome }}</h3>
-        <p class="pri">{{ paciente[2].prioridade }}</p>
-        <p class="obs">{{ paciente[2].observacao }}</p>
+      <li *ngFor="let paciente of pacientes">
+        <div class="nomeData d-flex flex-row justify-content-between">
+          <h3>{{ paciente.nome }}</h3>
+          <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
+        </div>
+
+        <p class="pri">{{ paciente.prioridade }}</p>
+        <p class="obs">{{ paciente.observacao }}</p>
       </li>
     </ul>
 
-    <div class="acoes">
-      <button routerLink="/home/ficha/identificacao-paciente" class="botao">+</button>
+    <div class="btn acoes">
+      <button (click)="adicionarFicha()" class="botao">+</button>
     </div>
-
-  </section>
-
-</main>
+  </div>
+</div>

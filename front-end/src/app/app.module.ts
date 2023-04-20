@@ -18,6 +18,7 @@ import { FormularioCadastroComponent } from './formulario-cadastro/formulario-ca
 import { HomeComponent } from './home/home.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PerfilComponent } from './perfil/perfil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     RouterModule
   ],

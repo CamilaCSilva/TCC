@@ -4,12 +4,14 @@
       <a routerLink="/perfil"><img class="left" src="../../../assets/images/left.png" alt="Sair"></a>
       <h2>{{string}}</h2>
     </div>
-    <form class="edicaoPerfil">
+    <form class="edicaoPerfil" (ngSubmit)="salvar()">
+      <!-- NOME -->
       <div class="d-flex flex-column">
         <label for="nome">Nome</label>
         <input type="text" class="input" id="nome" name="nome" value={{usuario.nome}}>
       </div>
 
+      <!-- ÁREA ATUAÇÃO -->
       <div class="d-flex flex-column">
         <label>Área de Atuação</label>
         <select class="minimal" name="seletor">
@@ -18,28 +20,32 @@
         </select>
       </div>
 
+      <!-- CRM/COREN/DRF -->
       <div class="d-flex flex-column">
         <label for="doc">CRM\COREN\DRF</label>
         <input type="text" class="input" id="doc" name="doc" value={{usuario.docmentro_trabalho}}>
       </div>
 
+      <!-- CPF -->
       <div class="d-flex flex-column">
         <label for="cpf">CPF</label>
         <input type="text" class="input" id="cpf" name="cpf" value={{usuario.cpf}}>
       </div>
 
+      <!-- UNIDADE DE ATENDIMENTO -->
       <div class="d-flex flex-column">
         <label for="unidadeAtendimento">Unidade de Atendimento</label>
         <input type="text" class="input" id="unidadeAtendimento" name="unidadeAtendimento" value={{usuario.unidade_atendimento}}>
       </div>
 
+      <!-- CELULAR -->
       <div class="d-flex flex-column">
         <label for="celular">Celular</label>
         <input type="tel" class="input" id="celular" name="celular" value={{usuario.celular}}>
       </div>
 
       <div class="acoes">
-        <button (click)="salvar()" class="botao">Salvar</button>
+        <button type="submit" class="botao">Salvar</button>
       </div>
     </form>
   </div>

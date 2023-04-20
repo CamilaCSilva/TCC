@@ -9,26 +9,23 @@ $background-color_2: #ffd6d6;
 
   height: 28vh;
 
-  .imagem {
-    cursor: pointer;
-    width: 40%;
-  }
-
   .logo {
     width: 46%;
     padding: 1rem 1.5rem;
 
-    img {
+    & img {
       width: 80%;
       max-width: 350px;
       margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+
+    & p {
+      font-size: 1rem;
+      color: $color_3;
     }
   }
 
-  p {
-    font-size: 1rem;
-    color: $color_3;
-  }
 }
 
 .cabecalho-menu {
