@@ -1,66 +1,64 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil</title>
-</head>
-<body>
-  <div class="container1 d-flex flex-column justify-content-center align-items-center">
-    <div class="header">
-        <header class="cabecalho d-flex flex-row">
-          <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
-          <div class="botoesHeader d-flex flex-row justify-content-end">
-            <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
-            <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
-          </div>
-        </header>
+<div class="perfilContainer d-flex flex-column align-items-center justify-content-center">
+  <!-- HEADER -->
+  <div class="headerGeral d-flex flex-column align-items-center justify-content-around">
+    <div class="nav d-flex flex-row justify-content-between">
+      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+      <div class="botoesHeader d-flex flex-row justify-content-end">
+        <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
+        <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+      </div>
     </div>
 
-    <div class="container2 d-flex flex-column justify-content-center align-items-center">
-      <div class="cabecalho2 d-flex flex-row justify-content-center align-items-center">
-        <h2>{{ string }}</h2>
-      </div>
-      <div class="perfilInfos d-flex flex-column align-items-center">
-        <div class="d-flex flex-column align-items-start mt-3">
-          <div class="d-flex flex-column align-items-start">
-            <label for="nome">Nome</label>
-            <p class="input" id="nome" name="nome">{{ usuario.nome }}</p>
-          </div>
-
-          <div class="d-flex flex-column align-items-start">
-            <label>Sexo</label>
-            <p>{{ usuario.sexo }}</p>
-          </div>
-
-          <div class="d-flex flex-column align-items-start">
-            <label for="doc">CRM\COREN\DRF</label>
-            <p type="text" class="input" id="doc" name="doc">{{ usuario.docmentro_trabalho }}</p>
-          </div>
-
-          <div class="d-flex flex-column align-items-start">
-            <label for="cpf">CPF</label>
-            <p type="text" class="input" id="cpf" name="cpf">{{ usuario.cpf }}</p>
-          </div>
-
-          <div class="d-flex flex-column align-items-start">
-            <label for="unidadeAtendimento">Unidade de Atendimento</label>
-            <p type="text" class="input" id="unidadeAtendimento" name="unidadeAtendimento">{{ usuario.unidade_atendimento }}</p>
-          </div>
-
-          <div class="d-flex flex-column align-items-start">
-            <label for="celular">Celular</label>
-            <p type="tel" class="input" id="celular" name="celular">{{ usuario.celular }}</p>
-          </div>
-
-          <div class="acoes">
-            <button (click)="editar()" class="botao">Editar Perfil</button>
-          </div>
-        </div>
-      </div>
+    <!-- CABEÇALHO FORM -->
+    <div class="cabecalho d-flex justify-content-center">
+      <h2>{{string}}</h2>
     </div>
   </div>
-</body>
-</html>
+
+  <!-- INFOS -->
+  <div class="perfilInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
+    <div class="d-flex flex-column align-items-start">
+      <!-- NOME COMPLETO -->
+      <div class="nomeCompleto d-flex flex-column">
+        <label for="nome">Nome Completo</label>
+        <p id="nome" name="nome">{{ usuario.nome }}</p>
+      </div>
+
+      <!-- SEXO -->
+      <div class="sexo d-flex flex-column">
+        <label>Sexo</label>
+        <p>{{ usuario.sexo }}</p>
+      </div>
+
+      <!-- CRM/COREN/DRF -->
+      <div class="crmCorenDrf d-flex flex-column">
+        <label for="doc">CRM/COREN/DRF</label>
+        <p type="text" id="doc" name="doc">{{ usuario.docmentro_trabalho }}</p>
+      </div>
+
+      <!-- CPF -->
+      <div class="cpf d-flex flex-column">
+        <label for="cpf">CPF</label>
+        <p type="text" id="cpf" name="cpf">{{ usuario.cpf }}</p>
+      </div>
+
+      <!-- UNIDADE ATENDIMENTO -->
+      <div class="unidadeAtendimento d-flex flex-column">
+        <label for="unidadeAtendimento">Unidade de Atendimento</label>
+        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ usuario.unidade_atendimento }}</p>
+      </div>
+
+      <!-- CELULAR -->
+      <div class="celular d-flex flex-column">
+        <label for="celular">Celular</label>
+        <p type="tel" id="celular" name="celular">{{ usuario.celular }}</p>
+      </div>
+    </div>
+
+    <!-- BOTOES -->
+    <div class="btns">
+      <button (click)="editar()" class="btnEditar">Editar Perfil</button>
+    </div>
+  </div>
+</div>

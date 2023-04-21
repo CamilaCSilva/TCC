@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,6 +17,8 @@ export class DadosAtendimentoComponent implements OnInit {
   alergias: string;
   medicacoesUsadas: string;
   historicoDoencas: string;
+  testResult: boolean = false;
+  formGroup: FormGroup;
 
   constructor(private router: Router) { }
 
@@ -27,8 +30,30 @@ export class DadosAtendimentoComponent implements OnInit {
   }
 
   seguir() {
-    if(this.idade && this.tipoSangue) {
+    this.verificaDados();
+    if(this.idade && this.testResult && this.sexo != '' && this.medicacoesUsadas.length > 0) {
       this.router.navigateByUrl(this.path2);
+    }
+  }
+
+  onSexChange() {
+    if(this.sexo == 'f') {
+      console.log('Feminino');
+    }
+    if(this.sexo == 'm') {
+      console.log('Masculino');
+    }
+    if(this.sexo == 'o') {
+      console.log('outro');
+    }
+  }
+
+  private verificaDados() {
+    if(this.tipoSangue && this.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
+      throw new Error('Tipo sanguíneo inválido');
+    }
+    else {
+      this.testResult = true;
     }
   }
 

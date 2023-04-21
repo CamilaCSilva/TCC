@@ -5,7 +5,10 @@
     <h2>{{ stringFacaLogin }}</h2>
   </header>
   <div class="d-flex flex-column align-items-center">
-    <form class="login" (ngSubmit)="logar()">
+    <form
+      #login="ngForm"
+      class="login"
+      (ngSubmit)="logar()">
       <div class="d-flex flex-column">
         <label for="cpf">CPF</label>
         <input
@@ -28,7 +31,7 @@
           [(ngModel)]="senha">
       </div>
 
-      <div class="acoes">
+      <div class="btns">
         <button type="submit" class="btn botao">ENTRAR</button>
       </div>
     </form>

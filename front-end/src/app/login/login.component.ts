@@ -22,17 +22,17 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.verificaDados();
-    if(!this.testResult) {
+    if(this.testResult) {
       this.router.navigateByUrl(this.path);
     }
   }
 
   private verificaDados() {
     if(this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      throwError('CPF incompleto');
+      throw new Error('CPF incompleto');
     }
     else if(this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
-      throwError('Senha incompleta');
+      throw new Error('Senha incompleta');
     }
     else {
       this.testResult = true;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-perfil',
   templateUrl: './editar-perfil.component.html',
@@ -13,7 +12,7 @@ export class EditarPerfilComponent implements OnInit {
   string = 'Edição Perfil';
 
   usuario = {
-    nome: 'Isabela Eduarda Pereira',
+    nome: 'Isabela',
     funcao: 'Equipe Médica',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',

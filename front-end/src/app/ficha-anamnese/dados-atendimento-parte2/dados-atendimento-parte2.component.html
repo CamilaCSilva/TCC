@@ -7,7 +7,10 @@
   <title>Dados para Atendimento 2</title>
 </head>
 <body>
-  <form class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center">
+  <form
+    #dadosAtendimentoParte2="ngForm"
+    class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
+    (ngSubmit)="seguir()">
     <h4>Dados para Atendimento</h4>
 
     <div class="d-flex flex-column align-items-center">
@@ -27,7 +30,7 @@
         <!-- PRIORIDADE -->
         <div class="prioridade d-flex flex-column align-itens-center mt-2 mr-3">
           <p>Prioridade:</p>
-          <select class="form-select" name="selectPrioridade">
+          <select [value]="prioridade" class="form-select" name="selectPrioridade" (change)="onPrioridadeChange(getPrioridade($event))">
             <option value="nao-urgente" selected>Não Urgente</option>
             <option value="pouco-urgente">Pouco Urgente</option>
             <option value="urgente">Urgente</option>
@@ -44,15 +47,14 @@
       <!-- OBSERVAÇÕES -->
       <div class="observacoes d-flex flex-column mt-2">
         <label for="observacoes">Observações:</label>
-        <textarea class="form-control" [(ngModel)]="observacoes"></textarea>
+        <textarea class="form-control" name="observacoes" [(ngModel)]="observacoes"></textarea>
       </div>
 
       <!-- BOTÕES -->
       <div class="btns d-flex flex-row justify-content-between">
-        <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
-        <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
+        <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
       </div>
-
     </div>
   </form>
 </body>

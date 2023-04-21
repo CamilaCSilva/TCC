@@ -5,112 +5,88 @@ $white: #ffff;
 $pink: #b87676;
 $vinho: #680909;
 
-.container1 {
+
+.perfilContainer {
   background: url(/assets/images/background.png);
   background-size: cover;
   min-height: 55vh;
   width: 100vw;
-  padding: 1rem 0;
-}
+  padding: 2rem 1rem;
 
-.container2 {
+  .headerGeral {
+    width: 100vw;
 
-  .perfilInfos {
+    .nav {
+      gap: 10px 450px;
+
+      .botoesHeader {
+        gap: 20px;
+
+        .logo {
+          max-width: 40px;
+          max-height: 40px;
+        }
+
+        .exit {
+          max-width: 35px;
+          max-height: 35px;
+        }
+      }
+    }
+
+    .cabecalho {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .perfilInfosContainer {
+    width: 60vw;
+    height: 85vh;
     background: $pink;
     border-radius: 20px;
-    padding: 1rem 5rem;
+    border: none;
+    padding: 1rem;
 
-    & label {
-      color: $vinho;
-      font-weight: bold;
-      font-size: 18px;
+    .nomeCompleto, .sexo, .crmCorenDrf, .cpf, .unidadeAtendimento, .celular {
+      width: 18em;
+
+      & label {
+        color: $vinho;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      & p {
+        color: $white;
+        font-size: 18px;
+        border: none;
+        border-radius: 20px;
+        height: 30px;
+      }
     }
 
-    & p {
-      color: $white;
-      font-size: 18px;
+    .btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      .btnEditar {
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 20px;
+        background-color: $color_1;
+        color: $white;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $white;
+          color:  $color_1;
+        }
+      }
     }
   }
 }
 
-.cabecalho {
-  gap: 390px;
-  margin-left: 10px;
-
-  .botoesHeader {
-    gap: 20px;
-  }
-}
-
-.cabecalho2 {
-  gap: 400px;
-
-  & a {
-
-    & img {
-      max-width: 25px;
-      max-height: 25px;
-    }
-  }
-}
-
-main {
-  background: url(/assets/images/background.png);
-  background-size: cover;
-  min-height: 86vh;
-}
-
-.exit {
-  max-width: 35px;
-  max-height: 35px;
-}
-
-.logo {
-  max-width: 40px;
-  max-height: 40px;
-}
-
-input {
-  background: #b87676;
-  border: none;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-}
-
-img {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-li {
-  align-items: center;
-  background-color: $background-color_1;
-  border-radius: 8px;
-  padding: 24px 26px;
-  box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
-  margin-top: 4px;
-}
-
-h3 {
-  font-size: 24px;
-  color: $color_1;
-}
-
-p {
-  font-size: 17px;
-  color: $color_2;
-  margin-top: 2px;
-}
-
-.botao {
-  padding: 1rem;
-}

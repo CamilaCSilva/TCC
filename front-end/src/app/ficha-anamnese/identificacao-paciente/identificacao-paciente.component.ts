@@ -24,7 +24,8 @@ export class IdentificacaoPacienteComponent implements OnInit {
 
   seguir() {
     this.verificaDados();
-    if(!this.testResult){
+    console.log('Test result:',this.testResult);
+    if(this.testResult){
       this.router.navigateByUrl(this.path2);
     }
   }
@@ -35,13 +36,15 @@ export class IdentificacaoPacienteComponent implements OnInit {
 
   private verificaDados() {
     if(this.nomeCompleto && this.nomeCompleto.length < 6) {
-      throwError('Nome incompleto');
+      throw new Error('Nome incompleto');
+      console.log(this.nomeCompleto.length);
     }
-    else if(this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      throwError('CPF incompleto');
+    else if(this.cpf && this.cpf.length < 11 || this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$')) == null) {
+      throw new Error('CPF incompleto');
+      console.log(this.cpf);
     }
-    else if(this.celular && !this.celular.match(new RegExp('^\([1-9]{2}\)([2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$'))){
-      throwError('Celular incorreto');
+    else if(this.celular && this.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
+      throw new Error('Celular incorreto');
     }
     else {
       this.testResult = true;

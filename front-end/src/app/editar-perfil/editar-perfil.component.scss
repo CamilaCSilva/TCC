@@ -7,101 +7,122 @@ $background-color_2: #ffd6d6;
 $background-color_3: white;
 $background-color_4: #5c0505;
 $border-color_1: #680909;
+$white: #ffff;
+$pink: #b87676;
 
-.acoes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.main {
+.editarPerfilContainer {
+  margin-right: auto;
+  margin-left: auto;
   background: url(/assets/images/background.png);
   background-size: cover;
-  min-height: 65vh;
-}
+  min-height: 55vh;
+  width: 100vw;
+  padding: 2rem 1rem;
 
-.edicaoPerfil {
-  width: 50vw;
-  height: 85vh;
-}
+  .headerGeral {
+    .nav {
+      display: inline-block;
+      gap: 10px 450px;
 
-.cabecalho {
-  margin-left: 10px;
-  gap: 470px;
-}
+      .botoesHeader {
+        gap: 20px;
 
-.left {
-  margin: 0 10px 7px 0;
-  max-width: 25px;
-  max-height: 25px;
-}
+        .logo {
+          max-width: 40px;
+          max-height: 40px;
+        }
 
-select {
-  background-color: $background-color_3;
-  border: none;
-  border-radius: 15px;
-  display: inline-block;
-  font: inherit;
-  line-height: 1.5em;
-  padding: 0.5em 3.5em 0.5em 1em;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+        .exit {
+          max-width: 35px;
+          max-height: 35px;
+        }
+      }
+    }
 
-select.minimal {
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
-
-  &:focus {
-    background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
-    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-    background-size: 5px 5px, 5px 5px, 1px 1.5em;
-    background-repeat: no-repeat;
-    border-color: $border-color_1;
-    outline: 0;
+    .cabecalho {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
   }
-}
 
-.botao {
-  margin-top: 10px;
-  width: 200px;
-  border: none;
-  padding: 1rem;
-
-  &:hover {
-    background-color: $background-color_4;
-  }
-}
-
-.login {
-  padding: 2rem 0;
-
-  form {
-    background: #b87676;
+  .editarPerfilForm {
+    width: 50vw;
+    height: 85vh;
+    background: $pink;
     border: none;
     border-radius: 20px;
     padding: 1rem;
 
-    label {
+    & label {
       color: $color_3;
       font-weight: bold;
+      font-size: 18px;
       margin: 0 0 0.5rem;
     }
 
-    .input {
+    & input {
       border: none;
+      font-size: 18px;
       height: 30px;
       padding: 1rem 2rem;
       border-radius: 20px;
       margin: 0.5rem 0 1rem;
     }
+
+    & select {
+      background-color: $background-color_3;
+      border: none;
+      border-radius: 15px;
+      display: inline-block;
+      font: inherit;
+      line-height: 1.5em;
+      padding: 0.5em 3.5em 0.5em 1em;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      .minimal {
+        background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+        background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        background-repeat: no-repeat;
+
+        &:focus {
+          background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+          background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+          background-size: 5px 5px, 5px 5px, 1px 1.5em;
+          background-repeat: no-repeat;
+          border-color: $border-color_1;
+          outline: 0;
+        }
+      }
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      .btnSalvar {
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 20px;
+        background-color: $background-color_4;
+        color: $white;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $white;
+          color:  $background-color_4;
+        }
+      }
+    }
   }
 }
+

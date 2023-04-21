@@ -4,7 +4,10 @@
         <header class="header">
             <h2>{{string}}</h2>
         </header>
-        <form class="criarCadastro">
+        <form
+          #cadastro="ngForm"
+          class="criarCadastro"
+          (ngSubmit)="cadastrar()">
             <label for="nome">Nome</label>
             <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo">
 
@@ -35,8 +38,8 @@
             <input type="password" class="input" id="confirmaSenha" name="confirmaSenha"
                 placeholder="Confirme sua senha">
 
-            <div class="acoes">
-                <button class="botao">CADASTRAR</button>
+            <div class="btns">
+              <button type="submit" class="botao">CADASTRAR</button>
             </div>
         </form>
     </div>

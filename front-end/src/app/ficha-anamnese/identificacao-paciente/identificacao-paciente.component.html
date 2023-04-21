@@ -8,7 +8,10 @@
   <title>Identificação do Paciente</title>
 </head>
 <body>
-  <form class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center">
+  <form
+    #idPaciente="ngForm"
+    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
+    (ngSubmit)="seguir()">
     <h4>Identificação do Paciente</h4>
 
     <!-- NOME COMPLETO -->
@@ -33,8 +36,8 @@
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-between">
-      <button class="btnVoltar btn btn-primary" (click)="voltar()">Cancelar e Voltar</button>
-      <button class="btnProximo btn btn-primary rounded-circle"  (click)="seguir()">></button>
+      <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">Cancelar e Voltar</button>
+      <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
     </div>
   </form>
 </body>

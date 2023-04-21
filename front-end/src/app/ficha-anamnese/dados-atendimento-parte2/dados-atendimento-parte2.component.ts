@@ -12,7 +12,7 @@ export class DadosAtendimentoParte2Component implements OnInit {
   path2: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
   sintomas: string;
   nivelDor: number;
-  prioridade: string;
+  prioridade: string = 'nao-urgente';
   observacoes: string;
 
   constructor(private router: Router) { }
@@ -25,9 +25,20 @@ export class DadosAtendimentoParte2Component implements OnInit {
   }
 
   seguir() {
-    if(this.nivelDor) {
+    if(this.sintomas.length > 0 && this.nivelDor) {
       this.router.navigateByUrl(this.path2);
     }
   }
 
+  onPrioridadeChange(prioridade: string) {
+    if(prioridade == 'nao-urgente') { console.log('Não urgente'); }
+    else if(prioridade == 'pouco-urgente') { console.log('Pouco urgente'); }
+    else if(prioridade == 'urgente') { console.log('Urgente'); }
+    else if(prioridade == 'emergencia') { console.log('Emergência'); }
+  }
+
+  getPrioridade(event: Event) {
+    this.prioridade = (event.target as HTMLInputElement).value;
+    return this.prioridade;
+  }
 }

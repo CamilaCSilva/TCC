@@ -7,7 +7,10 @@
   <title>Dados Vitais do Paciente</title>
 </head>
 <body>
-  <form class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center">
+  <form
+    #dadosVitais="ngForm"
+    class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
+    (ngSubmit)="seguir()">
     <h4>Dados Vitais do Paciente</h4>
 
     <div class="smallFields d-flex flex-column align-items-center">
@@ -41,8 +44,8 @@
 
       <!-- BOTÕES -->
       <div class="btns d-flex flex-row justify-content-between">
-        <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
-        <button class="btnProximo btn btn-primary rounded-circle" (click)="seguir()">></button>
+        <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+        <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
       </div>
     </div>
   </form>

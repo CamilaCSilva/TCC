@@ -8,7 +8,10 @@
   <title>Dados Gerais</title>
 </head>
 <body>
-  <form class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center">
+  <form
+    #dadosGerais="ngForm"
+    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
+    (ngSubmit)="seguir()">
     <h4>Dados Gerais</h4>
 
     <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
@@ -31,8 +34,8 @@
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-between">
-      <button class="btnAnterior btn btn-primary rounded-circle" (click)="voltar()"><</button>
-      <button class="btnAssinarEnviar btn btn-primary" (click)="seguir()">Assinar e Enviar</button>
+      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+      <button class="btnAssinarEnviar btn btn-primary" type="submit">Assinar e Enviar</button>
     </div>
   </form>
 </body>

@@ -14,4 +14,6 @@ export class FormularioCadastroComponent {
   ngOnInit(): void {
   }
 
+  cadastrar() {}
+
 }
