@@ -10,8 +10,7 @@
 <body>
   <form
     #dadosGerais="ngForm"
-    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
-    (ngSubmit)="seguir()">
+    class="dadosGerais d-flex flex-column justify-content-center align-content-center align-items-center">
     <h4>Dados Gerais</h4>
 
     <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
@@ -28,14 +27,30 @@
 
     <!-- DATA E ENDEREÇO -->
     <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
-      <p>22 de Março de 2023, 18:00</p>
+      <p>{{ date | date : 'long' }}</p>
       <p>Av. João de Camargo, 510, Centro</p>
+      <!-- <p>{{location.}}</p> -->
     </div>
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-between">
       <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
-      <button class="btnAssinarEnviar btn btn-primary" type="submit">Assinar e Enviar</button>
+      <button
+        class="btnAssinarEnviar btn btn-primary"
+        type="button"
+        (click)="this.nomeParamedico && this.nomeParamedico.length > 6 && this.crmCorenDrf ? modalConfirmacao.hidden = false : alert()">
+        Assinar e Enviar
+      </button>
+    </div>
+
+    <div #modalConfirmacao hidden>
+      <div class="modal d-flex flex-column justify-content-center align-items-center">
+        <h3>Confirmar</h3>
+        <div class="btns d-flex flex-row">
+          <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">Enviar</button>
+          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">Cancelar</button>
+        </div>
+      </div>
     </div>
   </form>
 </body>

@@ -1,25 +1,25 @@
-$dark-pink: #5c0505;
+$dark-red: #5c0505;
 $white: #ffff;
-$light-pink: #ffd6d6;
-$pink: #b83838;
+$light-red: #b87676;
+// #ffd6d6;
 
 .btnProximo {
-  background-color: $pink;
+  background-color: $light-red;
   border-style: none;
 }
 
 .btnAnterior {
-  background-color: $pink;
+  background-color: $light-red;
   border-style: none;
 }
 
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $light-pink;
+    background-color: $light-red;
 
     .dadosAtendimento {
-      background-color: $dark-pink;
+      background-color: $dark-red;
       color: $white;
       border-radius: 20px;
 
@@ -92,10 +92,10 @@ $pink: #b83838;
 @media (max-width: 1024px) and (min-width: 481px) {
 
   body {
-    background-color: $light-pink;
+    background-color: $light-red;
 
     .dadosAtendimento {
-      background-color: $dark-pink;
+      background-color: $dark-red;
       color: $white;
       border-radius: 20px;
 
@@ -168,10 +168,10 @@ $pink: #b83838;
 @media (max-width: 480px) and (min-width: 0px) {
 
   body {
-    background-color: $light-pink;
+    background-color: $light-red;
 
     .dadosAtendimento {
-      background-color: $dark-pink;
+      background-color: $dark-red;
       color: $white;
       border-radius: 20px;
 

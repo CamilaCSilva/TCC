@@ -1,5 +1,5 @@
-$color_1: #b83838;
-$color_2: #ffffff;
+$dark-red: #5c0505;
+$white: #ffffff;
 $font-family_1: 'Inter', sans-serif;
 $font-family_2: 'Roboto Mono', monospace;
 
@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-    color: $color_1;
+    color: $dark-red;
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
@@ -48,7 +48,7 @@ h2 {
 
 .botao {
     background: #b83838;
-    color: $color_2;
+    color: $white;
     max-width: 270px;
     width: 250px;
     // padding: 1rem;

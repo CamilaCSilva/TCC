@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,20 +13,27 @@ export class DadosGeraisComponent implements OnInit {
   path2: string = 'home';
   nomeParamedico: string;
   crmCorenDrf: string;
+  date: Date = new Date();
+  alertMessage: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+    if(this.alertMessage != "") {
+      alert(this.alertMessage);
+    }
   }
 
-  voltar(){
+  voltar() {
     this.router.navigateByUrl(this.path1);
   }
 
-  seguir() {
-    if(this.nomeParamedico && this.crmCorenDrf) {
-      this.router.navigateByUrl(this.path2);
-    }
+  alert() {
+    alert('Dados incompletos');
+  }
+
+  enviar() {
+    this.router.navigateByUrl(this.path2);
   }
 
 }

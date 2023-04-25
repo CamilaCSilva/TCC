@@ -1,9 +1,7 @@
-$color_1: #ffffff;
-$color_2: #5c0505;
-$color_3: #000000;
 $font-family_1: 'Sarala', sans-serif;
-$background-color_1: #b83838;
-$background-color_2: #ffd6d6;
+$white: #ffffff;
+$dark-red: #5c0505;
+$light-red: #b87676;
 
 .cabecalho {
 
@@ -22,35 +20,36 @@ $background-color_2: #ffd6d6;
 
     & p {
       font-size: 1rem;
-      color: $color_3;
     }
   }
 
-}
+  .cabecalho-menu {
+    display: flex;
+    gap: 32px;
 
-.cabecalho-menu {
-  display: flex;
-  gap: 32px;
+    .cabecalho-menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 11.5em;
+      height: 3.5em;
+      font-family: $font-family_1;
+      color: $white;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: $dark-red;
+      border-radius: 20px;
+      text-decoration: none;
 
-  .cabecalho-menu-item {
-    width: 13em;
-    height: 4em;
-    font-family: $font-family_1;
-    color: $color_1;
-    font-size: 18px;
-    padding: 25px;
-    cursor: pointer;
-    background-color: $background-color_1;
-    border-radius: 20px;
-    text-decoration: none;
-
-    &:hover {
-      color: $color_2;
-      background-color: $background-color_2;
-      transition: 0.5s ease;
+      &:hover {
+        color: $dark-red;
+        background-color: $light-red;
+        transition: 0.5s ease;
+      }
     }
   }
 }
+
 
 
 @media (max-width: 576px) {

@@ -1,4 +1,4 @@
-$color_1: rgb(0, 0, 0);
+$black: rgb(0, 0, 0);
 
 footer {
     display: grid;
@@ -10,7 +10,7 @@ footer {
     padding: 1rem 2rem;
 
     small {
-        color: $color_1;
+        color: $black;
     }
 }
 

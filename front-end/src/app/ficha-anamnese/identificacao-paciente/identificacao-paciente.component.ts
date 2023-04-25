@@ -24,7 +24,6 @@ export class IdentificacaoPacienteComponent implements OnInit {
 
   seguir() {
     this.verificaDados();
-    console.log('Test result:',this.testResult);
     if(this.testResult){
       this.router.navigateByUrl(this.path2);
     }
@@ -35,15 +34,17 @@ export class IdentificacaoPacienteComponent implements OnInit {
   }
 
   private verificaDados() {
-    if(this.nomeCompleto && this.nomeCompleto.length < 6) {
+    if(this.nomeCompleto && this.nomeCompleto.length < 6 && this.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
+      alert('Nome incompleto');
+      console.log('Passou aqui');
       throw new Error('Nome incompleto');
-      console.log(this.nomeCompleto.length);
     }
     else if(this.cpf && this.cpf.length < 11 || this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$')) == null) {
+      alert('CPF no formato errado ou com menos caracteres do que esperado');
       throw new Error('CPF incompleto');
-      console.log(this.cpf);
     }
     else if(this.celular && this.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
+      alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
     else {

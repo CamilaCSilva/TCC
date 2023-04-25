@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,9 +28,11 @@ export class LoginComponent implements OnInit {
 
   private verificaDados() {
     if(this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+      alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
     else if(this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+      alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }
     else {

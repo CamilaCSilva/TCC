@@ -1,9 +1,6 @@
-$color_1: #5c0505;
-$color_2: #b83838;
-$background-color_1: #ffd6d6;
+$dark-red: #5c0505;
 $white: #ffff;
-$pink: #b87676;
-$vinho: #680909;
+$light-red: #b87676;
 
 
 .perfilContainer {
@@ -43,7 +40,7 @@ $vinho: #680909;
   .perfilInfosContainer {
     width: 60vw;
     height: 85vh;
-    background: $pink;
+    background: $light-red;
     border-radius: 20px;
     border: none;
     padding: 1rem;
@@ -52,7 +49,7 @@ $vinho: #680909;
       width: 18em;
 
       & label {
-        color: $vinho;
+        color: $dark-red;
         font-weight: bold;
         font-size: 18px;
       }
@@ -77,13 +74,13 @@ $vinho: #680909;
         height: 50px;
         border: none;
         border-radius: 20px;
-        background-color: $color_1;
+        background-color: $dark-red;
         color: $white;
         font-weight: bold;
 
         &:hover {
           background-color: $white;
-          color:  $color_1;
+          color:  $dark-red;
         }
       }
     }

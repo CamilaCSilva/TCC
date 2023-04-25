@@ -1,7 +1,6 @@
-$color_1: #680909;
-$background-color_1: white;
-$background-color_2: #5c0505;
-$border-color_1: #680909;
+$white: white;
+$dark-red: #5c0505;
+// $border-color_1: #680909;
 
 .btns {
 	display: flex;
@@ -15,7 +14,7 @@ $border-color_1: #680909;
 	min-height: 65vh;
 }
 select {
-	background-color: $background-color_1;
+	background-color: $white;
 	border: none;
 	border-radius: 15px;
 	display: inline-block;
@@ -40,7 +39,7 @@ select.minimal {
 		background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
 		background-size: 5px 5px, 5px 5px, 1px 1.5em;
 		background-repeat: no-repeat;
-		border-color: $border-color_1;
+		border-color: $dark-red;
 		outline: 0;
 	}
 }
@@ -50,7 +49,7 @@ select.minimal {
 	border: none;
   padding: 1rem;
 	&:hover {
-		background-color: $background-color_2;
+		background-color: $dark-red;
 	}
 }
 .cadastro {
@@ -63,7 +62,7 @@ select.minimal {
 		flex-direction: column;
 		padding: 1rem;
 		label {
-			color: $color_1;
+			color: $dark-red;
 			font-weight: bold;
 			margin: 0 0 0.5rem;
 		}

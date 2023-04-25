@@ -1,14 +1,7 @@
-$color_1: hsl(0, 0%, 100%);
-$color_2: #5c0505;
-$color_3: #680909;
 $font-family_1: 'Sarala', sans-serif;
-$background-color_1: #b83838;
-$background-color_2: #ffd6d6;
-$background-color_3: white;
-$background-color_4: #5c0505;
-$border-color_1: #680909;
+$dark-red: #5c0505;
 $white: #ffff;
-$pink: #b87676;
+$light-red: #b87676;
 
 .editarPerfilContainer {
   margin-right: auto;
@@ -48,13 +41,13 @@ $pink: #b87676;
   .editarPerfilForm {
     width: 50vw;
     height: 85vh;
-    background: $pink;
+    background: $light-red;
     border: none;
     border-radius: 20px;
     padding: 1rem;
 
     & label {
-      color: $color_3;
+      color: $dark-red;
       font-weight: bold;
       font-size: 18px;
       margin: 0 0 0.5rem;
@@ -70,7 +63,7 @@ $pink: #b87676;
     }
 
     & select {
-      background-color: $background-color_3;
+      background-color: $white;
       border: none;
       border-radius: 15px;
       display: inline-block;
@@ -96,7 +89,7 @@ $pink: #b87676;
           background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
           background-size: 5px 5px, 5px 5px, 1px 1.5em;
           background-repeat: no-repeat;
-          border-color: $border-color_1;
+          border-color: $white;
           outline: 0;
         }
       }
@@ -113,13 +106,13 @@ $pink: #b87676;
         height: 50px;
         border: none;
         border-radius: 20px;
-        background-color: $background-color_4;
+        background-color: $dark-red;
         color: $white;
         font-weight: bold;
 
         &:hover {
           background-color: $white;
-          color:  $background-color_4;
+          color:  $dark-red;
         }
       }
     }

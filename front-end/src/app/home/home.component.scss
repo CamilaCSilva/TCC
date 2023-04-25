@@ -1,6 +1,5 @@
-$color_1: #5c0505;
-$color_2: #b83838;
-$background-color_1: #ffd6d6;
+$dark-red: #5c0505;
+$light-red: #b87676;
 $white: #ffff;
 
 .cabecalho {
@@ -39,7 +38,7 @@ $white: #ffff;
 }
 
 input {
-	background: #b87676;
+	background: $light-red;
 	border: none;
 	border-radius: 20px;
 	display: flex;
@@ -61,7 +60,7 @@ img {
   }
   & li {
     align-items: center;
-    background-color: $background-color_1;
+    background-color: $light-red;
     border-radius: 8px;
     padding: 18px 26px;
     box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
@@ -70,11 +69,11 @@ img {
   }
   & h3 {
     font-size: 24px;
-    color: $color_1;
+    color: $dark-red;
   }
   & p {
     font-size: 17px;
-    color: $color_2;
+    color: $dark-red;
     margin-top: 2px;
   }
 }
@@ -84,17 +83,19 @@ img {
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+  .botao {
+    border-radius: 25px;
+    width: 65px;
+    height: 60px;
+    border: none;
+    font-size: 25px;
+    background-color: $dark-red;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $dark-red;
+    }
+  }
 }
 
-.botao {
-	border-radius: 25px;
-	width: 65px;
-  height: 60px;
-	border: none;
-  font-size: 25px;
-
-	&:hover {
-		background-color: $background-color_1;
-    color: $color_2;
-	}
-}
