@@ -15,8 +15,13 @@ export class DadosGeraisComponent implements OnInit {
   crmCorenDrf: string;
   date: Date = new Date();
   alertMessage: string = "";
+  // location: Location;
+  // lat: any;
+  // lng: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // this.location = location;
+  }
 
   ngOnInit(): void {
     if(this.alertMessage != "") {
@@ -36,4 +41,17 @@ export class DadosGeraisComponent implements OnInit {
     this.router.navigateByUrl(this.path2);
   }
 
+  // getUserLocation() {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(position => {
+  //       this.lat = position.coords.latitude;
+  //       this.lng = position.coords.longitude;
+  //       alert('Location accessed')
+  //     },function(){
+  //       alert('User not allowed')
+  //     },{timeout:10000});
+  //   } else {
+  //     console.log("User not allow")
+  //   }
+  // }
 }

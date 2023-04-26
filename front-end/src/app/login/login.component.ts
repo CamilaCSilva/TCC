@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from './login.model';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
   cpf: string;
   senha: string;
   testResult: boolean = false;
+  loginInfo: Array<any>;
+  loginInfosModel: Login;
 
   constructor(private router: Router) { }
 
@@ -22,6 +25,10 @@ export class LoginComponent implements OnInit {
   logar() {
     this.verificaDados();
     if(this.testResult) {
+      this.loginInfo = [this.cpf, this.senha, this.testResult];
+      this.loginInfosModel.cpf = this.loginInfo[0];
+      this.loginInfosModel.senha = this.loginInfo[1];
+      this.loginInfosModel = this.loginInfo[2];
       this.router.navigateByUrl(this.path);
     }
   }
