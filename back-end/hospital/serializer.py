@@ -9,8 +9,12 @@ class ProfissionaldeSaudeSerializer(serializers.ModelSerializer):
         fields = '__all__'
     
     def validate(self, data):
-        if not nome_valido(data['nomeCompleto']):
-            raise serializers.ValidationError({'nomeCompleto':"Não inclua números neste campo"})
-        return data
+        if not cpf_valido(data['cpf']):
+            raise serializers.ValidationError({'cpf':"O CPF deve ter 11 dígitos"})
+        if not nome_valido(data['nome']):
+            raise serializers.ValidationError({'nome':"Não inclua números neste campo"})
+        if not telefone_valido(data['telefone']):
+            raise serializers.ValidationError({'telefone':"O número de telefone deve conter o DDD e o 9 padrão"})
+        return 
     
         
