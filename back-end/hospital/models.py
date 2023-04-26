@@ -15,4 +15,5 @@ class ProfissionaldeSaude(models.Model):
     def __str__(self):
         return self.nomeCompleto
     
-    
+class BaixaFicha(models.Model):
+    DOCUMENTOS = ( ('', ''), ('', ''), ('', ''))
