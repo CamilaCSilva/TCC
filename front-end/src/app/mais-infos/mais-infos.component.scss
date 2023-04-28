@@ -1,0 +1,67 @@
+$dark-red: #5c0505;
+$white: #ffff;
+$light-red: #b87676;
+
+
+.infosContainer {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 55vh;
+  width: 100vw;
+  padding: 2rem 1rem;
+
+  .headerGeral {
+    width: 100vw;
+
+    .nav {
+      gap: 10px 450px;
+
+      .botoesHeader {
+        gap: 20px;
+
+        .logo {
+          max-width: 40px;
+          max-height: 40px;
+        }
+
+        .exit {
+          max-width: 35px;
+          max-height: 35px;
+        }
+      }
+    }
+
+    .cabecalho {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .maisInfosContainer {
+    width: 50vw;
+    height: 40vh;
+    background: $light-red;
+    border-radius: 20px;
+    border: none;
+    padding: 1rem;
+
+    .site, .telefone {
+      color: $white;
+      border: none;
+      font-weight: bold;
+      border-radius: 20px;
+      height: 30px;
+
+      & p {
+        font-size: 22px;
+      }
+
+      & a {
+        color: $dark-red;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+}
+

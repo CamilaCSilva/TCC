@@ -12,10 +12,9 @@
             <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo">
 
             <label for="nome">Área de Atuação</label>
-            <select class="minimal" name="seletor" >
-                <option value="med" selected>-SELECIONE-</option>
-                <option value="med">Equipe Médica</option>
-                <option value="par">Paramédico(a)</option>
+            <select class="minimal" [value]="areaAtuacao" name="seletor" (change)="onAreaChange(getArea($event))">
+              <option value="profissionalSaude" selected>Profissional de Saúde</option>
+              <option value="paramedico">Paramédico(a)</option>
             </select>
 
             <label for="doc">CRM\COREN\DRF</label>

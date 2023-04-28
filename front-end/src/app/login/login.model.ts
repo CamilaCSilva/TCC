@@ -1,16 +1,8 @@
-export interface Login {
+// VOU PEGAR INFOS DO BANCO
+export interface LoginInfoExistente {
   cpf: string;
   senha: string;
   is_correct: boolean;
 }
 
-interface LoginArray extends Array<Login> {}
-
-export interface LoginInfosEsperadas {
-  cpf: string;
-  senha: string;
-  is_correct: boolean;
-  loginInfos: LoginArray;
-}
-
-export interface LoginInfosEsperadas extends Array<LoginInfosEsperadas> {}
+export interface LoginInfoExistenteArray extends Array<LoginInfoExistente> {}

@@ -11,11 +11,13 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { MaisInfosComponent } from './mais-infos/mais-infos.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'mais-infos', component: MaisInfosComponent },
   { path: 'home', component: HomeComponent },
   {
     path: 'home/ficha',

@@ -13,7 +13,7 @@ export class EditarPerfilComponent implements OnInit {
 
   usuario = {
     nome: 'Isabela',
-    funcao: 'Equipe Médica',
+    funcao: 'Profissional de Saúde',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',
     unidade_atendimento: 'Hospital Antônio Moreira da Costa',
@@ -22,8 +22,7 @@ export class EditarPerfilComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   salvar(){
     this.router.navigateByUrl(this.path);

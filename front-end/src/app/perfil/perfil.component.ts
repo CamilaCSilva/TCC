@@ -15,7 +15,7 @@ export class PerfilComponent implements OnInit {
   usuario: any = {
     nome: 'Isabela',
     sexo: 'F',
-    funcao: 'Equipe Medica',
+    funcao: 'Profissional de Saúde',
     docmentro_trabalho: 78965,
     cpf: '123.456.789.10',
     unidade_atendimento: 'Hospital Antônio Moreira da Costa',

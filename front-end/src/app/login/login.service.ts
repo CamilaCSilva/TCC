@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LoginInfoExistenteArray } from './login.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  setLoginInfo(loginInfo: String[]) {
-    // return this.http.post('');
+  getLoginInfo() {
+    return this.http.get('') as Observable<LoginInfoExistenteArray>;
   }
 }
