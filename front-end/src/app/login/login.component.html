@@ -1,39 +1,48 @@
-<app-header></app-header>
+<app-header [signOptions]="['CRIAR CADASTRO', 'MAIS INFORMAÇÕES']" [signPaths]="['/cadastro', '/mais-infos']"></app-header>
 
-<div class="loginContainer">
-  <header class="header">
+<div class="loginContainer d-flex flex-column align-items-center justify-content-center">
+  <!-- TITULO -->
+  <div class="titulo d-flex justify-content-center m-2">
     <h2>{{ stringFacaLogin }}</h2>
-  </header>
-  <div class="d-flex flex-column align-items-center">
-    <form
-      #login="ngForm"
-      class="login"
-      (ngSubmit)="logar()">
-      <div class="d-flex flex-column">
-        <label for="cpf">CPF</label>
-        <input
-          class="form-control"
-          type="text"
-          id="cpf"
-          name="cpf"
-          placeholder="Digite seu CPF"
-          [(ngModel)]="cpf">
-      </div>
+  </div>
 
-      <div class="d-flex flex-column">
-        <label for="senha">Senha</label>
-        <input
-          class="form-control"
-          type="password"
-          id="senha"
-          name="senha"
-          placeholder="Digite sua senha"
-          [(ngModel)]="senha">
-      </div>
+  <!-- FORMULÁRIO -->
+  <div class="loginInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
+    <div class="d-flex flex-column align-items-start">
+      <form
+        #login="ngForm"
+        class="loginForm"
+        (ngSubmit)="logar()">
 
-      <div class="btns">
-        <button type="submit" class="btn botao">ENTRAR</button>
-      </div>
-    </form>
+        <!-- CPF -->
+        <div class="d-flex flex-column">
+          <label for="cpf">CPF</label>
+          <input
+            class="form-control"
+            type="text"
+            id="cpf"
+            name="cpf"
+            placeholder="Digite seu CPF"
+            [(ngModel)]="cpf">
+        </div>
+
+        <!-- SENHA -->
+        <div class="d-flex flex-column">
+          <label for="senha">Senha</label>
+          <input
+            class="form-control"
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            [(ngModel)]="senha">
+        </div>
+
+        <!-- BOTÃO -->
+        <div class="btns">
+          <button type="submit" class="btn botao">ENTRAR</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
