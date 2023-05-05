@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PerfilService } from './perfil.service';
+import { PerfilInfoExistente, PerfilInfoExistenteArray } from './perfil.model';
 
 @Component({
   selector: 'app-perfil',
@@ -9,8 +11,15 @@ import { Router } from '@angular/router';
 export class PerfilComponent implements OnInit {
 
   path: string = 'perfil/editar-perfil';
-
-  string = 'Perfil'
+  string = 'Perfil';
+  nomeCompleto: string;
+  areaAtuacao: string = 'profissionalSaude';
+  crmCorenDrf: string;
+  cpf: string;
+  unidadeAtendimento: string;
+  celular: string
+  testResult: boolean = false;
+  perfilInfoExistente: PerfilInfoExistenteArray;
 
   usuario: any = {
     nome: 'Isabela',
@@ -20,11 +29,22 @@ export class PerfilComponent implements OnInit {
     cpf: '123.456.789.10',
     unidade_atendimento: 'Hospital Antônio Moreira da Costa',
     celular: '(35)99123-4567'
-  }
+  };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private perfilService: PerfilService) { }
 
   ngOnInit(): void {
+    // this.perfilInfoExistente = this.perfilService.getPerfilInfo();
+    // if(this.perfilInfoExistente) {
+    //   this.perfilInfoExistente.map((data) => {
+    //     this.nomeCompleto = data.nomeCompleto;
+    //     this.areaAtuacao = data.campo_escolha;
+    //     this.crmCorenDrf = data.documentoTrabalho;
+    //     this.cpf = data.cpf;
+    //     this.unidadeAtendimento = data.unidadeDeAtendimento;
+    //     this.celular = data.telefone;
+    //   });
+    // }
   }
 
   editar(){

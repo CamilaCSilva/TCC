@@ -10,56 +10,60 @@
       </div>
     </div>
 
-    <!-- CABEÇALHO FORM -->
-    <div class="cabecalho d-flex justify-content-center">
+    <!-- TITULO FORM -->
+    <div class="titulo d-flex justify-content-center m-2">
       <h2>{{string}}</h2>
     </div>
   </div>
 
   <!-- FORMULÁRIO -->
-  <form class="editarPerfilForm" #editarPerfil="ngForm" (ngSubmit)="salvar()">
-    <!-- NOME -->
-    <div class="d-flex flex-column">
-      <label for="nome">Nome</label>
-      <input type="text"  id="nome" name="nome" value={{usuario.nome}}>
-    </div>
+  <div class="editarPerfilInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
+    <div class="d-flex flex-column align-items-start">
+      <form class="editarPerfilForm" #editarPerfil="ngForm" (ngSubmit)="salvar()">
+        <!-- NOME -->
+        <div class="d-flex flex-column">
+          <label for="nome">Nome</label>
+          <input type="text"  id="nome" name="nome" value={{usuario.nome}}>
+        </div>
 
-    <!-- ÁREA ATUAÇÃO -->
-    <div class="d-flex flex-column">
-      <label>Área de Atuação</label>
-      <select class="minimal" name="seletor">
-        <option value="atu" selected>{{ usuario.funcao }}</option>
-        <option value="par">Paramédico(a)</option>
-      </select>
-    </div>
+        <!-- ÁREA ATUAÇÃO -->
+        <div class="d-flex flex-column">
+          <label>Área de Atuação</label>
+          <select class="minimal" name="seletor">
+            <option value="atu">{{ usuario.funcao }}</option>
+            <option value="par">Paramédico(a)</option>
+          </select>
+        </div>
 
-    <!-- CRM/COREN/DRF -->
-    <div class="d-flex flex-column">
-      <label for="doc">CRM\COREN\DRF</label>
-      <input type="text"  id="doc" name="doc" value={{usuario.docmentro_trabalho}}>
-    </div>
+        <!-- CRM/COREN/DRF -->
+        <div class="d-flex flex-column">
+          <label for="doc">CRM\COREN\DRF</label>
+          <input type="text"  id="doc" name="doc" value={{usuario.docmentro_trabalho}}>
+        </div>
 
-    <!-- CPF -->
-    <div class="d-flex flex-column">
-      <label for="cpf">CPF</label>
-      <input type="text"  id="cpf" name="cpf" value={{usuario.cpf}}>
-    </div>
+        <!-- CPF -->
+        <div class="d-flex flex-column">
+          <label for="cpf">CPF</label>
+          <input type="text"  id="cpf" name="cpf" value={{usuario.cpf}}>
+        </div>
 
-    <!-- UNIDADE DE ATENDIMENTO -->
-    <div class="d-flex flex-column">
-      <label for="unidadeAtendimento">Unidade de Atendimento</label>
-      <input type="text"  id="unidadeAtendimento" name="unidadeAtendimento" value={{usuario.unidade_atendimento}}>
-    </div>
+        <!-- UNIDADE DE ATENDIMENTO -->
+        <div class="d-flex flex-column">
+          <label for="unidadeAtendimento">Unidade de Atendimento</label>
+          <input type="text"  id="unidadeAtendimento" name="unidadeAtendimento" value={{usuario.unidade_atendimento}}>
+        </div>
 
-    <!-- CELULAR -->
-    <div class="d-flex flex-column">
-      <label for="celular">Celular</label>
-      <input type="tel"  id="celular" name="celular" value={{usuario.celular}}>
-    </div>
+        <!-- CELULAR -->
+        <div class="d-flex flex-column">
+          <label for="celular">Celular</label>
+          <input type="tel"  id="celular" name="celular" value={{usuario.celular}}>
+        </div>
 
-    <!-- BOTÕES -->
-    <div class="btns">
-      <button type="submit" class="btn btnSalvar">Salvar</button>
+        <!-- BOTÕES -->
+        <div class="btns">
+          <button type="submit" class="btn btnSalvar">Salvar</button>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>

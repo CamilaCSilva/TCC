@@ -1,32 +1,25 @@
+<app-header [signOptions]="['FAZER LOGIN', 'CRIAR CADASTRO']" [signPaths]="['/login', '/cadastro']"></app-header>
 
 <div class="infosContainer d-flex flex-column align-items-center justify-content-center">
-  <!-- HEADER -->
-  <div class="headerGeral d-flex flex-column align-items-center justify-content-around">
-    <div class="nav d-flex flex-row justify-content-between">
-      <h2>Informações Adicionais</h2>
-      <div class="botoesHeader d-flex flex-row justify-content-end">
-        <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
-      </div>
-    </div>
-
-    <!-- CABEÇALHO FORM -->
-    <div class="cabecalho d-flex justify-content-center">
-      <h2>Sobre</h2>
-    </div>
+  <!-- TITULO -->
+  <div class="titulo d-flex justify-content-center">
+    <h2>Sobre</h2>
   </div>
 
   <!-- INFOS -->
-  <div class="maisInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
+  <div class="maisInfosContainer d-flex align-items-center justify-content-center">
     <div class="d-flex flex-column align-items-start">
-      <!-- SITE -->
-      <div class="site d-flex flex-column mb-5">
-        <p>Para saber mais busque por:</p>
-        <a>www.maisInfos.com</a>
-      </div>
-      <!-- CONTATO -->
-      <div class="telefone d-flex flex-column mt-4">
-        <p>Ou entre em contato por:</p>
-        <a>(22)91234-5678</a>
+      <div class="d-flex flex-column align-items-start">
+        <!-- SITE -->
+        <div class="site d-flex flex-column">
+          <p>Para saber mais busque por:</p>
+          <a>www.maisInfos.com</a>
+        </div>
+        <!-- CONTATO -->
+        <div class="telefone d-flex flex-column mt-4">
+          <p>Ou entre em contato por:</p>
+          <a>(22)91234-5678</a>
+        </div>
       </div>
     </div>
   </div>
