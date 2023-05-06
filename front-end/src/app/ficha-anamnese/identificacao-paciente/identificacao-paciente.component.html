@@ -12,31 +12,31 @@
     #idPaciente="ngForm"
     class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
     (ngSubmit)="seguir()">
-    <h4>Identificação do Paciente</h4>
+    <h3>Identificação do Paciente</h3>
 
     <!-- NOME COMPLETO -->
     <div class="nomeCompleto d-flex flex-column mt-3">
-      <label for="nomeCompleto">Nome Completo:</label>
+      <label for="nomeCompleto">Nome Completo</label>
       <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto">
     </div>
     <p class="text-danger">{{ message }}</p>
 
     <!-- CPF -->
     <div class="cpf d-flex flex-column">
-      <label for="cpf">CPF:</label>
+      <label for="cpf">CPF</label>
       <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf">
     </div>
     <!-- <p class="text-danger" *ngIf="validaCpf(cpf)">{{ message }}</p> -->
 
     <!-- CELULAR -->
     <div class="celular d-flex flex-column mt-3">
-      <label for="celular">Celular:</label>
+      <label for="celular">Celular</label>
       <input name="celular" class="form-control" type="text" [(ngModel)]="celular">
     </div>
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-between">
-      <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">Cancelar e Voltar</button>
+      <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
       <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
     </div>
   </form>
