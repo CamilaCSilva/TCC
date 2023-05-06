@@ -1,13 +1,11 @@
 // VOU PEGAR AS INFOS DIGITADAS
-export interface CadastroInfo {
+export interface PerfilInfo {
   nomeCompleto: string;
   campo_escolha: string;
   documentoTrabalho: string;
   cpf: string;
   unidadeDeAtendimento: string;
   telefone: string
-  senha: string;
-  senhaConfirmacao: string;
 }
 
-export interface CadastroInfoArray extends Array<CadastroInfo> {}
+export interface PerfilInfoArray extends Array<PerfilInfo> {}

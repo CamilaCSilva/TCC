@@ -5,7 +5,7 @@
   </div>
 
   <div class="cabecalho-menu">
-    <a routerLink="/cadastro" class="cabecalho-menu-item">{{ signup }}</a>
-    <a routerLink="/mais-infos" class="cabecalho-menu-item">MAIS INFORMAÇÕES</a>
+    <a class="cabecalho-menu-item" (click)="avancar()">{{ signOptions[0] }}</a>
+    <a class="cabecalho-menu-item" (click)="maisInfos()">{{ signOptions[1] }}</a>
   </div>
 </header>
