@@ -1,4 +1,5 @@
 from django.db import models
+from ficha_paciente.models import Anamnese
 
 # Create your models here.
 class ProfissionaldeSaude(models.Model):
@@ -16,4 +17,5 @@ class ProfissionaldeSaude(models.Model):
         return self.nome_completo
     
 class FichaPaciente(models.Model):
-    DOCUMENTOS = ( ('', ''), ('', ''), ('', ''))
+    anamnese = models.ForeignKey(Anamnese, on_delete=models.CASCADE, default='0')
+    paramedico = models.ForeignKey(ProfissionaldeSaude, on_delete=models.CASCADE, default='0')

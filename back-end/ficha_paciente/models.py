@@ -28,4 +28,4 @@ class Anamnese(models.Model):
     documento_trabalho_paramedico  = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.nomeCompleto
+        return self.nome_completo

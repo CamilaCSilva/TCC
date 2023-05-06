@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hospital.models import ProfissionaldeSaude
+from hospital.models import ProfissionaldeSaude, FichaPaciente
 
 # Register your models here.
 
@@ -9,3 +9,9 @@ class ProfissionaisdeSaude(admin.ModelAdmin):
     search_fields = ( 'cpf', 'nome_completo' )
 
 admin.site.register(ProfissionaldeSaude, ProfissionaisdeSaude)
+
+class ResponsavelAnamnese(admin.ModelAdmin):
+    list_display = ( 'id','anamnese', 'paramedico')
+    list_display_links = ('id',)
+
+admin.site.register(FichaPaciente, ResponsavelAnamnese)
