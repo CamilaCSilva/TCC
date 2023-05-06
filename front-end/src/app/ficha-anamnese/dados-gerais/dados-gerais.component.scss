@@ -10,7 +10,8 @@ $light-red: #b87676;
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosGerais {
       background-color: $dark-red;
@@ -81,7 +82,8 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosGerais {
       background-color: $dark-red;
@@ -151,7 +153,8 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosGerais {
       background-color: $dark-red;

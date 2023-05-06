@@ -3,6 +3,7 @@
     <div class="header">
       <div class="cabecalho">
         <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+
         <div class="botoesHeader d-flex flex-row justify-content-around align-items-center">
           <!-- DATA -->
           <input type="date" name="data" [(ngModel)]="data" (keyup.enter)="filtrarPorData(data)">
