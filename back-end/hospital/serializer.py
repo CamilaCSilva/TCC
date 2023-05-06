@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from hospital.models import ProfissionaldeSaude
+from hospital.models import ProfissionaldeSaude, FichaPaciente
 from hospital.validators import *
 
 
@@ -16,5 +16,9 @@ class ProfissionaldeSaudeSerializer(serializers.ModelSerializer):
         if not celular_valido(data['celular']):
             raise serializers.ValidationError({'celular':"O número de telefone deve conter o DDD e o 9 padrão"})
         return 
+
+class FichasPacientesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FichaPaciente
+        fields = '__all__'
     
-        
