@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class AnamneseViewSet(viewsets.ModelViewSet):
+    """Listando as fichas dos pacientes"""
     queryset = Anamnese.objects.all()
     serializer_class = AnamneseSerializer
     authentication_classes = [BasicAuthentication]

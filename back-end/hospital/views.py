@@ -7,12 +7,14 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class ProfissionaldeSaudeViewSet(viewsets.ModelViewSet):
+    """Listando os profissionais de saúde"""
     queryset = ProfissionaldeSaude.objects.all()
     serializer_class = ProfissionaldeSaudeSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
 class FichaPacienteViewSet(viewsets.ModelViewSet):
+    """Listando as fichas dos pacientes de cada profissional"""
     queryset = FichaPaciente.objects.all()
     serializer_class = FichasPacientesSerializer
     authentication_classes = [BasicAuthentication]
