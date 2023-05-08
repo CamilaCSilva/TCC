@@ -11,26 +11,26 @@
     #dadosAtendimento="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
     (ngSubmit)="seguir()">
-    <h4>Dados para Atendimento</h4>
+    <h3>Dados para Atendimento</h3>
 
     <div class="d-flex flex-column align-items-center">
-      <div>
-        <div class="smallFields d-flex flex-row">
+      <div class="smallFieldsContainer d-flex flex-column">
+        <div class="smallFields d-flex flex-row justify-content-around">
           <!-- IDADE -->
           <div class="idade d-flex flex-column mt-2">
-            <label for="idade">Idade:</label>
+            <label for="idade">Idade</label>
             <input class="form-control" name="idade" type="text" [(ngModel)]="idade">
           </div>
 
           <!-- TIPO SANGUÍNEO -->
           <div class="tipoSangue d-flex flex-column align-itens-center mt-2">
-            <label for="tipoSangue">Tipo sanguíneo:</label>
+            <label for="tipoSangue">Tipo sanguíneo</label>
             <input class="form-control" name="tipoSangue" type="text" [(ngModel)]="tipoSangue">
           </div>
 
           <!-- SEXO -->
           <div class="sexo d-flex flex-column">
-            <label>Sexo:</label>
+            <label>Sexo</label>
 
             <div class="opcoes d-flex flex-row ml-3">
               <div class="ml-2 d-flex flex-column">
@@ -53,26 +53,25 @@
 
         <!-- OBSERVAÇÃO -->
         <div class="mt-2 d-flex justify-content-end">
-          <p>Obs.: O significa outro</p>
+          <p>Obs. 'O' significa outro</p>
         </div>
       </div>
 
-
       <!-- ALERGIAS -->
       <div class="alergias d-flex flex-column mt-2">
-        <label for="alergias">Alergias:</label>
+        <label for="alergias">Alergias</label>
         <textarea class="form-control" name="alergias" type="text" [(ngModel)]="alergias" rows="30" cols="120"></textarea>
       </div>
 
       <!-- MEDICAÇÕES -->
       <div class="medicacoesUsadas d-flex flex-column mt-2">
-        <label for="medicacoesUsadas">Medicações Utilizadas:</label>
+        <label for="medicacoesUsadas">Medicações Utilizadas</label>
         <textarea class="form-control" name="medicacoesUsadas" [(ngModel)]="medicacoesUsadas" rows="30" cols="120"></textarea>
       </div>
 
       <!-- HISTÓRICO DE DOENÇAS -->
       <div class="historicoDoencas d-flex flex-column mt-2">
-        <label for="historicoDoencas">Histórico de Doenças:</label>
+        <label for="historicoDoencas">Histórico de Doenças</label>
         <textarea class="form-control" name="historicoDoencas" [(ngModel)]="historicoDoencas" rows="30" cols="120"></textarea>
       </div>
 
