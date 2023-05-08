@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
+import { LoginInfoExistente, LoginInfoExistenteArray } from './login.model';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +15,40 @@ export class LoginComponent implements OnInit {
   cpf: string;
   senha: string;
   testResult: boolean = false;
+  loginInfoExistente: LoginInfoExistenteArray;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {}
-
 
   logar() {
     this.verificaDados();
     if(this.testResult) {
       this.router.navigateByUrl(this.path);
+      // this.loginInfoExistente = this.getLoginInfo();
+      // if(this.loginInfoExistente) {
+      //   this.loginInfoExistente.map((data) => {
+      //     data.cpf == this.cpf &&
+      //     data.senha == this.senha &&
+      //     data.is_correct == this.testResult ?
+      //     this.router.navigateByUrl(this.path) :
+      //     new Error('Informações de Login incorretas');
+      //   });
+      // }
     }
+  }
+
+  getLoginInfo(): any {
+    this.loginService.getLoginInfo().subscribe({
+      next: (data) => {
+        console.log(data);
+        return data;
+      },
+      error: (error) => {
+        console.log(error);
+        return null;
+      }
+    });
   }
 
   private verificaDados() {

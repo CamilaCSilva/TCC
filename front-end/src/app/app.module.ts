@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { FichaAnamneseModule } from './ficha-anamnese/ficha-anamnese.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
+import { MaisInfosComponent } from './mais-infos/mais-infos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { HeaderComponent } from './header/header.component';
     CadastroComponent,
     HomeComponent,
     PerfilComponent,
-    HeaderComponent
+    HeaderComponent,
+    MaisInfosComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { HeaderComponent } from './header/header.component';
     RouterModule,
     FichaAnamneseModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,10 +17,9 @@ export class DadosAtendimentoParte2Component implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  voltar(){
+  voltar() {
     this.router.navigateByUrl(this.path1);
   }
 
