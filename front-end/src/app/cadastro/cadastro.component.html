@@ -9,33 +9,34 @@
           class="criarCadastro"
           (ngSubmit)="cadastrar()">
             <label for="nome">Nome</label>
-            <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo">
+            <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo" [(ngModel)] = "nome_completo">
 
             <label for="nome">Área de Atuação</label>
-            <select class="minimal" [value]="areaAtuacao" name="seletor" (change)="onAreaChange(getArea($event))">
-              <option value="profissionalSaude" selected>Profissional de Saúde</option>
-              <option value="paramedico">Paramédico(a)</option>
+            <select class="minimal" [value]="campo_escolha" name="seletor" (change)="onAreaChange(getArea($event))">
+              <option value="COREN" selected>COREN</option>
+              <option value="CRM">CRM</option>
+              <option value="DRF">DRF</option>
             </select>
 
-            <label for="doc">CRM\COREN\DRF</label>
-            <input type="text" class="input" id="doc" name="doc" placeholder="Informe seu documento de trabalho">
+            <label for="doc">Documento de Trabalho</label>
+            <input type="text" class="input" id="doc" name="doc" placeholder="Informe seu documento de trabalho" [(ngModel)] = "documento_trabalho">
 
             <label for="cpf">CPF</label>
-            <input type="number" class="input" id="cpf" name="cpf" placeholder="Informe seu CPF">
+            <input type="number" class="input" id="cpf" name="cpf" placeholder="Informe seu CPF" [(ngModel)] = "cpf">
 
-            <label for="unidadeAtendimento">Unidade de Atendimento</label>
+            <label for="unidade_de_atendimento">Unidade de Atendimento</label>
             <input type="text" class="input" id="unidadeAtendimento" name="unidadeAtendimento"
-                placeholder="Qual sua unidade de atendimento?">
+                placeholder="Qual sua unidade de atendimento?" [(ngModel)] = "unidade_de_atendimento">
 
             <label for="celular">Celular</label>
-            <input type="tel" class="input" id="celular" name="celular" placeholder="Informe seu celular">
+            <input type="tel" class="input" id="celular" name="celular" placeholder="Informe seu celular" [(ngModel)] = "celular">
 
             <label for="senha">Senha</label>
-            <input type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha">
+            <input type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha" [(ngModel)] = "senha">
 
             <label for="confirmaSenha">Senha</label>
             <input type="password" class="input" id="confirmaSenha" name="confirmaSenha"
-                placeholder="Confirme sua senha">
+                placeholder="Confirme sua senha" [(ngModel)] = "senha_confirmacao">
 
             <div class="btns">
               <button type="submit" class="botao">CADASTRAR</button>

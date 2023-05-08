@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-perfil',
@@ -22,9 +23,15 @@ export class PerfilComponent implements OnInit {
     celular: '(35)99123-4567'
   }
 
-  constructor(private router: Router) { }
+  obj:any;
+
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.obj = this.http.get("http://127.0.0.1:8000/profissionaisdesaude/12345678910/").subscribe(
+      data => this.obj = data
+    )
+
   }
 
   editar(){
