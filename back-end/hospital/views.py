@@ -3,6 +3,7 @@ from hospital.models import ProfissionaldeSaude
 from hospital.serializer import ProfissionaldeSaudeSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import JSONParser
 
 # Create your views here.
 
