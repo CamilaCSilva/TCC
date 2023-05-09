@@ -1,13 +1,14 @@
 $dark-red: #5c0505;
 $white: #ffff;
-$light-red: #b87676;
+$light-red: #d89b9b;
 //  #ffd6d6;
 
 @media screen and (min-width:1025px) {
   .ficha {
     position: absolute;
-    background-color: $light-red;
-    color: $dark-red;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
     width: 100vw;
     height: auto;
 
@@ -25,14 +26,16 @@ $light-red: #b87676;
     .footer {
       background-color: $white;
       width: 100vw;
+      background-repeat: no-repeat;
     }
   }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {
   .ficha {
-    background-color: $light-red;
-    color: $dark-red;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
     width: 100vw;
     height: auto;
 
@@ -49,14 +52,16 @@ $light-red: #b87676;
     .footer {
       background-color: $white;
       width: 100vw;
+      background-repeat: no-repeat;
     }
   }
 }
 
 @media screen and (max-width: 480px) and (min-width: 0px)  {
   .ficha {
-    background-color: $light-red;
-    color: $dark-red;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
     width: 100vw;
     height: auto;
 
