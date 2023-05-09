@@ -3,28 +3,38 @@ $white: #ffff;
 $light-red: #b87676;
 // #ffd6d6;
 
-.btnProximo {
-  background-color: $light-red;
+.btnProximo, .btnAnterior {
+  background-color: $dark-red;
+  color: $white;
   border-style: none;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-red;
+    font-weight: bold;
+  }
 }
 
-.btnAnterior{
-  background-color: $light-red;
-  border-style: none;
+.btnAnterior, .btnProximo {
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
-      width: 55vw;
+      width: 30vw;
       height: 85vh;
       margin-top: 3em;
       padding: 3em;
@@ -37,47 +47,54 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
-        align-items: center;
+      .smallFieldsContainer {
 
-        .idade {
-          width: 4em;
-          font-size: 18px;
+        .smallFields {
+          width: 27.5vw;
           align-items: center;
 
-          & input {
+          .idade {
             width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .tipoSangue {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .sexo {
-          margin-bottom: 1.25em;
-          align-items: center;
-
-          & label {
             font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
           }
 
-          & div {
-            height: 0.5em;
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
 
             & div {
-              & label {
-                font-size: 15px;
-                margin-bottom: 0px;
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
               }
             }
           }
@@ -88,16 +105,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 15em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -107,12 +124,14 @@ $light-red: #b87676;
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
       width: 65vw;
@@ -128,47 +147,53 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
-        align-items: center;
+      .smallFieldsContainer {
 
-        .idade {
-          width: 4em;
-          font-size: 18px;
+        .smallFields {
           align-items: center;
 
-          & input {
+          .idade {
             width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .tipoSangue {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .sexo {
-          margin-bottom: 1.25em;
-          align-items: center;
-
-          & label {
             font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
           }
 
-          & div {
-            height: 0.5em;
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
 
             & div {
-              & label {
-                font-size: 15px;
-                margin-bottom: 0px;
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
               }
             }
           }
@@ -179,16 +204,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 12em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -198,12 +223,14 @@ $light-red: #b87676;
 @media screen and (max-width: 480px) and (min-width: 0px) {
 
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
       width: 95vw;
@@ -219,47 +246,53 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
-        align-items: center;
+      .smallFieldsContainer {
 
-        .idade {
-          width: 4em;
-          font-size: 18px;
+        .smallFields {
           align-items: center;
 
-          & input {
+          .idade {
             width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .tipoSangue {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-        }
-
-        .sexo {
-          margin-bottom: 1.25em;
-          align-items: center;
-
-          & label {
             font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
           }
 
-          & div {
-            height: 0.5em;
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
 
             & div {
-              & label {
-                font-size: 15px;
-                margin-bottom: 0px;
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
               }
             }
           }
@@ -270,16 +303,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 12em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }

@@ -11,26 +11,26 @@
     #dadosAtendimentoParte2="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
     (ngSubmit)="seguir()">
-    <h4>Dados para Atendimento</h4>
+    <h3>Dados para Atendimento</h3>
 
     <div class="d-flex flex-column align-items-center">
       <!-- SINTOMAS -->
       <div class="sintomas d-flex flex-column mt-2">
-        <label for="alergias">Sintomas/Queixas:</label>
-        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="sintomas"></textarea>
+        <label for="alergias">Sintomas/Queixas</label>
+        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="sintomas" placeholder="Descreva os sintomas/queixas observados(as)"></textarea>
       </div>
 
-      <div class="smallFields d-flex flex-row">
+      <div class="smallFields d-flex flex-row justify-content-around">
         <!-- NÍVEL DE DOR -->
-        <div class="nivelDor d-flex flex-column mt-2 mr-4">
-          <label for="nivelDor">Nível de Dor:</label>
-          <input class="form-control" name="nivelDor" type="text" [(ngModel)]="nivelDor">
+        <div class="nivelDor d-flex flex-column mt-2">
+          <label for="nivelDor">Nível de Dor</label>
+          <input class="form-control" name="nivelDor" type="text" [(ngModel)]="nivelDor" placeholder="1-10">
         </div>
 
         <!-- PRIORIDADE -->
-        <div class="prioridade d-flex flex-column align-itens-center mt-2 mr-3">
-          <p>Prioridade:</p>
-          <select [value]="prioridade" class="form-select" name="selectPrioridade" (change)="onPrioridadeChange(getPrioridade($event))">
+        <div class="prioridade d-flex flex-column align-itens-center mt-2">
+          <p>Prioridade</p>
+          <select [value]="prioridade" class="btn form-select" name="selectPrioridade" (change)="onPrioridadeChange(getPrioridade($event))">
             <option value="nao-urgente" selected>Não Urgente</option>
             <option value="pouco-urgente">Pouco Urgente</option>
             <option value="urgente">Urgente</option>
@@ -39,21 +39,16 @@
         </div>
       </div>
 
-      <!-- OBSERVAÇÃO -->
-      <div class="mt-2 d-flex justify-content-end">
-        <p>Obs.: No nível de dor coloque um número entre 1 e 10</p>
-      </div>
-
       <!-- OBSERVAÇÕES -->
       <div class="observacoes d-flex flex-column mt-2">
-        <label for="observacoes">Observações:</label>
-        <textarea class="form-control" name="observacoes" [(ngModel)]="observacoes"></textarea>
+        <label for="observacoes">Observações</label>
+        <textarea class="form-control" name="observacoes" [(ngModel)]="observacoes" placeholder="Digite as observações necessárias"></textarea>
       </div>
 
       <!-- BOTÕES -->
       <div class="btns d-flex flex-row justify-content-between">
-        <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
-        <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
+        <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar()"><</button>
+        <button class="btnProximo btn rounded-circle" type="submit">></button>
       </div>
     </div>
   </form>

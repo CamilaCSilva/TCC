@@ -2,29 +2,38 @@ $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
 
-.btnProximo {
-  background-color: $light-red;
+.btnProximo, .btnAnterior {
+  background-color: $dark-red;
+  color: $white;
   border-style: none;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-red;
+    font-weight: bold;
+  }
 }
 
-.btnAnterior {
-  background-color: $light-red;
-  border-style: none;
+.btnAnterior, .btnProximo {
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $light-red;
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
-      width: 60vw;
-      height: 75vh;
+      width: 30vw;
+      height: 55vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -36,8 +45,12 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
+      .smallFields {
+        width: 30vw;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
@@ -53,8 +66,8 @@ $light-red: #b87676;
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -64,16 +77,18 @@ $light-red: #b87676;
 @media (max-width: 1024px) and (min-width: 481px) {
 
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
-      width: 75vw;
-      height: 75vh;
+      width: 30vw;
+      height: 55vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -85,8 +100,12 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
+      .smallFields {
+        width: 30vw;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
@@ -102,8 +121,8 @@ $light-red: #b87676;
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -113,12 +132,14 @@ $light-red: #b87676;
 @media (max-width: 480px) and (min-width: 0px) {
 
   body {
-    background-color: $light-red;
+
+    border-radius: 20px;
 
     .dadosAtendimento {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
       width: 90vw;
@@ -134,8 +155,12 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
+      & h3 {
+        font-weight: bold;
+      }
 
+      .smallFields {
+        width: 30vw;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
@@ -151,8 +176,8 @@ $light-red: #b87676;
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }

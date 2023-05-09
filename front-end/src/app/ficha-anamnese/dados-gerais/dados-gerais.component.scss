@@ -2,24 +2,44 @@ $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
 
-.btnProximo, .btnAnterior, .btnAssinarEnviar, .btnEnviar, .btnCancelar  {
-  background-color: $light-red;
+.btnProximo, .btnAnterior, .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+  background-color: $dark-red;
+  color: $white;
   border-style: none;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-red;
+    font-weight: bold;
+  }
 }
+
+.btnAssinarEnviar, .btnEnviar, .btnCancelar  {
+  width: 200px;
+  height: 50px;
+}
+
+.btnProximo, .btnAnterior {
+  width: 50px;
+  height: 50px;
+}
+
 
 @media screen and (min-width:1025px) {
 
   body {
-    background-color: $light-red;
+    border-radius: 20px;
 
     .dadosGerais {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
-      width: 60vw;
-      height: 75vh;
+      width: 30vw;
+      height: 65vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -31,18 +51,22 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
+      & h3 {
+        font-weight: bold;
+      }
+
       .nomeParamedico, .crmCorenDrf {
         font-size: 18px;
 
         & input {
-          width: 15em;
+          width: 30em;
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
@@ -53,25 +77,33 @@ $light-red: #b87676;
       .modal {
         background-color: $light-red;
         border-radius: 20px;
-        width: 300px;
-        height: 200px;
+
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        // width: 300px;
+        // height: 200px;
 
         & h3 {
           color: $dark-red;
         }
 
         .btns {
+          background-color: $light-red;
           gap: 20px;
 
           & button {
             color: $white;
             background-color: $dark-red;
 
-            & :hover {
-              color: $dark-red;
+            &:hover {
               background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
             }
-
           }
         }
       }
@@ -81,12 +113,13 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
   body {
-    background-color: $light-red;
+    border-radius: 20px;
 
     .dadosGerais {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
       width: 70vw;
@@ -102,17 +135,22 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
+      & h3 {
+        font-weight: bold;
+      }
+
       .nomeParamedico, .crmCorenDrf {
         font-size: 18px;
 
         & input {
+          width: 20vw;
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
@@ -123,8 +161,16 @@ $light-red: #b87676;
       .modal {
         background-color: $light-red;
         border-radius: 20px;
-        width: 300px;
-        height: 200px;
+
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        // width: 300px;
+        // height: 200px;
 
         & h3 {
           color: $dark-red;
@@ -132,14 +178,16 @@ $light-red: #b87676;
 
         .btns {
           gap: 20px;
+          background-color: $light-red;
 
           & button {
             color: $white;
             background-color: $dark-red;
 
-            & :hover {
-              color: $dark-red;
+            &:hover {
               background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
             }
           }
         }
@@ -151,12 +199,13 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
   body {
-    background-color: $light-red;
+    border-radius: 20px;
 
     .dadosGerais {
-      background-color: $dark-red;
-      color: $white;
+      background-color: $light-red;
+      color: $dark-red;
       border-radius: 20px;
+      font-weight: bold;
 
       //Spacing
       width: 90vw;
@@ -172,17 +221,22 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
+      & h3 {
+        font-weight: bold;
+      }
+
       .nomeParamedico, .crmCorenDrf {
         font-size: 18px;
 
         & input {
+          width: 20vw;
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
@@ -193,24 +247,34 @@ $light-red: #b87676;
       .modal {
         background-color: $light-red;
         border-radius: 20px;
-        width: 300px;
-        height: 200px;
+
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        // width: 400px;
+        // height: 200px;
 
         & h3 {
           color: $dark-red;
         }
 
         .btns {
-          gap: 20px;
+          background-color: $light-red;
+          width: 27.5vw;
+
           & button {
             color: $white;
             background-color: $dark-red;
 
-            & :hover {
-              color: $dark-red;
+            &:hover {
               background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
             }
-
           }
         }
       }
