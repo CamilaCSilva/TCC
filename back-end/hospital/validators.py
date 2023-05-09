@@ -4,5 +4,5 @@ def cpf_valido(numero_do_cpf):
 def nome_valido(nome):
     return nome.isalpha()
 
-def telefone_valido(telefone):
-    return len(telefone) < 11
+def celular_valido(celular):
+    return len(celular) < 11
