@@ -54,7 +54,7 @@ $light-red: #b87676;
       .smallFieldsContainer {
 
         .smallFields {
-          width: 30em;
+          width: 27.5vw;
           align-items: center;
 
           .idade {
@@ -105,16 +105,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 30em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -204,16 +204,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 12em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
@@ -303,16 +303,16 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 12em;
-          height: 4.5em;
+          width: 27.5vw;
+          height: 7vh;
 
           border-radius: 20px;
         }
       }
 
       .btns {
+        width: 27.5vw;
         font-size: 18px;
-        column-gap: 8em;
         margin-top: 40px;
       }
     }
