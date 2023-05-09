@@ -1,80 +1,46 @@
-<app-header [signOptions]="['FAZER LOGIN', 'MAIS INFORMAÇÕES']" [signPaths]="['/login', '/mais-infos']"></app-header>
+<app-header></app-header>
+<div class="main">
+    <div class="cadastro d-flex flex-column align-items-center">
+        <header class="header">
+            <h2>{{string}}</h2>
+        </header>
+        <form
+          #cadastro="ngForm"
+          class="criarCadastro"
+          (ngSubmit)="cadastrar()">
+            <label for="nome">Nome</label>
+            <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo" [(ngModel)] = "nome_completo">
 
-<div class="cadastroContainer d-flex flex-column align-items-center justify-content-center">
-  <!-- TITULO -->
-  <div class="titulo d-flex justify-content-center m-2">
-    <h2>{{string}}</h2>
-  </div>
+            <label for="nome">Área de Atuação</label>
+            <select class="minimal" [value]="campo_escolha" name="seletor" (change)="onAreaChange(getArea($event))">
+              <option value="COREN" selected>COREN</option>
+              <option value="CRM">CRM</option>
+              <option value="DRF">DRF</option>
+            </select>
 
-  <!-- FORMULÁRIO -->
-  <div class="cadastroInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
-    <div class="d-flex flex-column align-items-start">
-      <form
-        #cadastro="ngForm"
-        class="criarCadastroForm"
-        (ngSubmit)="cadastrar()">
+            <label for="doc">Documento de Trabalho</label>
+            <input type="text" class="input" id="doc" name="doc" placeholder="Informe seu documento de trabalho" [(ngModel)] = "documento_trabalho">
 
-        <!-- NOME COMPLETO -->
-        <div class="d-flex flex-column">
-          <label for="nome">Nome Completo</label>
-          <input type="text" class="input" id="nome" name="nome" placeholder="Digite seu nome completo">
-        </div>
+            <label for="cpf">CPF</label>
+            <input type="number" class="input" id="cpf" name="cpf" placeholder="Informe seu CPF" [(ngModel)] = "cpf">
 
-        <!-- ÁREA DE ATUAÇÃO -->
-        <div class="d-flex flex-column">
-          <label for="nome">Área de Atuação</label>
-          <select class="minimal" [value]="areaAtuacao" name="seletor" (change)="onAreaChange(getArea($event))">
-            <option value="profissionalSaude" selected>Profissional de Saúde</option>
-            <option value="paramedico">Paramédico(a)</option>
-          </select>
-        </div>
+            <label for="unidade_de_atendimento">Unidade de Atendimento</label>
+            <input type="text" class="input" id="unidadeAtendimento" name="unidadeAtendimento"
+                placeholder="Qual sua unidade de atendimento?" [(ngModel)] = "unidade_de_atendimento">
 
-        <!-- CRM/COREN/DRF -->
-        <div class="d-flex flex-column">
-          <label for="doc">CRM/COREN/DRF</label>
-          <input type="text" class="input" id="doc" name="doc" placeholder="Informe seu documento de trabalho">
-        </div>
+            <label for="celular">Celular</label>
+            <input type="tel" class="input" id="celular" name="celular" placeholder="Informe seu celular" [(ngModel)] = "celular">
 
-        <!-- CPF -->
-        <div class="d-flex flex-column">
-          <label for="cpf">CPF</label>
-          <input type="number" class="input" id="cpf" name="cpf" placeholder="Informe seu CPF">
-        </div>
+            <label for="senha">Senha</label>
+            <input type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha" [(ngModel)] = "senha">
 
-        <!-- UNIDADE DE ATENDIMENTO -->
-        <div class="d-flex flex-column">
-          <label for="unidadeAtendimento">Unidade de Atendimento</label>
-          <input
-            type="text"
-            class="input"
-            id="unidadeAtendimento"
-            name="unidadeAtendimento"
-            placeholder="Qual sua unidade de atendimento?">
-        </div>
+            <label for="confirmaSenha">Senha</label>
+            <input type="password" class="input" id="confirmaSenha" name="confirmaSenha"
+                placeholder="Confirme sua senha" [(ngModel)] = "senha_confirmacao">
 
-        <!-- CELULAR -->
-        <div class="d-flex flex-column">
-          <label for="celular">Celular</label>
-          <input type="tel" class="input" id="celular" name="celular" placeholder="Informe seu celular">
-        </div>
-
-        <!-- SENHA -->
-        <div class="d-flex flex-column">
-          <label for="senha">Senha</label>
-          <input type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha">
-        </div>
-
-        <!-- CONFIRMAÇÃO SENHA -->
-        <div class="d-flex flex-column">
-          <label for="confirmaSenha">Confirmar Senha</label>
-          <input type="password" class="input" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha">
-        </div>
-
-        <!-- BOTÃO -->
-        <div class="btns">
-          <button type="submit" class="botao">CADASTRAR</button>
-        </div>
-      </form>
+            <div class="btns">
+              <button type="submit" class="botao">CADASTRAR</button>
+            </div>
+        </form>
     </div>
-  </div>
 </div>
