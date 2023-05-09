@@ -22,37 +22,37 @@
       <!-- NOME COMPLETO -->
       <div class="nomeCompleto d-flex flex-column">
         <label for="nome">Nome Completo</label>
-        <p id="nome" name="nome">{{ nomeCompleto }}</p>
-      </div>
-
-      <!-- ÁREA DE ATUAÇÃO -->
-      <div class="sexo d-flex flex-column">
-        <label>Área de Atuação</label>
-        <p>{{ areaAtuacao }}</p>
+        <p id="nome" name="nome">{{ obj.nome_completo }}</p>
       </div>
 
       <!-- CRM/COREN/DRF -->
       <div class="crmCorenDrf d-flex flex-column">
         <label for="doc">CRM/COREN/DRF</label>
-        <p type="text" id="doc" name="doc">{{ crmCorenDrf }}</p>
+        <p type="text" id="doc" name="doc">{{ obj.campo_escolha }}</p>
+      </div>
+
+      <!-- DOCUMENTO DE TRABALHO -->
+      <div class="sexo d-flex flex-column">
+        <label>Documento de Trabalho</label>
+        <p>{{ obj.documento_trabalho }}</p>
       </div>
 
       <!-- CPF -->
       <div class="cpf d-flex flex-column">
         <label for="cpf">CPF</label>
-        <p type="text" id="cpf" name="cpf">{{ cpf }}</p>
+        <p type="text" id="cpf" name="cpf">{{ obj.cpf }}</p>
       </div>
 
       <!-- UNIDADE ATENDIMENTO -->
       <div class="unidadeAtendimento d-flex flex-column">
         <label for="unidadeAtendimento">Unidade de Atendimento</label>
-        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ unidadeAtendimento }}</p>
+        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ obj.unidade_de_atendimento }}</p>
       </div>
 
       <!-- CELULAR -->
       <div class="celular d-flex flex-column">
         <label for="celular">Celular</label>
-        <p type="tel" id="celular" name="celular">{{ celular }}</p>
+        <p type="tel" id="celular" name="celular">{{ obj.celular }}</p>
       </div>
     </div>
 
