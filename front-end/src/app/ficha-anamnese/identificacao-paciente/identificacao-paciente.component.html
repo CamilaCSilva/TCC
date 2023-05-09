@@ -17,21 +17,20 @@
     <!-- NOME COMPLETO -->
     <div class="nomeCompleto d-flex flex-column mt-3">
       <label for="nomeCompleto">Nome Completo</label>
-      <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto">
+      <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto" placeholder="Digite seu Nome Completo">
     </div>
     <p class="text-danger">{{ message }}</p>
 
     <!-- CPF -->
     <div class="cpf d-flex flex-column">
       <label for="cpf">CPF</label>
-      <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf">
+      <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf" placeholder="Digite seu CPF">
     </div>
-    <!-- <p class="text-danger" *ngIf="validaCpf(cpf)">{{ message }}</p> -->
 
     <!-- CELULAR -->
     <div class="celular d-flex flex-column mt-3">
       <label for="celular">Celular</label>
-      <input name="celular" class="form-control" type="text" [(ngModel)]="celular">
+      <input name="celular" class="form-control" type="text" [(ngModel)]="celular" placeholder="Digite seu celular">
     </div>
 
     <!-- BOTÕES -->

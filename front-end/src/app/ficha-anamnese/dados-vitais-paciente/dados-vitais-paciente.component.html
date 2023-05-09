@@ -11,34 +11,34 @@
     #dadosVitais="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
     (ngSubmit)="seguir()">
-    <h4>Dados Vitais do Paciente</h4>
+    <h3>Dados Vitais do Paciente</h3>
 
     <div class="smallFields d-flex flex-column align-items-center">
       <div class="d-flex flex-row align-items-center justify-content-around align-content-center">
         <!-- PRESSÃO SANGUÍNEA -->
-        <div class="pressao d-flex flex-column mt-2 ml-5">
+        <div class="pressao d-flex flex-column mt-2">
           <label for="pressao">Pressão Sanguínea:</label>
-          <input class="form-control" name="pressao" type="text" [(ngModel)]="pressao">
+          <input class="form-control" name="pressao" type="text" [(ngModel)]="pressao" placeholder="x/y mmHg">
         </div>
 
         <!-- OXIGENAÇÃO -->
-        <div class="oxigenacao d-flex flex-column mt-2 mr-5">
+        <div class="oxigenacao d-flex flex-column mt-2">
           <label for="oxigenacao">Oxigenação:</label>
-          <input class="form-control" name="oxigenacao" type="text" [(ngModel)]="oxigenacao">
+          <input class="form-control" name="oxigenacao" type="text" [(ngModel)]="oxigenacao" placeholder="xx %">
         </div>
       </div>
 
       <div class="d-flex flex-row align-items-center justify-content-center align-content-center">
         <!-- TEMPERATURA -->
-        <div class="temperatura d-flex flex-column mt-2 ml-5">
+        <div class="temperatura d-flex flex-column mt-2">
           <label for="temperatura">Temperatura:</label>
-          <input class="form-control" name="temperatura" type="text" [(ngModel)]="temperatura">
+          <input class="form-control" name="temperatura" type="text" [(ngModel)]="temperatura" placeholder="xx °C">
         </div>
 
         <!-- FREQUÊNCIA RITMÍCA -->
-        <div class="frequenciaRitmica d-flex flex-column mt-2 mr-5">
+        <div class="frequenciaRitmica d-flex flex-column mt-2">
           <label for="frequenciaRitmica">Frequência Ritmíca:</label>
-          <input class="form-control" name="frequenciaRitmica" type="text" [(ngModel)]="frequenciaRitmica">
+          <input class="form-control" name="frequenciaRitmica" type="text" [(ngModel)]="frequenciaRitmica" placeholder="xx ppm">
         </div>
       </div>
 
