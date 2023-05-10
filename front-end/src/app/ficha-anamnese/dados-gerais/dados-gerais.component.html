@@ -11,18 +11,20 @@
   <form
     #dadosGerais="ngForm"
     class="dadosGerais d-flex flex-column justify-content-center align-content-center align-items-center">
-    <h4>Dados Gerais</h4>
+    <h3>Dados Gerais</h3>
 
-    <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
-    <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
-      <label for="nomeParamedico">Nome do Paramédico Responsável:</label>
-      <input name="nomeParamedico" class="form-control" type="text" [(ngModel)]="nomeParamedico">
-    </div>
+    <div class="d-flex flex-column align-items-start">
+      <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
+      <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+        <label for="nomeParamedico">Nome do Paramédico Responsável:</label>
+        <input name="nomeParamedico" class="form-control" type="text" [(ngModel)]="nomeParamedico" placeholder="Digite o nome do Paramédico Responsável">
+      </div>
 
-    <!-- CRM/COREN/DRF -->
-    <div class="crmCorenDrf d-flex flex-column mt-3 align-items-center">
-      <label for="crmCorenDrf">CRM/COREN/DRF:</label>
-      <input name="crmCorenDrf" class="form-control" type="text" [(ngModel)]="crmCorenDrf">
+      <!-- CRM/COREN/DRF -->
+      <div class="crmCorenDrf d-flex flex-column mt-3 align-items-center">
+        <label for="crmCorenDrf">CRM/COREN/DRF:</label>
+        <input name="crmCorenDrf" class="form-control" type="text" [(ngModel)]="crmCorenDrf" placeholder="Digite o número do documento de trabalho">
+      </div>
     </div>
 
     <!-- DATA E ENDEREÇO -->
@@ -39,19 +41,20 @@
         class="btnAssinarEnviar btn btn-primary"
         type="button"
         (click)="this.nomeParamedico && this.nomeParamedico.length > 6 && this.crmCorenDrf ? modalConfirmacao.hidden = false : alert()">
-        Assinar e Enviar
+        ASSINAR E ENVIAR
       </button>
     </div>
+  </form>
 
-    <div #modalConfirmacao hidden>
-      <div class="modal d-flex flex-column justify-content-center align-items-center">
-        <h3>Confirmar</h3>
-        <div class="btns d-flex flex-row">
-          <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">Enviar</button>
-          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">Cancelar</button>
-        </div>
+  <!-- MODAL -->
+  <div #modalConfirmacao hidden>
+    <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
+      <h3>Assinar e Enviar</h3>
+      <div class="btns d-flex flex-row align-items-center justify-content-around">
+        <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
+        <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
       </div>
     </div>
-  </form>
+  </div>
 </body>
 </html>
