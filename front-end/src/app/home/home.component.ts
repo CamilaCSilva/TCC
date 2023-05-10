@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       historico_doencas: [ 'Nenhuma'],
       sintomas: ['Nausea', 'Tontura', 'Febre'],
       nivel_dor: 6,
-      prioridade: 'Pouco Uregente',
+      prioridade: 'Pouco Urgente',
       observacao: 'O paciente está com tontura',
       data: '2021-04-22'
     },
