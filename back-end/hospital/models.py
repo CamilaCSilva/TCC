@@ -6,7 +6,7 @@ class ProfissionaldeSaude(models.Model):
     DOCUMENTOS = ( ('CRM', 'Médico(a)'), ('COREN', 'Enfermeiro(a)'), ('DRF', 'Paramédico(a)'))
 
     cpf = models.DecimalField(max_digits=11, decimal_places=0, primary_key=True)
-    campo_escolha = models.CharField(max_length=5, choices=DOCUMENTOS, blank=False, null=False, default='CRM')
+    campo_escolha = models.CharField(max_length=5, choices=DOCUMENTOS, blank=False, null=False, default='Paramédico(a)')
     nome_completo = models.CharField(max_length=150)
     celular = models.DecimalField(max_digits=11, decimal_places=0)
     documento_trabalho = models.CharField(max_length=10)
