@@ -18,6 +18,8 @@ import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { MaisInfosComponent } from './mais-infos/mais-infos.component';
 
+import { PerfilService } from './perfil/perfil.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,10 @@ import { MaisInfosComponent } from './mais-infos/mais-infos.component';
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    PerfilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
