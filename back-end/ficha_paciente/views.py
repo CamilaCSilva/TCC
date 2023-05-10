@@ -1,104 +1,81 @@
-from rest_framework import viewsets, status
+from rest_framework import status
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.parsers import JSONParser
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from ficha_paciente.models import Anamnese
 from ficha_paciente.serializer import AnamneseSerializer
 
-from django.shortcuts import render
-from django.http import HttpResponse ,JsonResponse
-
-import json
-
 # Create your views here.
-@api_view(['GET'])
-def get_fichas(request):
-
-    if request.method == 'GET':
-        anamnese = Anamnese.objects.all()
-        anamnese_serializer = AnamneseSerializer(anamnese, many=True)
-        return Response(anamnese_serializer.data)
-    return Response(status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['GET'])
-def get_by_cpf(request, cpf):
-
-    try:
-        anamnese = Anamnese.objects.get(pk=cpf)
-    except:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+class AnamneseViewSet(APIView):
+    queryset = Anamnese.objects.all()
+    serializer_class = AnamneseSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     
-    if request.method == 'GET':
-        anamnese_serializer = AnamneseSerializer(anamnese)
-        return Response(anamnese_serializer.data)
-    return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
-@api_view(['GET', 'POST', 'PUT', 'DELETE'])
-def anamnese_manager(request):
-
-    if request.method == 'GET':
-
-        try:
-            if request.GET['cpf'] and request.GET['data']:
-                anamnese_cpf = request.GET['cpf']
+    def get(self, request):
+        
+        if request.method == 'GET':            
+            try:
+                """Listando as fichas dos pacientes por data"""
                 anamnese_data = request.GET['data']
+                anamnese = Anamnese.objects.all()
+                anamnese = Anamnese.objects.filter(data = anamnese_data)
+
+                anamnese_serializer = AnamneseSerializer(anamnese, many=True)
+                return Response(anamnese_serializer.data)        
+            except:
+                try:
+                    """Listando as fichas dos pacientes por cpf"""
+                    anamnese_cpf = request.GET['cpf']
+                    anamnese = Anamnese.objects.get(pk = anamnese_cpf)
+
+                    anamnese_serializer = AnamneseSerializer(anamnese)
+                    return Response(anamnese_serializer.data)        
+                except:
+                    """Listando todas as fichas dos pacientes"""
+                    anamnese = Anamnese.objects.all()
+                    anamnese_serializer = AnamneseSerializer(anamnese, many=True)
+                    return Response(anamnese_serializer.data)
+        
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+    
+    def post(self, request):
+        if request.method == 'POST':
+                """inserindo uma nova ficha"""
+                anamnese_data = request.data
+                anamnese_serializer = AnamneseSerializer(data=anamnese_data)
+                
+                if anamnese_serializer.is_valid():
+                    anamnese_serializer.save()
+                    return Response("Adicionado com sucesso!!", status=status.HTTP_201_CREATED)
+                
+                return Response("Falha para adicionar", status=status.HTTP_400_BAD_REQUEST)
+        
+    def put(self, request):
+        """Editando uma ficha"""
+        if request.method == 'PUT':
+                
+                anamnese_data = request.data['cpf']
 
                 try:
-                    anamnese = Anamnese.objects.get(pk=anamnese_cpf, data = anamnese_data)
+                    anamnese = Anamnese.objects.get(cpf=anamnese_data)
                 except:
                     return Response(status=status.HTTP_404_NOT_FOUND)
-                
-                anamnese_serializer = AnamneseSerializer(anamnese)
-                return Response(anamnese_serializer.data)
-            
-            else:
-                return Response(status=status.HTTP_400_BAD_REQUEST)
-        
-        except:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-
-        
-        
-        
-            
-        
-# class AnamneseViewSet(viewsets.ModelViewSet):
-#     """Listando as fichas dos pacientes"""
-#     queryset = Anamnese.objects.all()
-#     serializer_class = AnamneseSerializer
-#     authentication_classes = [BasicAuthentication]
-#     permission_classes = [IsAuthenticated]
+                anamnese_serializer = AnamneseSerializer(anamnese, data=request.data)
+                if anamnese_serializer.is_valid():
+                    anamnese_serializer.save()
+                    return Response("Atualizado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
+                return Response("Falha para atualizar.", status=status.HTTP_400_BAD_REQUEST)
     
-
-    # def anamneseAPI(request, cpf=0):
-        
-    #     if request.method == 'GET':
-    #         anamnese = Anamnese.objects.all()
-    #         anamnese_serializer = AnamneseSerializer(anamnese, many=True)
-    #         return JsonResponse(anamnese_serializer.data, safe=False)
-        
-    #     elif request.method == 'POST':
-    #         anamnese_data = JSONParser().parse(request)
-    #         anamnese_serializer = AnamneseSerializer(data=anamnese_data)
-    #         if anamnese_serializer.is_valid():
-    #             anamnese_serializer.save()
-    #             return JsonResponse("Adicionado com sucesso!!", safe=False)
-    #         return JsonResponse("Falha para adicionar", safe=False)
-        
-    #     elif request.method == 'PUT':
-    #         anamnese_data = JSONParser().parse(request)
-    #         anamnese = Anamnese.objects.get(cpf=anamnese_data['cpf'])
-    #         anamnese_serializer = AnamneseSerializer(anamnese, data=anamnese_data)
-    #         if anamnese_serializer.is_valid():
-    #             anamnese_serializer.save()
-    #             return JsonResponse("Atualizado com Sucesso!!", safe=False)
-    #         return JsonResponse("Falha para atualizar.", safe=False)
-        
-    #     elif request.method == 'DELETE':
-    #         anamnese = Anamnese.objects.get(cpf = cpf)
-    #         anamnese.delete()
-    #         return JsonResponse("Deletado com Sucesso!!", safe=False)
+    def delete(self, request):
+        """Deletendo uma ficha"""
+        if request.method == 'DELETE':
+            try:
+                anamnese = Anamnese.objects.get(cpf = request.data['cpf'])
+                anamnese.delete()
+                return Response("Deletado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
+            except:
+                return Response("Falha para deletar.", status=status.HTTP_400_BAD_REQUEST)
