@@ -23,7 +23,6 @@
     "ng-bootstrap": "^1.6.3",
     "popper.js": "^1.14.3",
     "rxjs": "~6.6.0",
-    "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -38,6 +37,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "tslib": "^2.5.0",
     "typescript": "~4.3.5"
   }
 }

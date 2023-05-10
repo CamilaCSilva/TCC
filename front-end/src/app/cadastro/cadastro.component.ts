@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CadastroService } from './cadastro.service';
 import { CadastroInfo, CadastroInfoArray } from './cadastro.model';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-cadastro',
@@ -13,39 +12,38 @@ export class CadastroComponent {
 
   path: string = 'login';
   string = 'Faça seu cadastro!'
-  nome_completo: string;
-  campo_escolha: string = 'COREN';
-  documento_trabalho: string;
+  nomeCompleto: string;
+  areaAtuacao: string = 'profissionalSaude';
+  crmCorenDrf: string;
   cpf: string;
-  unidade_de_atendimento: string;
+  unidadeAtendimento: string;
   celular: string
   senha: string;
-  senha_confirmacao: string;
+  senhaConfirmacao: string;
   testResult: boolean = false;
   cadastroInfo: CadastroInfo;
   cadastroInfoArray: CadastroInfoArray;
 
-
-  constructor(private router: Router, private cadastroService: CadastroService,  private http: HttpClient) {}
-
-  obj:any;
+  constructor(private router: Router, private cadastroService: CadastroService) {}
 
   ngOnInit(): void {}
 
   cadastrar() {
-
     this.verificaDados();
-    
-    var send_data = {"nome_completo": this.nome_completo, "campo_escolha": this.campo_escolha, 
-    "documento_trabalho": this.documento_trabalho, "cpf": this.cpf, "unidade_de_atendimento": this.unidade_de_atendimento,
-    "celular":this.celular, "senha": this.senha_confirmacao}
-
-    console.log(this.unidade_de_atendimento)
-
-    if(this.testResult && this.documento_trabalho && this.unidade_de_atendimento) {
-      this.obj = this.http.post("http://127.0.0.1:8000/profissionaisdesaude/", send_data).subscribe(data => this.obj = data)
-
+    if(this.testResult && this.crmCorenDrf && this.unidadeAtendimento) {
       this.router.navigateByUrl(this.path);
+      // this.cadastroInfo = {
+      //   nomeCompleto: this.nomeCompleto,
+      //   areaAtuacao: this.areaAtuacao,
+      //   crmCorenDrf: this.crmCorenDrf,
+      //   cpf: this.cpf,
+      //   unidadeAtendimento: this.unidadeAtendimento,
+      //   celular: this.celular,
+      //   senha: this.senha,
+      //   senhaConfirmacao: this.senhaConfirmacao
+      // };
+      // this.cadastroInfoArray = [this.cadastroInfo];
+      // this.setCadastroInfo(this.cadastroInfoArray);
     }
   }
 
@@ -53,19 +51,18 @@ export class CadastroComponent {
     this.cadastroService.setCadastroInfo(cadastroInfoArray);
   }
 
-  onAreaChange(campo_escolha: string) {
-    if(campo_escolha == 'COREN') { console.log('COREN'); }
-    else if(campo_escolha == 'CRM') { console.log('CRM'); }
-    else if(campo_escolha == 'DRF') { console.log('DRF'); }
+  onAreaChange(areaAtuacao: string) {
+    if(areaAtuacao == 'profissionalSaude') { console.log('Profissional de Saúde'); }
+    else if(areaAtuacao == 'paramedico') { console.log('Paramédico'); }
   }
 
   getArea(event: Event) {
-    this.campo_escolha = (event.target as HTMLInputElement).value;
-    return this.campo_escolha;
+    this.areaAtuacao = (event.target as HTMLInputElement).value;
+    return this.areaAtuacao;
   }
 
   private verificaDados() {
-    if(this.nome_completo && this.nome_completo.length < 6 && this.nome_completo.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
+    if(this.nomeCompleto && this.nomeCompleto.length < 6 && this.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
       alert('Nome incompleto');
       throw new Error('Nome incompleto');
     }

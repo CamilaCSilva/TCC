@@ -12,10 +12,10 @@ from hospital.serializer import ProfissionaldeSaudeSerializer, FichasPacientesSe
 
 class ProfissionaldeSaudeViewSet(APIView):
     """Listando os profissionais de saúde"""
-    queryset = ProfissionaldeSaude.objects.all()
-    serializer_class = ProfissionaldeSaudeSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # queryset = ProfissionaldeSaude.objects.all()
+    # serializer_class = ProfissionaldeSaudeSerializer
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     def get(self, request):
     

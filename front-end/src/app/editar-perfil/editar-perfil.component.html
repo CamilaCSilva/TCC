@@ -3,7 +3,7 @@
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column align-items-center justify-content-between">
     <div class="nav d-flex flex-row justify-content-between">
-      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+      <h2>Bem vinda(o), {{ perfil?.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row justify-content-end">
         <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
         <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
@@ -23,7 +23,7 @@
         <!-- NOME -->
         <div class="d-flex flex-column">
           <label for="nome">Nome</label>
-          <input type="text"  id="nome" name="nome" value={{usuario.nome}}>
+          <input type="text"  id="nome" name="nome" value={{perfil?.nome_completo}}>
         </div>
 
         <!-- ÁREA ATUAÇÃO -->

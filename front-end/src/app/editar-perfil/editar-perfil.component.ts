@@ -21,19 +21,30 @@ export class EditarPerfilComponent implements OnInit {
   testResult: boolean = false;
   perfilInfo: PerfilInfo;
   perfilInfoArray: PerfilInfoArray;
+  perfil: any;
 
   usuario = {
     nome: 'Isabela',
     funcao: 'Profissional de Saúde',
     docmentro_trabalho: 78965,
-    cpf: '123.456.789-10',
+    cpf: '78965412320',
     unidade_atendimento: 'Hospital Antônio Moreira da Costa',
     celular: '(35)99123-4567'
   };
 
   constructor(private router: Router, private editarPerfilService: EditarPerfilService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.listarProfissional();
+  }
+
+  listarProfissional(){
+    this.editarPerfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
+    this.perfil = perfilInfo
+    }, err => {
+      console.log('Erro ao listar o profissional', err)
+    })
+  }
 
   salvar() {
     // this.verificaDados();

@@ -1,3 +1,4 @@
+
 // VOU PEGAR INFOS DO BANCO
 export interface PerfilInfoExistente {
   nomeCompleto: string;
@@ -8,4 +9,3 @@ export interface PerfilInfoExistente {
   telefone: string
 }
 
-export interface PerfilInfoExistenteArray extends Array<PerfilInfoExistente> {}
