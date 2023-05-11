@@ -40,8 +40,4 @@ export class PerfilComponent implements OnInit {
   editar(){
     this.router.navigateByUrl(this.path);
   }
-
-  cpf(){
-    return this.usuario.cpf;
-  }
 }
