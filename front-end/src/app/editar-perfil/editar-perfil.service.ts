@@ -7,9 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EditarPerfilService {
 
+  profissionalUrl = 'http://127.0.0.1:8000/profissionaldesaude/?cpf='
+
   constructor(private http: HttpClient) { }
 
-  setPerfilInfo(perfilInfos: PerfilInfoArray) {
-    // return this.http.post('');
+  getPerfilInfo(cpf: any) {
+    return this.http.get(`${this.profissionalUrl}${cpf}`);
+  }
+
+  updatePerfilInfo(cpf: any, perfilInfos: any) {
+    return this.http.put(`${this.profissionalUrl}${cpf}`, perfilInfos);
   }
 }
