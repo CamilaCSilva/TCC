@@ -1,6 +1,7 @@
 $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
+$black: black;
 
 .btnProximo, .btnVoltar {
   background-color: $dark-red;
@@ -28,14 +29,12 @@ $light-red: #b87676;
 @media screen and (min-width:1025px) {
 
   body {
-
     border-radius: 20px;
 
-    .idPaciente {
+    .idPacienteContainer {
       background: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 30vw;
@@ -51,30 +50,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      & h3 {
-        font-weight: bold;
-      }
-
-      .nomeCompleto, .cpf, .celular {
-        & label {
-          font-size: 18px;
+      .idPaciente {
+        & h3 {
+          font-weight: bold;
         }
 
-        & input {
+        .nomeCompleto, .cpf, .celular {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
           width: 27.5vw;
-          height: 4vh;
-          border-radius: 20px;
+          font-size: 18px;
+          margin-top: 40px;
         }
-
-        & p {
-          font-size: 10px;
-        }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }
@@ -82,14 +79,13 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
   body {
-
     border-radius: 20px;
 
-    .idPaciente {
+    .idPacienteContainer {
+
       background: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 60vw;
@@ -105,30 +101,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      & h3 {
-        font-weight: bold;
-      }
+      .idPaciente {
+        & h3 {
+          font-weight: bold;
+        }
 
-      .nomeCompleto, .cpf, .celular {
-        & label {
+        .nomeCompleto, .cpf, .celular {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 27.5vw;
           font-size: 18px;
+          margin-top: 40px;
         }
-
-        & input {
-          width: 15em;
-          height: 2.3em;
-          border-radius: 20px;
-        }
-
-        & p {
-          font-size: 10px;
-        }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }
@@ -136,14 +130,12 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
   body {
-
     border-radius: 20px;
 
-    .idPaciente {
+    .idPacienteContainer {
       background: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 90vw;
@@ -159,30 +151,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      & h3 {
-        font-weight: bold;
-      }
+      .idPaciente {
+        & h3 {
+          font-weight: bold;
+        }
 
-      .nomeCompleto, .cpf, .celular {
-        & label {
+        .nomeCompleto, .cpf, .celular {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 27.5vw;
           font-size: 18px;
+          margin-top: 40px;
         }
-
-        & input {
-          width: 15em;
-          height: 2.3em;
-          border-radius: 20px;
-        }
-
-        & p {
-          font-size: 10px;
-        }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }

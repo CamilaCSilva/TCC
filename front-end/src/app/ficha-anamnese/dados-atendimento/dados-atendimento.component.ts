@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dados-atendimento',
@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class DadosAtendimentoComponent implements OnInit {
 
-  path1: string = 'home/ficha/identificacao-paciente';
-  path2: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
+  path1: string = 'home/fichas/identificacao-paciente';
+  path2: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
   idade: number;
   tipoSangue: string;
   sexo: string;
@@ -19,6 +19,7 @@ export class DadosAtendimentoComponent implements OnInit {
   historicoDoencas: string;
   testResult: boolean = false;
   formGroup: FormGroup;
+  tipo: string | null;
 
   constructor(private router: Router) { }
 
@@ -30,31 +31,7 @@ export class DadosAtendimentoComponent implements OnInit {
   }
 
   seguir() {
-    this.verificaDados();
-    if(this.idade && this.testResult && this.sexo != '' && this.medicacoesUsadas.length > 0) {
-      this.router.navigateByUrl(this.path2);
-    }
-  }
-
-  onSexChange() {
-    if(this.sexo == 'f') {
-      console.log('Feminino');
-    }
-    if(this.sexo == 'm') {
-      console.log('Masculino');
-    }
-    if(this.sexo == 'o') {
-      console.log('outro');
-    }
-  }
-
-  private verificaDados() {
-    if(this.tipoSangue && this.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
-      throw new Error('Tipo sanguíneo inválido');
-    }
-    else {
-      this.testResult = true;
-    }
+    this.router.navigateByUrl(this.path2);
   }
 
 }

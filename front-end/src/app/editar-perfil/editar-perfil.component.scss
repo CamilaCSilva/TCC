@@ -101,6 +101,14 @@ $light-red: #b87676;
           }
         }
 
+        .cpf {
+          font-size: 18px;
+
+          & :disabled {
+            opacity: 1;
+          }
+        }
+
         .btns {
           display: flex;
           justify-content: center;

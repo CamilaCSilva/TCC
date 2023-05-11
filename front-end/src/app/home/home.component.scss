@@ -104,8 +104,10 @@ $black: black;
     justify-content: center;
     align-items: center;
     align-content: center;
-    .botao {
-      border-radius: 25px;
+
+    .btn {
+      position: fixed;
+      border-radius: 20px;
       width: 65px;
       height: 60px;
       border: none;

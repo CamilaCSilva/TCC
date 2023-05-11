@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificação do Paciente</title>
+</head>
+<body>
+  <form
+    #idPaciente="ngForm"
+    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
+    (ngSubmit)="seguir()">
+    <h3>Identificação do Paciente</h3>
+
+    <!-- NOME COMPLETO -->
+    <div class="nomeCompleto d-flex flex-column mt-3">
+      <label for="nomeCompleto">Nome Completo</label>
+      <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto" placeholder="Digite seu Nome Completo">
+    </div>
+    <p class="text-danger">{{ message }}</p>
+
+    <!-- CPF -->
+    <div class="cpf d-flex flex-column">
+      <label for="cpf">CPF</label>
+      <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf" placeholder="Digite seu CPF">
+    </div>
+
+    <!-- CELULAR -->
+    <div class="celular d-flex flex-column mt-3">
+      <label for="celular">Celular</label>
+      <input name="celular" class="form-control" type="text" [(ngModel)]="celular" placeholder="Digite seu celular">
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="btns d-flex flex-row justify-content-between">
+      <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
+      <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
+    </div>
+  </form>
+</body>
+</html>

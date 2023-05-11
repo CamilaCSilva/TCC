@@ -4,40 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="identificacao-paciente.component.scss" media="(max-width: 600px)"> -->
   <title>Identificação do Paciente</title>
 </head>
 <body>
-  <form
-    #idPaciente="ngForm"
-    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
-    (ngSubmit)="seguir()">
+  <!-- INFOS -->
+  <div class="idPacienteContainer d-flex flex-column align-items-center justify-content-center">
     <h3>Identificação do Paciente</h3>
 
-    <!-- NOME COMPLETO -->
-    <div class="nomeCompleto d-flex flex-column mt-3">
-      <label for="nomeCompleto">Nome Completo</label>
-      <input name="nomeCompleto" class="form-control" type="text" [(ngModel)]="nomeCompleto" placeholder="Digite seu Nome Completo">
-    </div>
-    <p class="text-danger">{{ message }}</p>
+    <div class="idPaciente d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-start">
+        <!-- NOME COMPLETO -->
+        <div class="nomeCompleto d-flex flex-column mt-3">
+          <label for="nomeCompleto">Nome Completo</label>
+          <p>Valeria de Cássia</p>
+        </div>
 
-    <!-- CPF -->
-    <div class="cpf d-flex flex-column">
-      <label for="cpf">CPF</label>
-      <input name="cpf" class="form-control" type="text" [(ngModel)]="cpf" placeholder="Digite seu CPF">
-    </div>
+        <!-- CPF -->
+        <div class="cpf d-flex flex-column">
+          <label for="cpf">CPF</label>
+          <p>123.456.789-10</p>
+        </div>
 
-    <!-- CELULAR -->
-    <div class="celular d-flex flex-column mt-3">
-      <label for="celular">Celular</label>
-      <input name="celular" class="form-control" type="text" [(ngModel)]="celular" placeholder="Digite seu celular">
-    </div>
+        <!-- CELULAR -->
+        <div class="celular d-flex flex-column mt-3">
+          <label for="celular">Celular</label>
+          <p>37 99356-1245</p>
+        </div>
+      </div>
 
-    <!-- BOTÕES -->
-    <div class="btns d-flex flex-row justify-content-between">
-      <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
-      <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-between">
+        <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
+        <button class="btnProximo btn btn-primary rounded-circle" type="button" (click)="seguir()">></button>
+      </div>
     </div>
-  </form>
+  </div>
 </body>
 </html>

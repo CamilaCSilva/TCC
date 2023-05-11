@@ -13,7 +13,7 @@ export class EditarPerfilComponent implements OnInit {
   path: string = 'perfil';
   string = 'Edição Perfil';
   nomeCompleto: string;
-  areaAtuacao: string = 'profissionalSaude';
+  areaAtuacao: string = 'medico';
   crmCorenDrf: string;
   cpf: string;
   unidadeAtendimento: string;
@@ -50,6 +50,17 @@ export class EditarPerfilComponent implements OnInit {
       // this.perfilInfoArray = [this.perfilInfo];
       // this.editarPerfilService.setPerfilInfo(this.perfilInfoArray);
     // }
+  }
+
+  onAreaChange(areaAtuacao: string) {
+    if(areaAtuacao == 'medico') { console.log('Médico(a)'); }
+    else if(areaAtuacao == 'enfermeiro') { console.log('Enfermeiro(a)'); }
+    else if(areaAtuacao == 'paramedico') { console.log('Paramédico(a)'); }
+  }
+
+  getArea(event: Event) {
+    this.areaAtuacao = (event.target as HTMLInputElement).value;
+    return this.areaAtuacao;
   }
 
   // private verificaDados() {

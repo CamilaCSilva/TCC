@@ -13,8 +13,8 @@ export class PerfilComponent implements OnInit {
   path: string = 'perfil/editar-perfil';
   string = 'Perfil';
   nomeCompleto: string;
-  areaAtuacao: string = 'profissionalSaude';
-  crmCorenDrf: string;
+  areaAtuacao: string = 'medico';
+  documento_trabalho: string;
   cpf: string;
   unidadeAtendimento: string;
   celular: string
