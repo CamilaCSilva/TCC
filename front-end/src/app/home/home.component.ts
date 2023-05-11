@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('fichas') fichasElement: ElementRef;
 
   pacientes = [
     {
@@ -56,7 +59,23 @@ export class HomeComponent implements OnInit {
       prioridade: 'Pouco Urgente',
       observacao: 'O paciente está com tontura e não consegue ficar com os olhos abertos',
       data: '2020-03-08'
-    }
+    },
+    // {
+    //   nome: 'Mariana Dias',
+    //   cpf: '127.274.497-75',
+    //   celular: '(14)98227-9567',
+    //   idade: 15,
+    //   tipo_sanguineo: 'O+',
+    //   sexo: 'F',
+    //   alegias: 'Leite',
+    //   medicacoes_utilizadas: ['Nenhuma'],
+    //   historico_doencas: [ 'Nenhuma'],
+    //   sintomas: ['Falta de ar', 'Garganta Fechada'],
+    //   nivel_dor: 8,
+    //   prioridade: 'Urgente',
+    //   observacao: 'A paciente não consegue respirar',
+    //   data: '2020-03-21'
+    // }
   ]
 
   usuario = {
@@ -69,6 +88,7 @@ export class HomeComponent implements OnInit {
   }
 
   data: Date;
+  tipo: boolean;
 
   constructor(private router: Router) { }
 
@@ -83,8 +103,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  visualizarFicha() {
+    this.router.navigateByUrl('/home/fichas/identificacao-paciente');
+  }
+
   adicionarFicha() {
-    this.router.navigateByUrl('/home/ficha/identificacao-paciente');
+    this.router.navigateByUrl('/home/formularios/identificacao-paciente-form');
   }
 
 }

@@ -1,6 +1,7 @@
 $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
+$black: black;
 
 .btnProximo, .btnAnterior {
   background-color: $dark-red;
@@ -29,7 +30,6 @@ $light-red: #b87676;
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 30vw;
@@ -49,18 +49,23 @@ $light-red: #b87676;
         font-weight: bold;
       }
 
+
       .smallFields {
         width: 30vw;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
-          width: 9.5em;
-          font-size: 18px;
           align-items: center;
+          width: 12em;
 
-          & input {
-            width: 4em;
-            border-radius: 20px;
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
           }
         }
       }
@@ -77,17 +82,15 @@ $light-red: #b87676;
 @media (max-width: 1024px) and (min-width: 481px) {
 
   body {
-
     border-radius: 20px;
 
     .dadosAtendimento {
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
-      width: 30vw;
+      width: 75vw;
       height: 55vh;
       margin-top: 3em;
       padding: 3em;
@@ -109,13 +112,17 @@ $light-red: #b87676;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
-          width: 9.5em;
-          font-size: 18px;
           align-items: center;
+          width: 11.5em;
 
-          & input {
-            width: 4em;
-            border-radius: 20px;
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
           }
         }
       }
@@ -132,14 +139,12 @@ $light-red: #b87676;
 @media (max-width: 480px) and (min-width: 0px) {
 
   body {
-
     border-radius: 20px;
 
     .dadosAtendimento {
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 90vw;
@@ -164,13 +169,17 @@ $light-red: #b87676;
         align-items: center;
 
         .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
-          width: 8.8em;
-          font-size: 18px;
           align-items: center;
+          width: 12em;
 
-          & input {
-            width: 4em;
-            border-radius: 20px;
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
           }
         }
       }

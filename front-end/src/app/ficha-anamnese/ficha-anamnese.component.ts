@@ -9,11 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FichaAnamneseComponent implements OnInit {
 
   nomePaciente: string = 'Isabela';
+  tipo: string | null;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['ficha/identificacao-paciente'] , { relativeTo: this.activatedRoute })
+    this.router.navigateByUrl('home/fichas/identificacao-paciente');
   }
-
 }

@@ -24,14 +24,15 @@
         <div class="d-flex flex-column">
           <label for="nome">Área de Atuação</label>
           <select class="minimal" [value]="areaAtuacao" name="seletor" (change)="onAreaChange(getArea($event))">
-            <option value="profissionalSaude" selected>Profissional de Saúde</option>
+            <option value="medico" selected>Médico(a)</option>
+            <option value="enfermeiro">Enfermeiro(a)</option>
             <option value="paramedico">Paramédico(a)</option>
           </select>
         </div>
 
-        <!-- CRM/COREN/DRF -->
+        <!-- DOCUMENTO DE TRABALHO -->
         <div class="d-flex flex-column">
-          <label for="doc">CRM/COREN/DRF</label>
+          <label for="doc">Documento de Trabalho</label>
           <input type="text" class="input" id="doc" name="doc" placeholder="Informe seu documento de trabalho">
         </div>
 

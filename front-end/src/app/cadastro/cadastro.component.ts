@@ -13,8 +13,8 @@ export class CadastroComponent {
   path: string = 'login';
   string = 'Faça seu cadastro!'
   nomeCompleto: string;
-  areaAtuacao: string = 'profissionalSaude';
-  crmCorenDrf: string;
+  areaAtuacao: string = 'medico';
+  documento_trabalho: string;
   cpf: string;
   unidadeAtendimento: string;
   celular: string
@@ -30,12 +30,12 @@ export class CadastroComponent {
 
   cadastrar() {
     this.verificaDados();
-    if(this.testResult && this.crmCorenDrf && this.unidadeAtendimento) {
+    if(this.testResult && this.documento_trabalho && this.unidadeAtendimento) {
       this.router.navigateByUrl(this.path);
       // this.cadastroInfo = {
       //   nomeCompleto: this.nomeCompleto,
       //   areaAtuacao: this.areaAtuacao,
-      //   crmCorenDrf: this.crmCorenDrf,
+      //   documento_trabalho: this.documento_trabalho,
       //   cpf: this.cpf,
       //   unidadeAtendimento: this.unidadeAtendimento,
       //   celular: this.celular,
@@ -52,8 +52,9 @@ export class CadastroComponent {
   }
 
   onAreaChange(areaAtuacao: string) {
-    if(areaAtuacao == 'profissionalSaude') { console.log('Profissional de Saúde'); }
-    else if(areaAtuacao == 'paramedico') { console.log('Paramédico'); }
+    if(areaAtuacao == 'medico') { console.log('Médico(a)'); }
+    else if(areaAtuacao == 'enfermeiro') { console.log('Enfermeiro(a)'); }
+    else if(areaAtuacao == 'paramedico') { console.log('Paramédico(a)'); }
   }
 
   getArea(event: Event) {
