@@ -15,7 +15,7 @@ export class EditarPerfilService {
     return this.http.get(`${this.profissionalUrl}${cpf}`);
   }
 
-  setPerfilInfo(perfilInfos: PerfilInfoArray) {
-    // return this.http.put('');
+  updatePerfilInfo(cpf: any, perfilInfos: any) {
+    return this.http.put(`${this.profissionalUrl}${cpf}`, perfilInfos);
   }
 }

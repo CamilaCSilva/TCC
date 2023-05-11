@@ -47,20 +47,12 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   salvar() {
-    // this.verificaDados();
-    // if(this.testResult) {
-      this.router.navigateByUrl(this.path);
-      // this.perfilInfo = {
-      //   nomeCompleto: this.nomeCompleto,
-      //   campo_escolha: this.areaAtuacao,
-      //   documentoTrabalho: this.crmCorenDrf,
-      //   cpf: this.cpf,
-      //   unidadeDeAtendimento: this.unidadeAtendimento,
-      //   telefone: this.celular
-      // };
-      // this.perfilInfoArray = [this.perfilInfo];
-      // this.editarPerfilService.setPerfilInfo(this.perfilInfoArray);
-    // }
+    this.updateProfissional();
+    // this.router.navigateByUrl(this.path);
+  }
+
+  updateProfissional(){
+    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil);
   }
 
   // private verificaDados() {
