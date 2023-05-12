@@ -45,10 +45,10 @@ export class EditarPerfilComponent implements OnInit {
     })
   }
 
-  salvar(f: any) {
+  salvar(editarPerfil: any) {
     this.perfil_atualizado = this.perfil;
     console.log(this.perfil_atualizado)
-    console.log(f.value)
+    console.log(editarPerfil.value)
     this.updateProfissional();
     this.router.navigateByUrl(this.path);
   }
