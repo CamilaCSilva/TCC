@@ -45,16 +45,27 @@ export class EditarPerfilComponent implements OnInit {
     })
   }
 
+  voltar(){
+    this.router.navigateByUrl(this.path);
+  }
+
   salvar(editarPerfil: any) {
     this.perfil_atualizado = this.perfil;
-    console.log(this.perfil_atualizado)
-    console.log(editarPerfil.value)
+    this.perfil_atualizado.campo_escolha = editarPerfil.value.campo_escolha != '' ? editarPerfil.value.campo_escolha : this.perfil_atualizado.campo_escolha;
+    this.perfil_atualizado.nome_completo = editarPerfil.value.nome_completo != '' ? editarPerfil.value.nome_completo : this.perfil_atualizado.nome_completo;
+    this.perfil_atualizado.celular = editarPerfil.value.celular != '' ? editarPerfil.value.celular : this.perfil_atualizado.celular;
+    this.perfil_atualizado.documento_trabalho = editarPerfil.value.documento_trabalho != '' ? editarPerfil.value.documento_trabalho : this.perfil_atualizado.documento_trabalho;
+    this.perfil_atualizado.unidade_de_atendimento = editarPerfil.value.unidade_de_atendimento != '' ? editarPerfil.value.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
     this.updateProfissional();
     this.router.navigateByUrl(this.path);
   }
 
   updateProfissional(){
-    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado);
+    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado).subscribe(
+      success => console.log('Sucesso!'),
+      error => console.log(error),
+      () => console.log('request completo')
+    );
   }
 
   onAreaChange(areaAtuacao: string) {
