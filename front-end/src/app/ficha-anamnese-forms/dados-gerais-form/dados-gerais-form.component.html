@@ -1,0 +1,51 @@
+<div class="main">
+  <form
+    #dadosGerais="ngForm"
+    class="dadosGerais d-flex flex-column justify-content-center align-items-center">
+    <h3>Dados Gerais</h3>
+
+    <div class="d-flex flex-column align-items-start">
+      <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
+      <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+        <label for="nomeParamedico">Nome do Paramédico Responsável</label>
+        <p>{{ nomeParamedico }}</p>
+      </div>
+
+      <!-- DOCUMENTO DE TRABALHO -->
+      <div class="docTrabalho d-flex flex-column mt-3 align-items-center">
+        <label for="docTrabalho">Documento de Trabalho</label>
+        <p>{{ documento_trabalho }}</p>
+      </div>
+    </div>
+
+    <!-- DATA E ENDEREÇO -->
+    <div class="d-flex flex-column align-items-end mt-5">
+      <p>{{ date | date : 'long' }}</p>
+      <input class="loc form-control" [(ngModel)]="localizacao" type="text" [value]="'Av. João de Camargo, 510, Centro'">
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="btns d-flex flex-row justify-content-around">
+      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+      <button
+        class="btnAssinarEnviar btn btn-primary"
+        type="button"
+        (click)="modalConfirmacao.hidden = false">
+        ASSINAR E ENVIAR
+      </button>
+    </div>
+  </form>
+
+  <!-- MODAL -->
+  <div #modalConfirmacao hidden>
+    <div class="modalContainer">
+      <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
+        <h3>Assinar e Enviar</h3>
+        <div class="btns d-flex flex-row align-items-center justify-content-around">
+          <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
+          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,24 +18,24 @@ registerLocaleData(localeFR);
 /* *********************************************** */
 
 import { FichaAnamneseComponent } from './ficha-anamnese.component';
-import { DadosAtendimentoComponent } from './dados-atendimento/dados-atendimento.component';
 import { DadosAtendimentoParte2Component } from './dados-atendimento-parte2/dados-atendimento-parte2.component';
 import { DadosGeraisComponent } from './dados-gerais/dados-gerais.component';
 import { DadosVitaisPacienteComponent } from './dados-vitais-paciente/dados-vitais-paciente.component';
-import { IdentificacaoPacienteComponent } from './identificacao-paciente/identificacao-paciente.component';
 
-import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { DadosAtendimentoComponent } from './dados-atendimento/dados-atendimento.component';
+import { IdentificacaoPacienteComponent } from './identificacao-paciente/identificacao-paciente.component';
 
 
 @NgModule({
   declarations: [
     FichaAnamneseComponent,
+    IdentificacaoPacienteComponent,
     DadosAtendimentoComponent,
     DadosAtendimentoParte2Component,
     DadosGeraisComponent,
-    DadosVitaisPacienteComponent,
-    IdentificacaoPacienteComponent,
+    DadosVitaisPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +44,9 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
+  exports: [ FichaAnamneseComponent ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-br' },
   ]

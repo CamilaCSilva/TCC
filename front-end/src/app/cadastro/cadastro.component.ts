@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CadastroService } from './cadastro.service';
-import { CadastroInfo, CadastroInfoArray } from './cadastro.model';
 import { Router } from '@angular/router';
+import { PerfilInfo } from '../models/perfil.model';
+import { Validacao } from '../models/validacao.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,74 +13,52 @@ export class CadastroComponent {
 
   path: string = 'login';
   string = 'Faça seu cadastro!'
-  nomeCompleto: string;
-  areaAtuacao: string = 'profissionalSaude';
-  crmCorenDrf: string;
-  cpf: string;
-  unidadeAtendimento: string;
-  celular: string
-  senha: string;
   senhaConfirmacao: string;
-  testResult: boolean = false;
-  cadastroInfo: CadastroInfo;
-  cadastroInfoArray: CadastroInfoArray;
+  areaAtuacao: string;
+  cadastroInfo: PerfilInfo;
 
-  constructor(private router: Router, private cadastroService: CadastroService) {}
+  constructor(private router: Router, private cadastroService: CadastroService, private validacao: Validacao) {}
 
   ngOnInit(): void {}
 
-  cadastrar() {
-    this.verificaDados();
-    if(this.testResult && this.crmCorenDrf && this.unidadeAtendimento) {
-      this.router.navigateByUrl(this.path);
-      // this.cadastroInfo = {
-      //   nomeCompleto: this.nomeCompleto,
-      //   areaAtuacao: this.areaAtuacao,
-      //   crmCorenDrf: this.crmCorenDrf,
-      //   cpf: this.cpf,
-      //   unidadeAtendimento: this.unidadeAtendimento,
-      //   celular: this.celular,
-      //   senha: this.senha,
-      //   senhaConfirmacao: this.senhaConfirmacao
-      // };
-      // this.cadastroInfoArray = [this.cadastroInfo];
-      // this.setCadastroInfo(this.cadastroInfoArray);
+  cadastrar(cadastro: any) {
+    this.cadastroInfo = {
+      nome_completo: cadastro.value.nomeCompleto,
+      campo_escolha: cadastro.value.seletor,
+      documento_trabalho: cadastro.value.doc,
+      cpf: cadastro.value.cpf,
+      unidade_de_atendimento: cadastro.value.unidadeAtendimento,
+      celular: cadastro.value.celular,
+      senha: cadastro.value.senha,
+    };
+    if(this.validacao.verificaDadosPerfil(this.cadastroInfo)) {
+      if(cadastro.senha != cadastro.value.confirmaSenha){
+        alert('As senha não são iguais');
+        throw new Error('As senha não são iguais');
+      }
+      else{
+        this.setCadastroInfo();
+        this.router.navigateByUrl(this.path);
+      }
     }
   }
 
-  setCadastroInfo(cadastroInfoArray: CadastroInfoArray): any {
-    this.cadastroService.setCadastroInfo(cadastroInfoArray);
+  setCadastroInfo() {
+    this.cadastroService.setCadastroInfo(this.cadastroInfo).subscribe(
+      success => console.log('Sucesso!'),
+      error => console.log(error),
+      () => console.log('request completo')
+    );
   }
 
   onAreaChange(areaAtuacao: string) {
-    if(areaAtuacao == 'profissionalSaude') { console.log('Profissional de Saúde'); }
-    else if(areaAtuacao == 'paramedico') { console.log('Paramédico'); }
+    if(areaAtuacao == 'CRM') { console.log('Médico(a)'); }
+    else if(areaAtuacao == 'COREN') { console.log('Enfermeiro(a)'); }
+    else if(areaAtuacao == 'DRF') { console.log('Paramédico(a)'); }
   }
 
   getArea(event: Event) {
     this.areaAtuacao = (event.target as HTMLInputElement).value;
     return this.areaAtuacao;
-  }
-
-  private verificaDados() {
-    if(this.nomeCompleto && this.nomeCompleto.length < 6 && this.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
-      alert('Nome incompleto');
-      throw new Error('Nome incompleto');
-    }
-    else if (this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      alert('CPF incompleto');
-      throw new Error('CPF incompleto');
-    }
-    else if (this.celular && this.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
-      alert('Celular no formato inesperado');
-      throw new Error('Celular incorreto');
-    }
-    else if (this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
-      alert('Senha incompleta');
-      throw new Error('Senha incompleta');
-    }
-    else {
-      this.testResult = true;
-    }
   }
 }

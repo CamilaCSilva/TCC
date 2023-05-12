@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class DadosVitaisPacienteComponent implements OnInit {
 
-  path1: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
-  path2: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente/dados-gerais';
+  path1: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
+  path2: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente/dados-gerais';
   pressao: number;
   oxigenacao: number;
   temperatura: number;
@@ -26,9 +26,7 @@ export class DadosVitaisPacienteComponent implements OnInit {
   }
 
   seguir() {
-    if(this.pressao && this.oxigenacao && this.temperatura && this.frequenciaRitmica) {
-      this.router.navigateByUrl(this.path2);
-    }
+    this.router.navigateByUrl(this.path2);
   }
 
 }

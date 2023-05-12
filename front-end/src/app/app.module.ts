@@ -17,8 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { MaisInfosComponent } from './mais-infos/mais-infos.component';
+import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-forms.module';
 
 import { PerfilService } from './perfil/perfil.service'
+
+import { Validacao } from './models/validacao.model';
 
 @NgModule({
   declarations: [
@@ -38,13 +41,15 @@ import { PerfilService } from './perfil/perfil.service'
     FormsModule,
     RouterModule,
     FichaAnamneseModule,
+    FichaAnamneseFormsModule,
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule
   ],
   providers: [
     HttpClientModule,
-    PerfilService
+    PerfilService,
+    Validacao,
   ],
   bootstrap: [AppComponent]
 })

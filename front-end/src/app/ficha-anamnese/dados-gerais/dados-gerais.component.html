@@ -1,60 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="identificacao-paciente.component.scss" media="(max-width: 600px)"> -->
-  <title>Dados Gerais</title>
-</head>
-<body>
-  <form
-    #dadosGerais="ngForm"
-    class="dadosGerais d-flex flex-column justify-content-center align-content-center align-items-center">
+<div class="main">
+  <div class="dadosGeraisContainer d-flex flex-column align-items-center justify-content-center">
     <h3>Dados Gerais</h3>
 
-    <div class="d-flex flex-column align-items-start">
-      <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
-      <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
-        <label for="nomeParamedico">Nome do Paramédico Responsável:</label>
-        <input name="nomeParamedico" class="form-control" type="text" [(ngModel)]="nomeParamedico" placeholder="Digite o nome do Paramédico Responsável">
+    <div class="dadosGerais d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-start">
+        <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
+        <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+          <label for="nomeParamedico">Nome do Paramédico Responsável</label>
+          <p>{{ nomeParamedico }}</p>
+        </div>
+
+        <!-- DOCUMENTO DE TRABALHO -->
+        <div class="docTrabalho d-flex flex-column mt-3 align-items-center">
+          <label for="docTrabalho">Documento de Trabalho</label>
+          <p>{{ documento_trabalho }}</p>
+        </div>
       </div>
 
-      <!-- CRM/COREN/DRF -->
-      <div class="crmCorenDrf d-flex flex-column mt-3 align-items-center">
-        <label for="crmCorenDrf">CRM/COREN/DRF:</label>
-        <input name="crmCorenDrf" class="form-control" type="text" [(ngModel)]="crmCorenDrf" placeholder="Digite o número do documento de trabalho">
+      <!-- DATA E ENDEREÇO -->
+      <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
+        <p>{{ date | date : 'long' }}</p>
+        <p>{{ localizacao }}</p>
       </div>
-    </div>
 
-    <!-- DATA E ENDEREÇO -->
-    <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
-      <p>{{ date | date : 'long' }}</p>
-      <p>Av. João de Camargo, 510, Centro</p>
-      <!-- <p>{{location.}}</p> -->
-    </div>
-
-    <!-- BOTÕES -->
-    <div class="btns d-flex flex-row justify-content-between">
-      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
-      <button
-        class="btnAssinarEnviar btn btn-primary"
-        type="button"
-        (click)="this.nomeParamedico && this.nomeParamedico.length > 6 && this.crmCorenDrf ? modalConfirmacao.hidden = false : alert()">
-        ASSINAR E ENVIAR
-      </button>
-    </div>
-  </form>
-
-  <!-- MODAL -->
-  <div #modalConfirmacao hidden>
-    <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
-      <h3>Assinar e Enviar</h3>
-      <div class="btns d-flex flex-row align-items-center justify-content-around">
-        <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
-        <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-around">
+        <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+        <button
+          class="btnFechar btn btn-primary"
+          type="button"
+          (click)="fechar()">
+          FECHAR
+        </button>
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>

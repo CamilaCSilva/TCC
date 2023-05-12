@@ -1,0 +1,84 @@
+$dark-red: #5c0505;
+$white: #ffff;
+$light-red: #d89b9b;
+//  #ffd6d6;
+
+@media screen and (min-width:1025px) {
+  .ficha {
+    position: absolute;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+
+    .header {
+      .fotoPerfil {
+        background-color: $white;
+        color: $dark-red;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+
+    .footer {
+      background-color: $white;
+      width: 100vw;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  .ficha {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+
+    .header {
+      .fotoPerfil {
+        background-color: $white;
+        color: $dark-red;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .footer {
+      background-color: $white;
+      width: 100vw;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px)  {
+  .ficha {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+
+    .header {
+      .fotoPerfil {
+        background-color: $white;
+        color: $dark-red;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .footer {
+      background-color: $white;
+      width: 100vw;
+    }
+  }
+
+}
