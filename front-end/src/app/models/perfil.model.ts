@@ -1,5 +1,5 @@
 // VOU PEGAR AS INFOS DIGITADAS
-export interface PerfilInfo {
+export class PerfilInfo {
   cpf: string;
   campo_escolha: string;
   nome_completo: string;
@@ -9,6 +9,3 @@ export interface PerfilInfo {
   senha: string;
 
 }
-
-
-export interface PerfilInfoExistenteArray extends Array<PerfilInfo> {}
