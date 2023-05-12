@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PerfilInfo, PerfilInfoArray } from './editar-perfil.model';
+import { PerfilInfo } from '../models/perfil.model';
 import { EditarPerfilService } from './editar-perfil.service';
 
 @Component({
@@ -19,9 +19,8 @@ export class EditarPerfilComponent implements OnInit {
   unidadeAtendimento: string;
   celular: string
   testResult: boolean = false;
-  perfilInfo: PerfilInfo;
-  perfilInfoArray: PerfilInfoArray;
-  perfil: any;
+  perfil: PerfilInfo;
+  perfil_atualizado: any;
 
   usuario = {
     nome: 'Isabela',
@@ -40,25 +39,22 @@ export class EditarPerfilComponent implements OnInit {
 
   listarProfissional(){
     this.editarPerfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
-    this.perfil = perfilInfo
+      this.perfil = perfilInfo;
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })
   }
 
-  voltar (){
+  salvar(f: any) {
+    this.perfil_atualizado = this.perfil;
+    console.log(this.perfil_atualizado)
+    console.log(f.value)
+    this.updateProfissional();
     this.router.navigateByUrl(this.path);
   }
 
-  salvar() {
-    if(this.testResult){
-      this.updateProfissional();
-      // this.router.navigateByUrl(this.path);
-    }
-  }
-
   updateProfissional(){
-    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil);
+    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado);
   }
 
   onAreaChange(areaAtuacao: string) {
@@ -89,5 +85,4 @@ export class EditarPerfilComponent implements OnInit {
       this.testResult = true;
     }
   }
-
 }
