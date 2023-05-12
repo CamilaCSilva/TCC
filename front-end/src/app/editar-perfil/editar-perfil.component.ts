@@ -20,6 +20,7 @@ export class EditarPerfilComponent implements OnInit {
   celular: string
   testResult: boolean = false;
   perfil: PerfilInfo;
+  perfil_atualizado: any;
 
   usuario = {
     nome: 'Isabela',
@@ -44,13 +45,16 @@ export class EditarPerfilComponent implements OnInit {
     })
   }
 
-  salvar() {
-    // this.updateProfissional();
+  salvar(f: any) {
+    this.perfil_atualizado = this.perfil;
+    console.log(this.perfil_atualizado)
+    console.log(f.value)
+    this.updateProfissional();
     this.router.navigateByUrl(this.path);
   }
 
   updateProfissional(){
-    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil);
+    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado);
   }
 
   onAreaChange(areaAtuacao: string) {

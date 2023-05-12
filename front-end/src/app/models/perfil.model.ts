@@ -6,7 +6,8 @@ export interface PerfilInfo {
   celular: string;
   documento_trabalho: string;
   unidade_de_atendimento: string;
-  senha: string
+  senha: string;
+
 }
 
 

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EditarPerfilService {
 
-  profissionalUrl = 'http://127.0.0.1:8000/profissionaldesaude/?cpf='
+  private profissionalUrl = 'http://127.0.0.1:8000/profissionaldesaude/?cpf='
 
   constructor(private http: HttpClient) { }
 
