@@ -1,6 +1,7 @@
 $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
+$black: black;
 
 
 .perfilContainer {
@@ -45,7 +46,7 @@ $light-red: #b87676;
     border: none;
     padding: 1rem;
 
-    .nomeCompleto, .sexo, .crmCorenDrf, .cpf, .unidadeAtendimento, .celular {
+    .nomeCompleto, .sexo, .docTrabalho, .cpf, .unidadeAtendimento, .celular {
       width: 18em;
 
       & label {
@@ -55,7 +56,7 @@ $light-red: #b87676;
       }
 
       & p {
-        color: $white;
+        color: $black;
         font-size: 18px;
         border: none;
         border-radius: 20px;

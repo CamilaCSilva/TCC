@@ -1,6 +1,7 @@
 $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
+$black: black;
 
 
 .infosContainer {
@@ -47,16 +48,16 @@ $light-red: #b87676;
     .site, .telefone {
       color: $white;
       border: none;
-      font-weight: bold;
       border-radius: 20px;
 
       & p {
         font-size: 22px;
+        color: $dark-red;
+        font-weight: bold;
       }
 
       & a {
-        color: $dark-red;
-        font-weight: bold;
+        color: $black;
         font-size: 18px;
       }
     }

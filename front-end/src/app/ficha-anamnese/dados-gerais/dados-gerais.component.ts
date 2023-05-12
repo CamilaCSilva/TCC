@@ -9,18 +9,15 @@ import { Router } from '@angular/router';
 })
 export class DadosGeraisComponent implements OnInit {
 
-  path1: string = 'home/ficha/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
+  path1: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
   path2: string = 'home';
   nomeParamedico: string;
-  crmCorenDrf: string;
+  documento_trabalho: string;
   date: Date = new Date();
   alertMessage: string = "";
-  // location: Location;
-  // lat: any;
-  // lng: any;
+  localizacao: string;
 
   constructor(private router: Router) {
-    // this.location = location;
   }
 
   ngOnInit(): void {
@@ -37,21 +34,7 @@ export class DadosGeraisComponent implements OnInit {
     alert('Dados incompletos');
   }
 
-  enviar() {
+  fechar() {
     this.router.navigateByUrl(this.path2);
   }
-
-  // getUserLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(position => {
-  //       this.lat = position.coords.latitude;
-  //       this.lng = position.coords.longitude;
-  //       alert('Location accessed')
-  //     },function(){
-  //       alert('User not allowed')
-  //     },{timeout:10000});
-  //   } else {
-  //     console.log("User not allow")
-  //   }
-  // }
 }

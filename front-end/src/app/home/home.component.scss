@@ -1,102 +1,126 @@
 $dark-red: #5c0505;
 $light-red: #b87676;
 $white: #ffff;
-
-.cabecalho {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-left: 10px;
-
-  .fotoPerfil {
-    background-color: $white;
-    border-radius: 100%;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    color: $dark-red;
-
-    & img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-
-  .botoesHeader {
-    gap: 20px;
-  }
-}
+$black: black;
 
 .main {
 	background: url(/assets/images/background.png);
 	background-size: cover;
 	min-height: 86vh;
-}
+  width: 100vw;
+  padding: 1rem;
+  margin-right: auto;
+  margin-left: auto;
 
-.exit {
-	max-width: 35px;
-	max-height: 35px;
-}
+  .headerGeral {
+    .nav {
+      display: inline-block;
+      gap: 10px 450px;
 
-input {
-	background: $light-red;
-	border: none;
-	border-radius: 20px;
-	display: flex;
-	flex-direction: row;
-	padding: 1rem;
-}
 
-img {
-	width: 50px;
-	height: 50px;
-	cursor: pointer;
-}
+      .botoesHeader {
+        gap: 20px;
 
-#anamnese {
-  & ul {
+        & input {
+          color: $black;
+          background: $light-red;
+          border: none;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: row;
+          padding: 1rem;
+        }
+
+        .fotoPerfil {
+          background-color: $white;
+          border-radius: 100%;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+          color: $dark-red;
+
+          & img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .exit {
+          max-width: 35px;
+          max-height: 35px;
+        }
+      }
+    }
+
+    .titulo {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .anamnese {
     list-style: none;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
+
+    & li {
+      width: 60vw;
+      align-items: center;
+      background-color: $light-red;
+      border-radius: 8px;
+      padding: 18px 26px;
+      box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
+      margin-top: 4px;
+      list-style: none;
+
+      .nomeData {
+        & h3 {
+          font-size: 24px;
+          color: $dark-red;
+        }
+
+        & p {
+          font-size: 18px;
+          color: $dark-red;
+          margin-top: 2px;
+        }
+
+      }
+
+      .observacoes {
+        & p {
+          font-size: 18px;
+          color: $black;
+          margin-top: 2px;
+        }
+      }
+    }
+
+
   }
-  & li {
+
+  .btns {
+    display: flex;
+    position: fixed;
+    top: 44.5em;
+    justify-content: center;
     align-items: center;
-    background-color: $light-red;
-    border-radius: 8px;
-    padding: 18px 26px;
-    box-shadow: 0 20px 36px -16px rgba(0, 0, 0, 0.1);
-    margin-top: 4px;
-    list-style: none;
-  }
-  & h3 {
-    font-size: 24px;
-    color: $dark-red;
-  }
-  & p {
-    font-size: 17px;
-    color: $dark-red;
-    margin-top: 2px;
-  }
-}
+    align-content: center;
 
-.btns {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-  .botao {
-    border-radius: 25px;
-    width: 65px;
-    height: 60px;
-    border: none;
-    font-size: 25px;
-    background-color: $dark-red;
-    color: $white;
+    .btn {
+      border-radius: 20px;
+      width: 65px;
+      height: 60px;
+      border: none;
+      font-size: 25px;
+      background-color: $dark-red;
+      color: $white;
 
-    &:hover {
-      background-color: $white;
-      color: $dark-red;
+      &:hover {
+        background-color: $white;
+        color: $dark-red;
+      }
     }
   }
 }
-

@@ -1,6 +1,7 @@
 $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
+$black: black;
 // #ffd6d6;
 
 .btnProximo, .btnAnterior {
@@ -23,18 +24,17 @@ $light-red: #b87676;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
-    .dadosAtendimento {
+    .dadosAtendimentoContainer {
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 30vw;
-      height: 75vh;
+      height: 70vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -46,62 +46,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      & h3 {
-        font-weight: bold;
-      }
-
-      .smallFields {
-        width: 30vw;
-        align-items: center;
-
-        .nivelDor {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
+      .dadosAtendimento {
+        & h3 {
+          font-weight: bold;
         }
 
-        .prioridade {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
 
           & p {
             font-size: 18px;
-          }
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-
-          & select {
-            height: 4vh;
-            border-radius: 20px;
+            color: $black;
           }
         }
 
-      }
-
-      .sintomas, .observacoes {
-        font-size: 18px;
-
-        & textarea {
+        .btns {
           width: 27.5vw;
-          height: 7vh;
-
-          border-radius: 20px;
+          font-size: 18px;
+          margin-top: 40px;
         }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }
@@ -109,14 +75,13 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
-    .dadosAtendimento {
+    .dadosAtendimentoContainer {
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 65vw;
@@ -132,62 +97,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      & h3 {
-        font-weight: bold;
-      }
-
-      .smallFields {
-        width: 30vw;
-        align-items: center;
-
-        .nivelDor {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
+      .dadosAtendimento {
+        & h3 {
+          font-weight: bold;
         }
 
-        .prioridade {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
 
           & p {
             font-size: 18px;
-          }
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-
-          & select {
-            height: 4vh;
-            border-radius: 20px;
+            color: $black;
           }
         }
 
-      }
-
-      .sintomas, .observacoes {
-        font-size: 18px;
-
-        & textarea {
+        .btns {
           width: 27.5vw;
-          height: 7vh;
-
-          border-radius: 20px;
+          font-size: 18px;
+          margin-top: 40px;
         }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }
@@ -195,15 +126,13 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
 
-  body {
-
+  .main {
     border-radius: 20px;
 
-    .dadosAtendimento {
+    .dadosAtendimentoContainer {
       background-color: $light-red;
       color: $dark-red;
       border-radius: 20px;
-      font-weight: bold;
 
       //Spacing
       width: 90vw;
@@ -219,57 +148,28 @@ $light-red: #b87676;
       bottom: 0;
       margin: auto;
 
-      .smallFields {
-        width: 30vw;
-        align-items: center;
-
-        .nivelDor {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
+      .dadosAtendimento {
+        & h3 {
+          font-weight: bold;
         }
 
-        .prioridade {
-          width: 7.5em;
-          font-size: 18px;
-          align-items: center;
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            font-size: 20px;
+            font-weight: bold;
+          }
 
           & p {
             font-size: 18px;
-          }
-
-          & input {
-            width: 4em;
-            border-radius: 20px;
-          }
-
-          & select {
-            height: 4vh;
-            border-radius: 20px;
+            color: $black;
           }
         }
-      }
 
-      .sintomas, .observacoes {
-        font-size: 18px;
-
-        & textarea {
+        .btns {
           width: 27.5vw;
-          height: 7vh;
-
-          border-radius: 20px;
+          font-size: 18px;
+          margin-top: 40px;
         }
-      }
-
-      .btns {
-        width: 27.5vw;
-        font-size: 18px;
-        margin-top: 40px;
       }
     }
   }
