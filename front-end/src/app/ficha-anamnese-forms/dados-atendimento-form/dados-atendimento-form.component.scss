@@ -1,0 +1,320 @@
+$dark-red: #5c0505;
+$white: #ffff;
+$light-red: #b87676;
+// #ffd6d6;
+
+.btnProximo, .btnAnterior {
+  background-color: $dark-red;
+  color: $white;
+  border-style: none;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-red;
+    font-weight: bold;
+  }
+}
+
+.btnAnterior, .btnProximo {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width:1025px) {
+
+  .main {
+
+    border-radius: 20px;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 30vw;
+      height: 85vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+      }
+
+      .smallFieldsContainer {
+
+        .smallFields {
+          width: 27.5vw;
+          align-items: center;
+
+          .idade {
+            width: 4em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
+
+            & div {
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 27.5vw;
+          height: 7vh;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        width: 27.5vw;
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  .main {
+
+    border-radius: 20px;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 65vw;
+      height: 85vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+      }
+
+      .smallFieldsContainer {
+
+        .smallFields {
+          align-items: center;
+
+          .idade {
+            width: 4em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
+
+            & div {
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 40vw;
+          height: 7vh;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        width: 27.5vw;
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+
+  .main {
+
+    border-radius: 20px;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 95vw;
+      height: 100vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+      }
+
+      .smallFieldsContainer {
+
+        .smallFields {
+          align-items: center;
+
+          .idade {
+            width: 4em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .tipoSangue {
+            width: 7.5em;
+            font-size: 18px;
+            align-items: center;
+
+            & input {
+              width: 4em;
+              border-radius: 20px;
+            }
+          }
+
+          .sexo {
+            margin-bottom: 1.25em;
+            align-items: center;
+
+            & label {
+              font-size: 18px;
+            }
+
+            & div {
+              height: 0.5em;
+
+              & div {
+                & label {
+                  font-size: 15px;
+                  margin-bottom: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .alergias , .medicacoesUsadas, .historicoDoencas {
+        font-size: 18px;
+
+        & textarea {
+          width: 40vw;
+          height: 7vh;
+
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        width: 27.5vw;
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
