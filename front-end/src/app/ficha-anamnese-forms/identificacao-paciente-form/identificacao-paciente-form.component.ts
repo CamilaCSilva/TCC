@@ -15,29 +15,26 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   celular: string;
   message: string = '';
   testResult: boolean = false;
-  tipo: string | null;
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.tipo = this.activatedRoute.snapshot.queryParamMap.get("tipo");
   }
 
   seguir() {
     this.verificaDados();
     if(this.testResult){
-      this.router.navigate([this.path2], { queryParams: { tipo: this.tipo } } );
+      this.router.navigateByUrl(this.path2);
     }
   }
 
   voltar() {
-    this.router.navigate([this.path1], { queryParams: { tipo: this.tipo } } );
+    this.router.navigateByUrl(this.path1);
   }
 
   private verificaDados() {
-    if(this.nomeCompleto && this.nomeCompleto.length < 6 && this.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
+    if(this.nomeCompleto && this.nomeCompleto.length < 6) {
       alert('Nome incompleto');
-      console.log('Passou aqui');
       throw new Error('Nome incompleto');
     }
     else if(this.cpf && this.cpf.length < 11 || this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$')) == null) {

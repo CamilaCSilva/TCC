@@ -20,6 +20,7 @@
     </div>
   </div>
 
+  <div class="d-flex flex-column align-items-center justify-content-center">
   <!-- FICHAS DISPONÍVEIS -->
   <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
     <li id="fichas" *ngFor="let paciente of pacientes">
@@ -39,3 +40,5 @@
     <button (click)="adicionarFicha()" class="btn botao">+</button>
   </div>
 </div>
+</div>
+<app-footer></app-footer>

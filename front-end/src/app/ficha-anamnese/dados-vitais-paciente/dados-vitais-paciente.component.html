@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados Vitais do Paciente</title>
-</head>
-<body>
+
+<div class="main">
   <form
     #dadosVitais="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
@@ -43,11 +36,10 @@
       </div>
 
       <!-- BOTÕES -->
-      <div class="btns d-flex flex-row justify-content-between">
+      <div class="btns d-flex flex-row justify-content-around">
         <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
         <button class="btnProximo btn btn-primary rounded-circle" type="submit">></button>
       </div>
     </div>
   </form>
-</body>
-</html>
+</div>

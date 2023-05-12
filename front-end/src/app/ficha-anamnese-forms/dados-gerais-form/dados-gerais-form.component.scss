@@ -29,7 +29,7 @@ $black: black;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosGerais {
@@ -85,23 +85,34 @@ $black: black;
         }
       }
 
-      .modal {
-        background-color: $light-red;
-        border-radius: 20px;
+    }
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-        position: relative;
+      .modal {
+        position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         margin: auto;
 
+        background-color: $white;
+        border-radius: 20px;
+        width: 30em;
+        height: 10em;
+
         & h3 {
           color: $dark-red;
         }
 
         .btns {
-          background-color: $light-red;
+          // background-color: $light-red;
           gap: 20px;
 
           & button {
@@ -109,7 +120,7 @@ $black: black;
             background-color: $dark-red;
 
             &:hover {
-              background-color: $white;
+              background-color: $light-red;
               color: $dark-red;
               font-weight: bold;
             }
@@ -121,7 +132,7 @@ $black: black;
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosGerais {
@@ -163,40 +174,52 @@ $black: black;
       }
 
       .btns {
-        width: 27.5vw;
+        width: 50vw;
         font-size: 18px;
         margin-top: 40px;
+        gap: 20px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
 
-      .modal {
-        background-color: $light-red;
-        border-radius: 20px;
+    }
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
 
-        position: relative;
+      .modal {
+        position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         margin: auto;
 
+        background-color: $white;
+        border-radius: 20px;
+        width: 30em;
+        height: 10em;
+
         & h3 {
           color: $dark-red;
         }
 
         .btns {
+          // background-color: $light-red;
           gap: 20px;
-          background-color: $light-red;
 
           & button {
             color: $white;
             background-color: $dark-red;
 
             &:hover {
-              background-color: $white;
+              background-color: $light-red;
               color: $dark-red;
               font-weight: bold;
             }
@@ -204,12 +227,11 @@ $black: black;
         }
       }
     }
-
   }
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosGerais {
@@ -251,40 +273,53 @@ $black: black;
       }
 
       .btns {
-        width: 27.5vw;
+        width: 50vw;
         font-size: 18px;
         margin-top: 40px;
+        gap: 20px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
 
-      .modal {
-        background-color: $light-red;
-        border-radius: 20px;
+    }
 
-        position: relative;
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .modal {
+        position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         margin: auto;
 
+        background-color: $white;
+        border-radius: 20px;
+        width: 30em;
+        height: 10em;
+
         & h3 {
           color: $dark-red;
         }
 
         .btns {
-          background-color: $light-red;
-          width: 27.5vw;
+          // background-color: $light-red;
+          gap: 20px;
 
           & button {
             color: $white;
             background-color: $dark-red;
 
             &:hover {
-              background-color: $white;
+              background-color: $light-red;
               color: $dark-red;
               font-weight: bold;
             }
@@ -292,6 +327,5 @@ $black: black;
         }
       }
     }
-
   }
 }
