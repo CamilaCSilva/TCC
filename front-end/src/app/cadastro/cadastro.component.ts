@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CadastroService } from './cadastro.service';
-import { CadastroInfo, CadastroInfoArray } from './cadastro.model';
 import { Router } from '@angular/router';
+import { PerfilInfo } from '../models/perfil.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,49 +12,41 @@ export class CadastroComponent {
 
   path: string = 'login';
   string = 'Faça seu cadastro!'
-  nomeCompleto: string;
-  areaAtuacao: string = 'medico';
-  documento_trabalho: string;
-  cpf: string;
-  unidadeAtendimento: string;
-  celular: string
-  senha: string;
-  senhaConfirmacao: string;
-  testResult: boolean = false;
-  cadastroInfo: CadastroInfo;
-  cadastroInfoArray: CadastroInfoArray;
+  areaAtuacao: string;
+  cadastroInfo: PerfilInfo;
 
   constructor(private router: Router, private cadastroService: CadastroService) {}
 
   ngOnInit(): void {}
 
-  cadastrar() {
-    this.verificaDados();
-    if(this.testResult && this.documento_trabalho && this.unidadeAtendimento) {
+  cadastrar(cadastro: any) {
+    if(this.verificaDados(cadastro)) {
       this.router.navigateByUrl(this.path);
-      // this.cadastroInfo = {
-      //   nomeCompleto: this.nomeCompleto,
-      //   areaAtuacao: this.areaAtuacao,
-      //   documento_trabalho: this.documento_trabalho,
-      //   cpf: this.cpf,
-      //   unidadeAtendimento: this.unidadeAtendimento,
-      //   celular: this.celular,
-      //   senha: this.senha,
-      //   senhaConfirmacao: this.senhaConfirmacao
-      // };
-      // this.cadastroInfoArray = [this.cadastroInfo];
-      // this.setCadastroInfo(this.cadastroInfoArray);
+      this.cadastroInfo = {
+        nome_completo: cadastro.value.nomeCompleto,
+        campo_escolha: cadastro.value.seletor,
+        documento_trabalho: cadastro.value.doc,
+        cpf: cadastro.value.cpf,
+        unidade_de_atendimento: cadastro.value.unidadeAtendimento,
+        celular: cadastro.value.celular,
+        senha: cadastro.value.senha,
+      };
+      this.setCadastroInfo();
     }
   }
 
-  setCadastroInfo(cadastroInfoArray: CadastroInfoArray): any {
-    this.cadastroService.setCadastroInfo(cadastroInfoArray);
+  setCadastroInfo() {
+    this.cadastroService.setCadastroInfo(this.cadastroInfo).subscribe(
+      success => console.log('Sucesso!'),
+      error => console.log(error),
+      () => console.log('request completo')
+    );
   }
 
   onAreaChange(areaAtuacao: string) {
-    if(areaAtuacao == 'medico') { console.log('Médico(a)'); }
-    else if(areaAtuacao == 'enfermeiro') { console.log('Enfermeiro(a)'); }
-    else if(areaAtuacao == 'paramedico') { console.log('Paramédico(a)'); }
+    if(areaAtuacao == 'CRM') { console.log('Médico(a)'); }
+    else if(areaAtuacao == 'COREN') { console.log('Enfermeiro(a)'); }
+    else if(areaAtuacao == 'DRF') { console.log('Paramédico(a)'); }
   }
 
   getArea(event: Event) {
@@ -62,25 +54,43 @@ export class CadastroComponent {
     return this.areaAtuacao;
   }
 
-  private verificaDados() {
-    if(this.nomeCompleto && this.nomeCompleto.length < 6 && this.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
+  private verificaDados(cadastro: any) {
+    let testResult: boolean = false;
+    if(cadastro.value.nomeCompleto == '' && cadastro.value.nomeCompleto.length < 6 && cadastro.value.nomeCompleto.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
       alert('Nome incompleto');
       throw new Error('Nome incompleto');
     }
-    else if (this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+    else if ( cadastro.value.seletor == '' ){
+      alert('Escolha sua área de atuação');
+      throw new Error('Escolha sua área de atuação');
+    }
+    else if(cadastro.value.doc == ''){
+      alert('Preencha seu documento de trabalho');
+      throw new Error('Preencha seu documento de trabalho');
+    }
+    else if (cadastro.value.cpf == '' && cadastro.value.cpf.length < 11 || !cadastro.value.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
-    else if (this.celular && this.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
+    else if(cadastro.value.unidadeAtendimento == ''){
+      alert('Preencha o campo de qual unidade você atua');
+      throw new Error('Preencha o campo de qual unidade você atua');
+    }
+    else if (cadastro.value.celular == '' && cadastro.value.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-    else if (this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if (cadastro.value.senha == '' && !cadastro.value.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }
-    else {
-      this.testResult = true;
+    else if(cadastro.value.senha != cadastro.value.confirmaSenha){
+      alert('As senha não são iguais');
+      throw new Error('As senha não são iguais');
     }
+    else {
+      testResult = true;
+    }
+    return testResult
   }
 }

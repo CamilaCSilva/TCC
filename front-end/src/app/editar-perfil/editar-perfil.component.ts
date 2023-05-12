@@ -18,7 +18,6 @@ export class EditarPerfilComponent implements OnInit {
   cpf: string;
   unidadeAtendimento: string;
   celular: string
-  testResult: boolean = false;
   perfil: PerfilInfo;
   perfil_atualizado: any;
 
@@ -80,6 +79,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   private verificaDados() {
+    let testResult: boolean = false;
     if(this.nomeCompleto && this.nomeCompleto.length < 6) {
       alert('Nome incompleto');
       throw new Error('Nome incompleto');
@@ -93,7 +93,8 @@ export class EditarPerfilComponent implements OnInit {
       throw new Error('Celular incorreto');
     }
     else {
-      this.testResult = true;
+      testResult = true;
     }
+    return testResult;
   }
 }
