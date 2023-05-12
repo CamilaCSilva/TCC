@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfilService } from './perfil.service';
+import { PerfilInfo } from '../models/perfil.model';
 
 @Component({
   selector: 'app-perfil',
@@ -12,7 +13,7 @@ export class PerfilComponent implements OnInit {
   path: string = 'perfil/editar-perfil';
   string = 'Perfil';
   testResult: boolean = false;
-  perfil: any;
+  perfil: PerfilInfo;
 
   usuario: any = {
     nome: 'Isabela',
@@ -31,7 +32,7 @@ export class PerfilComponent implements OnInit {
 
   listarProfissional(){
     this.perfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
-    this.perfil = perfilInfo
+    this.perfil = perfilInfo;
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })

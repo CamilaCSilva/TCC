@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PerfilInfo, PerfilInfoArray } from './editar-perfil.model';
+import { PerfilInfo } from '../models/perfil.model';
 import { EditarPerfilService } from './editar-perfil.service';
 
 @Component({
@@ -19,9 +19,7 @@ export class EditarPerfilComponent implements OnInit {
   unidadeAtendimento: string;
   celular: string
   testResult: boolean = false;
-  perfilInfo: PerfilInfo;
-  perfilInfoArray: PerfilInfoArray;
-  perfil: any;
+  perfil: PerfilInfo;
 
   usuario = {
     nome: 'Isabela',
@@ -40,15 +38,15 @@ export class EditarPerfilComponent implements OnInit {
 
   listarProfissional(){
     this.editarPerfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
-    this.perfil = perfilInfo
+      this.perfil = perfilInfo;
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })
   }
 
   salvar() {
-    this.updateProfissional();
-    // this.router.navigateByUrl(this.path);
+    // this.updateProfissional();
+    this.router.navigateByUrl(this.path);
   }
 
   updateProfissional(){
