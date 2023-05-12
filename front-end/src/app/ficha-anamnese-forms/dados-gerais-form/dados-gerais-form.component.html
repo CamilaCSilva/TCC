@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="identificacao-paciente.component.scss" media="(max-width: 600px)"> -->
-  <title>Dados Gerais</title>
-</head>
-<body>
+<div class="main">
   <form
     #dadosGerais="ngForm"
     class="dadosGerais d-flex flex-column justify-content-center align-items-center">
@@ -34,7 +25,7 @@
     </div>
 
     <!-- BOTÕES -->
-    <div class="btns d-flex flex-row justify-content-between">
+    <div class="btns d-flex flex-row justify-content-around">
       <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
       <button
         class="btnAssinarEnviar btn btn-primary"
@@ -47,13 +38,14 @@
 
   <!-- MODAL -->
   <div #modalConfirmacao hidden>
-    <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
-      <h3>Assinar e Enviar</h3>
-      <div class="btns d-flex flex-row align-items-center justify-content-around">
-        <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
-        <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+    <div class="modalContainer">
+      <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
+        <h3>Assinar e Enviar</h3>
+        <div class="btns d-flex flex-row align-items-center justify-content-around">
+          <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
+          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+        </div>
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>

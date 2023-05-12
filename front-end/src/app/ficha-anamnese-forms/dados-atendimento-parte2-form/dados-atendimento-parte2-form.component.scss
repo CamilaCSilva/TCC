@@ -23,7 +23,7 @@ $light-red: #b87676;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -109,7 +109,7 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -137,13 +137,17 @@ $light-red: #b87676;
       }
 
       .smallFields {
-        width: 30vw;
+        width: 45vw;
         align-items: center;
 
         .nivelDor {
           width: 7.5em;
           font-size: 18px;
           align-items: center;
+
+          & label {
+            width: 6em;
+          }
 
           & input {
             width: 4em;
@@ -177,7 +181,7 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 27.5vw;
+          width: 40vw;
           height: 7vh;
 
           border-radius: 20px;
@@ -195,7 +199,7 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
 
-  body {
+  .main {
 
     border-radius: 20px;
 
@@ -220,13 +224,17 @@ $light-red: #b87676;
       margin: auto;
 
       .smallFields {
-        width: 30vw;
+        width: 45vw;
         align-items: center;
 
         .nivelDor {
           width: 7.5em;
           font-size: 18px;
           align-items: center;
+
+          & label {
+            width: 6em;
+          }
 
           & input {
             width: 4em;
@@ -259,7 +267,7 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 27.5vw;
+          width: 40vw;
           height: 7vh;
 
           border-radius: 20px;

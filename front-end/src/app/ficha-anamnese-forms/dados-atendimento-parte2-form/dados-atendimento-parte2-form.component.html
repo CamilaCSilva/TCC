@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados para Atendimento 2</title>
-</head>
-<body>
+<div class="main">
   <form
     #dadosAtendimentoParte2="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
@@ -24,7 +16,15 @@
         <!-- NÍVEL DE DOR -->
         <div class="nivelDor d-flex flex-column mt-2">
           <label for="nivelDor">Nível de Dor</label>
-          <input class="form-control" name="nivelDor" type="text" [(ngModel)]="nivelDor" placeholder="1-10">
+          <input
+            class="form-control"
+            name="nivelDor"
+            type="number"
+            [(ngModel)]="nivelDor"
+            placeholder="1-10"
+            rangeValidator
+            rangeMin="1"
+            rangeMax="10">
         </div>
 
         <!-- PRIORIDADE -->
@@ -46,11 +46,10 @@
       </div>
 
       <!-- BOTÕES -->
-      <div class="btns d-flex flex-row justify-content-between">
+      <div class="btns d-flex flex-row justify-content-around">
         <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar()"><</button>
         <button class="btnProximo btn rounded-circle" type="submit">></button>
       </div>
     </div>
   </form>
-</body>
-</html>
+</div>

@@ -25,23 +25,3 @@ footer {
   max-width: 120px;
   max-height: 70px;
 }
-
-@media (max-width: 576px) {
-  .cabecalho {
-    .logo {
-      padding: 2rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  footer {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem;
-  }
-}

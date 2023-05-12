@@ -19,12 +19,10 @@ export class DadosAtendimentoFormComponent implements OnInit {
   historicoDoencas: string;
   testResult: boolean = false;
   formGroup: FormGroup;
-  tipo: string | null;
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.tipo = this.activatedRoute.snapshot.queryParamMap.get("tipo");
   }
 
   voltar(){
