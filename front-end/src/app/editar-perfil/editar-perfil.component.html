@@ -3,7 +3,7 @@
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column align-items-center justify-content-between">
     <div class="nav d-flex flex-row justify-content-between">
-      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+      <h2>Bem vinda(o), {{ perfil?.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row justify-content-end">
         <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
         <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
@@ -23,48 +23,49 @@
         <!-- NOME -->
         <div class="d-flex flex-column">
           <label for="nome">Nome</label>
-          <input type="text"  id="nome" name="nome" value={{usuario.nome}}>
+          <input type="text"  id="nome" name="nome" value={{perfil?.nome_completo}}>
         </div>
 
         <!-- ÁREA ATUAÇÃO -->
         <div class="d-flex flex-column">
           <label>Área de Atuação</label>
-          <select class="minimal" [value]="areaAtuacao" name="seletor" (change)="onAreaChange(getArea($event))">
-            <option value="medico" selected>Médico(a)</option>
-            <option value="enfermeiro">Enfermeiro(a)</option>
-            <option value="paramedico">Paramédico(a)</option>
+          <select class="minimal" name="seletor">
+            <option value="atu">{{ perfil?.campo_escolha }}</option>
+            <option value="par">Paramédico(a)</option>
           </select>
         </div>
 
-        <!-- DOCUMENTO DE TRABALHO -->
+        <!-- CRM/COREN/DRF -->
         <div class="d-flex flex-column">
-          <label for="doc">Documento de Trabalho</label>
-          <input type="text"  id="doc" name="doc" value={{usuario.docmentro_trabalho}}>
+          <label for="doc">CRM\COREN\DRF</label>
+          <input type="text"  id="doc" name="doc" value={{perfil?.documento_trabalho}}>
         </div>
 
         <!-- CPF -->
-        <div class="cpf d-flex flex-column">
+        <div class="d-flex flex-column">
           <label for="cpf">CPF</label>
-          <input type="text"  id="cpf" name="cpf" value={{usuario.cpf}} readonly disabled>
+          <input type="text"  id="cpf" name="cpf" value={{perfil?.cpf}}>
         </div>
 
         <!-- UNIDADE DE ATENDIMENTO -->
         <div class="d-flex flex-column">
           <label for="unidadeAtendimento">Unidade de Atendimento</label>
-          <input type="text"  id="unidadeAtendimento" name="unidadeAtendimento" value={{usuario.unidade_atendimento}}>
+          <input type="text"  id="unidadeAtendimento" name="unidadeAtendimento" value={{perfil?.unidade_de_atendimento}}>
         </div>
 
         <!-- CELULAR -->
         <div class="d-flex flex-column">
           <label for="celular">Celular</label>
-          <input type="tel"  id="celular" name="celular" value={{usuario.celular}}>
+          <input type="tel"  id="celular" name="celular" value={{perfil?.celular}}>
         </div>
 
         <!-- BOTÕES -->
-        <div class="btns">
+        <div class="btns d-flex flex-row justify-content-around">
+          <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
           <button type="submit" class="btn btnSalvar">SALVAR</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

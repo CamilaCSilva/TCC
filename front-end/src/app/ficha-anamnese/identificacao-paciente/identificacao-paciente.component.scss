@@ -28,7 +28,7 @@ $black: black;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .idPacienteContainer {
@@ -78,7 +78,7 @@ $black: black;
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
-  body {
+  .main {
     border-radius: 20px;
 
     .idPacienteContainer {
@@ -119,9 +119,10 @@ $black: black;
         }
 
         .btns {
-          width: 27.5vw;
+          width: 50vw;
           font-size: 18px;
           margin-top: 40px;
+          gap: 20px;
         }
       }
     }
@@ -129,7 +130,7 @@ $black: black;
 }
 
 @media (max-width: 480px) and (min-width: 0px) {
-  body {
+  .main {
     border-radius: 20px;
 
     .idPacienteContainer {
@@ -169,9 +170,10 @@ $black: black;
         }
 
         .btns {
-          width: 27.5vw;
+          width: 50vw;
           font-size: 18px;
           margin-top: 40px;
+          gap: 20px;
         }
       }
     }

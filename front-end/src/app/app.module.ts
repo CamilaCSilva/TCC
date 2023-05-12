@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { MaisInfosComponent } from './mais-infos/mais-infos.component';
 import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-forms.module';
 
+import { PerfilService } from './perfil/perfil.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,10 @@ import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    PerfilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

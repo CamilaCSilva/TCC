@@ -23,7 +23,7 @@ $black: black;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -81,7 +81,7 @@ $black: black;
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -138,7 +138,7 @@ $black: black;
 
 @media (max-width: 480px) and (min-width: 0px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {

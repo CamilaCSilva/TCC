@@ -62,6 +62,7 @@ $black: black;
     list-style: none;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 
     & li {
       width: 60vw;
@@ -101,12 +102,13 @@ $black: black;
 
   .btns {
     display: flex;
+    position: fixed;
+    top: 44.5em;
     justify-content: center;
     align-items: center;
     align-content: center;
 
     .btn {
-      position: fixed;
       border-radius: 20px;
       width: 65px;
       height: 60px;

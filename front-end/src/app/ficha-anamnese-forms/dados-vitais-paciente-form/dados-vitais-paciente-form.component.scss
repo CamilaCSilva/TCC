@@ -22,7 +22,7 @@ $light-red: #b87676;
 
 @media screen and (min-width:1025px) {
 
-  body {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -76,7 +76,7 @@ $light-red: #b87676;
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  body {
+  .main {
 
     border-radius: 20px;
 
@@ -87,7 +87,7 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 30vw;
+      width: 75vw;
       height: 55vh;
       margin-top: 3em;
       padding: 3em;
@@ -131,7 +131,7 @@ $light-red: #b87676;
 
 @media (max-width: 480px) and (min-width: 0px) {
 
-  body {
+  .main {
 
     border-radius: 20px;
 

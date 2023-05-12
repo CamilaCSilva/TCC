@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Identificação do Paciente</title>
-</head>
-<body>
+<div class="main">
   <!-- INFOS -->
   <div class="idPacienteContainer d-flex flex-column align-items-center justify-content-center">
     <h3>Identificação do Paciente</h3>
@@ -16,28 +8,27 @@
         <!-- NOME COMPLETO -->
         <div class="nomeCompleto d-flex flex-column mt-3">
           <label for="nomeCompleto">Nome Completo</label>
-          <p>Valeria de Cássia</p>
+          <p>{{ nomeCompleto }}</p>
         </div>
 
         <!-- CPF -->
         <div class="cpf d-flex flex-column">
           <label for="cpf">CPF</label>
-          <p>123.456.789-10</p>
+          <p>{{ cpf }}</p>
         </div>
 
         <!-- CELULAR -->
         <div class="celular d-flex flex-column mt-3">
           <label for="celular">Celular</label>
-          <p>37 99356-1245</p>
+          <p>{{ celular }}</p>
         </div>
       </div>
 
       <!-- BOTÕES -->
-      <div class="btns d-flex flex-row justify-content-between">
+      <div class="btns d-flex flex-row justify-content-around">
         <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
         <button class="btnProximo btn btn-primary rounded-circle" type="button" (click)="seguir()">></button>
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>
