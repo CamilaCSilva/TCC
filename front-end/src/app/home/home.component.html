@@ -1,41 +1,44 @@
-<div class="main">
-  <div class="container">
-    <div class="header">
-      <div class="cabecalho">
-        <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+<div class="main d-flex flex-column align-items-center justify-content-around">
+  <!-- HEADER -->
+  <div class="headerGeral d-flex flex-column align-items-center justify-content-between">
+    <div class="nav d-flex flex-row justify-content-between">
+      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+      <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
+        <!-- DATA -->
+        <input type="date" name="data" [(ngModel)]="data" (keyup.enter)="filtrarPorData(data)">
 
-        <div class="botoesHeader d-flex flex-row justify-content-around align-items-center">
-          <!-- DATA -->
-          <input type="date" name="data" [(ngModel)]="data" (keyup.enter)="filtrarPorData(data)">
+        <!-- PERFIL LINK -->
+        <div class="fotoPerfil d-flex align-items-center justify-content-center">
+          <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
+        </div>
 
-          <!-- PERFIL LINK -->
-          <div class="fotoPerfil d-flex align-items-center justify-content-center">
-            <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
-          </div>
-
-          <!-- SAIR -->
-          <div class="iconeSair">
-            <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
-          </div>
+         <!-- SAIR -->
+         <div class="iconeSair">
+          <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- FICHAS DISPONÍVEIS -->
-    <ul id="anamnese">
-      <li *ngFor="let paciente of pacientes">
-        <div class="nomeData d-flex flex-row justify-content-between">
-          <h3>{{ paciente.nome }}</h3>
-          <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
-        </div>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+  <!-- FICHAS DISPONÍVEIS -->
+  <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
+    <li id="fichas" *ngFor="let paciente of pacientes">
+      <div class="nomeData d-flex flex-row justify-content-between">
+        <h3><a (click)="visualizarFicha()">{{ paciente.nome }}</a></h3>
+        <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
+      </div>
 
+      <div class="observacoes">
         <p class="pri">{{ paciente.prioridade }}</p>
         <p class="obs">{{ paciente.observacao }}</p>
-      </li>
-    </ul>
+      </div>
+    </li>
+  </ul>
 
-    <div class="btns">
-      <button (click)="adicionarFicha()" class="btn botao">+</button>
-    </div>
+  <div class="btns">
+    <button (click)="adicionarFicha()" class="btn botao">+</button>
   </div>
 </div>
+</div>
+<app-footer></app-footer>
