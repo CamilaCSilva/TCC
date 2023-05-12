@@ -32,7 +32,7 @@ export class CadastroComponent {
       senha: cadastro.value.senha,
     };
     if(this.validacao.verificaDadosPerfil(this.cadastroInfo)) {
-      if(cadastro.senha != cadastro.value.confirmaSenha){
+      if(this.cadastroInfo.senha != cadastro.value.confirmaSenha){
         alert('As senha não são iguais');
         throw new Error('As senha não são iguais');
       }
