@@ -21,6 +21,8 @@ import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-
 
 import { PerfilService } from './perfil/perfil.service'
 
+import { Validacao } from './models/validacao.model';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { PerfilService } from './perfil/perfil.service'
   ],
   providers: [
     HttpClientModule,
-    PerfilService
+    PerfilService,
+    Validacao,
   ],
   bootstrap: [AppComponent]
 })

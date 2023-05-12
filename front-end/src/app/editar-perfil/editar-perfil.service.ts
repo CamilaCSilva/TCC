@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PerfilInfo } from '../models/perfil.model';
+import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,7 +17,7 @@ export class EditarPerfilService {
     return this.http.get(`${this.profissionalUrl}${cpf}`) as Observable<PerfilInfo>;
   }
 
-  updatePerfilInfo(cpf: any, perfilInfos: any) {
-    return this.http.put(`${this.profissionalUrl}${cpf}`, perfilInfos);
+  updatePerfilInfo(cpf: any, perfil: PerfilInfo) {
+    return this.http.put(`${this.profissionalUrl}${cpf}`, perfil).pipe(take(1));
   }
 }

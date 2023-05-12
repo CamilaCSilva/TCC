@@ -33,6 +33,9 @@ export class PerfilComponent implements OnInit {
   listarProfissional(){
     this.perfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
     this.perfil = perfilInfo;
+    if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
+    else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
+    else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })
