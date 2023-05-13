@@ -3,16 +3,11 @@
 ## 1 - Descrição do projeto :four_leaf_clover:
 
 ## 2 - Pré-requesitos :desktop_computer:
-- ### VS Code
-- ### Python
-```
-https://www.python.org/downloads/
-``` 
+- ### [VS Code](READMEAUX/VSCODE.md)
+- ### [Python](READMEAUX/PYTHON.md)
+- ### [NVM](READMEAUX/NVM.md)
+- ### [ANGULAR](READMEAUX/ANGULAR.md)
 
-
-```
-https://code.visualstudio.com/
-```
 ### Clonando repositório:
 ```
 $ git clone "https://github.com/Matheusilva431/Score_AG002.git"
