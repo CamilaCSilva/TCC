@@ -2,13 +2,14 @@
 > Status do Projeto: Em desenvolvimento :warning:
 ## 1 - Descrição do projeto :four_leaf_clover:
 
-## 2 - Como o usuário pode utilizar :desktop_computer:
-### Instalando o python:
+## 2 - Pré-requesitos :desktop_computer:
+- ### VS Code
+- ### Python
 ```
 https://www.python.org/downloads/
 ``` 
 
-### Instalando o VS Code:
+
 ```
 https://code.visualstudio.com/
 ```
