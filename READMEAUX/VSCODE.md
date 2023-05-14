@@ -1,5 +1,3 @@
-[voltar]: init
-
 # Visual Studio Code
 
 ## Como instalar o Visual Studio Code no Windows
@@ -38,4 +36,4 @@ Após executar o arquivo instalado site os seguintes passo:
    
    <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/9a3ce184-f8f6-4db3-8327-5e1de28c7eff width="700" >
 
-#[VOLTAR](../README.md, test)
+[<kbd>VOLTAR</kbd>](../README.md)
