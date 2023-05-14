@@ -3,7 +3,7 @@
 ## 1 - Descrição do projeto :four_leaf_clover:
 
 ## 2 - Pré-requesitos :desktop_computer:
-- ### [VS Code](READMEAUX/VSCODE.md)
+- ### [VS Code](READMEAUX/VSCODE.md, "test")
 - ### [Python](READMEAUX/PYTHON.md)
 - ### [NVM](READMEAUX/NVM.md)
 - ### [ANGULAR](READMEAUX/ANGULAR.md)
