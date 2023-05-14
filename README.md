@@ -3,10 +3,11 @@
 ## 1 - Descrição do projeto :four_leaf_clover:
 
 ## 2 - Pré-requesitos :desktop_computer:
-- ### [VS Code](READMEAUX/VSCODE.md, "test")
-- ### [Python](READMEAUX/PYTHON.md)
-- ### [NVM](READMEAUX/NVM.md)
-- ### [ANGULAR](READMEAUX/ANGULAR.md)
+
+|[<kbd>VS Code</kbd>](READMEAUX/VSCODE.md)|[<kbd>Python</kbd>](READMEAUX/PYTHON.md)|
+| :---: | :---: |
+|[<kbd>NVM</kbd>](READMEAUX/NVM.md)|[<kbd>ANGULAR</kbd>](READMEAUX/ANGULAR.md)|
+
 
 ### Clonando repositório:
 ```
