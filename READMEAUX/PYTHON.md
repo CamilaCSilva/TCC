@@ -29,6 +29,6 @@ Após executar o arquivo instalado do site os seguintes passo:
      ```
    - Se tudo estiver certo vai aparecer conforme abaixo:
      
-     <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/411bd30b-b45c-4e31-9056-d5000c266a47 width="700" >
+     <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/c129045a-8215-45c4-8359-e778df9d9311 width="700" >
 
 [<kbd>VOLTAR</kbd>](../README.md)
