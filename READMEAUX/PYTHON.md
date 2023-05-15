@@ -19,20 +19,16 @@ Após executar o arquivo instalado do site os seguintes passo:
    
    <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/93e2cef3-31fe-47be-8456-d4c490788e04 width="700" >
   
--  Marque todas as opção e Clique em próximo
-
-   <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/3db9fd22-5f4b-486c-bcd6-a4be92013d4f width="700" >
-
--  Clique em instalar
-   
-   <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/4eb61c9c-189a-4264-bee2-60bc64ec61a6 width="700" >
-   
--  Clique em concluir
-  
-   <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/1ef394db-c740-4a64-96b0-09c6d9524b35 width="700" >
-
--  Por fim costumize conforme seu gosto
-   
-   <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/9a3ce184-f8f6-4db3-8327-5e1de28c7eff width="700" >
+-  Agora vamos verificar se instalou corretamente
+   - Abrar o `CMD` ➡️ <kbd>Win</kbd> ➡️ digite `CMD` ➡️ <kbd>Enter</kbd>
+   - Digite os seguintes comandos
+     ```
+      python
+      print("Hello World")
+      exit()
+     ```
+   - Se tudo estiver certo vai aparecer conforme abaixo:
+     
+     <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/411bd30b-b45c-4e31-9056-d5000c266a47 width="700" >
 
 [<kbd>VOLTAR</kbd>](../README.md)
