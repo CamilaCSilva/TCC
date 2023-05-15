@@ -51,6 +51,5 @@ Após executar o arquivo instalado do site os seguintes passo:
 <h2 align= "center" >
 
 [<kbd>VOLTAR</kbd>](../README.md)
-[<kbd> ⬆️VOLTAR AO TOPO </kbd>](#como-instalar-o-nvm-no-windows)
 
 </h2>
