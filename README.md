@@ -69,7 +69,7 @@ $ git clone "https://github.com/CamilaCSilva/tcc.git"
  ```
   cd .\tcc\front-end\
   npm install
-  npm start
+  npm start ou ng s
  ```
  <img src=https://github.com/CamilaCSilva/tcc/assets/85804680/a7d368a8-b263-4888-8d3a-a6991095f5ed width="700" >
  
