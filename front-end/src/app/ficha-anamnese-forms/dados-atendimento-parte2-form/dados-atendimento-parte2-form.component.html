@@ -2,14 +2,14 @@
   <form
     #dadosAtendimentoParte2="ngForm"
     class="dadosAtendimento d-flex flex-column justify-content-center align-content-center align-items-center"
-    (ngSubmit)="seguir()">
+    (ngSubmit)="onSubmit(dadosAtendimentoParte2)">
     <h3>Dados para Atendimento</h3>
 
     <div class="d-flex flex-column align-items-center">
       <!-- SINTOMAS -->
       <div class="sintomas d-flex flex-column mt-2">
-        <label for="alergias">Sintomas/Queixas</label>
-        <textarea class="form-control" name="alergias" type="text" [(ngModel)]="sintomas" placeholder="Descreva os sintomas/queixas observados(as)"></textarea>
+        <label for="sintomas">Sintomas/Queixas</label>
+        <textarea ngModel class="form-control" name="sintomas" type="text" [(ngModel)]="sintomas" placeholder="Descreva os sintomas/queixas observados(as)"></textarea>
       </div>
 
       <div class="smallFields d-flex flex-row justify-content-around">
@@ -17,6 +17,7 @@
         <div class="nivelDor d-flex flex-column mt-2">
           <label for="nivelDor">Nível de Dor</label>
           <input
+            ngModel
             class="form-control"
             name="nivelDor"
             type="number"
@@ -30,7 +31,7 @@
         <!-- PRIORIDADE -->
         <div class="prioridade d-flex flex-column align-itens-center mt-2">
           <p>Prioridade</p>
-          <select [value]="prioridade" class="btn form-select" name="selectPrioridade" (change)="onPrioridadeChange(getPrioridade($event))">
+          <select ngModel class="btn form-select" [value]="prioridade" (change)="onPrioridadeChange(getPrioridade($event))">
             <option value="nao-urgente" selected>Não Urgente</option>
             <option value="pouco-urgente">Pouco Urgente</option>
             <option value="urgente">Urgente</option>
@@ -42,13 +43,13 @@
       <!-- OBSERVAÇÕES -->
       <div class="observacoes d-flex flex-column mt-2">
         <label for="observacoes">Observações</label>
-        <textarea class="form-control" name="observacoes" [(ngModel)]="observacoes" placeholder="Digite as observações necessárias"></textarea>
+        <textarea ngModel class="form-control" name="observacoes" [(ngModel)]="observacoes" placeholder="Digite as observações necessárias"></textarea>
       </div>
 
       <!-- BOTÕES -->
       <div class="btns d-flex flex-row justify-content-around">
-        <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar()"><</button>
-        <button class="btnProximo btn rounded-circle" type="submit">></button>
+        <button class="btnAnterior btn rounded-circle" type="submit" (click)="botaoVoltar()"><</button>
+        <button class="btnProximo btn rounded-circle"  type="submit" (click)="botaoSeguir()">></button>
       </div>
     </div>
   </form>

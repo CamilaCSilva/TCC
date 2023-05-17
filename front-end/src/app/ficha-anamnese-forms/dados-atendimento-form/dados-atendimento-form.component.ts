@@ -11,29 +11,51 @@ export class DadosAtendimentoFormComponent implements OnInit {
 
   path1: string = 'home/formularios/identificacao-paciente-form';
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form';
-  idade: number;
-  tipoSangue: string;
-  sexo: string = 'f';
-  alergias: string;
-  medicacoesUsadas: string;
-  historicoDoencas: string;
-  testResult: boolean = false;
+  sexo: String = '';
+  tipoSangue: string = '';
+  alergias: string = '';
+  medicacoesUsadas: string = '';
+  historicoDoencas: string = '';
+  idade: String = '';
+  anamnese: any;
   formGroup: FormGroup;
+  bVoltar: boolean = false;
+  bSeguir: boolean = false;
 
-  constructor(private router: Router, private activatedRoute : ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute : ActivatedRoute) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+   }
 
   ngOnInit(): void {
-  }
-
-  voltar(){
-    this.router.navigateByUrl(this.path1);
-  }
-
-  seguir() {
-    this.verificaDados();
-    if(this.idade && this.testResult && this.sexo != '' && this.medicacoesUsadas.length > 0) {
-      this.router.navigateByUrl(this.path2);
+    if(this.anamnese.nomeCompleto != ''){
+      this.sexo = this.anamnese.sexo;
+      this.idade = this.anamnese.idade;
+      this.tipoSangue = this.anamnese.tipoSangue;
+      this.alergias = this.anamnese.alergias;
+      this.medicacoesUsadas = this.anamnese.medicacoesUsadas;
+      this.historicoDoencas = this.anamnese.historicoDoencas;
     }
+  }
+  
+  onSubmit(dadosAtendimento: any){
+    this.criarAnamnese(dadosAtendimento);
+    if(this.bSeguir == true){
+      if(this.verificaDados(this.anamnese))
+        this.router.navigateByUrl(this.path2, this.anamnese);
+    }
+    else if(this.bVoltar == true){
+      this.router.navigateByUrl(this.path1, this.anamnese);
+    }
+  }
+
+  botaoVoltar(){
+    this.bVoltar = true;
+    this.bSeguir = false;
+  }
+  botaoSeguir(){
+    this.bSeguir = true;
+    this.bVoltar = false;
   }
 
   onSexChange() {
@@ -48,13 +70,33 @@ export class DadosAtendimentoFormComponent implements OnInit {
     }
   }
 
-  private verificaDados() {
-    if(this.tipoSangue && this.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
+  private criarAnamnese(dadosAtendimento: any){
+    this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
+  }
+
+  private verificaDados(dadosAtendimento: any) {
+    console.log(dadosAtendimento);
+    let testResult: boolean = false;
+    if(dadosAtendimento.idade == undefined){
+      alert('Insira a idade')
+      throw new Error('Insira a idade');
+    }
+    else if(dadosAtendimento.tipoSangue == undefined || dadosAtendimento.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
+      alert('Tipo sanguíneo inválido');
       throw new Error('Tipo sanguíneo inválido');
+    } 
+    else if(dadosAtendimento.sexo == undefined){
+      alert('Escolha o sexo');
+      throw new Error('Escolha o sexo');
+    }
+    else if (dadosAtendimento.medicacoesUsadas == undefined){
+      alert('Escreva sobre os medicamentos');
+      throw new Error('Escreva sobre os medicamentos');
     }
     else {
-      this.testResult = true;
+      testResult = true;
     }
+    return testResult;
   }
 
 }
