@@ -64,12 +64,12 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
       alert('Insira os sintomas');
       throw new Error('Insira os sintomas');
     }
-    else if(this.anamnese.nivelDor == undefined){
+    else if(this.anamnese.nivelDor == undefined || this.anamnese.nivelDor == ''){
       alert('Insira o nivel de dor do paciente');
       throw new Error('Insira o nivel de dor do paciente');
 
     }
-    else if(this.anamnese.prioridade == ''){
+    else if(this.anamnese.prioridade == undefined || this.anamnese.prioridade == ''){
       alert('Insira a prioridade do paciente');
       throw new Error('Insira a prioridade do paciente');
     }
@@ -84,7 +84,6 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
     else if(prioridade == 'pouco-urgente') { console.log('Pouco urgente'); }
     else if(prioridade == 'urgente') { console.log('Urgente'); }
     else if(prioridade == 'emergencia') { console.log('Emergência'); }
-    return prioridade;
   }
 
   getPrioridade(event: Event) {

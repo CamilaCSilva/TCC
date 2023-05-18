@@ -31,8 +31,8 @@
         <!-- PRIORIDADE -->
         <div class="prioridade d-flex flex-column align-itens-center mt-2">
           <p>Prioridade</p>
-          <select ngModel class="btn form-select" [value]="prioridade" (change)="onPrioridadeChange(getPrioridade($event))">
-            <option value="nao-urgente" selected>Não Urgente</option>
+          <select ngModel class="btn form-select" [(ngModel)]="prioridade" name="prioridade" (change)="onPrioridadeChange(getPrioridade($event))">
+            <option value="nao-urgente">Não Urgente</option>
             <option value="pouco-urgente">Pouco Urgente</option>
             <option value="urgente">Urgente</option>
             <option value="emergencia">Emergência</option>

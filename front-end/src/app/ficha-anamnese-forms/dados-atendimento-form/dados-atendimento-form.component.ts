@@ -77,19 +77,19 @@ export class DadosAtendimentoFormComponent implements OnInit {
   private verificaDados(dadosAtendimento: any) {
     console.log(dadosAtendimento);
     let testResult: boolean = false;
-    if(dadosAtendimento.idade == undefined){
+    if(dadosAtendimento.idade == undefined || dadosAtendimento.idade == ''){
       alert('Insira a idade')
       throw new Error('Insira a idade');
     }
-    else if(dadosAtendimento.tipoSangue == undefined || dadosAtendimento.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
+    else if(dadosAtendimento.tipoSangue == undefined || dadosAtendimento.tipoSangue == '' || dadosAtendimento.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
       alert('Tipo sanguíneo inválido');
       throw new Error('Tipo sanguíneo inválido');
     } 
-    else if(dadosAtendimento.sexo == undefined){
+    else if(dadosAtendimento.sexo == undefined || dadosAtendimento.sexo == ''){
       alert('Escolha o sexo');
       throw new Error('Escolha o sexo');
     }
-    else if (dadosAtendimento.medicacoesUsadas == undefined){
+    else if (dadosAtendimento.medicacoesUsadas == undefined || dadosAtendimento.medicacoesUsadas == ''){
       alert('Escreva sobre os medicamentos');
       throw new Error('Escreva sobre os medicamentos');
     }

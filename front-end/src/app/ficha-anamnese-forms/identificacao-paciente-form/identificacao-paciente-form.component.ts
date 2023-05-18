@@ -11,7 +11,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   path1: string = 'home';
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form';
   message: string = '';
-  anamnese: any = '';
+  anamnese: any;
   nomeCompleto: string = '';
   cpf: string = '';
   celular: string = '';
