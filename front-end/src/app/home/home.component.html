@@ -20,25 +20,25 @@
     </div>
   </div>
 
-  <div class="d-flex flex-column align-items-center justify-content-center">
-  <!-- FICHAS DISPONÍVEIS -->
-  <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
-    <li id="fichas" *ngFor="let paciente of pacientes">
-      <div class="nomeData d-flex flex-row justify-content-between">
-        <h3><a (click)="visualizarFicha()">{{ paciente.nome }}</a></h3>
-        <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
-      </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <!-- FICHAS DISPONÍVEIS -->
+      <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
+        <li id="fichas" *ngFor="let paciente of pacientes">
+          <div class="nomeData d-flex flex-row justify-content-between">
+            <h3><a (click)="visualizarFicha()">{{ paciente.nome }}</a></h3>
+            <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
+          </div>
 
-      <div class="observacoes">
-        <p class="pri">{{ paciente.prioridade }}</p>
-        <p class="obs">{{ paciente.observacao }}</p>
-      </div>
-    </li>
-  </ul>
+          <div class="observacoes">
+            <p class="pri">{{ paciente.prioridade }}</p>
+            <p class="obs">{{ paciente.observacao }}</p>
+          </div>
+        </li>
+      </ul>
 
-  <div class="btns">
-    <button (click)="adicionarFicha()" class="btn botao">+</button>
-  </div>
-</div>
+      <div class="btns">
+        <button (click)="adicionarFicha()" class="btn botao">+</button>
+      </div>
+    </div>
 </div>
 <app-footer></app-footer>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
   historicoDoencas: string = '';
   idade: String = '';
   anamnese: any;
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
 
