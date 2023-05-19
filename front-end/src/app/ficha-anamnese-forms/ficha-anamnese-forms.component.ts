@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Anamnese } from '../models/anamnese.model';
+import { PerfilInfo } from '../models/perfil.model';
 
 @Component({
   selector: 'app-ficha-anamnese-forms',
@@ -8,12 +10,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FichaAnamneseFormsComponent implements OnInit {
 
-  nomePaciente: string = 'Isabela';
+  usuario: any = {
+    'nomeParamedico': '',
+    'documento_trabalho': '',
+  };
+  nomePaciente: string = this.usuario['nomeParamedico'];
   tipo: string | null;
+  anamnese: Anamnese;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    const nav = this.router.getCurrentNavigation();
+    this.usuario = nav?.extras;
+   }
 
   ngOnInit(): void {
-    this.router.navigateByUrl('home/formularios/identificacao-paciente-form');
+    this.usuario['nomeParamedico'] = 'Matheus';
+    this.usuario['documento_trabalho'] = '654256';
+    this.router.navigateByUrl('home/formularios/identificacao-paciente-form', this.usuario);
   }
+
 }

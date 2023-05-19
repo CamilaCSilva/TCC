@@ -15,20 +15,74 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
   temperatura: number;
   frequenciaRitmica: number;
   testResult: boolean;
+  anamnese: any;
+  bVoltar: boolean = false;
+  bSeguir: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+   }
 
   ngOnInit(): void {
+    if(this.anamnese.nomeCompleto != ''){
+      this.pressao = this.anamnese.pressao;
+      this.oxigenacao = this.anamnese.oxigenacao;
+      this.temperatura = this.anamnese.temperatura;
+      this.frequenciaRitmica = this.anamnese.frequenciaRitmica;
+    }
+  }
+
+  onSubmit(dadosAtendimentoParte2: any){
+    this.criarAnamnese(dadosAtendimentoParte2);
+    if(this.bSeguir == true){
+      if(this.verificaDados(this.anamnese)){
+        this.router.navigateByUrl(this.path2, this.anamnese);
+      }
+    }
+    else if(this.bVoltar == true){
+      this.router.navigateByUrl(this.path1, this.anamnese);
+    }
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1);
+    this.bVoltar = true;
+    this.bSeguir = false;
   }
 
   seguir() {
-    if(this.pressao && this.oxigenacao && this.temperatura && this.frequenciaRitmica) {
-      this.router.navigateByUrl(this.path2);
+    this.bSeguir = true;
+    this.bVoltar = false;
+  }
+
+  private criarAnamnese(dadosAtendimento: any){
+    this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
+  }
+
+  private verificaDados(dadosAtendimento: any) {
+    console.log(dadosAtendimento);
+    let testResult: boolean = false;
+    if(this.anamnese.pressao == undefined || this.anamnese.pressao == '') {
+      alert('Insira a pressão do paciente');
+      throw new Error('Insira a pressão do paciente');
     }
+    else if(this.anamnese.oxigenacao == undefined || this.anamnese.oxigenacao == ''){
+      alert('Insira a oxigenação do paciente');
+      throw new Error('Insira a oxigenação do paciente');
+
+    }
+    else if(this.anamnese.temperatura == undefined || this.anamnese.temperatura == ''){
+      alert('Insira a temperatura do paciente');
+      throw new Error('Insira a temperatura do paciente');
+    }
+    else if(this.anamnese.frequenciaRitmica == undefined || this.anamnese.frequenciaRitmica == ''){
+      alert('Insira a frequência ritmica do paciente');
+      throw new Error('Insira a frequência ritmica do paciente');
+    }
+    else {
+      testResult = true;
+    }
+    return testResult;
   }
 
 }
