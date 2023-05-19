@@ -54,11 +54,11 @@ export class DadosGeraisFormComponent implements OnInit {
   enviar(dadosGerais: any) {
     this.criarAnamnese(dadosGerais);
     if(this.verificaDados(this.anamnese)){
-      // this.coverteParaAnamnese();
       this.anamnese.data = this.data;
       this.anamnese.hora = this.horas;
+      this.coverteParaAnamnese();
       this.setAnamneseInfo()
-      // this.router.navigateByUrl(this.path2);
+      this.router.navigateByUrl(this.path2);
     }
   }
 
@@ -67,32 +67,34 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   private coverteParaAnamnese(){
-    this.anamneseEnviar.cpf = '';
-    this.anamneseEnviar.nome_completo = this.anamnese.nomeCompleto == undefined ? '' : this.anamnese.cpf;
-    this.anamneseEnviar.celular = this.anamnese.celular == undefined ? '' : this.anamnese.cpf;
-    this.anamneseEnviar.sexo = this.anamnese.sexo == undefined ? '' : this.anamnese.celular;
-    this.anamneseEnviar.idade = this.anamnese.idade == undefined ? '' : this.anamnese.idade;
-    this.anamneseEnviar.tipo_sanguineo = this.anamnese.tipoSangue == undefined ? '' : this.anamnese.tipoSangue;
-    this.anamneseEnviar.alergias = this.anamnese.alergias == undefined ? '' : this.anamnese.alergias;
-    this.anamneseEnviar.medicacao_drogas = this.anamnese.medicacoesUsadas == undefined ? '' : this.anamnese.medicacoesUsadas;
-    this.anamneseEnviar.historico_doencas = this.anamnese.historicoDoencas == undefined ? '' : this.anamnese.historicoDoencas;
-    this.anamneseEnviar.queixa_principal = this.anamnese.sintomas == undefined ? '' : this.anamnese.sintomas;
-    this.anamneseEnviar.nivel_dor = this.anamnese.nivelDor == undefined ? '' : this.anamnese.nivelDor;
-    this.anamneseEnviar.classificacao_risco = this.anamnese.prioridade == undefined ? '' : this.anamnese.prioridade;
-    this.anamneseEnviar.observacoes = this.anamnese.observacoes == undefined ? '' : this.anamnese.observacoes;
-    this.anamneseEnviar.pressao_sanguinea = this.anamnese.pressao == undefined ? '' : this.anamnese.pressao;
-    this.anamneseEnviar.oxigenacao = this.anamnese.oxigenacao == undefined ? '' : this.anamnese.oxigenacao;
-    this.anamneseEnviar.temperatura = this.anamnese.temperatura == undefined ? '' : this.anamnese.temperatura;
-    this.anamneseEnviar.frequencia_ritmica = this.anamnese.frequenciaRitmica == undefined ? '' : this.anamnese.frequenciaRitmica;
-    this.anamneseEnviar.data = this.data;
-    this.anamneseEnviar.hora = this.horas;
-    this.anamneseEnviar.local = this.anamnese.localizacao == undefined ? '' : this.anamnese.cpf;
-    this.anamneseEnviar.nome_paramedico_responsavel = this.anamnese.nomeParamedico == undefined ? '' : this.anamnese.nomeParamedico;
-    this.anamneseEnviar.documento_trabalho_paramedico = this.anamnese.documento_trabalho == undefined ? '' : this.anamnese.documento_trabalho;
+    this.anamneseEnviar = {
+      cpf: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.cpf,
+      nome_completo: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.nomeCompleto,
+      celular: this.anamnese.celular == undefined ? 'N/A' : this.anamnese.celular,
+      sexo: this.anamnese.sexo == undefined ? 'N/A' : this.anamnese.sexo,
+      idade: this.anamnese.idade == undefined ? 'N/A' : this.anamnese.idade,
+      tipo_sanguineo: this.anamnese.tipoSangue == undefined ? 'N/A' : this.anamnese.tipoSangue,
+      alergias: this.anamnese.alergias == undefined ? 'N/A' : this.anamnese.alergias,
+      medicacao_drogas: this.anamnese.medicacoesUsadas == undefined ? 'N/A' : this.anamnese.medicacoesUsadas,
+      historico_doencas: this.anamnese.historicoDoencas == undefined ? 'N/A' : this.anamnese.historicoDoencas,
+      queixa_principal: this.anamnese.sintomas == undefined ? 'N/A' : this.anamnese.sintomas,
+      nivel_dor: this.anamnese.nivelDor == undefined ? 'N/A' : this.anamnese.nivelDor,
+      classificacao_risco: this.anamnese.prioridade == undefined ? 'N/A' : this.anamnese.prioridade,
+      observacoes: this.anamnese.observacoes == undefined ? 'N/A' : this.anamnese.observacoes,
+      pressao_sanguinea: this.anamnese.pressao == undefined ? 'N/A' : this.anamnese.pressao,
+      oxigenacao: this.anamnese.oxigenacao == undefined ? 'N/A' : this.anamnese.oxigenacao,
+      temperatura: this.anamnese.temperatura == undefined ? 'N/A' : this.anamnese.temperatura,
+      frequencia_ritmica: this.anamnese.frequenciaRitmica == undefined ? 'N/A' : this.anamnese.frequenciaRitmica,
+      data: this.data,
+      hora: this.horas,
+      local: this.anamnese.localizacao == undefined ? 'N/A' : this.anamnese.localizacao,
+      nome_paramedico_responsavel: this.anamnese.nomeParamedico == undefined ? 'N/A' : this.anamnese.nomeParamedico,
+      documento_trabalho_paramedico: this.anamnese.documento_trabalho == undefined ? 'N/A' : this.anamnese.documento_trabalho,
+    }
   }
 
   setAnamneseInfo() {
-    this.dadosGeraisFormService.setAnamneseInfo(this.anamnese).subscribe(
+    this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
       success => console.log('Sucesso!'),
       error => console.log(error),
       () => console.log('request completo')
