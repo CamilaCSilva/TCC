@@ -30,7 +30,7 @@ const routes: Routes = [
     component: FichaAnamneseComponent,
     children: [
       {
-        path: '',
+        path: 'fichas',
         redirectTo: 'identificacao-paciente',
         pathMatch: 'full'
       },

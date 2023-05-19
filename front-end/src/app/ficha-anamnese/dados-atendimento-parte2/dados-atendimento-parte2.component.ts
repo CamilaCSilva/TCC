@@ -14,16 +14,25 @@ export class DadosAtendimentoParte2Component implements OnInit {
   nivelDor: number;
   prioridade: string = 'nao-urgente';
   observacoes: string;
+  anamnese: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sintomas = this.anamnese.queixa_principal;
+    this.nivelDor = this.anamnese.nivel_dor;
+    this.prioridade = this.anamnese.classificacao_risco;
+    this.observacoes = this.anamnese.observacoes;
+  }
 
   voltar() {
-    this.router.navigateByUrl(this.path1);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2);
+    this.router.navigateByUrl(this.path2, this.anamnese);
   }
 }

@@ -104,7 +104,7 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarFicha() {
-    this.router.navigateByUrl('/home/fichas/identificacao-paciente');
+    this.router.navigateByUrl('/home/fichas');
   }
 
   adicionarFicha() {

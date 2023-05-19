@@ -20,18 +20,29 @@ export class DadosAtendimentoComponent implements OnInit {
   testResult: boolean = false;
   formGroup: UntypedFormGroup;
   tipo: string | null;
+  anamnese: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+  }
 
   ngOnInit(): void {
+    console.log(this.anamnese)
+    this.sexo = this.anamnese.sexo;
+    this.idade = this.anamnese.idade;
+    this.tipoSangue = this.anamnese.tipo_sanguineo    ;
+    this.alergias = this.anamnese.alergias;
+    this.medicacoesUsadas = this.anamnese.medicacao_drogas;
+    this.historicoDoencas = this.anamnese.historico_doencas;
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2);
+    this.router.navigateByUrl(this.path2, this.anamnese);
   }
 
 }
