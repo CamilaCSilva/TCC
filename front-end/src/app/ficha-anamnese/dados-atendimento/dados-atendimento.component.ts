@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class DadosAtendimentoComponent implements OnInit {
   medicacoesUsadas: string;
   historicoDoencas: string;
   testResult: boolean = false;
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   tipo: string | null;
 
   constructor(private router: Router) { }
