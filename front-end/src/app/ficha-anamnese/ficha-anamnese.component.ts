@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FichaAnamneseComponent implements OnInit {
 
-  nomePaciente: string = 'Isabela';
+  nome_paramedico: string = 'Isabela';
   tipo: string | null;
 
   constructor(private router: Router) { }
