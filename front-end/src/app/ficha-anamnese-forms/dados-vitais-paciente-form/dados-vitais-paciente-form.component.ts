@@ -14,7 +14,6 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
   oxigenacao: number;
   temperatura: number;
   frequenciaRitmica: number;
-  testResult: boolean;
   anamnese: any;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
@@ -36,7 +35,7 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
   onSubmit(dadosAtendimentoParte2: any){
     this.criarAnamnese(dadosAtendimentoParte2);
     if(this.bSeguir == true){
-      if(this.verificaDados(this.anamnese)){
+      if(this.verificaDados()){
         this.router.navigateByUrl(this.path2, this.anamnese);
       }
     }
@@ -59,8 +58,7 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
     this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
   }
 
-  private verificaDados(dadosAtendimento: any) {
-    console.log(dadosAtendimento);
+  private verificaDados() {
     let testResult: boolean = false;
     if(this.anamnese.pressao == undefined || this.anamnese.pressao == '') {
       alert('Insira a pressão do paciente');

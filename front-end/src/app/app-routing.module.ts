@@ -30,7 +30,7 @@ const routes: Routes = [
     component: FichaAnamneseComponent,
     children: [
       {
-        path: '',
+        path: 'fichas',
         redirectTo: 'identificacao-paciente',
         pathMatch: 'full'
       },
@@ -61,7 +61,7 @@ const routes: Routes = [
     component: FichaAnamneseFormsComponent,
     children: [
       {
-        path: '',
+        path: 'formularios',
         redirectTo: 'identificacao-paciente-form',
         pathMatch: 'full'
       },
@@ -87,8 +87,8 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'perfil/editar-perfil', component: EditarPerfilComponent },
+  { path: 'home/perfil', component: PerfilComponent },
+  { path: 'home/perfil/editar-perfil', component: EditarPerfilComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, createNgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FichaAnamneseService } from './ficha-anamnese.service';
+import { Anamnese } from '../models/anamnese.model';
 
 @Component({
   selector: 'app-ficha-anamnese',
@@ -8,12 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FichaAnamneseComponent implements OnInit {
 
-  nome_paramedico: string = 'Isabela';
   tipo: string | null;
+  path1: string = "home/fichas/identificacao-paciente";
+  anamnese: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+  }
 
   ngOnInit(): void {
-    this.router.navigateByUrl('home/fichas/identificacao-paciente');
+    console.log(this.anamnese);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
+
 }

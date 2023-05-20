@@ -5,11 +5,11 @@
       <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
       <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
         <!-- DATA -->
-        <input type="date" name="data" [(ngModel)]="data" (keyup.enter)="filtrarPorData(data)">
+        <input type="date" name="data" [(ngModel)]="data" (input)="filtrarPorData(data)">
 
         <!-- PERFIL LINK -->
         <div class="fotoPerfil d-flex align-items-center justify-content-center">
-          <a routerLink="/perfil"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
+          <a (click)="visualizarPerfil()"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
         </div>
 
          <!-- SAIR -->
@@ -25,13 +25,13 @@
       <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
         <li id="fichas" *ngFor="let paciente of pacientes">
           <div class="nomeData d-flex flex-row justify-content-between">
-            <h3><a (click)="visualizarFicha()">{{ paciente.nome }}</a></h3>
+            <h3><a (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
             <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
           </div>
 
           <div class="observacoes">
-            <p class="pri">{{ paciente.prioridade }}</p>
-            <p class="obs">{{ paciente.observacao }}</p>
+            <p class="pri">{{ paciente.classificacao_risco }}</p>
+            <p class="obs">{{ paciente.observacoes }}</p>
           </div>
         </li>
       </ul>

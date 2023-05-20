@@ -19,7 +19,7 @@
 
       <!-- DATA E ENDEREÇO -->
       <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
-        <p>{{ date | date : 'long' }}</p>
+        <p> Data: {{ data | date: 'dd/MM/yyyy' }} - Hora: {{ hora }}</p>
         <p>{{ localizacao }}</p>
       </div>
 

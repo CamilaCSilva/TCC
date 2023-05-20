@@ -15,11 +15,12 @@ export class DadosGeraisFormComponent implements OnInit {
   nomeParamedico: string;
   documento_trabalho: string;
   date: Date = new Date();
-  data = this.date.getDate() + '/' + (this.date.getMonth()+1) + '/' + this.date.getFullYear();
+  data = this.date.getFullYear() + '-' + String(this.date.getMonth()+1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
   localizacao: string;
   anamnese: any;
   anamneseEnviar: any;
+  usuario: any;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
   alertMessage: string = "";
@@ -34,7 +35,7 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese.nomeCompleto;
+    this.nomeParamedico = this.anamnese.nomeParamedico;
     this.documento_trabalho = this.anamnese.documento_trabalho;
     this.localizacao = this.anamnese.localizacao;
     if(this.alertMessage != "") {
@@ -51,14 +52,14 @@ export class DadosGeraisFormComponent implements OnInit {
     alert('Dados incompletos');
   }
 
-  enviar(dadosGerais: any) {
-    this.criarAnamnese(dadosGerais);
+  enviar() {
     if(this.verificaDados(this.anamnese)){
       this.anamnese.data = this.data;
       this.anamnese.hora = this.horas;
       this.coverteParaAnamnese();
       this.setAnamneseInfo()
-      this.router.navigateByUrl(this.path2);
+      this.getuser();
+      this.router.navigateByUrl(this.path2, this.usuario);
     }
   }
 
@@ -93,7 +94,7 @@ export class DadosGeraisFormComponent implements OnInit {
     }
   }
 
-  setAnamneseInfo() {
+  private setAnamneseInfo() {
     this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
       success => console.log('Sucesso!'),
       error => console.log(error),
@@ -111,6 +112,16 @@ export class DadosGeraisFormComponent implements OnInit {
       testResult = true;
     }
     return testResult;
+  }
+
+  private getuser(){
+    this.usuario = {
+      nome: this.anamnese.nome,
+      cpfUsuario: this.anamnese.cpfUsuario,
+      documento_trabalho: this.anamnese.documento_trabalho,
+      tokem: this.anamnese.tokem,
+      cpfPaciente: '',
+    }
   }
 
   // getUserLocation() {

@@ -58,7 +58,6 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
   }
 
   private verificaDados(dadosAtendimento: any) {
-    console.log(dadosAtendimento);
     let testResult: boolean = false;
     if(this.anamnese.sintomas == undefined) {
       alert('Insira os sintomas');
