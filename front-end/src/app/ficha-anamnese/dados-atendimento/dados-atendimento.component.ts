@@ -29,12 +29,12 @@ export class DadosAtendimentoComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.anamnese)
-    this.sexo = this.anamnese.sexo;
-    this.idade = this.anamnese.idade;
+    this.sexo = this.anamnese.paciente.sexo;
+    this.idade = this.anamnese.paciente.idade;
     this.tipoSangue = this.anamnese.tipo_sanguineo    ;
-    this.alergias = this.anamnese.alergias;
-    this.medicacoesUsadas = this.anamnese.medicacao_drogas;
-    this.historicoDoencas = this.anamnese.historico_doencas;
+    this.alergias = this.anamnese.paciente.alergias;
+    this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
+    this.historicoDoencas = this.anamnese.paciente.historico_doencas;
   }
 
   voltar(){

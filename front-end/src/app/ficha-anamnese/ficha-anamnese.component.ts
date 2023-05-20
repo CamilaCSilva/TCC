@@ -20,17 +20,8 @@ export class FichaAnamneseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarAnamenese();
-  }
-
-  private listarAnamenese(){
-    this.fichaAnamneseService.getAnamneseInfo(this.anamnese.cpfPaciente).subscribe(anamneseInfo => {
-      this.anamnese = Object.assign({}, this.anamnese, anamneseInfo);
-      console.log(this.anamnese)
-      this.router.navigateByUrl(this.path1, this.anamnese);
-    }, err => {
-      console.log('Erro ao listar a anamnese', err)
-    })
+    console.log(this.anamnese);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
 }

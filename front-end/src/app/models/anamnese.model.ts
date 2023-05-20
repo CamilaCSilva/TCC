@@ -17,7 +17,7 @@ export class Anamnese {
   oxigenacao: String;
   temperatura: String;
   frequencia_ritmica: String;
-  data: String;
+  data: Date;
   hora: String;
   local: String;
   nome_paramedico_responsavel: String;

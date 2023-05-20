@@ -25,9 +25,9 @@ export class IdentificacaoPacienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nomeCompleto = this.anamnese.nome_completo;
-    this.cpf = this.anamnese.cpf;
-    this.celular = this.anamnese.celular;
+    this.nomeCompleto = this.anamnese.paciente.nome_completo;
+    this.cpf = this.anamnese.paciente.cpf;
+    this.celular = this.anamnese.paciente.celular;
   }
 
   seguir() {

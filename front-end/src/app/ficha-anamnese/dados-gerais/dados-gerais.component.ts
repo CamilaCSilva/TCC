@@ -13,7 +13,7 @@ export class DadosGeraisComponent implements OnInit {
   path2: string = 'home';
   nomeParamedico: string;
   documento_trabalho: string;
-  data: String;
+  data: Date;
   hora: String;
   anamnese: any;
   num: Int16Array
@@ -27,12 +27,11 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.anamnese.data.slice(0, 2))
-    this.nomeParamedico = this.anamnese.nome_paramedico_responsavel;
-    this.documento_trabalho = this.anamnese.documento_trabalho_paramedico;
-    this.localizacao = this.anamnese.localizacao;
-    this.data = this.anamnese.data
-    this.hora = this.anamnese.hora
+    this.nomeParamedico = this.anamnese.paciente.nome_paramedico_responsavel;
+    this.documento_trabalho = this.anamnese.paciente.documento_trabalho_paramedico;
+    this.localizacao = this.anamnese.paciente.localizacao;
+    this.data = this.anamnese.paciente.data
+    this.hora = this.anamnese.paciente.hora
     if(this.alertMessage != "") {
       alert(this.alertMessage);
     }
