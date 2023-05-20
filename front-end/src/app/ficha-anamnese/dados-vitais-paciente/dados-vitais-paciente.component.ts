@@ -14,19 +14,26 @@ export class DadosVitaisPacienteComponent implements OnInit {
   oxigenacao: number;
   temperatura: number;
   frequenciaRitmica: number;
-  testResult: boolean;
+  anamnese: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+  }
 
   ngOnInit(): void {
+    this.pressao = this.anamnese.pressao_sanguinea;
+    this.oxigenacao = this.anamnese.oxigenacao;
+    this.temperatura = this.anamnese.temperatura;
+    this.frequenciaRitmica = this.anamnese.frequencia_ritmica;
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2);
+    this.router.navigateByUrl(this.path2, this.anamnese);
   }
 
 }

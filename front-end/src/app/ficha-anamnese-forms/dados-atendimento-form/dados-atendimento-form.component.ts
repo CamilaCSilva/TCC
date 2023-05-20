@@ -59,13 +59,13 @@ export class DadosAtendimentoFormComponent implements OnInit {
   }
 
   onSexChange() {
-    if(this.sexo == 'f') {
+    if(this.sexo == 'F') {
       console.log('Feminino');
     }
-    if(this.sexo == 'm') {
+    if(this.sexo == 'M') {
       console.log('Masculino');
     }
-    if(this.sexo == 'o') {
+    if(this.sexo == 'O') {
       console.log('outro');
     }
   }
@@ -75,7 +75,6 @@ export class DadosAtendimentoFormComponent implements OnInit {
   }
 
   private verificaDados(dadosAtendimento: any) {
-    console.log(dadosAtendimento);
     let testResult: boolean = false;
     if(dadosAtendimento.idade == undefined || dadosAtendimento.idade == ''){
       alert('Insira a idade')

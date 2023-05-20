@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   pacientes = [
     {
       nome: 'Lucas Santos',
-      cpf: '987.234.567-45',
+      cpf: '98723456714',
       celular: '(35)99123-4567',
       idade: 25,
       tipo_sanguineo: 'O-',
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     },
     {
       nome: 'Margaret Tate',
-      cpf: '727.254.687-35',
+      cpf: '12345678910',
       celular: '(22)99253-4568',
       idade: 23,
       tipo_sanguineo: 'A-',
@@ -45,8 +45,8 @@ export class HomeComponent implements OnInit {
       data: '2021-04-22'
     },
     {
-      nome: 'Bernardo Silva',
-      cpf: '127.274.697-75',
+      nome: 'Sandro',
+      cpf: '98723456724',
       celular: '(13)99257-9567',
       idade: 35,
       tipo_sanguineo: 'AB+',
@@ -78,21 +78,24 @@ export class HomeComponent implements OnInit {
     // }
   ]
 
-  usuario = {
+  usuario: any = {
     nome: 'Isabela',
-    funcao: 'Profissional de Saúde',
-    docmentro_trabalho: 78965,
-    cpf: '123.456.789.10',
-    unidade_atendimento: 'Hospital Antônio Moreira da Costa',
-    celular: '(35)99123-4567'
+    cpfUsuario: '12345678910',
+    documento_trabalho: '78965',
+    tokem: '',
+    cpfPaciente: '',
   }
 
   data: Date;
   tipo: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    // this.usuario = nav?.extras;
+  }
 
   ngOnInit(): void {
+    console.log(this.usuario)
   }
 
   filtrarPorData(data: Date) {
@@ -103,12 +106,14 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  visualizarFicha() {
-    this.router.navigateByUrl('/home/fichas');
+  visualizarFicha(cpf: any) {
+    this.usuario.cpfPaciente = cpf;
+    console.log(this.usuario)
+    this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 
   adicionarFicha() {
-    this.router.navigateByUrl('/home/formularios/identificacao-paciente-form');
+    this.router.navigateByUrl('/home/formularios', this.usuario);
   }
 
 }

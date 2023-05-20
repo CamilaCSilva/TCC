@@ -10,13 +10,9 @@ import { PerfilInfo } from '../models/perfil.model';
 })
 export class FichaAnamneseFormsComponent implements OnInit {
 
-  usuario: any = {
-    'nomeParamedico': '',
-    'documento_trabalho': '',
-  };
-  nomePaciente: string = this.usuario['nomeParamedico'];
+  path1: string = 'home/formularios/identificacao-paciente-form'
+  usuario: any;
   tipo: string | null;
-  anamnese: Anamnese;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     const nav = this.router.getCurrentNavigation();
@@ -24,9 +20,7 @@ export class FichaAnamneseFormsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.usuario['nomeParamedico'] = 'Matheus';
-    this.usuario['documento_trabalho'] = '654256';
-    this.router.navigateByUrl('home/formularios/identificacao-paciente-form', this.usuario);
+    this.router.navigateByUrl(this.path1, this.usuario);
   }
 
 }

@@ -18,6 +18,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute) {
     const nav = this.router.getCurrentNavigation();
+    console.log(nav?.extras)
     this.anamnese = nav?.extras;
    }
 
@@ -41,7 +42,6 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   }
 
   private verificaDados(anamnese: any): boolean {
-    console.log(anamnese);
     let testResult: boolean = false;
     if(anamnese.nomeCompleto == undefined || anamnese.nomeCompleto.length < 6) {
       alert('Nome incompleto');

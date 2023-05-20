@@ -61,7 +61,7 @@ const routes: Routes = [
     component: FichaAnamneseFormsComponent,
     children: [
       {
-        path: '',
+        path: 'formularios',
         redirectTo: 'identificacao-paciente-form',
         pathMatch: 'full'
       },
