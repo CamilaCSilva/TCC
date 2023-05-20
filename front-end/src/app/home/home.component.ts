@@ -37,16 +37,10 @@ export class HomeComponent implements OnInit {
 
   filtrarPorData(data: Date) {
     this.homeService.getFichasDisponiveis(data).subscribe(anamneseData => this.pacientes = anamneseData);
-    // if(data) {
-    //   this.pacientes = this.pacientes.filter(a => a.data == data.toString());
-    // } else {
-    //   return;
-    // }
   }
 
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
-    console.log(this.usuario)
     this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 

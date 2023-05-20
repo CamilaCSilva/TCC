@@ -15,7 +15,7 @@ export class DadosGeraisFormComponent implements OnInit {
   nomeParamedico: string;
   documento_trabalho: string;
   date: Date = new Date();
-  data = this.date.getFullYear() + '/' + (this.date.getMonth()+1) + '/' + this.date.getDate();
+  data = this.date.getFullYear() + '-' + String(this.date.getMonth()+1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
   localizacao: string;
   anamnese: any;
