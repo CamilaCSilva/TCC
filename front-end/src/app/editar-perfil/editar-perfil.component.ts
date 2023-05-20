@@ -10,37 +10,53 @@ import { EditarPerfilService } from './editar-perfil.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  path: string = 'perfil';
+  path: string = 'home/perfil';
   string = 'Edição Perfil';
   areaAtuacao: string;
   perfil: PerfilInfo;
   perfil_atualizado: any;
+  nome_completo:String;
+  campo_escolha: String;
+  documento_trabalho: String;
+  cpf: String;
+  unidade_de_atendimento: String;
+  celular: String;
 
-  usuario = {
-    nome: 'Isabela',
-    funcao: 'Profissional de Saúde',
-    docmentro_trabalho: 78965,
-    cpf: '22222222228',
-    unidade_atendimento: 'Hospital Antônio Moreira da Costa',
-    celular: '(35)99123-4567'
-  };
+  usuario: any;
 
-  constructor(private router: Router, private editarPerfilService: EditarPerfilService) { }
+  constructor(private router: Router, private editarPerfilService: EditarPerfilService) {
+    const nav = this.router.getCurrentNavigation();
+    this.usuario = nav?.extras;
+  }
 
   ngOnInit(): void {
     this.listarProfissional();
   }
 
   listarProfissional(){
-    this.editarPerfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
+    this.editarPerfilService.getPerfilInfo(this.usuario.cpfUsuario).subscribe(perfilInfo => {
       this.perfil = perfilInfo;
+      this.mostrarProfissional();
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })
   }
+  
+  mostrarProfissional(){
+    this.nome_completo = this.perfil.nome_completo;
+    this.campo_escolha = this.perfil.campo_escolha;
+    this.documento_trabalho = this.perfil.documento_trabalho;
+    this.cpf = this.perfil.cpf;
+    this.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
+    this.celular = this.perfil.celular;
+  }
 
   voltar(){
-    this.router.navigateByUrl(this.path);
+    this.router.navigateByUrl(this.path, this.usuario);
+  }
+
+  home(){
+    this.router.navigateByUrl('/home', this.usuario)
   }
 
   salvar(editarPerfil: any) {

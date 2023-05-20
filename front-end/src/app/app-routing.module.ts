@@ -87,8 +87,8 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'perfil/editar-perfil', component: EditarPerfilComponent },
+  { path: 'home/perfil', component: PerfilComponent },
+  { path: 'home/perfil/editar-perfil', component: EditarPerfilComponent },
 ];
 
 @NgModule({

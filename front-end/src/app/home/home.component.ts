@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   pacientes: Anamnese[];
 
   usuario: any = {
-    nome: 'Isabela',
-    cpfUsuario: '12345678910',
+    nome: 'Matheus',
+    cpfUsuario: '78965412320',
     documento_trabalho: '78965',
     tokem: '',
     paciente: '',
@@ -37,6 +37,10 @@ export class HomeComponent implements OnInit {
 
   filtrarPorData(data: Date) {
     this.homeService.getFichasDisponiveis(data).subscribe(anamneseData => this.pacientes = anamneseData);
+  }
+
+  visualizarPerfil(){
+    this.router.navigateByUrl('/home/perfil', this.usuario)
   }
 
   visualizarFicha(paciente: any) {

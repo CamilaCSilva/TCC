@@ -22,11 +22,14 @@ class ProfissionaldeSaudeViewSet(APIView):
         if request.method == 'GET':            
             try:
                 """Listando os profissionais por cpf"""
-                profissional_cpf = request.GET['cpf']
-                profissional = ProfissionaldeSaude.objects.get(pk = profissional_cpf)
+                if request.GET['cpf'] != '' and request.GET['cpf'] != 'undefined':
+                    profissional_cpf = request.GET['cpf']
+                    profissional = ProfissionaldeSaude.objects.get(pk = profissional_cpf)
 
-                profissional_serializer = ProfissionaldeSaudeSerializer(profissional)
-                return Response(profissional_serializer.data)        
+                    profissional_serializer = ProfissionaldeSaudeSerializer(profissional)
+                    return Response(profissional_serializer.data) 
+                else:
+                    return Response(status=status.HTTP_400_BAD_REQUEST)   
             except:
                 """Listando todas os profissionais"""
                 profissional = ProfissionaldeSaude.objects.all()
