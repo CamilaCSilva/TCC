@@ -3,9 +3,9 @@
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column align-items-center justify-content-around">
     <div class="nav d-flex flex-row justify-content-between">
-      <h2>Bem vinda(o), {{ perfil?.nome_completo }}!</h2>
+      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
       <div class="botoesHeader d-flex flex-row justify-content-end">
-        <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
+        <a (click)="home()"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
         <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
       </div>
     </div>
@@ -22,37 +22,37 @@
       <!-- NOME COMPLETO -->
       <div class="nomeCompleto d-flex flex-column">
         <label for="nome">Nome Completo</label>
-        <p id="nome" name="nome">{{ perfil?.nome_completo }}</p>
+        <p id="nome" name="nome">{{ nome_completo }}</p>
       </div>
 
       <!-- ÁREA DE ATUAÇÃO -->
       <div class="sexo d-flex flex-column">
         <label>Área de Atuação</label>
-        <p>{{ perfil?.campo_escolha }}</p>
+        <p>{{ campo_escolha }}</p>
       </div>
 
       <!-- Documento de Trabalho -->
       <div class="crmCorenDrf d-flex flex-column">
         <label for="doc">Documento de Trabalho</label>
-        <p type="text" id="doc" name="doc">{{ perfil?.documento_trabalho }}</p>
+        <p type="text" id="doc" name="doc">{{ documento_trabalho }}</p>
       </div>
 
       <!-- CPF -->
       <div class="cpf d-flex flex-column">
         <label for="cpf">CPF</label>
-        <p type="text" id="cpf" name="cpf">{{ perfil?.cpf }}</p>
+        <p type="text" id="cpf" name="cpf">{{ cpf }}</p>
       </div>
 
       <!-- UNIDADE ATENDIMENTO -->
       <div class="unidadeAtendimento d-flex flex-column">
         <label for="unidadeAtendimento">Unidade de Atendimento</label>
-        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ perfil?.unidade_de_atendimento }}</p>
+        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ unidade_de_atendimento }}</p>
       </div>
 
       <!-- CELULAR -->
       <div class="celular d-flex flex-column">
         <label for="celular">Celular</label>
-        <p type="tel" id="celular" name="celular">{{ perfil?.celular }}</p>
+        <p type="tel" id="celular" name="celular">{{ celular }}</p>
       </div>
     </div>
 

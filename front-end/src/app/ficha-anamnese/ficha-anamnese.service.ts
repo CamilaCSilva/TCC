@@ -1,13 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FichaAnamneseService {
 
-  tipo: string | null;
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 }

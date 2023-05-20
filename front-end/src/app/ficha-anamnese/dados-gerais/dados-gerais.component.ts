@@ -13,21 +13,32 @@ export class DadosGeraisComponent implements OnInit {
   path2: string = 'home';
   nomeParamedico: string;
   documento_trabalho: string;
-  date: Date = new Date();
+  data: Date;
+  hora: String;
+  anamnese: any;
+  num: Int16Array
   alertMessage: string = "";
   localizacao: string;
+  usuario:any;
 
   constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
+    this.nomeParamedico = this.anamnese.paciente.nome_paramedico_responsavel;
+    this.documento_trabalho = this.anamnese.paciente.documento_trabalho_paramedico;
+    this.localizacao = this.anamnese.paciente.localizacao;
+    this.data = this.anamnese.paciente.data
+    this.hora = this.anamnese.paciente.hora
     if(this.alertMessage != "") {
       alert(this.alertMessage);
     }
   }
 
   voltar() {
-    this.router.navigateByUrl(this.path1);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
   alert() {
@@ -35,6 +46,16 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   fechar() {
-    this.router.navigateByUrl(this.path2);
+    this.router.navigateByUrl(this.path2, this.usuario);
+  }
+
+  getuser(){
+    this.usuario = {
+      nome: this.anamnese.nome,
+      cpfUsuario: this.anamnese.cpfUsuario,
+      documento_trabalho: this.anamnese.documento_trabalho,
+      tokem: this.anamnese.tokem,
+      cpfPaciente: '',
+    }
   }
 }

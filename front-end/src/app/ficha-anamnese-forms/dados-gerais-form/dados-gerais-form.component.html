@@ -21,12 +21,12 @@
     <!-- DATA E ENDEREÇO -->
     <div class="d-flex flex-column align-items-end mt-5">
       <p>{{ date | date : 'long' }}</p>
-      <input class="loc form-control" [(ngModel)]="localizacao" type="text" [value]="'Av. João de Camargo, 510, Centro'">
+      <input ngModel class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" placeholder="Digite a sua localização">
     </div>
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-around">
-      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>
+      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar(dadosGerais)"><</button>
       <button
         class="btnAssinarEnviar btn btn-primary"
         type="button"
@@ -42,7 +42,7 @@
       <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
         <h3>Assinar e Enviar</h3>
         <div class="btns d-flex flex-row align-items-center justify-content-around">
-          <button class="btnEnviar btn btn-primary" type="button" (click)="enviar()">CONFIRMAR</button>
+          <button class="btnEnviar btn btn-primary" type="submit" (click)="enviar()">CONFIRMAR</button>
           <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
         </div>
       </div>

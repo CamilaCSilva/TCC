@@ -47,6 +47,9 @@ INSTALLED_APPS = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "https://a667-138-94-54-210.ngrok-free.app"
+    ] 
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
