@@ -35,7 +35,7 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese.nomeParamedico;
+    this.nomeParamedico = this.anamnese.nome;
     this.documento_trabalho = this.anamnese.documento_trabalho;
     this.localizacao = this.anamnese.localizacao;
     if(this.alertMessage != "") {
@@ -52,7 +52,8 @@ export class DadosGeraisFormComponent implements OnInit {
     alert('Dados incompletos');
   }
 
-  enviar() {
+  enviar(dadosGerais: any) {
+    this.criarAnamnese(dadosGerais);
     if(this.verificaDados(this.anamnese)){
       this.anamnese.data = this.data;
       this.anamnese.hora = this.horas;
@@ -89,7 +90,7 @@ export class DadosGeraisFormComponent implements OnInit {
       data: this.data,
       hora: this.horas,
       local: this.anamnese.localizacao == undefined ? 'N/A' : this.anamnese.localizacao,
-      nome_paramedico_responsavel: this.anamnese.nomeParamedico == undefined ? 'N/A' : this.anamnese.nomeParamedico,
+      nome_paramedico_responsavel: this.anamnese.nome == undefined ? 'N/A' : this.anamnese.nome,
       documento_trabalho_paramedico: this.anamnese.documento_trabalho == undefined ? 'N/A' : this.anamnese.documento_trabalho,
     }
   }
@@ -104,7 +105,8 @@ export class DadosGeraisFormComponent implements OnInit {
 
   private verificaDados(dadosAtendimento: any) {
     let testResult: boolean = false;
-    if(this.anamnese.localizacao == undefined || this.anamnese.localizacao == '') {
+    console.log(dadosAtendimento.localizacao)
+    if(dadosAtendimento.localizacao == undefined || dadosAtendimento.localizacao == '') {
       alert('Insira a localização do paciente');
       throw new Error('Insira a localização do paciente');
     }
