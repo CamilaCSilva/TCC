@@ -56,7 +56,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   home(){
-    this.router.navigateByUrl('/home', this.usuario)
+    this.router.navigateByUrl('/home', this.usuario);
   }
 
   salvar(editarPerfil: any) {
@@ -68,7 +68,7 @@ export class EditarPerfilComponent implements OnInit {
     this.perfil_atualizado.unidade_de_atendimento = editarPerfil.value.unidade_de_atendimento != '' ? editarPerfil.value.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
     if(this.verificaDadosPerfil(this.perfil_atualizado)){
       this.updateProfissional();
-      this.router.navigateByUrl(this.path);
+      this.router.navigateByUrl(this.path, this.usuario);
     }
   }
 

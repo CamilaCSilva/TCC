@@ -9,7 +9,7 @@ import { Anamnese } from '../models/anamnese.model';
 })
 export class HomeService {
 
-  private profissionalUrl = 'http://127.0.0.1:8000/anamnese/?data='
+  private profissionalUrl = 'https://tcc-production-33a0.up.railway.app/anamnese/?data='
 
   constructor(private http: HttpClient) { }
 
