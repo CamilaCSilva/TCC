@@ -21,7 +21,7 @@
     <!-- DATA E ENDEREÇO -->
     <div class="d-flex flex-column align-items-end mt-5">
       <p>{{ date | date : 'long' }}</p>
-      <input ngModel class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" placeholder="Digite a sua localização">
+      <input ngModel class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" id="localizacao" placeholder="Digite a sua localização">
     </div>
 
     <!-- BOTÕES -->
@@ -42,7 +42,7 @@
       <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
         <h3>Assinar e Enviar</h3>
         <div class="btns d-flex flex-row align-items-center justify-content-around">
-          <button class="btnEnviar btn btn-primary" type="submit" (click)="enviar()">CONFIRMAR</button>
+          <button class="btnEnviar btn btn-primary" type="submit" (click)="enviar(dadosGerais)">CONFIRMAR</button>
           <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
         </div>
       </div>
