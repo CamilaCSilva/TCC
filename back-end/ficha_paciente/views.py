@@ -12,7 +12,7 @@ class AnamneseViewSet(APIView):
     # queryset = Anamnese.objects.all()
     # serializer_class = AnamneseSerializer
     # authentication_classes = [BasicAuthentication]
-    # permission_classes = [IsAuthenticated]
+    # permission_classes = (IsAuthenticated,)
     
 
     def get(self, request):

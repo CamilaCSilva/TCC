@@ -15,7 +15,7 @@ class ProfissionaldeSaudeViewSet(APIView):
     # queryset = ProfissionaldeSaude.objects.all()
     # serializer_class = ProfissionaldeSaudeSerializer
     # authentication_classes = [BasicAuthentication]
-    # permission_classes = [IsAuthenticated]
+    # permission_classes = (IsAuthenticated,)
 
     def get(self, request):
     
