@@ -10,21 +10,17 @@ import { URLS } from '../models/url.model';
 })
 export class EditarPerfilService {
 
-<<<<<<< HEAD
-  private profissional_url = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/?cpf=';
-=======
   url = URLS;
 
   private profissionalUrl =  this.url + 'profissionaldesaude/?cpf=';
->>>>>>> ef85b971b846aaaef9e143d831b39f0c1a86f0b5
 
   constructor(private http: HttpClient) { }
 
   getPerfilInfo(cpf: any) {
-    return this.http.get(`${this.profissional_url}${cpf}`) as Observable<PerfilInfo>;
+    return this.http.get(`${this.profissionalUrl}${cpf}`) as Observable<PerfilInfo>;
   }
 
   updatePerfilInfo(cpf: any, perfil: PerfilInfo) {
-    return this.http.put(`${this.profissional_url}${cpf}`, perfil).pipe(take(1));
+    return this.http.put(`${this.profissionalUrl}${cpf}`, perfil).pipe(take(1));
   }
 }

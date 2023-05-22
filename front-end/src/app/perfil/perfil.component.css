@@ -28,21 +28,21 @@
 }
 .perfilContainer .perfilInfosContainer {
   width: 30vw;
-  height: 75vh;
+  height: 85vh;
   background: #b87676;
   border-radius: 20px;
   border: none;
   padding: 1rem;
 }
-.perfilContainer .perfilInfosContainer .nomeCompleto, .perfilContainer .perfilInfosContainer .sexo, .perfilContainer .perfilInfosContainer .docTrabalho, .perfilContainer .perfilInfosContainer .cpf, .perfilContainer .perfilInfosContainer .unidadeAtendimento, .perfilContainer .perfilInfosContainer .celular {
+.perfilContainer .perfilInfosContainer .nomeCompleto, .perfilContainer .perfilInfosContainer .crmCorenDrf, .perfilContainer .perfilInfosContainer .sexo, .perfilContainer .perfilInfosContainer .docTrabalho, .perfilContainer .perfilInfosContainer .cpf, .perfilContainer .perfilInfosContainer .unidadeAtendimento, .perfilContainer .perfilInfosContainer .celular {
   width: 18em;
 }
-.perfilContainer .perfilInfosContainer .nomeCompleto label, .perfilContainer .perfilInfosContainer .sexo label, .perfilContainer .perfilInfosContainer .docTrabalho label, .perfilContainer .perfilInfosContainer .cpf label, .perfilContainer .perfilInfosContainer .unidadeAtendimento label, .perfilContainer .perfilInfosContainer .celular label {
+.perfilContainer .perfilInfosContainer .nomeCompleto label, .perfilContainer .perfilInfosContainer .crmCorenDrf label, .perfilContainer .perfilInfosContainer .sexo label, .perfilContainer .perfilInfosContainer .docTrabalho label, .perfilContainer .perfilInfosContainer .cpf label, .perfilContainer .perfilInfosContainer .unidadeAtendimento label, .perfilContainer .perfilInfosContainer .celular label {
   color: #5c0505;
   font-weight: bold;
   font-size: 18px;
 }
-.perfilContainer .perfilInfosContainer .nomeCompleto p, .perfilContainer .perfilInfosContainer .sexo p, .perfilContainer .perfilInfosContainer .docTrabalho p, .perfilContainer .perfilInfosContainer .cpf p, .perfilContainer .perfilInfosContainer .unidadeAtendimento p, .perfilContainer .perfilInfosContainer .celular p {
+.perfilContainer .perfilInfosContainer .nomeCompleto p, .perfilContainer .perfilInfosContainer .crmCorenDrf p, .perfilContainer .perfilInfosContainer .sexo p, .perfilContainer .perfilInfosContainer .docTrabalho p, .perfilContainer .perfilInfosContainer .cpf p, .perfilContainer .perfilInfosContainer .unidadeAtendimento p, .perfilContainer .perfilInfosContainer .celular p {
   color: black;
   font-size: 18px;
   border: none;
