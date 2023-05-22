@@ -1,0 +1,77 @@
+.cadastroContainer {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 65vh;
+  padding: 2rem 0;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm {
+  width: 30vw;
+  height: 120vh;
+  background: #b87676;
+  border: none;
+  border-radius: 20px;
+  padding: 1rem;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm label {
+  font-size: 18px;
+  color: #5c0505;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm select {
+  width: 27.5vw;
+  height: 4vh;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  -moz-appearance: none;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm select .minimal {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm select .minimal:focus {
+  background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: #5c0505;
+  outline: 0;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm input {
+  border: none;
+  width: 27.5vw;
+  height: 3vh;
+  font-size: 18px;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin: 0.5rem 0 1rem;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm .btns .botao {
+  margin-top: 10px;
+  width: 200px;
+  border: none;
+  padding: 1rem;
+  background-color: #5c0505;
+  color: white;
+}
+.cadastroContainer .cadastroInfosContainer .criarCadastroForm .btns .botao:hover {
+  background-color: white;
+  color: #5c0505;
+  font-weight: bold;
+}/*# sourceMappingURL=cadastro.component.css.map */

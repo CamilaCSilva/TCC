@@ -1,4 +1,4 @@
-# from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from ficha_paciente.models import Anamnese
 
@@ -17,9 +17,14 @@ class ProfissionaldeSaude(models.Model):
     def __str__(self):
         return self.nome_completo
     
+
 class FichaPaciente(models.Model):
     anamnese = models.ForeignKey(Anamnese, on_delete=models.CASCADE, default='0')
     paramedico = models.ForeignKey(ProfissionaldeSaude, on_delete=models.CASCADE, default='0')
 
-# class User(AbstractUser):
-#     pass
+
+class User(AbstractUser):
+    cpf = models.ForeignKey(ProfissionaldeSaude, on_delete=models.CASCADE, default='0', unique=True)
+
+    USERNAME_FIELD = "cpf"
+    REQUIRED_FIELDS = ["username"]

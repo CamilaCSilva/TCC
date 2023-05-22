@@ -1,0 +1,64 @@
+@media screen and (min-width: 1025px) {
+  .ficha {
+    position: absolute;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+  }
+  .ficha .header .fotoPerfil {
+    background-color: white;
+    color: #5c0505;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .ficha .footer {
+    background-color: white;
+    width: 100vw;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  .ficha {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+  }
+  .ficha .header .fotoPerfil {
+    background-color: white;
+    color: #5c0505;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+  .ficha .footer {
+    background-color: white;
+    width: 100vw;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  .ficha {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 86vh;
+    width: 100vw;
+    height: auto;
+  }
+  .ficha .header .fotoPerfil {
+    background-color: white;
+    color: #5c0505;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+  .ficha .footer {
+    background-color: white;
+    width: 100vw;
+  }
+}/*# sourceMappingURL=ficha-anamnese.component.css.map */

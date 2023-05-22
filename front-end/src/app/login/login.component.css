@@ -1,0 +1,49 @@
+.loginContainer {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 55vh;
+  padding: 2rem 0;
+}
+.loginContainer .loginInfosContainer .loginForm {
+  width: 30vw;
+  height: 40vh;
+  background: #b87676;
+  border: none;
+  border-radius: 20px;
+  padding: 1rem;
+}
+.loginContainer .loginInfosContainer .loginForm label {
+  color: #5c0505;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 0.5rem;
+}
+.loginContainer .loginInfosContainer .loginForm input {
+  border: none;
+  width: 27.5vw;
+  height: 3vh;
+  font-size: 18px;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin: 0.5rem 0 1rem;
+}
+.loginContainer .loginInfosContainer .loginForm .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.loginContainer .loginInfosContainer .loginForm .btns .botao {
+  margin-top: 10px;
+  width: 11.5em;
+  height: 3.5em;
+  border: none;
+  padding: 1rem;
+  background-color: #5c0505;
+  color: white;
+}
+.loginContainer .loginInfosContainer .loginForm .btns .botao:hover {
+  background-color: white;
+  color: #5c0505;
+  font-weight: bold;
+}/*# sourceMappingURL=login.component.css.map */

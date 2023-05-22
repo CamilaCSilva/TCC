@@ -1,0 +1,132 @@
+.btnProximo, .btnVoltar {
+  background-color: #5c0505;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+}
+.btnProximo:hover, .btnVoltar:hover {
+  background-color: white;
+  color: #5c0505;
+  font-weight: bold;
+}
+
+.btnVoltar {
+  width: 200px;
+  height: 50px;
+}
+
+.btnProximo {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .idPacienteContainer {
+    background: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    width: 35vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .idPacienteContainer .idPaciente h3 {
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto label, .main .idPacienteContainer .idPaciente .cpf label, .main .idPacienteContainer .idPaciente .celular label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto p, .main .idPacienteContainer .idPaciente .cpf p, .main .idPacienteContainer .idPaciente .celular p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .idPacienteContainer .idPaciente .btns {
+    width: 27.5vw;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .idPacienteContainer {
+    background: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    width: 60vw;
+    height: 70vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .idPacienteContainer .idPaciente h3 {
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto label, .main .idPacienteContainer .idPaciente .cpf label, .main .idPacienteContainer .idPaciente .celular label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto p, .main .idPacienteContainer .idPaciente .cpf p, .main .idPacienteContainer .idPaciente .celular p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .idPacienteContainer .idPaciente .btns {
+    width: 50vw;
+    font-size: 18px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .idPacienteContainer {
+    background: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    width: 90vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .idPacienteContainer .idPaciente h3 {
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto label, .main .idPacienteContainer .idPaciente .cpf label, .main .idPacienteContainer .idPaciente .celular label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .idPacienteContainer .idPaciente .nomeCompleto p, .main .idPacienteContainer .idPaciente .cpf p, .main .idPacienteContainer .idPaciente .celular p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .idPacienteContainer .idPaciente .btns {
+    width: 50vw;
+    font-size: 18px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=identificacao-paciente.component.css.map */

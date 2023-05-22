@@ -1,0 +1,218 @@
+.btnProximo, .btnAnterior {
+  background-color: #5c0505;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+}
+.btnProximo:hover, .btnAnterior:hover {
+  background-color: white;
+  color: #5c0505;
+  font-weight: bold;
+}
+
+.btnAnterior, .btnProximo {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 35vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosAtendimento h3 {
+    font-weight: bold;
+  }
+  .main .dadosAtendimento .smallFields {
+    width: 30vw;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .prioridade p {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade select {
+    height: 4vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .sintomas, .main .dadosAtendimento .observacoes {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .sintomas textarea, .main .dadosAtendimento .observacoes textarea {
+    width: 27.5vw;
+    height: 7vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .btns {
+    width: 27.5vw;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 65vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosAtendimento h3 {
+    font-weight: bold;
+  }
+  .main .dadosAtendimento .smallFields {
+    width: 45vw;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor label {
+    width: 6em;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .prioridade p {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade select {
+    height: 4vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .sintomas, .main .dadosAtendimento .observacoes {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .sintomas textarea, .main .dadosAtendimento .observacoes textarea {
+    width: 40vw;
+    height: 7vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .btns {
+    width: 27.5vw;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 90vw;
+    height: 100vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosAtendimento .smallFields {
+    width: 45vw;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor label {
+    width: 6em;
+  }
+  .main .dadosAtendimento .smallFields .nivelDor input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade {
+    width: 7.5em;
+    font-size: 18px;
+    align-items: center;
+  }
+  .main .dadosAtendimento .smallFields .prioridade p {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade input {
+    width: 4em;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .smallFields .prioridade select {
+    height: 4vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .sintomas, .main .dadosAtendimento .observacoes {
+    font-size: 18px;
+  }
+  .main .dadosAtendimento .sintomas textarea, .main .dadosAtendimento .observacoes textarea {
+    width: 40vw;
+    height: 7vh;
+    border-radius: 20px;
+  }
+  .main .dadosAtendimento .btns {
+    width: 27.5vw;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}/*# sourceMappingURL=dados-atendimento-parte2-form.component.css.map */

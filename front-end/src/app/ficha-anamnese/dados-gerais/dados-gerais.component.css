@@ -1,0 +1,144 @@
+.btnProximo, .btnAnterior, .btnFechar, .btnEnviar, .btnCancelar {
+  background-color: #5c0505;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+}
+.btnProximo:hover, .btnAnterior:hover, .btnFechar:hover, .btnEnviar:hover, .btnCancelar:hover {
+  background-color: white;
+  color: #5c0505;
+  font-weight: bold;
+}
+
+.btnFechar, .btnEnviar, .btnCancelar {
+  width: 200px;
+  height: 50px;
+}
+
+.btnProximo, .btnAnterior {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosGeraisContainer {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 35vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosGeraisContainer .dadosGerais h3 {
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico label, .main .dadosGeraisContainer .dadosGerais .docTrabalho label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico p, .main .dadosGeraisContainer .dadosGerais .docTrabalho p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns {
+    width: 27.5vw;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns .btnFechar, .main .dadosGeraisContainer .dadosGerais .btns .btnEnviar, .main .dadosGeraisContainer .dadosGerais .btns .btnCancelar {
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosGeraisContainer {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 70vw;
+    height: 80vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosGeraisContainer .dadosGerais h3 {
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico label, .main .dadosGeraisContainer .dadosGerais .docTrabalho label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico p, .main .dadosGeraisContainer .dadosGerais .docTrabalho p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns {
+    width: 50vw;
+    font-size: 18px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns .btnFechar, .main .dadosGeraisContainer .dadosGerais .btns .btnEnviar, .main .dadosGeraisContainer .dadosGerais .btns .btnCancelar {
+    border-radius: 20px;
+  }
+}
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+  }
+  .main .dadosGeraisContainer {
+    background-color: #b87676;
+    color: #5c0505;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 3em;
+    padding: 3em;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .main .dadosGeraisContainer .dadosGerais h3 {
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico label, .main .dadosGeraisContainer .dadosGerais .docTrabalho label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .main .dadosGeraisContainer .dadosGerais .nomeParamedico p, .main .dadosGeraisContainer .dadosGerais .docTrabalho p {
+    font-size: 18px;
+    color: black;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns {
+    width: 50vw;
+    font-size: 18px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .main .dadosGeraisContainer .dadosGerais .btns .btnFechar, .main .dadosGeraisContainer .dadosGerais .btns .btnEnviar, .main .dadosGeraisContainer .dadosGerais .btns .btnCancelar {
+    border-radius: 20px;
+  }
+}/*# sourceMappingURL=dados-gerais.component.css.map */

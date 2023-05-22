@@ -1,0 +1,333 @@
+@media screen and (min-width: 1025px) {
+  .editarPerfilContainer {
+    margin-right: auto;
+    margin-left: auto;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    width: 100vw;
+    padding: 2rem 1rem;
+  }
+  .editarPerfilContainer .headerGeral .nav {
+    display: inline-block;
+    gap: 10px 450px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader {
+    gap: 20px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .logo {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .exit {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .editarPerfilContainer .headerGeral .titulo {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm {
+    width: 30vw;
+    height: 75vh;
+    background: #b87676;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm label {
+    color: #5c0505;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 0.5rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm input {
+    border: none;
+    font-size: 18px;
+    width: 27.5vw;
+    height: 3vh;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select {
+    width: 27.5vw;
+    height: 4vh;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    -moz-appearance: none;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal:focus {
+    background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: white;
+    outline: 0;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .cpf {
+    font-size: 18px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .cpf :disabled {
+    opacity: 1;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnAnterior {
+    background-color: #5c0505;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: #5c0505;
+    color: white;
+    font-weight: bold;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar:hover {
+    background-color: white;
+    color: #5c0505;
+  }
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  .editarPerfilContainer {
+    margin-right: auto;
+    margin-left: auto;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    width: 100vw;
+    padding: 2rem 1rem;
+  }
+  .editarPerfilContainer .headerGeral .nav {
+    display: inline-block;
+    gap: 10px 450px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader {
+    gap: 20px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .logo {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .exit {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .editarPerfilContainer .headerGeral .cabecalho {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm {
+    width: 75vw;
+    height: 65vh;
+    background: #b87676;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm label {
+    color: #5c0505;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 0.5rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm input {
+    border: none;
+    font-size: 18px;
+    width: 70vw;
+    height: 3vh;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select {
+    width: 70vw;
+    height: 4vh;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    -moz-appearance: none;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal:focus {
+    background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: white;
+    outline: 0;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnAnterior {
+    background-color: #5c0505;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: #5c0505;
+    color: white;
+    font-weight: bold;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar:hover {
+    background-color: white;
+    color: #5c0505;
+  }
+}
+@media (max-width: 480px) and (min-width: 0px) {
+  .editarPerfilContainer {
+    margin-right: auto;
+    margin-left: auto;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    width: 100vw;
+    padding: 2rem 1rem;
+  }
+  .editarPerfilContainer .headerGeral .nav {
+    display: inline-block;
+    gap: 10px 450px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader {
+    gap: 20px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .logo {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .editarPerfilContainer .headerGeral .nav .botoesHeader .exit {
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .editarPerfilContainer .headerGeral .cabecalho {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm {
+    width: 80vw;
+    height: 75vh;
+    background: #b87676;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm label {
+    color: #5c0505;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 0.5rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm input {
+    border: none;
+    font-size: 18px;
+    width: 70vw;
+    height: 3vh;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 1rem;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select {
+    width: 70vw;
+    height: 4vh;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    -moz-appearance: none;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm select .minimal:focus {
+    background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: white;
+    outline: 0;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnAnterior {
+    background-color: #5c0505;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: #5c0505;
+    color: white;
+    font-weight: bold;
+  }
+  .editarPerfilContainer .editarPerfilInfosContainer .editarPerfilForm .btns .btnSalvar:hover {
+    background-color: white;
+    color: #5c0505;
+  }
+}/*# sourceMappingURL=editar-perfil.component.css.map */

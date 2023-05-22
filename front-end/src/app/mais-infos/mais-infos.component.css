@@ -1,0 +1,49 @@
+.infosContainer {
+  background: url(/assets/images/background.png);
+  background-size: cover;
+  min-height: 55vh;
+  padding: 2rem 0;
+}
+.infosContainer .headerGeral {
+  width: 100vw;
+}
+.infosContainer .headerGeral .nav {
+  gap: 10px 450px;
+}
+.infosContainer .headerGeral .nav .botoesHeader {
+  gap: 20px;
+}
+.infosContainer .headerGeral .nav .botoesHeader .logo {
+  max-width: 40px;
+  max-height: 40px;
+}
+.infosContainer .headerGeral .nav .botoesHeader .exit {
+  max-width: 35px;
+  max-height: 35px;
+}
+.infosContainer .headerGeral .titulo {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.infosContainer .maisInfosContainer {
+  width: 30vw;
+  height: 30vh;
+  background: #b87676;
+  border-radius: 20px;
+  border: none;
+  padding: 1rem;
+}
+.infosContainer .maisInfosContainer .site, .infosContainer .maisInfosContainer .telefone {
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+.infosContainer .maisInfosContainer .site p, .infosContainer .maisInfosContainer .telefone p {
+  font-size: 22px;
+  color: #5c0505;
+  font-weight: bold;
+}
+.infosContainer .maisInfosContainer .site a, .infosContainer .maisInfosContainer .telefone a {
+  color: black;
+  font-size: 18px;
+}/*# sourceMappingURL=mais-infos.component.css.map */

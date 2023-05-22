@@ -1,0 +1,56 @@
+.cabecalho {
+  height: 28vh;
+}
+.cabecalho .logo {
+  width: 46%;
+  padding: 1rem 1.5rem;
+}
+.cabecalho .logo img {
+  width: 80%;
+  max-width: 350px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.cabecalho .logo p {
+  font-size: 1rem;
+}
+.cabecalho .cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+.cabecalho .cabecalho-menu .cabecalho-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.5em;
+  height: 3.5em;
+  font-family: "Sarala", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #5c0505;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.cabecalho .cabecalho-menu .cabecalho-menu-item:hover {
+  color: #5c0505;
+  background-color: #b87676;
+  transition: 0.5s ease;
+}
+
+@media (max-width: 576px) {
+  .cabecalho .logo {
+    padding: 2rem;
+  }
+  .cabecalho p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .cabecalho .logo {
+    width: 90%;
+  }
+  .cabecalho .imagem {
+    display: none;
+  }
+}/*# sourceMappingURL=header.component.css.map */
