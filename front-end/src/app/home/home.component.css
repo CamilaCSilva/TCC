@@ -1,9 +1,10 @@
 .main {
   background: url(/assets/images/background.png);
   background-size: cover;
-  min-height: 86vh;
+  min-height: 95vh;
   width: 100vw;
   padding: 1rem;
+  margin-top: -60px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -76,8 +77,8 @@
 }
 .main .btns {
   display: flex;
-  position: absolute;
-  bottom: 3em;
+  position: relative;
+  bottom: -8em;
   justify-content: center;
   align-items: center;
   align-content: center;
