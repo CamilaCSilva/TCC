@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'drf_spectacular',
     'hospital.apps.HospitalConfig',
     'ficha_paciente.apps.FichaPacienteConfig',
     'rest_framework',
