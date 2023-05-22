@@ -7,5 +7,4 @@ export class PerfilInfo {
   documento_trabalho: string;
   unidade_de_atendimento: string;
   senha: string;
-
 }
