@@ -2,13 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PerfilInfo } from '../models/perfil.model';
 import { take } from 'rxjs/operators';
+import { URLS } from '../models/url.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
 
-  private profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/'
+  url = URLS;
+
+  private profissionalUrl = this.url + 'profissionaldesaude/'
 
 
   constructor(private http: HttpClient) {}

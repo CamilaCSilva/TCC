@@ -2,13 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PerfilInfo } from '../models/perfil.model';
 import { Observable } from 'rxjs';
+import { URLS } from '../models/url.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerfilService {
 
-  private profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/?cpf='
+  url = URLS;
+
+  private profissionalUrl = this.url + 'profissionaldesaude/?cpf='
 
   constructor(private http: HttpClient) {}
 
