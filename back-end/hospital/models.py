@@ -13,7 +13,7 @@ class User(AbstractUser):
 class ProfissionaldeSaude(models.Model):
     DOCUMENTOS = ( ('CRM', 'Médico(a)'), ('COREN', 'Enfermeiro(a)'), ('DRF', 'Paramédico(a)'))
 
-    cpf = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    cpf = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
     campo_escolha = models.CharField(max_length=5, choices=DOCUMENTOS, blank=False, null=False, default='CRM')
     nome_completo = models.CharField(max_length=150)
     celular = models.DecimalField(max_digits=11, decimal_places=0)
