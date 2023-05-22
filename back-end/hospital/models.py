@@ -24,7 +24,7 @@ class FichaPaciente(models.Model):
 
 
 class User(AbstractUser):
-    cpf = models.ForeignKey(ProfissionaldeSaude, on_delete=models.CASCADE, default='0', unique=True)
+    cpf = models.DecimalField(max_digits=11, decimal_places=0, unique=True)
 
     USERNAME_FIELD = "cpf"
     REQUIRED_FIELDS = ["username"]
