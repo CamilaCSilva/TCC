@@ -81,8 +81,8 @@ export class CadastroComponent {
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
-      alert('Senha incompleta');
+    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&*])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+      alert('Senha incompleta ou inválida, por favor selecione outra');
       throw new Error('Senha incompleta');
     }
     else if(this.cadastroInfo.senha != confirmaSenha){

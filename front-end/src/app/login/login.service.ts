@@ -8,9 +8,11 @@ import { LoginInfoExistenteArray } from './login.model';
 })
 export class LoginService {
 
+  private profissional_url = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/?cpf=';
+
   constructor(private http: HttpClient) {}
 
-  getLoginInfo() {
-    return this.http.get('') as Observable<LoginInfoExistenteArray>;
+  getLoginInfo(cpf: any) {
+    return this.http.get(`${this.profissional_url}${cpf}`) as Observable<LoginInfoExistenteArray>;
   }
 }
