@@ -9,10 +9,12 @@ from ficha_paciente.serializer import AnamneseSerializer
 
 # Create your views here.
 class AnamneseViewSet(APIView):
-    # queryset = Anamnese.objects.all()
-    # serializer_class = AnamneseSerializer
-    # authentication_classes = [BasicAuthentication]
-    # permission_classes = (IsAuthenticated,)
+    """
+    queryset = Anamnese.objects.all()
+    serializer_class = AnamneseSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = (IsAuthenticated,)
+    """
     
 
     def get(self, request):

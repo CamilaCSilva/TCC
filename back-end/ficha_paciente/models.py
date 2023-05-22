@@ -4,7 +4,7 @@ from django.db import models
 class Anamnese(models.Model):
     risco = (('nao-urgente', 'nao-urgente'), ('pouco-urgente','pouco-urgente'), ('urgente', 'urgente'), ('emergencia', 'emergencia'))
 
-    cpf = models.DecimalField(max_digits=11, decimal_places=0, primary_key=True)
+    cpf = models.CharField(max_length=11, primary_key=True, unique=True)
     nome_completo = models.CharField(max_length=150)
     celular = models.DecimalField(max_digits=11, decimal_places=0)
     sexo = models.CharField(max_length=1)

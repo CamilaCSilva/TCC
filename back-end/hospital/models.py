@@ -11,6 +11,10 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["username"]
 
 class ProfissionaldeSaude(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Profissionais de Saúde"
+
     DOCUMENTOS = ( ('CRM', 'Médico(a)'), ('COREN', 'Enfermeiro(a)'), ('DRF', 'Paramédico(a)'))
 
     cpf = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True, related_name='id')
@@ -26,6 +30,10 @@ class ProfissionaldeSaude(models.Model):
     
 
 class FichaPaciente(models.Model):
-    anamnese = models.ForeignKey(Anamnese, on_delete=models.CASCADE, default='0')
-    paramedico = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Fichas Pacientes"
+
+    anamnese = models.ForeignKey(Anamnese, on_delete=models.PROTECT, related_name="paciente")
+    paramedico = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="paciente")
 
