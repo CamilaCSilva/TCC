@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path, os
+from datetime import timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -125,6 +126,16 @@ AUTH_USER_MODEL = "hospital.ProfissionaldeSaude"
 
 SIMPLE_JWT = {
     'USER_ID_FIELD': 'cpf',
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=180),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Profissional de SaUde API',
+    'DESCRIPTION': 'API com os endpoints e documentação para hospital',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
 
 # Internationalization

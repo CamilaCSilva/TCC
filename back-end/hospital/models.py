@@ -15,6 +15,7 @@ class ProfissionaldeSaude(AbstractUser):
     celular = models.CharField(max_length=13)
     documento_trabalho = models.CharField(max_length=10)
     unidade_de_atendimento = models.CharField(max_length=250)
+    senha = models.CharField(max_length=128)
 
     USERNAME_FIELD = "cpf"
     REQUIRED_FIELDS = ["username"]
