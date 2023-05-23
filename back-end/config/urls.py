@@ -17,7 +17,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('anamnese/', include('ficha_paciente.urls'), name='anamnese.urls'),
     path('profissionaldesaude/', include('hospital.urls'), name='profissionaldesaude.urls'),
-    # path('paramedico/<int:pk>/fichas/', ListaFichaPorParamedico.as_view()),
     path('api/docs/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/docs/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),

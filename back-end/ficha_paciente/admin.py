@@ -8,3 +8,11 @@ class Anamneses(admin.ModelAdmin):
     search_fields = ( 'cpf', 'nome_completo' )
 
 admin.site.register(Anamnese, Anamneses)
+
+"""
+class ResponsavelAnamnese(admin.ModelAdmin):
+    list_display = ( 'id','anamnese', 'paramedico')
+    list_display_links = ('id',)
+
+admin.site.register(FichaPaciente, ResponsavelAnamnese)
+"""
