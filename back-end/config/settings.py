@@ -44,12 +44,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'drf_spectacular',
     'hospital.apps.HospitalConfig',
     'ficha_paciente.apps.FichaPacienteConfig',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://a667-138-94-54-210.ngrok-free.app"
     ] 
@@ -128,14 +128,6 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'cpf',
     'ACCESS_TOKEN_LIFETIME':timedelta(minutes=180),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
-}
-
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'Profissional de SaUde API',
-    'DESCRIPTION': 'API com os endpoints e documentação para hospital',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
-    # OTHER SETTINGS
 }
 
 # Internationalization
