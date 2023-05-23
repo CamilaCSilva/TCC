@@ -37,14 +37,16 @@ export class CadastroComponent {
       senha: this.senha
     };
     if(this.verificaDadosPerfil(this.cadastroInfo, this.confirmarSenha)) {
+      this.cadastroInfo.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
+      this.cadastroInfo.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
+      console.log(this.cadastroInfo)
       this.setCadastroInfo(this.cadastroInfo);
-      this.router.navigateByUrl(this.path);
     }
   }
 
   setCadastroInfo(cadastroInfo: PerfilInfo) {
     this.cadastroService.setCadastroInfo(cadastroInfo).subscribe(
-      success => console.log('Sucesso!'),
+      success => this.router.navigateByUrl(this.path),
       error => console.log(error),
       () => console.log('request completo')
     );
@@ -75,7 +77,7 @@ export class CadastroComponent {
       alert('Preencha seu documento de trabalho');
       throw new Error('Preencha seu documento de trabalho');
     }
-    else if (cadastro.cpf == '' || cadastro.cpf?.length < 11 || !cadastro.cpf?.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+    else if (cadastro.cpf == '' || !cadastro.cpf?.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
