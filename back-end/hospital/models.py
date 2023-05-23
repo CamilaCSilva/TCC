@@ -20,6 +20,6 @@ class ProfissionaldeSaude(AbstractUser):
     REQUIRED_FIELDS = ["username"]
 
     def __str__(self):
-        return self.nome_completo
+        return "%s - %s" %(self.cpf, self.nome_completo) 
 
 
