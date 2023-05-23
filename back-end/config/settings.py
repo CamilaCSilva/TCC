@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
     'drf_spectacular',
     'hospital.apps.HospitalConfig',
     'ficha_paciente.apps.FichaPacienteConfig',
-    'rest_framework',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -122,6 +123,9 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "hospital.ProfissionaldeSaude"
 
+SIMPLE_JWT = {
+    'USER_ID_FIELD': 'cpf',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
