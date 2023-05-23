@@ -60,7 +60,6 @@ export class DadosGeraisFormComponent implements OnInit {
       this.coverteParaAnamnese();
       this.setAnamneseInfo()
       this.getuser();
-      this.router.navigateByUrl(this.path2, this.usuario);
     }
   }
 
@@ -97,7 +96,7 @@ export class DadosGeraisFormComponent implements OnInit {
 
   private setAnamneseInfo() {
     this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
-      success => console.log('Sucesso!'),
+      success => this.router.navigateByUrl(this.path2, this.usuario),
       error => console.log(error),
       () => console.log('request completo')
     );
