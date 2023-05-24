@@ -11,10 +11,17 @@ import { LoginInfoExistente, LoginInfoExistenteArray } from './login.model';
 })
 export class LoginComponent implements OnInit {
 
+  mensagem(mensagem: any) {
+    throw new Error('Method not implemented.');
+  }
+  entrar(name: string) {
+    throw new Error('Method not implemented.');
+  }
+
   path = '/home';
   stringFacaLogin = 'Faça o login!';
   cpf_usuario: string;
-  senha: string;
+  password: string;
   testResult: boolean = false;
   loginInfoExistente: LoginInfoExistenteArray;
 
@@ -60,7 +67,7 @@ export class LoginComponent implements OnInit {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
-    else if(this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if(this.password && !this.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }

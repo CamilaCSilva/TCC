@@ -18,7 +18,7 @@ export class CadastroComponent {
   cpf: string;
   unidadeAtendimento: string;
   celular: string;
-  senha: string;
+  password: string;
   confirmarSenha: string;
   cadastroInfo: PerfilInfo;
 
@@ -34,7 +34,7 @@ export class CadastroComponent {
       celular: this.celular,
       documento_trabalho: this.doc,
       unidade_de_atendimento: this.unidadeAtendimento,
-      senha: this.senha
+      password: this.password
     };
     if(this.verificaDadosPerfil(this.cadastroInfo, this.confirmarSenha)) {
       this.cadastroInfo.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
@@ -89,16 +89,11 @@ export class CadastroComponent {
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-<<<<<<< HEAD
-    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&*])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
-      alert('Senha incompleta ou inválida, por favor selecione outra');
-=======
-    else if (cadastro.senha == '' || !cadastro.senha?.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))) {
+    else if (cadastro.password == '' || !cadastro.password?.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))) {
       alert('Senha incompleta');
->>>>>>> af299d8ba892f016f3f2432c8236676be2cf38d5
       throw new Error('Senha incompleta');
     }
-    else if(this.cadastroInfo.senha != confirmaSenha) {
+    else if(this.cadastroInfo.password != confirmaSenha) {
       alert('As senha não são iguais');
       throw new Error('As senha não são iguais');
     }

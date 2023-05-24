@@ -118,7 +118,7 @@ export class EditarPerfilComponent implements OnInit {
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if (cadastro.password == '' || !cadastro.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }

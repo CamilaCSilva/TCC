@@ -11,12 +11,13 @@ export class CadastroService {
 
   url = URLS;
 
-  private profissionalUrl = this.url + 'profissionaldesaude/'
+  private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
 
 
   constructor(private http: HttpClient) {}
 
-  setCadastroInfo(cadastroInfos: PerfilInfo) {
-    return this.http.post(`${this.profissionalUrl}`, cadastroInfos).pipe(take(1));
+  setCadastroInfo(cadastro_infos: PerfilInfo) {
+    console.log(cadastro_infos);
+    return this.http.post(`${this.profissional_url}`, cadastro_infos).pipe(take(1));
   }
 }
