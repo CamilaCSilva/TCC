@@ -1,7 +1,7 @@
 // VOU PEGAR INFOS DO BANCO
 export interface LoginInfoExistente {
   cpf: string;
-  senha: string;
+  password: string;
   is_correct: boolean;
 }
 

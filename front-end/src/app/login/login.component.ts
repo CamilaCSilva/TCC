@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { LoginInfo } from '../models/login.model';
-import { LoginInfoExistente, LoginInfoExistenteArray } from './login.model';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +22,6 @@ export class LoginComponent implements OnInit {
   cpf_usuario: string;
   password: string;
   testResult: boolean = false;
-  loginInfoExistente: LoginInfoExistenteArray;
 
   usuario: any;
   perfil: LoginInfo;
@@ -34,33 +32,24 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.verificaDados();
+    this.perfil = {
+      cpf: this.cpf_usuario,
+      password: this.password
+    }
+    this.getLoginInfo(this.perfil);
     if(this.testResult) {
       this.router.navigateByUrl(this.path);
-      /*
-      this.loginInfoExistente = this.getLoginInfo();
-      if(this.loginInfoExistente) {
-        this.loginInfoExistente.map((data) => {
-          data.cpf == this.cpf &&
-          data.senha == this.senha &&
-          data.is_correct == this.testResult ?
-          this.router.navigateByUrl(this.path) :
-          new Error('Informações de Login incorretas');
-        });
-      }
-      */
-    
     }
   }
 
-  getLoginInfo(): any {
-    this.loginService.getLoginInfo(this.usuario.cpf_usuario).subscribe(perfil_info => {
-      // this.perfil = perfil_info;
-      // this.mostrarProfissional();
-      console.log(this.usuario.cpf_usuario);
-    }, err => {
-      console.log('Erro ao listar o profissional', err)
-    })
+  getLoginInfo(login_info: LoginInfo) {
+    this.loginService.getLoginInfo(login_info).subscribe(
+      success => this.router.navigateByUrl(this.path),
+      error => console.log(error),
+      () => console.log('request completo')
+    );
   }
+
 
   private verificaDados() {
     if(this.cpf_usuario && this.cpf_usuario.length < 11 || !this.cpf_usuario.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
@@ -72,7 +61,6 @@ export class LoginComponent implements OnInit {
       throw new Error('Senha incompleta');
     }
     else {
-      this.getLoginInfo();
       this.testResult = true;
     }
   }

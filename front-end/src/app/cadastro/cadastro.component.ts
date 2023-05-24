@@ -19,15 +19,15 @@ export class CadastroComponent {
   unidadeAtendimento: string;
   celular: string;
   password: string;
-  confirmarSenha: string;
-  cadastroInfo: PerfilInfo;
+  confirmar_senha: string;
+  cadastro_info: PerfilInfo;
 
   constructor(private router: Router, private cadastroService: CadastroService) {}
 
   ngOnInit(): void {}
 
   cadastrar() {
-    this.cadastroInfo = {
+    this.cadastro_info = {
       cpf: this.cpf,
       campo_escolha: this.areaAtuacao,
       nome_completo: this.nomeCompleto,
@@ -36,16 +36,16 @@ export class CadastroComponent {
       unidade_de_atendimento: this.unidadeAtendimento,
       password: this.password
     };
-    if(this.verificaDadosPerfil(this.cadastroInfo, this.confirmarSenha)) {
-      this.cadastroInfo.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
-      this.cadastroInfo.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
-      console.log(this.cadastroInfo)
-      this.setCadastroInfo(this.cadastroInfo);
+    if(this.verificaDadosPerfil(this.cadastro_info, this.confirmar_senha)) {
+      this.cadastro_info.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
+      this.cadastro_info.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
+      console.log(this.cadastro_info)
+      this.setCadastroInfo(this.cadastro_info);
     }
   }
 
-  setCadastroInfo(cadastroInfo: PerfilInfo) {
-    this.cadastroService.setCadastroInfo(cadastroInfo).subscribe(
+  setCadastroInfo(cadastro_info: PerfilInfo) {
+    this.cadastroService.setCadastroInfo(cadastro_info).subscribe(
       success => this.router.navigateByUrl(this.path),
       error => console.log(error),
       () => console.log('request completo')
@@ -63,7 +63,7 @@ export class CadastroComponent {
     return this.areaAtuacao;
   }
 
-  private verificaDadosPerfil(cadastro: PerfilInfo, confirmaSenha: String) {
+  private verificaDadosPerfil(cadastro: PerfilInfo, confirma_senha: String) {
     let testResult: boolean = false;
     if(cadastro.nome_completo == '' || cadastro.nome_completo?.length < 6 || cadastro.nome_completo?.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
       alert('Nome incompleto');
@@ -93,7 +93,7 @@ export class CadastroComponent {
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }
-    else if(this.cadastroInfo.password != confirmaSenha) {
+    else if(this.cadastro_info.password != confirma_senha) {
       alert('As senha não são iguais');
       throw new Error('As senha não são iguais');
     }
