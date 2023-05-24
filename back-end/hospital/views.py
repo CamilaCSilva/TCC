@@ -33,7 +33,7 @@ class ProfissionaldeSaudeViewSet(APIView):
     
     def post(self, request):
         if request.method == 'POST':
-                """inserindo um novo profissional"""
+                """Cadastro um novo profissional"""
                 profissional_data = request.data
                 
                 profissional_serializer = ProfissionaldeSaudeSerializer(data=profissional_data)
