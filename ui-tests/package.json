@@ -1,0 +1,27 @@
+{
+  "name": "ui-tests",
+  "version": "1.0.0",
+  "description": "ui tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm run cypress": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaCSilva/tcc.git"
+  },
+  "author": "Camila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilaCSilva/tcc/issues"
+  },
+  "homepage": "https://github.com/CamilaCSilva/tcc#readme",
+  "devDependencies": {
+    "cypress": "^12.12.0",
+    "cypress-mochawesome-reporter": "^3.5.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

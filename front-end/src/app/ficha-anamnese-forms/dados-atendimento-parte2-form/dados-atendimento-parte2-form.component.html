@@ -9,7 +9,7 @@
       <!-- SINTOMAS -->
       <div class="sintomas d-flex flex-column mt-2">
         <label for="sintomas">Sintomas/Queixas</label>
-        <textarea ngModel class="form-control" name="sintomas" type="text" [(ngModel)]="sintomas" placeholder="Descreva os sintomas/queixas observados(as)"></textarea>
+        <textarea ngModel id="sintomas" class="form-control" name="sintomas" type="text" [(ngModel)]="sintomas" placeholder="Descreva os sintomas/queixas observados(as)"></textarea>
       </div>
 
       <div class="smallFields d-flex flex-row justify-content-around">
@@ -18,6 +18,7 @@
           <label for="nivelDor">Nível de Dor</label>
           <input
             ngModel
+            id="nivelDor"
             class="form-control"
             name="nivelDor"
             type="number"
@@ -31,7 +32,7 @@
         <!-- PRIORIDADE -->
         <div class="prioridade d-flex flex-column align-itens-center mt-2">
           <p>Prioridade</p>
-          <select ngModel class="btn form-select" [(ngModel)]="prioridade" name="prioridade" (change)="onPrioridadeChange(getPrioridade($event))">
+          <select ngModel id="prioridade" class="btn form-select" [(ngModel)]="prioridade" name="prioridade" (change)="onPrioridadeChange(getPrioridade($event))">
             <option value="nao-urgente">Não Urgente</option>
             <option value="pouco-urgente">Pouco Urgente</option>
             <option value="urgente">Urgente</option>
@@ -43,7 +44,7 @@
       <!-- OBSERVAÇÕES -->
       <div class="observacoes d-flex flex-column mt-2">
         <label for="observacoes">Observações</label>
-        <textarea ngModel class="form-control" name="observacoes" [(ngModel)]="observacoes" placeholder="Digite as observações necessárias"></textarea>
+        <textarea ngModel id="observacoes" class="form-control" name="observacoes" [(ngModel)]="observacoes" placeholder="Digite as observações necessárias"></textarea>
       </div>
 
       <!-- BOTÕES -->

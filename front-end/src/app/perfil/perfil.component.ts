@@ -54,9 +54,9 @@ export class PerfilComponent implements OnInit {
     this.nome_completo = this.perfil.nome_completo;
     this.campo_escolha = this.perfil.campo_escolha;
     this.documento_trabalho = this.perfil.documento_trabalho;
-    this.cpf = this.perfil.cpf;
+    this.cpf = this.perfil.cpf.slice(0,3) + "." + this.perfil.cpf.slice(3,6)+ "." + this.perfil.cpf.slice(6,9) + "-" + this.perfil.cpf.slice(9);
     this.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
-    this.celular = this.perfil.celular;
+    this.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
   }
 
   home(){

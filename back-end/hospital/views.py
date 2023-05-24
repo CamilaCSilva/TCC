@@ -11,63 +11,61 @@ import jwt, datetime
 class ProfissionaldeSaudeViewSet(APIView):
     
     def get(self, request):
-    
-        if request.method == 'GET':            
-            try:
-                """Listando os profissionais por cpf"""
-                if request.GET['cpf'] != '' and request.GET['cpf'] != 'undefined':
-                    profissional_cpf = request.GET['cpf']
-                    profissional = ProfissionaldeSaude.objects.get(pk = profissional_cpf)
-
-                    profissional_serializer = ProfissionaldeSaudeSerializer(profissional)
-                    return Response(profissional_serializer.data) 
-                else:
-                    return Response(status=status.HTTP_400_BAD_REQUEST)   
-            except:
-                """Listando todas os profissionais"""
-                profissional = ProfissionaldeSaude.objects.all()
-                profissional_serializer = ProfissionaldeSaudeSerializer(profissional, many=True)
+        try:
+            """Listando os profissionais por cpf"""
+            if request.GET['cpf'] != '' and request.GET['cpf'] != 'undefined':
+                profissional_cpf = request.GET['cpf']
+                profissional = ProfissionaldeSaude.objects.get(cpf = profissional_cpf)
+                profissional_serializer = ProfissionaldeSaudeSerializer(profissional)
                 return Response(profissional_serializer.data)
-    
-        return Response(status=status.HTTP_400_BAD_REQUEST)
-    
-    def post(self, request):
-        if request.method == 'POST':
-                """Cadastro um novo profissional"""
-                profissional_data = request.data
-                
-                profissional_serializer = ProfissionaldeSaudeSerializer(data=profissional_data)
-                if profissional_serializer.is_valid(raise_exception=True):
-                    profissional_serializer.save()
-                    return Response("Adicionado com sucesso!!", status=status.HTTP_201_CREATED)
-                
-                return Response("Falha para adicionar", status=status.HTTP_400_BAD_REQUEST)
-        
-    def put(self, request):
-        """Editando um profissional"""
-        if request.method == 'PUT':
-                
-                profissional_data = request.data['cpf']
+            else:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+        except:
+            """Listando todas os profissionais"""
+            profissional = ProfissionaldeSaude.objects.all()
+            profissional_serializer = ProfissionaldeSaudeSerializer(profissional, many=True)
+            return Response(profissional_serializer.data)
 
-                try:
-                    profissional = ProfissionaldeSaude.objects.get(cpf=profissional_data)
-                except:
-                    return Response(status=status.HTTP_404_NOT_FOUND)
-                profissional_serializer = ProfissionaldeSaudeSerializer(profissional, data=request.data)
-                if profissional_serializer.is_valid():
-                    profissional_serializer.save()
-                    return Response("Atualizado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
-                return Response("Falha para atualizar.", status=status.HTTP_400_BAD_REQUEST)
-    
+class SignUpProfissionalViewSet(APIView):
+    def post(self, request):
+        """Cadastro um novo profissional"""
+        profissional_data = request.data
+        profissional_serializer = ProfissionaldeSaudeSerializer(data=profissional_data)
+        if profissional_serializer.is_valid(raise_exception=True):
+            profissional_serializer.save()
+            return Response("Adicionado com sucesso!!", status=status.HTTP_201_CREATED)
+        return Response(profissional_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class DeleteProfissionalViewSet(APIView):
     def delete(self, request):
         """Deletendo um profissional"""
-        if request.method == 'DELETE':
-            try:
-                profissional = ProfissionaldeSaude.objects.get(cpf = request.data['cpf'])
-                profissional.delete()
-                return Response("Deletado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
-            except:
-                return Response("Falha para deletar.", status=status.HTTP_400_BAD_REQUEST)
+        profissional_cpf = request.GET['cpf']
+        profissional = ProfissionaldeSaude.objects.get(cpf = profissional_cpf)
+        try:
+            profissional.delete()
+            return Response("Deletado com Sucesso!!", status=status.HTTP_204_NO_CONTENT)
+        except:
+            return Response("Falha para deletar.", status=status.HTTP_400_BAD_REQUEST)
+
+class EditProfissionalViewSet(APIView):
+    def put(self, request):
+        """Editando um profissional"""
+        token = request.COOKIES.get('jwt')
+        
+        if not token:
+            raise AuthenticationFailed('Não Autenticado')
+        
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Não Autenticado')
+        
+        user = ProfissionaldeSaude.objects.get(cpf=payload['cpf'])
+        serializer = ProfissionaldeSaudeSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response("Atualizado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginProfissionalViewSet(APIView):
     def post(self, request):
