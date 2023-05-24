@@ -3,11 +3,7 @@ describe('Cenario de Teste:  Testar a página de home da aplicação MedVida', (
   it('Cenario de Teste: Pesquisar uma ficha pela data 22/05/2023', () => {
     cy.visit('http://localhost:4200/home')
     cy.get('#filtroData').click()
-    cy.get('#filtroData')
-     .type('2023-05-22')
-     .trigger('keyup', {
-      key: 'Enter',
-    });
+    cy.get('#filtroData').type('2023-05-22')
     cy.get('.nomeData > p').should('contain.text', '22/05/2023')
   })
 
