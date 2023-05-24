@@ -11,7 +11,7 @@ export class CadastroService {
 <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
   url = 'http://localhost:8000/'
 
-  private profissional_url = url + '/profissionaldesaude/signup'
+  private profissional_url = this.url + '/profissionaldesaude/signup'
 
 
   constructor(private http: HttpClient) {}
