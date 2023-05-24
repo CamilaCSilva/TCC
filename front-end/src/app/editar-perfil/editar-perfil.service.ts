@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { PerfilInfo } from '../models/perfil.model';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { URLS } from '../models/url.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EditarPerfilService {
 
-  url = URLS;
+  <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
+  url = 'http://localhost:8000/';
 
   private profissionalUrl =  this.url + 'profissionaldesaude/?cpf=';
 
