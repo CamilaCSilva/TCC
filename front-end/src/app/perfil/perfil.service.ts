@@ -8,7 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  private profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/?cpf='
+  <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
+  url = 'http://localhost:8000/'
+
+  private profissional_url = url
+
+  private profissionalUrl = this.url + 'profissionaldesaude/?cpf='
 
   constructor(private http: HttpClient) {}
 
