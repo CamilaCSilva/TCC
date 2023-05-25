@@ -1,27 +1,82 @@
 $black: rgb(0, 0, 0);
 
-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "TextoCopyright LogoRodape .";
-  align-items: center;
-  padding: 1rem 2rem;
+@media screen and (min-width:1024px) {
+  footer {
+    max-height: 10em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "TextoCopyright LogoRodape .";
+    align-items: center;
+    padding: 1rem 1.5rem;
 
-  small {
-    color: $black;
+    .TextoCopyright {
+      color: $black;
+      justify-self: center;
+      grid-area: TextoCopyright;
+    }
+
+    .LogoRodape {
+      justify-self: center;
+      grid-area: LogoRodape;
+      max-width: 120px;
+      max-height: 70px;
+    }
   }
+
 }
 
-.TextoCopyright {
-  justify-self: center;
-  grid-area: TextoCopyright;
+@media screen and (max-width: 1023px) and (min-width: 481px) {
+  footer {
+    max-height: 10em;
+    max-width: 100vw;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "TextoCopyright LogoRodape .";
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 1.5rem;
+
+    .TextoCopyright {
+      color: $black;
+      grid-area: TextoCopyright;
+    }
+
+    .LogoRodape {
+      grid-area: LogoRodape;
+      max-width: 120px;
+      max-height: 70px;
+    }
+  }
+
 }
 
-.LogoRodape {
-  justify-self: center;
-  grid-area: LogoRodape;
-  max-width: 120px;
-  max-height: 70px;
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  footer {
+    max-height: 10em;
+    max-width: 100vw;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "TextoCopyright LogoRodape .";
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 1.5rem;
+
+    .TextoCopyright {
+      color: $black;
+      grid-area: TextoCopyright;
+    }
+
+    .LogoRodape {
+      grid-area: LogoRodape;
+      max-width: 120px;
+      max-height: 70px;
+    }
+  }
+
 }
