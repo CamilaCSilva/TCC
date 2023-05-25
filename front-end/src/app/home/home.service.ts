@@ -9,7 +9,7 @@ import { Anamnese } from '../models/anamnese.model';
 })
 export class HomeService {
 
-  <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
+  // url = 'https://tcc-production-33a0.up.railway.app/';
   url = 'http://localhost:8000/';
 
   private profissionalUrl = this.url + 'anamnese/?data='

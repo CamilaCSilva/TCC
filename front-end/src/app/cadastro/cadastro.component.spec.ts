@@ -28,7 +28,7 @@ describe('CadastroComponent', () => {
     celular: '35 98453-2456',
     doc: '134567',
     unidadeAtendimento: 'HMAC',
-    senha: 'Testando@1',
+    password: 'Testando@1',
   };
 
   const cadastroInfoMock1: PerfilInfo = {
@@ -38,7 +38,7 @@ describe('CadastroComponent', () => {
     celular: cadastroInfoMock.celular,
     documento_trabalho: cadastroInfoMock.doc,
     unidade_de_atendimento: cadastroInfoMock.unidadeAtendimento,
-    senha: cadastroInfoMock.senha,
+    password: cadastroInfoMock.password,
   };
 
   beforeEach(() => {
@@ -81,13 +81,13 @@ describe('CadastroComponent', () => {
       component.cadastrar();
 
       // Then
-      expect(component.cadastroInfo.cpf).toEqual(cadastroInfoMock.cpf);
-      expect(component.cadastroInfo.campo_escolha).toEqual(cadastroInfoMock.areaAtuacao);
-      expect(component.cadastroInfo.nome_completo).toEqual(cadastroInfoMock.nomeCompleto);
-      expect(component.cadastroInfo.celular).toEqual(cadastroInfoMock.celular);
-      expect(component.cadastroInfo.documento_trabalho).toEqual(cadastroInfoMock.doc);
-      expect(component.cadastroInfo.unidade_de_atendimento).toEqual(cadastroInfoMock.unidadeAtendimento);
-      expect(component.cadastroInfo.senha).toEqual(cadastroInfoMock.senha);
+      expect(component.cadastro_info.cpf).toEqual(cadastroInfoMock.cpf);
+      expect(component.cadastro_info.campo_escolha).toEqual(cadastroInfoMock.areaAtuacao);
+      expect(component.cadastro_info.nome_completo).toEqual(cadastroInfoMock.nomeCompleto);
+      expect(component.cadastro_info.celular).toEqual(cadastroInfoMock.celular);
+      expect(component.cadastro_info.documento_trabalho).toEqual(cadastroInfoMock.doc);
+      expect(component.cadastro_info.unidade_de_atendimento).toEqual(cadastroInfoMock.unidadeAtendimento);
+      expect(component.cadastro_info.password).toEqual(cadastroInfoMock.password);
       expect(setCadastroInfoSpy).toHaveBeenCalledWith(cadastroInfoMock1);
       //     this.router.navigateByUrl(this.path);
     });

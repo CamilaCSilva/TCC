@@ -2,18 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PerfilInfo } from '../models/perfil.model';
 import { take } from 'rxjs/operators';
+import { URLS } from '../models/url.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
-<<<<<<< HEAD
-  url = URLS;
-=======
-
-<!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
+  
   url = 'http://localhost:8000/'
->>>>>>> 2a3a14936869b7ffbe050c97cf7a3c5e5ae3bbd8
 
   private profissional_url = this.url + '/profissionaldesaude/signup'
 
