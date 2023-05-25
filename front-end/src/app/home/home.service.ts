@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { Anamnese } from '../models/anamnese.model';
-import { URLS } from '../models/url.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  url = URLS;
+  <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
+  url = 'http://localhost:8000/';
 
   private profissionalUrl = this.url + 'anamnese/?data='
 
