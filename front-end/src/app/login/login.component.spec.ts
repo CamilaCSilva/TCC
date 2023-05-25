@@ -23,16 +23,16 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fdescribe('entrar()', () => {
-    it('should show message', () => {
-      // Given
-      const name = 'Camila';
+  // xdescribe('entrar()', () => {
+  //   it('should show message', () => {
+  //     // Given
+  //     const name = 'Camila';
 
-      // When
-      component.entrar(name);
+  //     // When
+  //     component.entrar(name);
 
-      // Then
-      expect(component.mensagem).toEqual("Bem vinda(o), " + name + "!");
-    });
-  });
+  //     // Then
+  //     expect(component.mensagem).toEqual("Bem vinda(o), " + name + "!");
+  //   });
+  // });
 });

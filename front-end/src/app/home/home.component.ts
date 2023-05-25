@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     paciente: '',
   }
 
-  data: Date;
+  data: Date = new Date('2023-05-22 GMT-3');
   tipo: boolean;
 
   constructor(private router: Router, private homeService: HomeService) {

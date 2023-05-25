@@ -8,11 +8,11 @@ import { URLS } from '../models/url.model';
   providedIn: 'root'
 })
 export class CadastroService {
-
   url = URLS;
 
   private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
 
+  profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/'
 
   constructor(private http: HttpClient) {}
 

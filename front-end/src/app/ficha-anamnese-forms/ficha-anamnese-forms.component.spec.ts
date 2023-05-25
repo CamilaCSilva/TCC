@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FichaAnamneseFormsComponent } from './ficha-anamnese-forms.component';
 
 describe('FichaAnamneseComponent', () => {
