@@ -11,14 +11,13 @@ export class CadastroService {
   
   url = 'http://localhost:8000/'
 
-  private profissional_url = this.url + '/profissionaldesaude/signup'
+  private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
 
   profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/'
 
   constructor(private http: HttpClient) {}
 
   setCadastroInfo(cadastro_infos: PerfilInfo) {
-    console.log(cadastro_infos);
     return this.http.post(`${this.profissional_url}`, cadastro_infos).pipe(take(1));
   }
 }

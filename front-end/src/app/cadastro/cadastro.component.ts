@@ -39,7 +39,6 @@ export class CadastroComponent {
     if(this.verificaDadosPerfil(this.cadastro_info, this.confirmar_senha)) {
       this.cadastro_info.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
       this.cadastro_info.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
-      console.log(this.cadastro_info)
       this.setCadastroInfo(this.cadastro_info);
     }
   }
