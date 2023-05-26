@@ -15,7 +15,7 @@ export class EditarPerfilComponent implements OnInit {
   areaAtuacao: string;
   perfil: PerfilInfo;
   perfil_atualizado: any;
-  nome_completo:String;
+  nome_completo:String = 'Alessandra';
   campo_escolha: String;
   documento_trabalho: String;
   cpf: String;
@@ -41,7 +41,7 @@ export class EditarPerfilComponent implements OnInit {
       console.log('Erro ao listar o profissional', err)
     })
   }
-  
+
   mostrarProfissional(){
     this.nome_completo = this.perfil.nome_completo;
     this.campo_escolha = this.perfil.campo_escolha;

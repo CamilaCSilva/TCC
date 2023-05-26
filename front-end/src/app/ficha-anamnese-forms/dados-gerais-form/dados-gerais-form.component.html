@@ -30,7 +30,7 @@
       <button
         class="btnAssinarEnviar btn btn-primary"
         type="button"
-        (click)="modalConfirmacao.hidden = false">
+        (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
         ASSINAR E ENVIAR
       </button>
     </div>

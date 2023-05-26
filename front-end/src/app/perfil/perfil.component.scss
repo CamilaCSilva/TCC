@@ -107,7 +107,7 @@ $black: black;
     background-size: cover;
     min-height: 90vh;
     width: 100vw;
-    padding: 2rem 1rem;
+    padding: 2em 1em;
     gap: 2em;
 
     .headerGeral {
@@ -223,7 +223,7 @@ $black: black;
         }
 
         .botoesHeader {
-          gap: 2em;
+          gap: 20px;
 
           .logo {
             max-width: 40px;
@@ -303,7 +303,7 @@ $black: black;
     background-size: cover;
     min-height: 90vh;
     width: 100vw;
-    padding: 1rem 1rem;
+    padding: 2em 1em;
     gap: 3em;
 
     .headerGeral {
@@ -314,14 +314,14 @@ $black: black;
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        gap: 5em;
+        gap: 2em;
 
         & h2 {
-          width: 9em;
+          width: 12.5em;
         }
 
         .botoesHeader {
-          gap: 2em;
+          gap: 10px;
 
           .logo {
             max-width: 40px;
