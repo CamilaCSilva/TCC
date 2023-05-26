@@ -29,7 +29,7 @@
         <!-- ÁREA ATUAÇÃO -->
         <div class="d-flex flex-column">
           <label>Área de Atuação</label>
-          <select ngModel class="minimal" [(ngModel)]="campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
+          <select ngModel id="campo_escolha" class="minimal" [(ngModel)]="campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
             <option value="CRM">Médico(a)</option>
             <option value="COREN">Enfermeiro(a)</option>
             <option value="DRF">Paramédico(a)</option>

@@ -11,7 +11,7 @@ export class PerfilService {
   private url = 'https://tcc-production-33a0.up.railway.app/';
   // private url = 'http://localhost:8000/'
 
-  private profissional_url = this.url + 'profissionaldesaude/user'
+  private profissional_url = this.url + 'profissionaldesaude/?cpf=13168035629' // trocar o ?cpf=13168035629 por user
 
   constructor(private http: HttpClient) {}
 
