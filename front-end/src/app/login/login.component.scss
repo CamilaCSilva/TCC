@@ -2,58 +2,60 @@ $dark-red: #5c0505;
 $light-red: #b87676;
 $white: #ffff;
 
-.loginContainer {
-  background: url(/assets/images/background.png);
-  background-size: cover;
-  min-height: 55vh;
-  padding: 2rem 0;
+@media screen and (min-width:1024px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    padding: 2rem 0;
 
-  .loginInfosContainer {
+    .loginInfosContainer {
 
-    .loginForm {
-      width: 30vw;
-      height: 40vh;
-      background: $light-red;
-      border: none;
-      border-radius: 20px;
-      padding: 1rem;
-
-      & label {
-        color: $dark-red;
-        font-weight: bold;
-        font-size: 18px;
-        margin: 0 0 0.5rem;
-      }
-
-      & input {
+      .loginForm {
+        width: 30vw;
+        height: 40vh;
+        background: $light-red;
         border: none;
-        width: 27.5vw;
-        height: 3vh;
-        font-size: 18px;
-        padding: 1rem 2rem;
         border-radius: 20px;
-        margin: 0.5rem 0 1rem;
-      }
+        padding: 1rem;
 
-      .btns {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
 
-        .botao {
-          margin-top: 10px;
-          width: 11.5em;
-          height: 3.5em;
+        & input {
           border: none;
-          padding: 1rem;
-          background-color: $dark-red;
-          color: $white;
+          width: 27.5vw;
+          height: 3vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
 
-          &:hover {
-            background-color: $white;
-            color: $dark-red;
-            font-weight: bold;
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
           }
         }
       }
@@ -61,3 +63,311 @@ $white: #ffff;
   }
 }
 
+@media screen and (min-width:1024px) and (max-height: 800px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 65vh;
+    padding: 2rem 0;
+
+    .loginInfosContainer {
+
+      .loginForm {
+        width: 30vw;
+        height: 48vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
+
+        & input {
+          border: none;
+          width: 27.5vw;
+          height: 3vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (min-height: 1024px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 65vh;
+    width: 100vw;
+    padding: 2rem 0;
+
+    .loginInfosContainer {
+
+      .loginForm {
+        width: 60vw;
+        height: 30vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
+
+        & input {
+          border: none;
+          width: 55vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 70vh;
+    width: 100vw;
+    padding: 2rem 0;
+
+    .loginInfosContainer {
+
+      .loginForm {
+        width: 60vw;
+        height: 40vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
+
+        & input {
+          border: none;
+          width: 55vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 80vh;
+    width: 110vw;
+    padding: 1.5rem 0;
+
+    .loginInfosContainer {
+
+      .loginForm {
+        width: 80vw;
+        height: 38vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
+
+        & input {
+          border: none;
+          width: 72.5vw;
+          height: 4.5vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+  .loginContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 80vh;
+    width: 110vw;
+    padding: 1.5rem 0;
+
+    .loginInfosContainer {
+
+      .loginForm {
+        width: 80vw;
+        height: 42vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          color: $dark-red;
+          font-weight: bold;
+          font-size: 18px;
+          margin: 0 0 0.5rem;
+        }
+
+        & input {
+          border: none;
+          width: 71.5vw;
+          height: 4.5vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 11.5em;
+            height: 3.5em;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

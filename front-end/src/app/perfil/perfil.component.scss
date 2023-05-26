@@ -40,13 +40,13 @@ $black: black;
 
   .perfilInfosContainer {
     width: 30vw;
-    height: 75vh;
+    height: 85vh;
     background: $light-red;
     border-radius: 20px;
     border: none;
     padding: 1rem;
 
-    .nomeCompleto, .sexo, .docTrabalho, .cpf, .unidadeAtendimento, .celular {
+    .nomeCompleto, .crmCorenDrf, .sexo, .docTrabalho, .cpf, .unidadeAtendimento, .celular {
       width: 18em;
 
       & label {

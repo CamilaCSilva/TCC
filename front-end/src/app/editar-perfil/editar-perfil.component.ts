@@ -12,7 +12,7 @@ export class EditarPerfilComponent implements OnInit {
 
   path: string = 'home/perfil';
   string = 'Edição Perfil';
-  areaAtuacao: string;
+  area_atuacao: string;
   perfil: PerfilInfo;
   perfil_atualizado: any;
   nome_completo:String;
@@ -46,9 +46,9 @@ export class EditarPerfilComponent implements OnInit {
     this.nome_completo = this.perfil.nome_completo;
     this.campo_escolha = this.perfil.campo_escolha;
     this.documento_trabalho = this.perfil.documento_trabalho;
-    this.cpf = this.perfil.cpf;
+    this.cpf = this.perfil.cpf.slice(0,3) + "." + this.perfil.cpf.slice(3,6)+ "." + this.perfil.cpf.slice(6,9) + "-" + this.perfil.cpf.slice(9);
     this.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
-    this.celular = this.perfil.celular;
+    this.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
   }
 
   voltar(){
@@ -67,28 +67,29 @@ export class EditarPerfilComponent implements OnInit {
     this.perfil_atualizado.documento_trabalho = editarPerfil.value.documento_trabalho != '' ? editarPerfil.value.documento_trabalho : this.perfil_atualizado.documento_trabalho;
     this.perfil_atualizado.unidade_de_atendimento = editarPerfil.value.unidade_de_atendimento != '' ? editarPerfil.value.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
     if(this.verificaDadosPerfil(this.perfil_atualizado)){
+      this.perfil_atualizado.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
+      this.perfil_atualizado.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
       this.updateProfissional();
-      this.router.navigateByUrl(this.path, this.usuario);
     }
   }
 
   updateProfissional(){
     this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado).subscribe(
-      success => console.log('Sucesso!'),
+      success => this.router.navigateByUrl(this.path, this.usuario),
       error => console.log(error),
       () => console.log('request completo')
     );
   }
 
-  onAreaChange(areaAtuacao: string) {
-    if(areaAtuacao == 'CRM') { console.log('Médico(a)'); }
-    else if(areaAtuacao == 'COREN') { console.log('Enfermeiro(a)'); }
-    else if(areaAtuacao == 'DRF') { console.log('Paramédico(a)'); }
+  onAreaChange(area_atuacao: string) {
+    if(area_atuacao == 'CRM') { console.log('Médico(a)'); }
+    else if(area_atuacao == 'COREN') { console.log('Enfermeiro(a)'); }
+    else if(area_atuacao == 'DRF') { console.log('Paramédico(a)'); }
   }
 
   getArea(event: Event) {
-    this.areaAtuacao = (event.target as HTMLInputElement).value;
-    return this.areaAtuacao;
+    this.area_atuacao = (event.target as HTMLInputElement).value;
+    return this.area_atuacao;
   }
 
   private verificaDadosPerfil(cadastro: PerfilInfo) {
@@ -105,7 +106,7 @@ export class EditarPerfilComponent implements OnInit {
       alert('Preencha seu documento de trabalho');
       throw new Error('Preencha seu documento de trabalho');
     }
-    else if (cadastro.cpf == '' || cadastro.cpf.length < 11 || !cadastro.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+    else if (cadastro.cpf == '' || !cadastro.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
@@ -117,7 +118,7 @@ export class EditarPerfilComponent implements OnInit {
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if (cadastro.password == '' || !cadastro.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }

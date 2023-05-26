@@ -33,6 +33,8 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   seguir(idPaciente: any) {
     this.anamnese = Object.assign({}, this.anamnese, idPaciente.value);
     if(this.verificaDados(this.anamnese)){
+      this.anamnese.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "")
+      this.anamnese.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
       this.router.navigateByUrl(this.path2, this.anamnese);
     }
   }

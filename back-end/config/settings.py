@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path, os
+from datetime import timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -40,13 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
     'hospital.apps.HospitalConfig',
     'ficha_paciente.apps.FichaPacienteConfig',
-    'rest_framework',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://a667-138-94-54-210.ngrok-free.app"
     ] 
@@ -115,9 +118,17 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+AUTH_USER_MODEL = "hospital.ProfissionaldeSaude"
+
+SIMPLE_JWT = {
+    'USER_ID_FIELD': 'cpf',
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=180),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

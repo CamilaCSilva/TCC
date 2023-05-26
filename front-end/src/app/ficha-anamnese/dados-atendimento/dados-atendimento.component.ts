@@ -31,7 +31,7 @@ export class DadosAtendimentoComponent implements OnInit {
     console.log(this.anamnese)
     this.sexo = this.anamnese.paciente.sexo;
     this.idade = this.anamnese.paciente.idade;
-    this.tipoSangue = this.anamnese.tipo_sanguineo    ;
+    this.tipoSangue = this.anamnese.tipo_sanguineo;
     this.alergias = this.anamnese.paciente.alergias;
     this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
     this.historicoDoencas = this.anamnese.paciente.historico_doencas;

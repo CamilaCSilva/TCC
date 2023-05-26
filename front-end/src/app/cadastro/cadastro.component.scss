@@ -2,90 +2,559 @@ $white: white;
 $dark-red: #5c0505;
 $light-red: #b87676;
 
-.cadastroContainer {
-  background: url(/assets/images/background.png);
-	background-size: cover;
-	min-height: 65vh;
-  padding: 2rem 0;
+@media screen and (min-width:1024px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 65vh;
+    padding: 2rem 0;
 
-  .cadastroInfosContainer {
+    .cadastroInfosContainer {
 
-    .criarCadastroForm {
-      width: 30vw;
-      height: 120vh;
-      background: $light-red;
-      border: none;
-      border-radius: 20px;
-      padding: 1rem;
-
-      & label {
-        font-size: 18px;
-        color: $dark-red;
-        font-weight: bold;
-        margin: 0 0 0.5rem;
-      }
-
-      & select {
-        width: 27.5vw;
-        height: 4vh;
-        background-color: $white;
+      .criarCadastroForm {
+        width: 30vw;
+        height: 100vh;
+        background: $light-red;
         border: none;
         border-radius: 20px;
-        display: inline-block;
-        font: inherit;
-        line-height: 1.5em;
-        padding: 0.5em 3.5em 0.5em 1em;
-        cursor: pointer;
-        margin-bottom: 1rem;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -moz-appearance: none;
+        padding: 1rem;
 
-        .minimal {
-          background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-          background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-          background-size: 5px 5px, 5px 5px, 1px 1.5em;
-          background-repeat: no-repeat;
-          &:focus {
-            background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
+
+        & select {
+          width: 27.5vw;
+          height: 4vh;
+          background-color: $white;
+          border: none;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
+
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
             background-size: 5px 5px, 5px 5px, 1px 1.5em;
             background-repeat: no-repeat;
-            border-color: $dark-red;
-            outline: 0;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 27.5vw;
+          height: 3vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
           }
         }
       }
+    }
+  }
+}
 
-      & input {
+@media screen and (min-width:1024px) and (max-height: 700px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 75vh;
+    padding: 2rem 0;
+
+    .cadastroInfosContainer {
+
+      .criarCadastroForm {
+        width: 30vw;
+        height: 145vh;
+        background: $light-red;
         border: none;
-        width: 27.5vw;
-        height: 3vh;
-        font-size: 18px;
-        padding: 1rem 2rem;
         border-radius: 20px;
-        margin: 0.5rem 0 1rem;
-      }
+        padding: 1rem;
 
-      .btns {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
 
-        .botao {
-          margin-top: 10px;
-          width: 200px;
+        & select {
+          width: 27.5vw;
+          height: 5vh;
+          background-color: $white;
           border: none;
-          padding: 1rem;
-          background-color: $dark-red;
-          color: $white;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
 
-          &:hover {
-            background-color: $white;
-            color: $dark-red;
-            font-weight: bold;
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 27.5vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (min-height: 1024px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 70vh;
+    padding: 2rem 0;
+
+    .cadastroInfosContainer {
+
+      .criarCadastroForm {
+        width: 60vw;
+        height: 90vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
+
+        & select {
+          width: 55vw;
+          height: 5vh;
+          background-color: $white;
+          border: none;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
+
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 55vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 65vh;
+    padding: 2rem 0;
+
+    .cadastroInfosContainer {
+
+      .criarCadastroForm {
+        width: 60vw;
+        height: 120vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
+
+        & select {
+          width: 55vw;
+          height: 5vh;
+          background-color: $white;
+          border: none;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
+
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 55vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 65vh;
+    width: 100vw;
+    padding: 2rem 0;
+
+    .cadastroInfosContainer {
+
+      .criarCadastroForm {
+        width: 80vw;
+        height: 100vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
+
+        & select {
+          width: 70vw;
+          height: 5vh;
+          background-color: $white;
+          border: none;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
+
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 70vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+  .cadastroContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 90vh;
+    width: 100vw;
+    padding: 2rem 0;
+
+    .cadastroInfosContainer {
+
+      .criarCadastroForm {
+        width: 78vw;
+        height: 135vh;
+        background: $light-red;
+        border: none;
+        border-radius: 20px;
+        padding: 1rem;
+
+        & label {
+          font-size: 18px;
+          color: $dark-red;
+          font-weight: bold;
+          margin: 0 0 0.5rem;
+        }
+
+        & select {
+          width: 68vw;
+          height: 5vh;
+          background-color: $white;
+          border: none;
+          border-radius: 20px;
+          display: inline-block;
+          font: inherit;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -moz-appearance: none;
+
+          .minimal {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            &:focus {
+              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+              border-color: $dark-red;
+              outline: 0;
+            }
+          }
+        }
+
+        & input {
+          border: none;
+          width: 68vw;
+          height: 4vh;
+          font-size: 18px;
+          padding: 1rem 2rem;
+          border-radius: 20px;
+          margin: 0.5rem 0 1rem;
+        }
+
+        .btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+
+          .botao {
+            margin-top: 10px;
+            width: 200px;
+            border: none;
+            padding: 1rem;
+            background-color: $dark-red;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-red;
+              font-weight: bold;
+            }
           }
         }
       }
