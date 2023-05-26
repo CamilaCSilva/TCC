@@ -8,16 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  <!--   url = 'https://tcc-production-33a0.up.railway.app/'; -->
-  url = 'http://localhost:8000/'
+  private url = 'https://tcc-production-33a0.up.railway.app/';
+  // private url = 'http://localhost:8000/'
 
-  private profissional_url = url
-
-  private profissionalUrl = this.url + 'profissionaldesaude/?cpf='
+  private profissional_url = this.url + 'profissionaldesaude/user'
 
   constructor(private http: HttpClient) {}
 
   getPerfilInfo(cpf: any) {
-    return this.http.get(`${this.profissionalUrl}${cpf}`) as Observable<PerfilInfo>;
+    return this.http.get(`${this.profissional_url}`) as Observable<PerfilInfo>;
   }
 }

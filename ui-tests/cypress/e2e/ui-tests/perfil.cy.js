@@ -1,9 +1,9 @@
 function visitperfil(){
   cy.visit('http://localhost:4200/')
   cy.get('#cpf').click()
-  cy.get('#cpf').type("789.654.123-20")
+  cy.get('#cpf').type("131.680.356-29")
   cy.get('#senha').click()
-  cy.get('#senha').type("Matheus123!")
+  cy.get('#senha').type("Matheus123@")
   cy.get('.btn').click()
   cy.get('.fotoPerfil > a > img').click()
 
