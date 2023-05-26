@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('Token'))
     console.log(this.usuario)
   }
 
