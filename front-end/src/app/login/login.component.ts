@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         cpf: this.cpf_usuario.replace(/-/g, "").replace(".", "").replace(".", ""),
         password: this.password
       }      
-      this.usuario = this.getLoginInfo(this.perfil);
+      this.getLoginInfo(this.perfil);
       this.router.navigateByUrl(this.path);
     }
   }
@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
       success => { 
-        return success;
+        this.usuario = success;
+        localStorage.setItem("Token", this.usuario.jwt);
       },
       error => console.log(error),
       () => console.log('request completo')

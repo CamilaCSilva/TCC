@@ -23,22 +23,22 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
 
   it('Cenario de Teste: Verificando a área de atuação do usuario na aba perfil da aplicação MedVida', () => {
     visitperfil()
-    cy.get('#campo_escolha').should('contain.text', 'Paramédico(a)')
+    cy.get('#campo_escolha').should('contain.text', 'Médico(a)')
   })
 
   it('Cenario de Teste: Verificando o numero do documento do usuario na aba perfil da aplicação MedVida', () => {
     visitperfil()
-    cy.get('#doc').should('contain.text', '987455')
+    cy.get('#doc').should('contain.text', '759143')
   })
 
   it('Cenario de Teste: Verificando o numero do CPF do usuario na aba perfil da aplicação MedVida', () => {
     visitperfil()
-    cy.get('#cpf').should('contain.text', '789.654.123-20')
+    cy.get('#cpf').should('contain.text', '131.680.356-29')
   })
 
   it('Cenario de Teste: Verificando a unidade de atendimento do usuario na aba perfil da aplicação MedVida', () => {
     visitperfil()
-    cy.get('#unidadeAtendimento').should('contain.text', 'Hospital Antônio Moreira da Costa')
+    cy.get('#unidadeAtendimento').should('contain.text', 'HAMC')
   })
 
   it('Cenario de Teste: Verificando o numero de celular do usuario na aba perfil da aplicação MedVida', () => {
