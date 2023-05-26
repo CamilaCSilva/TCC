@@ -1,7 +1,7 @@
-<div class="main d-flex flex-column align-items-center justify-content-around">
+<div class="main d-flex flex-column align-items-center">
   <!-- HEADER -->
-  <div class="headerGeral d-flex flex-column align-items-center justify-content-between">
-    <div class="nav d-flex flex-row justify-content-between">
+  <div class="headerGeral d-flex flex-column">
+    <div class="nav d-flex">
       <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
       <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
         <!-- DATA -->
@@ -12,33 +12,33 @@
           <a (click)="visualizarPerfil()"><img src="../../assets/do-utilizador.png" alt="Perfil"></a>
         </div>
 
-         <!-- SAIR -->
-         <div class="iconeSair">
+        <!-- SAIR -->
+        <div class="iconeSair">
           <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
         </div>
       </div>
     </div>
   </div>
 
-    <div class="d-flex flex-column align-items-center justify-content-center">
-      <!-- FICHAS DISPONÍVEIS -->
-      <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
-        <li id="fichas" *ngFor="let paciente of pacientes">
-          <div class="nomeData d-flex flex-row justify-content-between">
-            <h3><a (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
-            <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
-          </div>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <!-- FICHAS DISPONÍVEIS -->
+    <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
+      <li id="fichas" *ngFor="let paciente of pacientes">
+        <div class="nomeData d-flex flex-row justify-content-between">
+          <h3><a (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
+          <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
+        </div>
 
-          <div class="observacoes">
-            <p class="pri">{{ paciente.classificacao_risco }}</p>
-            <p class="obs">{{ paciente.observacoes }}</p>
-          </div>
-        </li>
-      </ul>
+        <div class="observacoes">
+          <p class="pri">{{ paciente.classificacao_risco }}</p>
+          <p class="obs">{{ paciente.observacoes }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-      <div class="btns">
-        <button (click)="adicionarFicha()" class="btn botao">+</button>
-      </div>
-    </div>
+  <div class="btns">
+    <button (click)="adicionarFicha()" class="btn botao">+</button>
+  </div>
 </div>
 <app-footer></app-footer>

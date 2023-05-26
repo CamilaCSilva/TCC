@@ -22,6 +22,7 @@ export class PerfilComponent implements OnInit {
   celular: String;
 
   usuario: any;
+  nome = 'Alessandra';
 
   constructor(private router: Router, private perfilService: PerfilService) {
     const nav = this.router.getCurrentNavigation();
