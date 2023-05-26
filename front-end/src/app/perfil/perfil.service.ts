@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PerfilInfo } from '../models/perfil.model';
 import { Observable } from 'rxjs';
@@ -18,10 +18,6 @@ export class PerfilService {
   constructor(private http: HttpClient) {}
 
   getPerfilInfo(cpf: any) {
-    return this.http.get(      
-      `${this.profissional_url}`,{
-        headers: this.header,
-      }
-      ) as Observable<PerfilInfo>;
+    return this.http.get(`${this.profissional_url}`) as Observable<PerfilInfo>;
   }
 }
