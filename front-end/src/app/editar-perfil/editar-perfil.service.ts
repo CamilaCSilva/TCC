@@ -12,7 +12,7 @@ export class EditarPerfilService {
   // url = 'https://tcc-production-33a0.up.railway.app/';
   url = 'http://localhost:8000/';
 
-  private profissionalUrl =  this.url + 'profissionaldesaude/?cpf=';
+  private profissionalUrl =  this.url + 'profissionaldesaude/edit/';
 
   constructor(private http: HttpClient) { }
 
