@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
 
   path = '/home';
   stringFacaLogin = 'Faça o login!';
-  cpf_usuario: string;
-  password: string;
+  cpf_usuario: string = '';
+  password: string = '';
   testResult: boolean = false;
 
   usuario: any;
@@ -31,37 +31,39 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   logar() {
-    this.verificaDados();
-    this.perfil = {
-      cpf: this.cpf_usuario,
-      password: this.password
-    }
-    this.getLoginInfo(this.perfil);
-    if(this.testResult) {
+    if(this.verificaDados()){
+      this.perfil = {
+        cpf: this.cpf_usuario.replace(/-/g, "").replace(".", "").replace(".", ""),
+        password: this.password
+      }      
+      this.usuario = this.getLoginInfo(this.perfil);
       this.router.navigateByUrl(this.path);
     }
   }
 
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
-      success => this.router.navigateByUrl(this.path),
+      success => { 
+        return success;
+      },
       error => console.log(error),
       () => console.log('request completo')
     );
   }
 
-
   private verificaDados() {
-    if(this.cpf_usuario && this.cpf_usuario.length < 11 || !this.cpf_usuario.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+    let testResult = false
+    if(this.cpf_usuario.length < 11 || !this.cpf_usuario.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
-    else if(this.password && !this.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if(!this.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }
     else {
-      this.testResult = true;
+      testResult = true;
     }
+    return testResult
   }
 }
