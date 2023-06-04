@@ -27,10 +27,113 @@ $black: black;
 }
 
 
-@media screen and (min-width:1025px) {
-
+@media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
+    min-height: 85vh;
+
+    .dadosGerais {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 28vw;
+      height: 60vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+      }
+
+      .loc {
+        width: 18em;
+        border-radius: 20px;
+      }
+
+      .nomeParamedico, .docTrabalho {
+        font-size: 18px;
+
+        & input {
+          width: 30em;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 18px;
+          color: $black;
+        }
+      }
+
+      .btns {
+        width: 30vw;
+        font-size: 18px;
+        margin-top: 20px;
+
+        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+          border-radius: 20px;
+        }
+      }
+
+    }
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        background-color: $white;
+        border-radius: 20px;
+        width: 30em;
+        height: 10em;
+
+        & h3 {
+          color: $dark-red;
+        }
+
+        .btns {
+          gap: 20px;
+
+          & button {
+            color: $white;
+            background-color: $dark-red;
+
+            &:hover {
+              background-color: $light-red;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1024px) and (max-height: 700px) {
+  .main {
+    border-radius: 20px;
+    min-height: 85vh;
 
     .dadosGerais {
       background-color: $light-red;
@@ -76,9 +179,9 @@ $black: black;
       }
 
       .btns {
-        width: 27.5vw;
+        width: 30vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
@@ -112,7 +215,6 @@ $black: black;
         }
 
         .btns {
-          // background-color: $light-red;
           gap: 20px;
 
           & button {
@@ -131,7 +233,7 @@ $black: black;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
+@media (max-width: 1023px) and (min-width: 481px) {
   .main {
     border-radius: 20px;
 
@@ -142,8 +244,8 @@ $black: black;
       font-weight: bold;
 
       //Spacing
-      width: 70vw;
-      height: 80vh;
+      width: 55vw;
+      height: 45vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -176,7 +278,7 @@ $black: black;
       .btns {
         width: 50vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
         gap: 20px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
@@ -211,7 +313,104 @@ $black: black;
         }
 
         .btns {
-          // background-color: $light-red;
+          gap: 20px;
+
+          & button {
+            color: $white;
+            background-color: $dark-red;
+
+            &:hover {
+              background-color: $light-red;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosGerais {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 70vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+      }
+
+      .loc {
+        width: 18em;
+        border-radius: 20px;
+      }
+
+      .nomeParamedico, .docTrabalho {
+        font-size: 18px;
+
+        & p {
+          font-size: 18px;
+          color: $black;
+        }
+      }
+
+      .btns {
+        width: 65vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 20px;
+
+        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+          border-radius: 20px;
+        }
+      }
+
+    }
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        background-color: $white;
+        border-radius: 20px;
+        width: 30em;
+        height: 10em;
+
+        & h3 {
+          color: $dark-red;
+        }
+
+        .btns {
           gap: 20px;
 
           & button {
@@ -242,7 +441,7 @@ $black: black;
 
       //Spacing
       width: 90vw;
-      height: 90vh;
+      height: 60vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -273,9 +472,9 @@ $black: black;
       }
 
       .btns {
-        width: 50vw;
+        width: 85vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
         gap: 20px;
 
         .btnAssinarEnviar, .btnEnviar, .btnCancelar {
@@ -303,7 +502,7 @@ $black: black;
 
         background-color: $white;
         border-radius: 20px;
-        width: 30em;
+        width: 20em;
         height: 10em;
 
         & h3 {
@@ -311,7 +510,117 @@ $black: black;
         }
 
         .btns {
-          // background-color: $light-red;
+          width: 50vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+
+          & button {
+            color: $white;
+            background-color: $dark-red;
+
+            &:hover {
+              background-color: $light-red;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosGerais {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 90vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        width: 7em;
+        margin-left: 10px;
+      }
+
+      .loc {
+        width: 15em;
+        border-radius: 20px;
+      }
+
+      .nomeParamedico, .docTrabalho {
+        font-size: 18px;
+
+        & label {
+          width: 12em;
+        }
+
+        & p {
+          font-size: 18px;
+          color: $black;
+        }
+      }
+
+      .btns {
+        width: 85vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 20px;
+
+        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+          border-radius: 20px;
+        }
+      }
+
+    }
+
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        background-color: $white;
+        border-radius: 20px;
+        width: 17em;
+        height: 10em;
+
+        & h3 {
+          color: $dark-red;
+        }
+
+        .btns {
+          width: 50vw;
+          font-size: 18px;
+          margin-top: 20px;
           gap: 20px;
 
           & button {

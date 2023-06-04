@@ -20,7 +20,11 @@
     <!-- FORMULÁRIO -->
     <div class="editarPerfilInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
       <div class="d-flex flex-column align-items-start">
-        <form class="editarPerfilForm" #editarPerfil="ngForm" (ngSubmit)="salvar(editarPerfil)">
+        <form
+          class="editarPerfilForm d-flex flex-column align-items-center"
+          #editarPerfil="ngForm"
+          (ngSubmit)="salvar(editarPerfil)">
+
           <!-- NOME -->
           <div class="d-flex flex-column">
             <label for="nome">Nome</label>

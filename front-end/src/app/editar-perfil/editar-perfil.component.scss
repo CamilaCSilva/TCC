@@ -3,6 +3,30 @@ $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
 
+.btnAnterior {
+  background-color: $dark-red;
+  color: $white;
+  border-style: none;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.btnSalvar {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  background-color: $dark-red;
+  color: $white;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $white;
+    color:  $dark-red;
+  }
+}
+
 @media screen and (min-width:1024px) {
   .editarPerfilContainer {
     margin-right: auto;
@@ -52,8 +76,8 @@ $light-red: #b87676;
     .editarPerfilForms {
       .editarPerfilInfosContainer {
         .editarPerfilForm {
-          width: 30vw;
-          height: 90vh;
+          width: 28vw;
+          height: 80vh;
           background: $light-red;
           border: none;
           border-radius: 20px;
@@ -69,7 +93,7 @@ $light-red: #b87676;
           & input {
             border: none;
             font-size: 18px;
-            width: 27vw;
+            width: 25vw;
             height: 4vh;
             padding: 1rem 2rem;
             border-radius: 20px;
@@ -77,8 +101,8 @@ $light-red: #b87676;
           }
 
           & select {
-            width: 27vw;
-            height: 5vh;
+            width: 25vw;
+            height: 4vh;
             background-color: $white;
             border: none;
             border-radius: 20px;
@@ -119,34 +143,13 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 25vw;
+            font-size: 18px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }
@@ -204,7 +207,7 @@ $light-red: #b87676;
       .editarPerfilInfosContainer {
         .editarPerfilForm {
           width: 40vw;
-          height: 105vh;
+          height: 110vh;
           background: $light-red;
           border: none;
           border-radius: 20px;
@@ -270,34 +273,13 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 35vw;
+            font-size: 18px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }
@@ -352,12 +334,11 @@ $light-red: #b87676;
     }
 
     .editarPerfilForms {
-
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
           width: 45vw;
-          height: 60vh;
+          height: 62vh;
           background: $light-red;
           border: none;
           border-radius: 20px;
@@ -415,34 +396,14 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 40vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }
@@ -560,34 +521,14 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 60vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }
@@ -704,34 +645,14 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 65vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }
@@ -847,36 +768,14 @@ $light-red: #b87676;
           }
 
           .btns {
+            width: 65vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
             align-content: center;
-            gap: 5px;
-            margin-top: 1em;
-
-            .btnAnterior {
-              background-color: $dark-red;
-              color: $white;
-              border-style: none;
-              border-radius: 20px;
-              width: 50px;
-              height: 50px;
-            }
-
-            .btnSalvar {
-              width: 150px;
-              height: 50px;
-              border: none;
-              border-radius: 20px;
-              background-color: $dark-red;
-              color: $white;
-              font-weight: bold;
-
-              &:hover {
-                background-color: $white;
-                color:  $dark-red;
-              }
-            }
           }
         }
       }

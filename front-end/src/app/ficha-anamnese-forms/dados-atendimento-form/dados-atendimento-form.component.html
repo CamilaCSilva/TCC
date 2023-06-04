@@ -10,13 +10,26 @@
           <!-- IDADE -->
           <div class="idade d-flex flex-column mt-2">
             <label for="idade">Idade</label>
-            <input ngModel class="form-control" name="idade" type="text" id="idade" [(ngModel)]="idade" placeholder="xx">
+            <input
+              class="form-control"
+              name="idade"
+              type="number"
+              id="idade"
+              [(ngModel)]="idade"
+              placeholder="xx"
+              min="0">
           </div>
 
           <!-- TIPO SANGUÍNEO -->
           <div class="tipoSangue d-flex flex-column align-itens-center mt-2">
             <label for="tipoSangue">Tipo sanguíneo</label>
-            <input ngModel class="form-control" name="tipoSangue" type="text" id="tipoSangue" [(ngModel)]="tipoSangue" placeholder="x+/x-">
+            <input
+              class="form-control"
+              name="tipoSangue"
+              type="text"
+              id="tipoSangue"
+              [(ngModel)]="tipoSangue"
+              placeholder="x+/x-">
           </div>
 
           <!-- SEXO -->
@@ -26,17 +39,17 @@
             <div class="opcoes d-flex flex-row ml-3">
               <div class="ml-2 d-flex flex-column">
                 <label for="f">F</label>
-                <input ngModel type="radio" id="F" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo" value="F">
+                <input type="radio" id="F" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo" value="F">
               </div>
 
               <div class="ml-2 d-flex flex-column">
                 <label for="m">M</label>
-                <input ngModel type="radio" id="M" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo"  value="M">
+                <input type="radio" id="M" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo" value="M">
               </div>
 
               <div class="ml-2 d-flex flex-column">
                 <label for="o">O</label>
-                <input ngModel type="radio" id="O" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo" value="O">
+                <input type="radio" id="O" name="sexo" (change)="onSexChange()" [(ngModel)]="sexo" value="O">
               </div>
             </div>
           </div>
@@ -51,19 +64,19 @@
       <!-- ALERGIAS -->
       <div class="alergias d-flex flex-column mt-2">
         <label for="alergias">Alergias</label>
-        <textarea ngModel class="form-control" name="alergias" type="text" id="alergias" [(ngModel)]="alergias" rows="30" cols="120" placeholder="Digite as alergias conhecidas"></textarea>
+        <textarea class="form-control" name="alergias" type="text" id="alergias" [(ngModel)]="alergias" rows="30" cols="120" placeholder="Digite as alergias conhecidas"></textarea>
       </div>
 
       <!-- MEDICAÇÕES -->
       <div class="medicacoesUsadas d-flex flex-column mt-2">
         <label for="medicacoesUsadas">Medicações Utilizadas</label>
-        <textarea ngModel class="form-control" name="medicacoesUsadas" id="medicacoesUsadas" [(ngModel)]="medicacoesUsadas" rows="30" cols="120" placeholder="Digite as medicações que foram utilizadas"></textarea>
+        <textarea class="form-control" name="medicacoesUsadas" id="medicacoesUsadas" [(ngModel)]="medicacoesUsadas" rows="30" cols="120" placeholder="Digite as medicações que foram utilizadas"></textarea>
       </div>
 
       <!-- HISTÓRICO DE DOENÇAS -->
       <div class="historicoDoencas d-flex flex-column mt-2">
         <label for="historicoDoencas">Histórico de Doenças</label>
-        <textarea ngModel class="form-control" name="historicoDoencas" id="historicoDoencas" [(ngModel)]="historicoDoencas" rows="30" cols="120" placeholder="Digite o histórico resumido de doenças"></textarea>
+        <textarea class="form-control" name="historicoDoencas" id="historicoDoencas" [(ngModel)]="historicoDoencas" rows="30" cols="120" placeholder="Digite o histórico resumido de doenças"></textarea>
       </div>
 
       <!-- BOTÕES -->

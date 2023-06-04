@@ -21,7 +21,7 @@ $light-red: #b87676;
   height: 50px;
 }
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
     height: 85vh;
@@ -33,7 +33,7 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 35vw;
+      width: 30vw;
       height: 70vh;
       margin-top: 3em;
       padding: 3em;
@@ -49,6 +49,7 @@ $light-red: #b87676;
       & h3 {
         font-weight: bold;
         width: 12em;
+        margin-left: 8px;
       }
 
       .smallFields {
@@ -62,6 +63,7 @@ $light-red: #b87676;
 
           & input {
             width: 5em;
+            height: 5vh;
             border-radius: 20px;
           }
         }
@@ -92,7 +94,7 @@ $light-red: #b87676;
         font-size: 18px;
 
         & textarea {
-          width: 30vw;
+          width: 25vw;
           height: 9vh;
 
           border-radius: 20px;
@@ -136,6 +138,7 @@ $light-red: #b87676;
       & h3 {
         font-weight: bold;
         width: 12em;
+        margin-left: 8px;
       }
 
       .smallFields {
@@ -149,6 +152,7 @@ $light-red: #b87676;
 
           & input {
             width: 5em;
+            height: 5vh;
             border-radius: 20px;
           }
         }
@@ -223,6 +227,7 @@ $light-red: #b87676;
       & h3 {
         font-weight: bold;
         width: 12em;
+        margin-left: 8px;
       }
 
       .smallFields {
@@ -241,6 +246,7 @@ $light-red: #b87676;
 
           & input {
             width: 5em;
+            height: 5vh;
             border-radius: 20px;
           }
         }
@@ -315,6 +321,7 @@ $light-red: #b87676;
       & h3 {
         font-weight: bold;
         width: 12em;
+        margin-left: 8px;
       }
 
       .smallFields {
@@ -333,6 +340,7 @@ $light-red: #b87676;
 
           & input {
             width: 5em;
+            height: 5vh;
             border-radius: 20px;
           }
         }
@@ -560,7 +568,7 @@ $light-red: #b87676;
         width: 65vw;
         font-size: 18px;
         margin-top: 20px;
-        gap: 100px;
+        gap: 90px;
       }
     }
   }

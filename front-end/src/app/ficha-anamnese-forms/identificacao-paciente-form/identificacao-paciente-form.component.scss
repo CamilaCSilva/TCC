@@ -26,9 +26,9 @@ $light-red: #b87676;
 }
 
 @media screen and (min-width:1024px) {
-
   .main {
     border-radius: 20px;
+    min-height: 85vh;
 
     .idPaciente {
       background: $light-red;
@@ -37,7 +37,7 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 35vw;
+      width: 30vw;
       height: 80vh;
       margin-top: 3em;
       padding: 3em;
@@ -288,8 +288,8 @@ $light-red: #b87676;
       .btns {
         width: 80vw;
         font-size: 17px;
-        margin-top: 40px;
-        gap: 20px;
+        margin-top: 20px;
+        gap: 10px;
 
         .btnVoltar {
           width: 195px;
