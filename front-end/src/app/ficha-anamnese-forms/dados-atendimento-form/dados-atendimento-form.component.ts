@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
 
   path1: string = 'home/formularios/identificacao-paciente-form';
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form';
-  sexo: String = '';
+  sexo: string = '';
   tipoSangue: string = '';
   alergias: string = '';
   medicacoesUsadas: string = '';
@@ -25,7 +25,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
   constructor(private router: Router, private activatedRoute : ActivatedRoute) {
     const nav = this.router.getCurrentNavigation();
     this.anamnese = nav?.extras;
-   }
+  }
 
   ngOnInit(): void {
     if(this.anamnese.nomeCompleto != ''){
@@ -37,7 +37,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
       this.historicoDoencas = this.anamnese.historicoDoencas;
     }
   }
-  
+
   onSubmit(dadosAtendimento: any){
     this.criarAnamnese(dadosAtendimento);
     if(this.bSeguir == true){
@@ -49,11 +49,12 @@ export class DadosAtendimentoFormComponent implements OnInit {
     }
   }
 
-  botaoVoltar(){
+  botaoVoltar() {
     this.bVoltar = true;
     this.bSeguir = false;
   }
-  botaoSeguir(){
+
+  botaoSeguir() {
     this.bSeguir = true;
     this.bVoltar = false;
   }
@@ -83,7 +84,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
     else if(dadosAtendimento.tipoSangue == undefined || dadosAtendimento.tipoSangue == '' || dadosAtendimento.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
       alert('Tipo sanguíneo inválido');
       throw new Error('Tipo sanguíneo inválido');
-    } 
+    }
     else if(dadosAtendimento.sexo == undefined || dadosAtendimento.sexo == ''){
       alert('Escolha o sexo');
       throw new Error('Escolha o sexo');

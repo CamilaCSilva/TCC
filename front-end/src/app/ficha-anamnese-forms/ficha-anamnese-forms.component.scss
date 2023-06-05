@@ -8,7 +8,7 @@ $light-red: #d89b9b;
     position: absolute;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 86vh;
+    min-height: 90vh;
     width: 100vw;
     height: auto;
 
@@ -22,12 +22,14 @@ $light-red: #d89b9b;
         cursor: pointer;
       }
     }
+  }
 
-    .footer {
-      background-color: $white;
-      width: 100vw;
-      background-repeat: no-repeat;
-    }
+  .footer {
+    background-color: $white;
+    width: 100vw;
+    position: absolute;
+    top: 110vh;
+    background-repeat: no-repeat;
   }
 }
 
@@ -35,7 +37,7 @@ $light-red: #d89b9b;
   .ficha {
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 86vh;
+    min-height: 90vh;
     width: 100vw;
     height: auto;
 
@@ -48,12 +50,12 @@ $light-red: #d89b9b;
         height: 40px;
       }
     }
+  }
 
-    .footer {
-      background-color: $white;
-      width: 100vw;
-      background-repeat: no-repeat;
-    }
+  .footer {
+    background-color: $white;
+    width: 100vw;
+    background-repeat: no-repeat;
   }
 }
 
@@ -74,11 +76,10 @@ $light-red: #d89b9b;
         height: 40px;
       }
     }
-
-    .footer {
-      background-color: $white;
-      width: 100vw;
-    }
   }
 
+  .footer {
+    background-color: $white;
+    width: 100vw;
+  }
 }

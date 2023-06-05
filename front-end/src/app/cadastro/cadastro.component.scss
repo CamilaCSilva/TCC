@@ -12,7 +12,7 @@ $light-red: #b87676;
     .cadastroInfosContainer {
 
       .criarCadastroForm {
-        width: 30vw;
+        width: 28vw;
         height: 100vh;
         background: $light-red;
         border: none;
@@ -27,7 +27,7 @@ $light-red: #b87676;
         }
 
         & select {
-          width: 27.5vw;
+          width: 25vw;
           height: 4vh;
           background-color: $white;
           border: none;
@@ -61,7 +61,7 @@ $light-red: #b87676;
 
         & input {
           border: none;
-          width: 27.5vw;
+          width: 25vw;
           height: 3vh;
           font-size: 18px;
           padding: 1rem 2rem;

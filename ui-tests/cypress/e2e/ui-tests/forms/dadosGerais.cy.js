@@ -66,7 +66,7 @@ function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medica
 
 describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao MedVida', () => {
   // Cenários Positivo página formulario de idados de atendimento
-  it.skip('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos e mostrar o modal ao clicar em Assinar e Enviar', () => {
+  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos e mostrar o modal ao clicar em Assinar e Enviar', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -91,7 +91,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
     cy.get('.modal').should('be.visible')
   })
 
-  it.skip('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos ir para a home ao clicar em Confirmar no modal', () => {
+  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos ir para a home ao clicar em Confirmar no modal', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -118,7 +118,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
     cy.url().should('contain','/home')
   })
 
-  it.skip('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos voltar para Dados Gerais ao clicar em Cancelar no modal', () => {
+  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos voltar para Dados Gerais ao clicar em Cancelar no modal', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -144,7 +144,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
     cy.url().should('contain','/home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form/dados-vitais-paciente-form/dados-gerais-form')
   })
 
-  it.skip('Cenario de Teste: Clicar no botão de voltar e voltar para o formulário de dados vitais', () => {
+  it('Cenario de Teste: Clicar no botão de voltar e voltar para o formulário de dados vitais', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -170,7 +170,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
   })
 
   // Cenários Negativos página formulario de identificacao do paciente
-  it.skip('Cenario de Teste: Preencher o formulário de dados gerais sem a localizacao', () => {
+  it('Cenario de Teste: Preencher o formulário de dados gerais sem a localizacao', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -192,7 +192,6 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       ''
     )
     cy.get('.btnAssinarEnviar').click()
-    cy.get('.btnEnviar').click()
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Insira a localização do paciente')
     })

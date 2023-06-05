@@ -205,7 +205,7 @@ $light-red: #b87676;
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 0px) {
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
   .cabecalho {
     height: 20vh;
     width: 100vw;
