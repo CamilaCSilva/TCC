@@ -3,7 +3,31 @@ $dark-red: #5c0505;
 $white: #ffff;
 $light-red: #b87676;
 
-@media screen and (min-width:1025px) {
+.btnAnterior {
+  background-color: $dark-red;
+  color: $white;
+  border-style: none;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.btnSalvar {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  background-color: $dark-red;
+  color: $white;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $white;
+    color:  $dark-red;
+  }
+}
+
+@media screen and (min-width:1024px) {
   .editarPerfilContainer {
     margin-right: auto;
     margin-left: auto;
@@ -11,15 +35,25 @@ $light-red: #b87676;
     background-size: cover;
     min-height: 55vh;
     width: 100vw;
-    padding: 2rem 1rem;
+    padding: 2em 1em;
+    gap: 2em;
 
     .headerGeral {
+      margin-top: 1em;
+
       .nav {
-        display: inline-block;
-        gap: 10px 450px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5em;
+
+        & h2 {
+          width: 13em;
+        }
 
         .botoesHeader {
-          gap: 20px;
+          gap: 2em;
 
           .logo {
             max-width: 40px;
@@ -33,109 +67,89 @@ $light-red: #b87676;
         }
       }
 
-      .titulo {
+      .cabecalho {
         margin-left: 10px;
         margin-top: 20px;
       }
     }
 
-    .editarPerfilInfosContainer {
-
-      .editarPerfilForm {
-        width: 30vw;
-        height: 90vh;
-        background: $light-red;
-        border: none;
-        border-radius: 20px;
-        padding: 1rem;
-
-        & label {
-          color: $dark-red;
-          font-weight: bold;
-          font-size: 18px;
-          margin: 0 0 0.5rem;
-        }
-
-        & input {
-          border: none;
-          font-size: 18px;
-          width: 27.5vw;
-          height: 3vh;
-          padding: 1rem 2rem;
-          border-radius: 20px;
-          margin: 0.5rem 0 1rem;
-        }
-
-        & select {
-          width: 27.5vw;
-          height: 4vh;
-          background-color: $white;
+    .editarPerfilForms {
+      .editarPerfilInfosContainer {
+        .editarPerfilForm {
+          width: 28vw;
+          height: 80vh;
+          background: $light-red;
           border: none;
           border-radius: 20px;
-          display: inline-block;
-          font: inherit;
-          line-height: 1.5em;
-          padding: 0.5em 3.5em 0.5em 1em;
-          cursor: pointer;
-          margin-bottom: 1rem;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          -moz-appearance: none;
+          padding: 1em;
 
-          .minimal {
-            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-            background-size: 5px 5px, 5px 5px, 1px 1.5em;
-            background-repeat: no-repeat;
-
-            &:focus {
-              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
-              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-              background-size: 5px 5px, 5px 5px, 1px 1.5em;
-              background-repeat: no-repeat;
-              border-color: $white;
-              outline: 0;
-            }
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
           }
-        }
 
-        .cpf {
-          font-size: 18px;
-
-          & :disabled {
-            opacity: 1;
-          }
-        }
-
-        .btns {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-
-          .btnAnterior {
-            background-color: $dark-red;
-            color: $white;
-            border-style: none;
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 25vw;
+            height: 4vh;
+            padding: 1rem 2rem;
             border-radius: 20px;
-            width: 50px;
-            height: 50px;
+            margin: 0.5rem 0 1rem;
           }
 
-          .btnSalvar {
-            width: 150px;
-            height: 50px;
+          & select {
+            width: 25vw;
+            height: 4vh;
+            background-color: $white;
             border: none;
             border-radius: 20px;
-            background-color: $dark-red;
-            color: $white;
-            font-weight: bold;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
 
-            &:hover {
-              background-color: $white;
-              color:  $dark-red;
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
             }
+          }
+
+          .cpf {
+            font-size: 18px;
+
+            & :disabled {
+              opacity: 1;
+            }
+          }
+
+          .btns {
+            width: 25vw;
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
           }
         }
       }
@@ -143,8 +157,7 @@ $light-red: #b87676;
   }
 }
 
-
-@media (max-width: 1024px) and (min-width: 481px) {
+@media screen and (min-width:1024px) and (max-height: 700px) {
   .editarPerfilContainer {
     margin-right: auto;
     margin-left: auto;
@@ -152,12 +165,152 @@ $light-red: #b87676;
     background-size: cover;
     min-height: 55vh;
     width: 100vw;
-    padding: 2rem 1rem;
+    padding: 2em 1em;
+    gap: 2em;
 
     .headerGeral {
+      margin-top: 1em;
+
       .nav {
-        display: inline-block;
-        gap: 10px 450px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5em;
+
+        & h2 {
+          width: 13em;
+        }
+
+        .botoesHeader {
+          gap: 2em;
+
+          .logo {
+            max-width: 40px;
+            max-height: 40px;
+          }
+
+          .exit {
+            max-width: 35px;
+            max-height: 35px;
+          }
+        }
+      }
+
+      .cabecalho {
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+    }
+
+    .editarPerfilForms {
+      .editarPerfilInfosContainer {
+        .editarPerfilForm {
+          width: 40vw;
+          height: 110vh;
+          background: $light-red;
+          border: none;
+          border-radius: 20px;
+          padding: 1em;
+
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
+          }
+
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 36vw;
+            height: 4vh;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 1rem;
+          }
+
+          & select {
+            width: 36vw;
+            height: 6vh;
+            background-color: $white;
+            border: none;
+            border-radius: 20px;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
+
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
+            }
+          }
+
+          .cpf {
+            font-size: 18px;
+
+            & :disabled {
+              opacity: 1;
+            }
+          }
+
+          .btns {
+            width: 35vw;
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (min-height: 1024px) {
+  .editarPerfilContainer {
+    margin-right: auto;
+    margin-left: auto;
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 90vh;
+    width: 100vw;
+    padding: 2em 1em;
+    gap: 3em;
+
+    .headerGeral {
+      margin-top: 4em;
+
+      .nav {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 5em;
+
+        & h2 {
+          width: 13em;
+        }
 
         .botoesHeader {
           gap: 20px;
@@ -180,95 +333,77 @@ $light-red: #b87676;
       }
     }
 
-    .editarPerfilInfosContainer {
-
-      .editarPerfilForm {
-        width: 75vw;
-        height: 65vh;
-        background: $light-red;
-        border: none;
-        border-radius: 20px;
-        padding: 1rem;
-
-        & label {
-          color: $dark-red;
-          font-weight: bold;
-          font-size: 18px;
-          margin: 0 0 0.5rem;
-        }
-
-        & input {
-          border: none;
-          font-size: 18px;
-          width: 70vw;
-          height: 3vh;
-          padding: 1rem 2rem;
-          border-radius: 20px;
-          margin: 0.5rem 0 1rem;
-        }
-
-        & select {
-          width: 70vw;
-          height: 4vh;
-          background-color: $white;
+    .editarPerfilForms {
+      .editarPerfilInfosContainer {
+        //Formulário
+        .editarPerfilForm {
+          width: 45vw;
+          height: 62vh;
+          background: $light-red;
           border: none;
           border-radius: 20px;
-          display: inline-block;
-          font: inherit;
-          line-height: 1.5em;
-          padding: 0.5em 3.5em 0.5em 1em;
-          cursor: pointer;
-          margin-bottom: 1rem;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          -moz-appearance: none;
+          padding: 1rem;
 
-          .minimal {
-            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-            background-size: 5px 5px, 5px 5px, 1px 1.5em;
-            background-repeat: no-repeat;
-
-            &:focus {
-              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
-              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-              background-size: 5px 5px, 5px 5px, 1px 1.5em;
-              background-repeat: no-repeat;
-              border-color: $white;
-              outline: 0;
-            }
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
           }
-        }
 
-        .btns {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-
-          .btnAnterior {
-            background-color: $dark-red;
-            color: $white;
-            border-style: none;
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 41vw;
+            height: 3vh;
+            padding: 1rem 2rem;
             border-radius: 20px;
-            width: 50px;
-            height: 50px;
+            margin: 0.5rem 0 1rem;
           }
 
-          .btnSalvar {
-            width: 150px;
-            height: 50px;
+          & select {
+            width: 41vw;
+            height: 3vh;
+            background-color: $white;
             border: none;
             border-radius: 20px;
-            background-color: $dark-red;
-            color: $white;
-            font-weight: bold;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
 
-            &:hover {
-              background-color: $white;
-              color:  $dark-red;
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
             }
+          }
+
+          .btns {
+            width: 40vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
           }
         }
       }
@@ -276,7 +411,7 @@ $light-red: #b87676;
   }
 }
 
-@media (max-width: 480px) and (min-width: 0px) {
+@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .editarPerfilContainer {
     margin-right: auto;
     margin-left: auto;
@@ -284,12 +419,146 @@ $light-red: #b87676;
     background-size: cover;
     min-height: 55vh;
     width: 100vw;
-    padding: 2rem 1rem;
+    padding: 2em 1em;
+    gap: 3em;
 
     .headerGeral {
+      margin-top: 2em;
+
       .nav {
-        display: inline-block;
-        gap: 10px 450px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2em;
+
+        & h2 {
+          width: 12.5em;
+        }
+
+        .botoesHeader {
+          gap: 10px;
+
+          .logo {
+            max-width: 40px;
+            max-height: 40px;
+          }
+
+          .exit {
+            max-width: 35px;
+            max-height: 35px;
+          }
+        }
+      }
+
+      .cabecalho {
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+    }
+
+    .editarPerfilForms {
+
+      .editarPerfilInfosContainer {
+        //Formulário
+        .editarPerfilForm {
+          width: 60vw;
+          height: 90vh;
+          background: $light-red;
+          border: none;
+          border-radius: 20px;
+          padding: 1rem;
+
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
+          }
+
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 55vw;
+            height: 3vh;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 1rem;
+          }
+
+          & select {
+            width: 55vw;
+            height: 4vh;
+            background-color: $white;
+            border: none;
+            border-radius: 20px;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
+
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
+            }
+          }
+
+          .btns {
+            width: 60vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  .editarPerfilContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    width: 100vw;
+    padding: 2em 1em;
+    gap: 2em;
+
+    .headerGeral {
+      margin-top: 2em;
+
+      .nav {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 3em;
+
+        & h2 {
+          font-size: 28px;
+          width: 7em;
+        }
 
         .botoesHeader {
           gap: 20px;
@@ -312,95 +581,201 @@ $light-red: #b87676;
       }
     }
 
-    .editarPerfilInfosContainer {
+    .editarPerfilForms {
 
-      .editarPerfilForm {
-        width: 80vw;
-        height: 75vh;
-        background: $light-red;
-        border: none;
-        border-radius: 20px;
-        padding: 1rem;
-
-        & label {
-          color: $dark-red;
-          font-weight: bold;
-          font-size: 18px;
-          margin: 0 0 0.5rem;
-        }
-
-        & input {
-          border: none;
-          font-size: 18px;
-          width: 70vw;
-          height: 3vh;
-          padding: 1rem 2rem;
-          border-radius: 20px;
-          margin: 0.5rem 0 1rem;
-        }
-
-        & select {
-          width: 70vw;
-          height: 4vh;
-          background-color: $white;
+      .editarPerfilInfosContainer {
+        //Formulário
+        .editarPerfilForm {
+          width: 80vw;
+          height: 75vh;
+          background: $light-red;
           border: none;
           border-radius: 20px;
-          display: inline-block;
-          font: inherit;
-          line-height: 1.5em;
-          padding: 0.5em 3.5em 0.5em 1em;
-          cursor: pointer;
-          margin-bottom: 1rem;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          -moz-appearance: none;
+          padding: 1rem;
 
-          .minimal {
-            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-            background-size: 5px 5px, 5px 5px, 1px 1.5em;
-            background-repeat: no-repeat;
-
-            &:focus {
-              background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
-              background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-              background-size: 5px 5px, 5px 5px, 1px 1.5em;
-              background-repeat: no-repeat;
-              border-color: $white;
-              outline: 0;
-            }
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
           }
-        }
 
-        .btns {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-
-          .btnAnterior {
-            background-color: $dark-red;
-            color: $white;
-            border-style: none;
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 70vw;
+            height: 3vh;
+            padding: 1rem 2rem;
             border-radius: 20px;
-            width: 50px;
-            height: 50px;
+            margin: 0.5rem 0 1rem;
           }
 
-          .btnSalvar {
-            width: 150px;
-            height: 50px;
+          & select {
+            width: 70vw;
+            height: 4vh;
+            background-color: $white;
             border: none;
             border-radius: 20px;
-            background-color: $dark-red;
-            color: $white;
-            font-weight: bold;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
 
-            &:hover {
-              background-color: $white;
-              color:  $dark-red;
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
             }
+          }
+
+          .btns {
+            width: 65vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
+  .editarPerfilContainer {
+    background: url(/assets/images/background.png);
+    background-size: cover;
+    min-height: 55vh;
+    width: 100vw;
+    padding: 2rem 1rem;
+    gap: 2em;
+
+    .headerGeral {
+      margin-top: 2em;
+
+      .nav {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-around;
+
+        & h2 {
+          font-size: 22px;
+          width: 7em;
+        }
+
+        .botoesHeader {
+          gap: 10px;
+
+          .logo {
+            max-width: 40px;
+            max-height: 40px;
+          }
+
+          .exit {
+            max-width: 35px;
+            max-height: 35px;
+          }
+        }
+      }
+
+      .cabecalho {
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+    }
+
+    .editarPerfilForms {
+
+      .editarPerfilInfosContainer {
+        //Formulário
+        .editarPerfilForm {
+          width: 85vw;
+          height: 103vh;
+          background: $light-red;
+          border: none;
+          border-radius: 20px;
+          padding: 1rem;
+
+          & label {
+            color: $dark-red;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 0 0.5rem;
+          }
+
+          & input {
+            border: none;
+            font-size: 18px;
+            width: 74vw;
+            height: 4vh;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 1rem;
+          }
+
+          & select {
+            width: 74vw;
+            height: 5vh;
+            background-color: $white;
+            border: none;
+            border-radius: 20px;
+            display: inline-block;
+            font: inherit;
+            line-height: 1.5em;
+            padding: 0.5em 3.5em 0.5em 1em;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
+
+            .minimal {
+              background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+              background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+              background-size: 5px 5px, 5px 5px, 1px 1.5em;
+              background-repeat: no-repeat;
+
+              &:focus {
+                background-image: linear-gradient(45deg, #680909 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #680909 50%), linear-gradient(to right, #ccc, #ccc);
+                background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                border-color: $white;
+                outline: 0;
+              }
+            }
+          }
+
+          .btns {
+            width: 65vw;
+            font-size: 18px;
+            margin-top: 20px;
+            gap: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
           }
         }
       }
