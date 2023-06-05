@@ -8,7 +8,10 @@ import { Anamnese } from 'src/app/models/anamnese.model';
 })
 export class DadosGeraisFormService {
 
-  private anamneseUrl = 'https://tcc-production-33a0.up.railway.app/anamnese/'
+  url = 'https://tcc-production-33a0.up.railway.app/';
+  // url = 'http://localhost:8000/'
+
+  private anamneseUrl = this.url + 'anamnese/'
 
   constructor(private http: HttpClient) { }
 

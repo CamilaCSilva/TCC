@@ -12,7 +12,7 @@ export class EditarPerfilComponent implements OnInit {
 
   path: string = 'home/perfil';
   string = 'Edição Perfil';
-  areaAtuacao: string;
+  area_atuacao: string;
   perfil: PerfilInfo;
   perfil_atualizado: any;
   nome_completo:String = 'Alessandra';
@@ -81,15 +81,15 @@ export class EditarPerfilComponent implements OnInit {
     );
   }
 
-  onAreaChange(areaAtuacao: string) {
-    if(areaAtuacao == 'CRM') { console.log('Médico(a)'); }
-    else if(areaAtuacao == 'COREN') { console.log('Enfermeiro(a)'); }
-    else if(areaAtuacao == 'DRF') { console.log('Paramédico(a)'); }
+  onAreaChange(area_atuacao: string) {
+    if(area_atuacao == 'CRM') { console.log('Médico(a)'); }
+    else if(area_atuacao == 'COREN') { console.log('Enfermeiro(a)'); }
+    else if(area_atuacao == 'DRF') { console.log('Paramédico(a)'); }
   }
 
   getArea(event: Event) {
-    this.areaAtuacao = (event.target as HTMLInputElement).value;
-    return this.areaAtuacao;
+    this.area_atuacao = (event.target as HTMLInputElement).value;
+    return this.area_atuacao;
   }
 
   private verificaDadosPerfil(cadastro: PerfilInfo) {
@@ -118,7 +118,7 @@ export class EditarPerfilComponent implements OnInit {
       alert('Celular no formato inesperado');
       throw new Error('Celular incorreto');
     }
-    else if (cadastro.senha == '' || !cadastro.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if (cadastro.password == '' || !cadastro.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }

@@ -39,7 +39,7 @@ describe('CadastroService', () => {
         celular: '35 98453-2456',
         documento_trabalho: '134567',
         unidade_de_atendimento: 'HMAC',
-        senha: 'Testando@1',
+        password: 'Testando@1',
       };
       const urlMock = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/';
 

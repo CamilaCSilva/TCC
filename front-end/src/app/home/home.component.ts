@@ -17,13 +17,13 @@ export class HomeComponent implements OnInit {
 
   usuario: any = {
     nome: 'Matheus',
-    cpfUsuario: '78965412320',
+    cpfUsuario: '13168035629',
     documento_trabalho: '78965',
     tokem: '',
     paciente: '',
   }
 
-  data: Date = new Date('2023-05-22 GMT-3');
+  data: Date = new Date();
   tipo: boolean;
 
   constructor(private router: Router, private homeService: HomeService) {
@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('Token'))
     console.log(this.usuario)
   }
 

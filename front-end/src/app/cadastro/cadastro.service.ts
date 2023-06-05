@@ -8,12 +8,12 @@ import { take } from 'rxjs/operators';
 })
 export class CadastroService {
 
-  profissionalUrl = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/'
-
+  // private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
+  private profissional_url = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/signup'
 
   constructor(private http: HttpClient) {}
 
-  setCadastroInfo(cadastroInfos: PerfilInfo) {
-    return this.http.post(`${this.profissionalUrl}`, cadastroInfos).pipe(take(1));
+  setCadastroInfo(cadastro_infos: PerfilInfo) {
+    return this.http.post(`${this.profissional_url}`, cadastro_infos).pipe(take(1));
   }
 }

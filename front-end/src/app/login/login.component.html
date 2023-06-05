@@ -9,6 +9,7 @@
   <!-- FORMULÁRIO -->
   <div class="loginInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center">
     <div class="d-flex flex-column align-items-start">
+
       <form
         #login="ngForm"
         class="loginForm d-flex flex-column align-items-center"
@@ -23,7 +24,7 @@
             id="cpf"
             name="cpf"
             placeholder="Digite seu CPF"
-            [(ngModel)]="cpf">
+            [(ngModel)]="cpf_usuario">
         </div>
 
         <!-- SENHA -->
@@ -35,7 +36,7 @@
             id="senha"
             name="senha"
             placeholder="Digite sua senha"
-            [(ngModel)]="senha">
+            [(ngModel)]="password">
         </div>
 
         <!-- BOTÃO -->
