@@ -10,17 +10,21 @@ import { Observable } from 'rxjs';
 export class EditarPerfilService {
 
   url = 'https://tcc-production-33a0.up.railway.app/';
-  // url = 'http://localhost:8000/';
+//   url = 'http://localhost:8000/';
 
   private profissionalUrl =  this.url + 'profissionaldesaude/';
 
   constructor(private http: HttpClient) { }
 
-  getPerfilInfo(cpf: any) {
-    return this.http.get(`${this.profissionalUrl}?cpf=13168035629`) as Observable<PerfilInfo>;
+  getPerfilInfo() {
+    return this.http.get(`${this.profissionalUrl}user`,{withCredentials: true}) as Observable<PerfilInfo>;
   }
 
-  updatePerfilInfo(cpf: any, perfil: PerfilInfo) {
-    return this.http.put(`${this.profissionalUrl}edit/`, perfil).pipe(take(1));
+  updatePerfilInfo(perfil: PerfilInfo) {
+    return this.http.put(`${this.profissionalUrl}edit/`, perfil  ,{withCredentials: true}).pipe(take(1));
+  }
+
+  getLogoutUser(){
+    return this.http.post(`${this.profissionalUrl}logout`, {}, {withCredentials: true});
   }
 }

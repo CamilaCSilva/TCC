@@ -2,7 +2,7 @@
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column">
     <div class="nav d-flex">
-      <h2>Bem vinda(o), {{ usuario.nome }}!</h2>
+      <h2>Bem vinda(o), {{ usuario.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
         <!-- DATA -->
         <input type="date" name="data" id="filtroData" [(ngModel)]="data" (input)="filtrarPorData(data)">
@@ -14,7 +14,7 @@
 
         <!-- SAIR -->
         <div class="iconeSair">
-          <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+          <a (click)="logout()"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
         </div>
       </div>
     </div>
