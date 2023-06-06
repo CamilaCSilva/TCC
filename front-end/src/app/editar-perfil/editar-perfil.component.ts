@@ -14,6 +14,7 @@ export class EditarPerfilComponent implements OnInit {
   string = 'Edição Perfil';
   perfil: PerfilInfo;
   password = '';
+  nome: string;
 
   usuario: any = {
     nome_completo: '',
@@ -54,6 +55,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   mostrarProfissional(){
+    this.nome = this.perfil.nome_completo;
     this.usuario.nome_completo = this.perfil.nome_completo;
     this.usuario.campo_escolha = this.perfil.campo_escolha;
     this.usuario.documento_trabalho = this.perfil.documento_trabalho;
