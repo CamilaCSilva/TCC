@@ -59,12 +59,12 @@ export class EditarPerfilComponent implements OnInit {
     this.router.navigateByUrl('/home');
   }
 
-  salvar(editarPerfil: any) {
-    this.perfil_atualizado.campo_escolha = editarPerfil.value.campo_escolha != '' ? editarPerfil.value.campo_escolha : this.perfil_atualizado.campo_escolha;
-    this.perfil_atualizado.nome_completo = editarPerfil.value.nome_completo != '' ? editarPerfil.value.nome_completo : this.perfil_atualizado.nome_completo;
-    this.perfil_atualizado.celular = editarPerfil.value.celular != '' ? editarPerfil.value.celular : this.perfil_atualizado.celular;
-    this.perfil_atualizado.documento_trabalho = editarPerfil.value.documento_trabalho != '' ? editarPerfil.value.documento_trabalho : this.perfil_atualizado.documento_trabalho;
-    this.perfil_atualizado.unidade_de_atendimento = editarPerfil.value.unidade_de_atendimento != '' ? editarPerfil.value.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
+  salvar() {
+    this.perfil_atualizado.campo_escolha = this.usuario.campo_escolha != '' ? this.usuario.campo_escolha : this.perfil_atualizado.campo_escolha;
+    this.perfil_atualizado.nome_completo = this.usuario.nome_completo != '' ? this.usuario.nome_completo : this.perfil_atualizado.nome_completo;
+    this.perfil_atualizado.celular = this.usuario.celular != '' ? this.usuario.celular : this.perfil_atualizado.celular;
+    this.perfil_atualizado.documento_trabalho = this.usuario.documento_trabalho != '' ? this.usuario.documento_trabalho : this.perfil_atualizado.documento_trabalho;
+    this.perfil_atualizado.unidade_de_atendimento = this.usuario.unidade_de_atendimento != '' ? this.usuario.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
     if(this.verificaDadosPerfil(this.perfil_atualizado)){
       this.perfil_atualizado.cpf = this.usuario.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
       this.perfil_atualizado.celular = this.usuario.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
