@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
   pacientes: Anamnese[];
 
   usuario: any = {
-    nome: 'Matheus',
-    cpfUsuario: '13168035629',
-    documento_trabalho: '78965',
-    tokem: '',
+    nome_completo: '',
+    cpf: '',
+    documento_trabalho: '',
+    token: '',
     paciente: '',
   }
 
@@ -32,8 +32,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('Token'))
-    console.log(this.usuario)
+    this.homeService.getUser().subscribe(
+      res => {
+        this.usuario = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   filtrarPorData(data: Date) {

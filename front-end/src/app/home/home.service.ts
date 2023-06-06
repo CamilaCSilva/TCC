@@ -9,14 +9,19 @@ import { Anamnese } from '../models/anamnese.model';
 })
 export class HomeService {
 
-  url = 'https://tcc-production-33a0.up.railway.app/';
-  // url = 'http://localhost:8000/';
+  // url = 'https://tcc-production-33a0.up.railway.app/';
+  url = 'http://localhost:8000/';
 
-  private profissionalUrl = this.url + 'anamnese/?data='
+  private profissionalUrl = this.url + 'profissionaldesaude/user'
+  private anamineseUrl = this.url + 'anamnese/?data='
 
   constructor(private http: HttpClient) { }
 
+  getUser(){
+    return this.http.get(`${this.profissionalUrl}`,{withCredentials: true});
+  }
+
   getFichasDisponiveis(data: any) {
-    return this.http.get<Anamnese[]>(`${this.profissionalUrl}${data}`).pipe(tap(console.log));
+    return this.http.get<Anamnese[]>(`${this.anamineseUrl}${data}`).pipe(tap(console.log));
   }
 }

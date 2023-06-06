@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  private url = 'https://tcc-production-33a0.up.railway.app/';
-  // private url = 'http://localhost:8000/'
+  // private url = 'https://tcc-production-33a0.up.railway.app/';
+  private url = 'http://localhost:8000/'
 
   header: any = localStorage.getItem('Token')
 
