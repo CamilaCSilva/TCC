@@ -19,12 +19,10 @@ export class HomeComponent implements OnInit {
     nome_completo: '',
     cpf: '',
     documento_trabalho: '',
-    token: '',
-    paciente: '',
   }
+  path = '/login';
 
   data: Date = new Date();
-  tipo: boolean;
 
   constructor(private router: Router, private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
@@ -48,6 +46,14 @@ export class HomeComponent implements OnInit {
 
   visualizarPerfil(){
     this.router.navigateByUrl('/home/perfil')
+  }
+
+  logout(){
+    this.homeService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path);
+      }
+    );
   }
 
   visualizarFicha(paciente: any) {
