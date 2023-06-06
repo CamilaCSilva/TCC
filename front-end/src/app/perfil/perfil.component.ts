@@ -12,7 +12,6 @@ export class PerfilComponent implements OnInit {
 
   path: string = 'home/perfil/editar-perfil';
   string = 'Perfil';
-  testResult: boolean = false;
   perfil: PerfilInfo;
   nome_completo:String;
   campo_escolha: String;
@@ -35,7 +34,7 @@ export class PerfilComponent implements OnInit {
   }
 
   listarProfissional(){
-    this.perfilService.getPerfilInfo(this.usuario.cpfUsuario).subscribe(perfilInfo => {
+    this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
     this.perfil = perfilInfo;
     if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
     else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
@@ -48,7 +47,7 @@ export class PerfilComponent implements OnInit {
 
   editar(){
     console.log(this.usuario)
-    this.router.navigateByUrl(this.path, this.usuario);
+    this.router.navigateByUrl(this.path);
   }
 
   mostrarProfissional(){
@@ -61,7 +60,7 @@ export class PerfilComponent implements OnInit {
   }
 
   home(){
-    this.router.navigateByUrl('/home', this.usuario)
+    this.router.navigateByUrl('/home')
   }
 
 }

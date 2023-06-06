@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarPerfil(){
-    this.router.navigateByUrl('/home/perfil', this.usuario)
+    this.router.navigateByUrl('/home/perfil')
   }
 
   visualizarFicha(paciente: any) {

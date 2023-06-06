@@ -12,21 +12,21 @@ export class EditarPerfilComponent implements OnInit {
 
   path: string = 'home/perfil';
   string = 'Edição Perfil';
-  area_atuacao: string;
   perfil: PerfilInfo;
-  perfil_atualizado: any;
-  nome_completo:String = 'Alessandra';
-  campo_escolha: String;
-  documento_trabalho: String;
-  cpf: String;
-  unidade_de_atendimento: String;
-  celular: String;
+  perfil_atualizado: PerfilInfo;
 
-  usuario: any;
+  usuario: any = {
+    nome_completo: '',
+    cpf: '',
+    documento_trabalho: '',
+    area_atuacao: '',
+    celular: '',
+    campo_escolha:'',
+    unidade_de_atendimento: '',
+  }
 
   constructor(private router: Router, private editarPerfilService: EditarPerfilService) {
-    const nav = this.router.getCurrentNavigation();
-    this.usuario = nav?.extras;
+    
   }
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   listarProfissional(){
-    this.editarPerfilService.getPerfilInfo(this.usuario.cpfUsuario).subscribe(perfilInfo => {
+    this.editarPerfilService.getPerfilInfo().subscribe(perfilInfo => {
       this.perfil = perfilInfo;
       this.mostrarProfissional();
     }, err => {
@@ -43,39 +43,38 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   mostrarProfissional(){
-    this.nome_completo = this.perfil.nome_completo;
-    this.campo_escolha = this.perfil.campo_escolha;
-    this.documento_trabalho = this.perfil.documento_trabalho;
-    this.cpf = this.perfil.cpf.slice(0,3) + "." + this.perfil.cpf.slice(3,6)+ "." + this.perfil.cpf.slice(6,9) + "-" + this.perfil.cpf.slice(9);
-    this.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
-    this.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
+    this.usuario.nome_completo = this.perfil.nome_completo;
+    this.usuario.campo_escolha = this.perfil.campo_escolha;
+    this.usuario.documento_trabalho = this.perfil.documento_trabalho;
+    this.usuario.cpf = this.perfil.cpf.slice(0,3) + "." + this.perfil.cpf.slice(3,6)+ "." + this.perfil.cpf.slice(6,9) + "-" + this.perfil.cpf.slice(9);
+    this.usuario.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
+    this.usuario.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path, this.usuario);
+    this.router.navigateByUrl(this.path,);
   }
 
   home(){
-    this.router.navigateByUrl('/home', this.usuario);
+    this.router.navigateByUrl('/home');
   }
 
   salvar(editarPerfil: any) {
-    this.perfil_atualizado = this.perfil;
     this.perfil_atualizado.campo_escolha = editarPerfil.value.campo_escolha != '' ? editarPerfil.value.campo_escolha : this.perfil_atualizado.campo_escolha;
     this.perfil_atualizado.nome_completo = editarPerfil.value.nome_completo != '' ? editarPerfil.value.nome_completo : this.perfil_atualizado.nome_completo;
     this.perfil_atualizado.celular = editarPerfil.value.celular != '' ? editarPerfil.value.celular : this.perfil_atualizado.celular;
     this.perfil_atualizado.documento_trabalho = editarPerfil.value.documento_trabalho != '' ? editarPerfil.value.documento_trabalho : this.perfil_atualizado.documento_trabalho;
     this.perfil_atualizado.unidade_de_atendimento = editarPerfil.value.unidade_de_atendimento != '' ? editarPerfil.value.unidade_de_atendimento : this.perfil_atualizado.unidade_de_atendimento;
     if(this.verificaDadosPerfil(this.perfil_atualizado)){
-      this.perfil_atualizado.cpf = this.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
-      this.perfil_atualizado.celular = this.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
+      this.perfil_atualizado.cpf = this.usuario.cpf.replace(/-/g, "").replace(".", "").replace(".", "");
+      this.perfil_atualizado.celular = this.usuario.celular.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
       this.updateProfissional();
     }
   }
 
   updateProfissional(){
-    this.editarPerfilService.updatePerfilInfo(this.usuario.cpf, this.perfil_atualizado).subscribe(
-      success => this.router.navigateByUrl(this.path, this.usuario),
+    this.editarPerfilService.updatePerfilInfo(this.perfil_atualizado).subscribe(
+      success => this.router.navigateByUrl(this.path),
       error => console.log(error),
       () => console.log('request completo')
     );
@@ -88,8 +87,8 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   getArea(event: Event) {
-    this.area_atuacao = (event.target as HTMLInputElement).value;
-    return this.area_atuacao;
+    this.usuario.area_atuacao = (event.target as HTMLInputElement).value;
+    return this.usuario.area_atuacao;
   }
 
   private verificaDadosPerfil(cadastro: PerfilInfo) {

@@ -3,7 +3,7 @@
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column align-items-center justify-content-between">
     <div class="nav d-flex flex-row justify-content-between">
-      <h2>Bem vinda(o), {{ nome_completo }}!</h2>
+      <h2>Bem vinda(o), {{ usuario.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row justify-content-end">
         <a (click)="home()"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
         <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
@@ -28,13 +28,13 @@
           <!-- NOME -->
           <div class="d-flex flex-column">
             <label for="nome">Nome</label>
-            <input ngModel type="text"  id="nome" name="nome_completo" [(ngModel)]="nome_completo" >
+            <input ngModel type="text"  id="nome" name="nome_completo" [(ngModel)]="usuario.nome_completo" >
           </div>
 
           <!-- ÁREA ATUAÇÃO -->
         <div class="d-flex flex-column">
           <label>Área de Atuação</label>
-          <select ngModel id="campo_escolha" class="minimal" [(ngModel)]="campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
+          <select ngModel id="campo_escolha" class="minimal" [(ngModel)]="usuario.campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
             <option value="CRM">Médico(a)</option>
             <option value="COREN">Enfermeiro(a)</option>
             <option value="DRF">Paramédico(a)</option>
@@ -44,25 +44,25 @@
           <!-- Documento de Trabalho -->
           <div class="d-flex flex-column">
             <label for="doc">Documento de Trabalho</label>
-            <input ngModel type="text"  id="doc" name="documento_trabalho" [(ngModel)]="documento_trabalho">
+            <input ngModel type="text"  id="doc" name="documento_trabalho" [(ngModel)]="usuario.documento_trabalho">
           </div>
 
           <!-- CPF -->
           <div class="d-flex flex-column">
             <label for="cpf">CPF</label>
-            <input ngModel type="text"  id="cpf" name="cpf" [(ngModel)]="cpf" readonly disabled>
+            <input ngModel type="text"  id="cpf" name="cpf" [(ngModel)]="usuario.cpf" readonly disabled>
           </div>
 
           <!-- UNIDADE DE ATENDIMENTO -->
           <div class="d-flex flex-column">
             <label for="unidadeAtendimento">Unidade de Atendimento</label>
-            <input ngModel type="text"  id="unidadeAtendimento" name="unidade_de_atendimento" [(ngModel)]="unidade_de_atendimento">
+            <input ngModel type="text"  id="unidadeAtendimento" name="unidade_de_atendimento" [(ngModel)]="usuario.unidade_de_atendimento">
           </div>
 
           <!-- CELULAR -->
           <div class="d-flex flex-column">
             <label for="celular">Celular</label>
-            <input ngModel type="tel"  id="celular" name="celular" [(ngModel)]="celular">
+            <input ngModel type="tel"  id="celular" name="celular" [(ngModel)]="usuario.celular">
           </div>
 
           <!-- BOTÕES -->
