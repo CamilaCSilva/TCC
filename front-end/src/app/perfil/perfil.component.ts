@@ -33,6 +33,14 @@ export class PerfilComponent implements OnInit {
     this.listarProfissional();
   }
 
+  logout(){
+    this.perfilService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path);
+      }
+    );
+  }
+
   listarProfissional(){
     this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
     this.perfil = perfilInfo;

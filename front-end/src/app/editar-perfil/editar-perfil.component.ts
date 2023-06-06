@@ -72,6 +72,14 @@ export class EditarPerfilComponent implements OnInit {
     }
   }
 
+  logout(){
+    this.editarPerfilService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path);
+      }
+    );
+  }
+
   updateProfissional(){
     this.editarPerfilService.updatePerfilInfo(this.perfil_atualizado).subscribe(
       success => this.router.navigateByUrl(this.path),
