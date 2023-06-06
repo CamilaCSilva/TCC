@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   stringFacaLogin = 'Faça o login!';
   cpf_usuario: string = '';
   password: string = '';
-  testResult: boolean = false;
 
   usuario: any;
   perfil: LoginInfo;
@@ -37,15 +36,13 @@ export class LoginComponent implements OnInit {
         password: this.password
       }      
       this.getLoginInfo(this.perfil);
-      this.router.navigateByUrl(this.path);
     }
   }
 
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
-      success => { 
-        this.usuario = success;
-        localStorage.setItem("Token", this.usuario.jwt);
+      success => {
+        this.router.navigateByUrl(this.path);
       },
       error => console.log(error),
       () => console.log('request completo')

@@ -34,7 +34,7 @@ import { environment } from '../environments/environment'
     HomeComponent,
     PerfilComponent,
     HeaderComponent,
-    MaisInfosComponent
+    MaisInfosComponent,
   ],
   imports: [
     BrowserModule,

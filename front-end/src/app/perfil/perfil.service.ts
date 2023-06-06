@@ -9,15 +9,17 @@ import { Observable } from 'rxjs';
 export class PerfilService {
 
   private url = 'https://tcc-production-33a0.up.railway.app/';
-  // private url = 'http://localhost:8000/'
+//   private url = 'http://localhost:8000/'
 
-  header: any = localStorage.getItem('Token')
-
-  private profissional_url = this.url + 'profissionaldesaude/?cpf=13168035629' // trocar o ?cpf=13168035629 por user
+  private profissional_url = this.url + 'profissionaldesaude/' // trocar o ?cpf=13168035629 por user
 
   constructor(private http: HttpClient) {}
 
-  getPerfilInfo(cpf: any) {
-    return this.http.get(`${this.profissional_url}`) as Observable<PerfilInfo>;
+  getPerfilInfo() {
+    return this.http.get(`${this.profissional_url}user`, {withCredentials: true}) as Observable<PerfilInfo>;
+  }
+
+  getLogoutUser(){
+    return this.http.post(`${this.profissional_url}logout`, {}, {withCredentials: true});
   }
 }

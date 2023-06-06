@@ -16,15 +16,13 @@ export class HomeComponent implements OnInit {
   pacientes: Anamnese[];
 
   usuario: any = {
-    nome: 'Matheus',
-    cpfUsuario: '13168035629',
-    documento_trabalho: '78965',
-    tokem: '',
-    paciente: '',
+    nome_completo: '',
+    cpf: '',
+    documento_trabalho: '',
   }
+  path = '/login';
 
   data: Date = new Date();
-  tipo: boolean;
 
   constructor(private router: Router, private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
@@ -32,8 +30,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('Token'))
-    console.log(this.usuario)
+    this.homeService.getUser().subscribe(
+      res => {
+        this.usuario = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   filtrarPorData(data: Date) {
@@ -41,7 +45,15 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarPerfil(){
-    this.router.navigateByUrl('/home/perfil', this.usuario)
+    this.router.navigateByUrl('/home/perfil')
+  }
+
+  logout(){
+    this.homeService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path);
+      }
+    );
   }
 
   visualizarFicha(paciente: any) {
