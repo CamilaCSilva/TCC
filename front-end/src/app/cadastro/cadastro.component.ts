@@ -12,11 +12,11 @@ export class CadastroComponent {
 
   path: string = 'login';
   string = 'Faça seu cadastro!'
-  nomeCompleto: string;
+  nome_completo: string;
   areaAtuacao: string;
   doc: string;
   cpf: string;
-  unidadeAtendimento: string;
+  unidade_atendimento: string;
   celular: string;
   password: string;
   confirmar_senha: string;
@@ -30,10 +30,10 @@ export class CadastroComponent {
     this.cadastro_info = {
       cpf: this.cpf,
       campo_escolha: this.areaAtuacao,
-      nome_completo: this.nomeCompleto,
+      nome_completo: this.nome_completo,
       celular: this.celular,
       documento_trabalho: this.doc,
-      unidade_de_atendimento: this.unidadeAtendimento,
+      unidade_de_atendimento: this.unidade_atendimento,
       password: this.password
     };
     if(this.verificaDadosPerfil(this.cadastro_info, this.confirmar_senha)) {

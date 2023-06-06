@@ -65,6 +65,12 @@
             <input ngModel type="tel"  id="celular" name="celular" [(ngModel)]="usuario.celular">
           </div>
 
+          <!-- SENHA -->
+          <div class="d-flex flex-column">
+            <label for="senha">Senha</label>
+            <input [(ngModel)]="password" type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha">
+          </div>
+
           <!-- BOTÕES -->
           <div class="btns d-flex flex-row justify-content-around">
             <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar()"><</button>

@@ -21,7 +21,7 @@ export class EditarPerfilService {
   }
 
   updatePerfilInfo(perfil: PerfilInfo) {
-    return this.http.put(`${this.profissionalUrl}edit/user`, perfil  ,{withCredentials: true}).pipe(take(1));
+    return this.http.put(`${this.profissionalUrl}edit/`, perfil  ,{withCredentials: true}).pipe(take(1));
   }
 
   getLogoutUser(){
