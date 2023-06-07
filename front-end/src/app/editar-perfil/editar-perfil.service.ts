@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class EditarPerfilService {
 
-  url = 'https://tcc-production-33a0.up.railway.app/';
-//   url = 'http://localhost:8000/';
+  // url = 'https://tcc-production-33a0.up.railway.app/';
+  url = 'http://localhost:8000/';
 
   private profissionalUrl =  this.url + 'profissionaldesaude/';
 
