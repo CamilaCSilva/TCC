@@ -33,7 +33,7 @@ $black: black;
       border-radius: 20px;
 
       //Spacing
-      width: 35vw;
+      width: 25vw;
       height: 70vh;
       margin-top: 3em;
       padding: 3em;
@@ -65,10 +65,10 @@ $black: black;
         }
 
         .btns {
-          width: 30vw;
+          width: 20vw;
           font-size: 18px;
           margin-top: 20px;
-          gap: 10px;
+          gap: 20px;
         }
       }
     }
@@ -87,7 +87,7 @@ $black: black;
 
       //Spacing
       width: 35vw;
-      height: 80vh;
+      height: 75vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -101,6 +101,8 @@ $black: black;
 
       & h3 {
         font-weight: bold;
+        width: 12em;
+        margin-left: 8px;
       }
 
       .dadosAtendimento {
@@ -154,6 +156,8 @@ $black: black;
 
       & h3 {
         font-weight: bold;
+        width: 12em;
+        margin-left: 8px;
       }
 
       .dadosAtendimento {
@@ -173,7 +177,7 @@ $black: black;
         .btns {
           width: 45vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
           gap: 20px;
         }
       }
@@ -226,7 +230,7 @@ $black: black;
         .btns {
           width: 60vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
           gap: 20px;
         }
       }
@@ -237,7 +241,7 @@ $black: black;
 @media (max-width: 480px) and (min-width: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 65vh;
+    min-height: 70vh;
 
     .dadosAtendimentoContainer {
       background-color: $light-red;

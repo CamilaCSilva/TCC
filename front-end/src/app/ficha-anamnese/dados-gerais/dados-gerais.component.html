@@ -5,21 +5,21 @@
     <div class="dadosGerais d-flex flex-column align-items-center">
       <div class="d-flex flex-column align-items-start">
         <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
-        <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+        <div class="nomeParamedico d-flex flex-column mt-3 align-items-start">
           <label for="nomeParamedico">Nome do Paramédico Responsável</label>
           <p>{{ nomeParamedico }}</p>
         </div>
 
         <!-- DOCUMENTO DE TRABALHO -->
-        <div class="docTrabalho d-flex flex-column mt-3 align-items-center">
+        <div class="docTrabalho d-flex flex-column mt-3 align-items-start">
           <label for="docTrabalho">Documento de Trabalho</label>
           <p>{{ documento_trabalho }}</p>
         </div>
       </div>
 
       <!-- DATA E ENDEREÇO -->
-      <div class="mt-2 d-flex flex-column justify-content-end align-items-center mt-5">
-        <p> Data: {{ data | date: 'dd/MM/yyyy' }} - Hora: {{ hora }}</p>
+      <div class="dataEnd d-flex flex-column justify-content-end align-items-end mt-3">
+        <p>{{ data | date: 'medium' }}</p>
         <p>{{ localizacao }}</p>
       </div>
 
