@@ -8,8 +8,8 @@ import { take } from 'rxjs/operators';
 })
 export class CadastroService {
 
-//   private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
-  private profissional_url = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/signup'
+  private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
+  // private profissional_url = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/signup'
 
   constructor(private http: HttpClient) {}
 
