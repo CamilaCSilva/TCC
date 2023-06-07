@@ -8,8 +8,8 @@ import { Anamnese } from '../models/anamnese.model';
 })
 export class HomeService {
 
-  // url = 'https://tcc-production-33a0.up.railway.app/';
-  url = 'http://localhost:8000/';
+  url = 'medvida.up.railway.app/';
+  // url = 'http://localhost:8000/';
 
   private profissionalUrl = this.url + 'profissionaldesaude/'
   private anamineseUrl = this.url + 'anamnese/?data='
