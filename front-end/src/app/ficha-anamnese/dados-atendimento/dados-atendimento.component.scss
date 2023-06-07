@@ -33,8 +33,8 @@ $black: black;
       border-radius: 20px;
 
       //Spacing
-      width: 35vw;
-      height: 90vh;
+      width: 25vw;
+      height: 80vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -65,7 +65,7 @@ $black: black;
         }
 
         .btns {
-          width: 30vw;
+          width: 20vw;
           font-size: 18px;
           margin-top: 20px;
         }
@@ -131,7 +131,7 @@ $black: black;
 @media screen and (max-width: 1023px) and (min-width: 481px) {
   .main {
     border-radius: 20px;
-    min-height: 75vh;
+    min-height: 80vh;
 
     .dadosAtendimentoContainer {
       background-color: $light-red;
@@ -154,6 +154,8 @@ $black: black;
 
       & h3 {
         font-weight: bold;
+        width: 12em;
+        margin-left: 8px;
       }
 
       .dadosAtendimento {
@@ -173,7 +175,7 @@ $black: black;
         .btns {
           width: 45vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
           gap: 20px;
         }
       }
@@ -193,7 +195,7 @@ $black: black;
 
       //Spacing
       width: 65vw;
-      height: 75vh;
+      height: 85vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -226,7 +228,7 @@ $black: black;
         .btns {
           width: 60vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
           gap: 20px;
         }
       }
@@ -237,7 +239,7 @@ $black: black;
 @media screen and (max-width: 480px) and (min-width: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 60vh;
+    min-height: 70vh;
 
     .dadosAtendimentoContainer {
       background-color: $light-red;
@@ -300,7 +302,7 @@ $black: black;
 
       //Spacing
       width: 85vw;
-      height: 90vh;
+      height: 105vh;
       margin-top: 3em;
       padding: 3em;
 

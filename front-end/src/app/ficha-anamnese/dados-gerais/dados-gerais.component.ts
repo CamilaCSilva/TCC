@@ -18,7 +18,7 @@ export class DadosGeraisComponent implements OnInit {
   anamnese: any;
   num: Int16Array
   alertMessage: string = "";
-  localizacao: string;
+  localizacao: string = 'My House on Broadway Street apt 6';
   usuario:any;
 
   constructor(private router: Router) {
@@ -29,7 +29,7 @@ export class DadosGeraisComponent implements OnInit {
   ngOnInit(): void {
     this.nomeParamedico = this.anamnese.paciente.nome_paramedico_responsavel;
     this.documento_trabalho = this.anamnese.paciente.documento_trabalho_paramedico;
-    this.localizacao = this.anamnese.paciente.localizacao;
+    // this.localizacao = this.anamnese.paciente.localizacao;
     this.data = this.anamnese.paciente.data
     this.hora = this.anamnese.paciente.hora
     if(this.alertMessage != "") {

@@ -23,14 +23,10 @@ export class DadosGeraisFormComponent implements OnInit {
   bVoltar: boolean = false;
   bSeguir: boolean = false;
   alertMessage: string = "";
-  // location: Location;
-  // lat: any;
-  // lng: any;
 
   constructor(private router: Router, private dadosGeraisFormService: DadosGeraisFormService) {
     const nav = this.router.getCurrentNavigation();
     this.anamnese = nav?.extras;
-    // this.location = location;
   }
 
   ngOnInit(): void {
@@ -123,18 +119,4 @@ export class DadosGeraisFormComponent implements OnInit {
       cpfPaciente: '',
     }
   }
-
-  // getUserLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(position => {
-  //       this.lat = position.coords.latitude;
-  //       this.lng = position.coords.longitude;
-  //       alert('Location accessed')
-  //     },function(){
-  //       alert('User not allowed')
-  //     },{timeout:10000});
-  //   } else {
-  //     console.log("User not allow")
-  //   }
-  // }
 }
