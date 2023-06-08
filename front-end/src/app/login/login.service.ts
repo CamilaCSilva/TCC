@@ -9,8 +9,7 @@ import { LoginInfo } from '../models/login.model';
 export class LoginService {
 
   // private profissional_url = 'http://localhost:8000/profissionaldesaude/login';
-  // private profissional_url = 'medvida.up.railway.app/profissionaldesaude/login';
-  private profissional_url = '/profissionaldesaude/login';
+  private profissional_url = 'https://medvida.up.railway.app/profissionaldesaude/login';
 
   constructor(private http: HttpClient) {}
 

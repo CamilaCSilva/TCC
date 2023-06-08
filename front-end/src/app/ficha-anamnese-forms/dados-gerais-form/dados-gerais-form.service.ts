@@ -8,9 +8,8 @@ import { Anamnese } from 'src/app/models/anamnese.model';
 })
 export class DadosGeraisFormService {
 
-  // url = 'https://medvida.up.railway.app/';
+  url = 'https://medvida.up.railway.app/';
   // url = 'http://localhost:8000/'
-  url = '';
 
   private anamneseUrl = this.url + 'anamnese/'
 
