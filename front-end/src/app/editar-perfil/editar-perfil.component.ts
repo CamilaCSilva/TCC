@@ -11,6 +11,7 @@ import { EditarPerfilService } from './editar-perfil.service';
 export class EditarPerfilComponent implements OnInit {
 
   path: string = 'home/perfil';
+  path2: string = 'login';
   string = 'Edição Perfil';
   perfil: PerfilInfo;
   password = '';
@@ -92,7 +93,7 @@ export class EditarPerfilComponent implements OnInit {
   logout(){
     this.editarPerfilService.getLogoutUser().subscribe(
       res => {
-        this.router.navigateByUrl(this.path);
+        this.router.navigateByUrl(this.path2);
       }
     );
   }

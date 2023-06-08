@@ -11,6 +11,7 @@ import { PerfilInfo } from '../models/perfil.model';
 export class PerfilComponent implements OnInit {
 
   path: string = 'home/perfil/editar-perfil';
+  path2: string = 'login';
   string = 'Perfil';
   perfil: PerfilInfo;
   nome_completo:String;
@@ -36,7 +37,7 @@ export class PerfilComponent implements OnInit {
   logout(){
     this.perfilService.getLogoutUser().subscribe(
       res => {
-        this.router.navigateByUrl(this.path);
+        this.router.navigateByUrl(this.path2);
       }
     );
   }
