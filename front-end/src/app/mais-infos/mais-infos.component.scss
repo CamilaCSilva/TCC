@@ -167,6 +167,7 @@ $black: black;
 @media screen and (max-width: 480px) and (min-width: 0px) {
   .infosContainer {
     min-height: 70vh;
+    width: 105vw;
 
     .maisInfosContainer {
       width: 65vw;
@@ -196,9 +197,10 @@ $black: black;
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
   .infosContainer {
     min-height: 70vh;
+    width: 105vw;
 
     .maisInfosContainer {
       width: 65vw;
