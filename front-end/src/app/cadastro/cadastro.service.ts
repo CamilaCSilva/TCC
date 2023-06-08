@@ -9,8 +9,7 @@ import { take } from 'rxjs/operators';
 export class CadastroService {
 
   // private profissional_url = 'http://localhost:8000/profissionaldesaude/signup'
-  // private profissional_url = 'https://medvida.up.railway.app/profissionaldesaude/signup'
-  private profissional_url = '';
+  private profissional_url = 'https://medvida.up.railway.app/profissionaldesaude/signup'
 
   constructor(private http: HttpClient) {}
 
