@@ -8,8 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  private url = 'medvida.up.railway.app/';
+  // private url = 'medvida.up.railway.app/';
   // private url = 'http://localhost:8000/'
+  private url = '';
 
   private profissional_url = this.url + 'profissionaldesaude/' // trocar o ?cpf=13168035629 por user
 
