@@ -10,8 +10,11 @@ import { PerfilInfo } from '../models/perfil.model';
 })
 export class PerfilComponent implements OnInit {
 
-  path: string = 'home/perfil/editar-perfil';
-  path2: string = 'login';
+
+  path1: string = '/home';
+  path2: string = '/login';
+  path3: string = 'home/perfil/editar-perfil';
+
   string = 'Perfil';
   perfil: PerfilInfo;
   nome_completo:String;
@@ -29,7 +32,7 @@ export class PerfilComponent implements OnInit {
     this.usuario = nav?.extras;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     console.log(this.usuario)
     this.listarProfissional();
   }
@@ -42,9 +45,9 @@ export class PerfilComponent implements OnInit {
     );
   }
 
-  listarProfissional(){
+  listarProfissional() {
     this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
-    this.perfil = perfilInfo;
+      this.perfil = perfilInfo;
     if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
     else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
     else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
@@ -54,12 +57,8 @@ export class PerfilComponent implements OnInit {
     })
   }
 
-  editar(){
-    console.log(this.usuario)
-    this.router.navigateByUrl(this.path);
-  }
 
-  mostrarProfissional(){
+  mostrarProfissional() {
     this.nome_completo = this.perfil.nome_completo;
     this.campo_escolha = this.perfil.campo_escolha;
     this.documento_trabalho = this.perfil.documento_trabalho;
@@ -68,8 +67,12 @@ export class PerfilComponent implements OnInit {
     this.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
   }
 
-  home(){
-    this.router.navigateByUrl('/home')
+  home() {
+    this.router.navigateByUrl(this.path1);
   }
 
+  editar() {
+    console.log(this.usuario)
+    this.router.navigateByUrl(this.path3);
+  }
 }

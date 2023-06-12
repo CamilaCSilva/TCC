@@ -10,8 +10,11 @@ import { EditarPerfilService } from './editar-perfil.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  path: string = 'home/perfil';
-  path2: string = 'login';
+
+  path1: string = '/home';
+  path2: string = '/login';
+  path3: string = 'home/perfil';
+  
   string = 'Edição Perfil';
   perfil: PerfilInfo;
   password = '';
@@ -38,9 +41,7 @@ export class EditarPerfilComponent implements OnInit {
     password: '',
   }
 
-  constructor(private router: Router, private editarPerfilService: EditarPerfilService) {
-    
-  }
+  constructor(private router: Router, private editarPerfilService: EditarPerfilService) {}
 
   ngOnInit(): void {
     this.listarProfissional();
@@ -65,12 +66,12 @@ export class EditarPerfilComponent implements OnInit {
     this.usuario.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
   }
 
-  voltar(){
-    this.router.navigateByUrl(this.path,);
+  home(){
+    this.router.navigateByUrl(this.path1);
   }
 
-  home(){
-    this.router.navigateByUrl('/home');
+  voltar(){
+    this.router.navigateByUrl(this.path3);
   }
 
   salvar() {
@@ -100,7 +101,7 @@ export class EditarPerfilComponent implements OnInit {
 
   updateProfissional(){
     this.editarPerfilService.updatePerfilInfo(this.perfil_atualizado).subscribe(
-      success => this.router.navigateByUrl(this.path),
+      success => this.router.navigateByUrl(this.path3),
       error => console.log(error),
       () => console.log('request completo')
     );
@@ -148,5 +149,4 @@ export class EditarPerfilComponent implements OnInit {
     }
     return testResult
   }
-
 }

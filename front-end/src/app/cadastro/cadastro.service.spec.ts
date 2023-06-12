@@ -41,7 +41,8 @@ describe('CadastroService', () => {
         unidade_de_atendimento: 'HMAC',
         password: 'Testando@1',
       };
-      const urlMock = 'https://tcc-production-33a0.up.railway.app/profissionaldesaude/';
+      const urlMock = '/profissionaldesaude/';
+      // const urlMock = 'https://medvida.up.railway.app/profissionaldesaude/';
 
       // When
       service.setCadastroInfo(cadastroInfoMock);

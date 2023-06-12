@@ -3,7 +3,7 @@ $white: #ffff;
 $light-red: #b87676;
 $black: black;
 
-.btnProximo, .btnAnterior, .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+.btnProximo, .btnAnterior, .btnAssinar, .btnEnviar, .btnCancelar {
   background-color: $dark-red;
   color: $white;
   border-style: none;
@@ -16,7 +16,7 @@ $black: black;
   }
 }
 
-.btnAssinarEnviar, .btnEnviar, .btnCancelar  {
+.btnAssinar, .btnEnviar, .btnCancelar  {
   width: 200px;
   height: 50px;
 }
@@ -56,11 +56,6 @@ $black: black;
         font-weight: bold;
       }
 
-      .loc {
-        width: 18em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -75,12 +70,23 @@ $black: black;
         }
       }
 
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
       .btns {
-        width: 30vw;
+        width: 20vw;
         font-size: 18px;
         margin-top: 20px;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -159,11 +165,6 @@ $black: black;
         font-weight: bold;
       }
 
-      .loc {
-        width: 18em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -178,12 +179,23 @@ $black: black;
         }
       }
 
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
       .btns {
         width: 30vw;
         font-size: 18px;
         margin-top: 20px;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -261,11 +273,6 @@ $black: black;
         font-weight: bold;
       }
 
-      .loc {
-        width: 18em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -275,13 +282,24 @@ $black: black;
         }
       }
 
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
       .btns {
         width: 50vw;
         font-size: 18px;
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -359,11 +377,6 @@ $black: black;
         font-weight: bold;
       }
 
-      .loc {
-        width: 18em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -373,13 +386,24 @@ $black: black;
         }
       }
 
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
       .btns {
         width: 65vw;
         font-size: 18px;
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -457,11 +481,6 @@ $black: black;
         font-weight: bold;
       }
 
-      .loc {
-        width: 18em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -471,13 +490,24 @@ $black: black;
         }
       }
 
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
       .btns {
         width: 85vw;
         font-size: 18px;
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -561,11 +591,6 @@ $black: black;
         margin-left: 10px;
       }
 
-      .loc {
-        width: 15em;
-        border-radius: 20px;
-      }
-
       .nomeParamedico, .docTrabalho {
         font-size: 18px;
 
@@ -579,17 +604,33 @@ $black: black;
         }
       }
 
-      .btns {
-        width: 85vw;
-        font-size: 18px;
-        margin-top: 20px;
-        gap: 20px;
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
 
-        .btnAssinarEnviar, .btnEnviar, .btnCancelar {
+        .loc {
+          width: 15em;
           border-radius: 20px;
         }
       }
 
+      .btns {
+        width: 80vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 20px;
+
+        .btnAssinar {
+          width: 120px;
+          height: 50px;
+          border-radius: 20px;
+        }
+
+        .btnEnviar, .btnCancelar {
+          border-radius: 20px;
+        }
+      }
     }
 
     .modalContainer {

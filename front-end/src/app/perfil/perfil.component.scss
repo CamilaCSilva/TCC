@@ -494,12 +494,12 @@ $black: black;
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
   .perfilContainer {
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 55vh;
-    width: 100vw;
+    width: 105vw;
     padding: 1rem 1rem;
     gap: 3em;
 

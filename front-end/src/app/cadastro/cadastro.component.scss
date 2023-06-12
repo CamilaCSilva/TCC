@@ -379,7 +379,7 @@ $light-red: #b87676;
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 65vh;
-    width: 100vw;
+    width: 105vw;
     padding: 2rem 0;
 
     .cadastroInfosContainer {
@@ -468,12 +468,12 @@ $light-red: #b87676;
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
   .cadastroContainer {
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 90vh;
-    width: 100vw;
+    width: 105vw;
     padding: 2rem 0;
 
     .cadastroInfosContainer {
