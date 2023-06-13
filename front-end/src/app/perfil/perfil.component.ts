@@ -10,9 +10,11 @@ import { PerfilInfo } from '../models/perfil.model';
 })
 export class PerfilComponent implements OnInit {
 
+
   path1: string = '/home';
   path2: string = '/login';
   path3: string = 'home/perfil/editar-perfil';
+
   string = 'Perfil';
   perfil: PerfilInfo;
   nome_completo:String;
@@ -35,6 +37,13 @@ export class PerfilComponent implements OnInit {
     this.listarProfissional();
   }
 
+  logout(){
+    this.perfilService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path2);
+      }
+    );
+  }
 
   listarProfissional() {
     this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
@@ -60,14 +69,6 @@ export class PerfilComponent implements OnInit {
 
   home() {
     this.router.navigateByUrl(this.path1);
-  }
-
-  logout() {
-    this.perfilService.getLogoutUser().subscribe(
-      res => {
-        this.router.navigateByUrl(this.path2);
-      }
-    );
   }
 
   editar() {
