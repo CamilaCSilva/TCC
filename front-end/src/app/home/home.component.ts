@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
 
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
+    console.log(this.usuario.paciente)
     this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 
