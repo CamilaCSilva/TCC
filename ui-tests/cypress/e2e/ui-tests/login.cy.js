@@ -10,12 +10,12 @@ function login(username, pass){
 describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', () => {
   // Cenários Positivos de Login
   it('Cenario de Teste: Fazer o login com dados certos e ir para a página de home', () => {
-    login('123.456.789-10', 'Testando@1')
+    login('777.777.777-71', 'nogueirA@23')
     cy.url().should('contain','/home')
   })
 
   it('Cenario de Teste: Fazer o login com o cpf em outro formato e ir para a página de home', () => {
-    login('12345678910', 'Testando@1')
+    login('77777777771', 'nogueirA@23')
     cy.url().should('contain','/home')
   })
 
