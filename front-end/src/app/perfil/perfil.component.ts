@@ -72,7 +72,15 @@ export class PerfilComponent implements OnInit {
   }
 
   editar() {
-    console.log(this.usuario)
     this.router.navigateByUrl(this.path3);
+  }
+
+  deletarUser(cpf: String) {
+    this.perfilService.deleteUser(cpf).subscribe(
+      () => {
+        console.log('Deletou!')
+        this.router.navigateByUrl(this.path2);
+      }
+    );
   }
 }

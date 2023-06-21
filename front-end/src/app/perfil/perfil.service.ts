@@ -19,7 +19,11 @@ export class PerfilService {
     return this.http.get(`${this.profissional_url}user`, {withCredentials: true}) as Observable<PerfilInfo>;
   }
 
-  getLogoutUser(){
+  getLogoutUser() {
     return this.http.post(`${this.profissional_url}logout`, {}, {withCredentials: true});
+  }
+
+  deleteUser(cpf: String) {
+    return this.http.delete(`${this.profissional_url}delete/?cpf=${cpf}`, { withCredentials: true });
   }
 }

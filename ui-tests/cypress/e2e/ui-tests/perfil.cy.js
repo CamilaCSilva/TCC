@@ -46,6 +46,25 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
     cy.get('#celular').should('contain.text', '(35) 99262-1257')
   })
 
+  it('Cenario de Teste: Verificando se o botão de deletar da página de perfil abre o modal de confirmação', () => {
+    visitperfil()
+    cy.get('.btnDeletar').click()
+    cy.get('.modal').should('be.visible')
+  })
+
+  it('Cenario de Teste: Verificando o botão de cancelar do modal na página de perfil fecha o modal', () => {
+    visitperfil()
+    cy.get('.btnDeletar').click()
+    cy.get('.btnCancelar').click()
+    cy.get('.modal').should('not.be.visible')
+  })
+
+  it('Cenario de Teste: Verificando o botão de confirmar do modal na página de perfil deleta o usuário', () => {
+    visitperfil()
+    cy.get('.btnDeletar').click()
+    cy.get('.btnEnviar').click()
+  })
+
   // Cenários de mudança de página
   it('Cenario de Teste: Clicar no icone de home e ir para a página de home', () => {
     visitperfil()
