@@ -1,31 +1,28 @@
 from rest_framework import serializers
-from hospital.models import ProfissionaldeSaude, FichaPaciente
-from hospital.validators import *
-
+from hospital.models import ProfissionaldeSaude
 
 class ProfissionaldeSaudeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProfissionaldeSaude
         fields = '__all__'
+        extra_kwargs = {
+            'password':{'write_only': True}
+        }
     
-    # def validate(self, data):
-    #     if not cpf_valido(data['cpf']):
-    #         raise serializers.ValidationError({'cpf':"O CPF deve ter 11 dígitos"})
-    #     if not nome_valido(data['nome_completo']):
-    #         raise serializers.ValidationError({'nome_completo':"Não inclua números neste campo"})
-    #     if not celular_valido(data['celular']):
-    #         raise serializers.ValidationError({'celular':"O número de telefone deve conter o DDD e o 9 padrão"})
-    #     return 
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.set_password(password)
+        instance.save()
+        return instance
+    
+    def update(self, instance, validated_data):
+        password = validated_data.pop('password', None)
+        if password is not None:
+            instance.set_password(password)
+            instance.save()
+        return super().update(instance, validated_data)
+    
 
-class FichasPacientesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FichaPaciente
-        fields = '__all__'
-
-class ListaFichasProfissionaisSerializer(serializers.ModelSerializer):
-    anamnese = serializers.ReadOnlyField(source = 'anamnese.nome_completo')
-    paramedico = serializers.ReadOnlyField(source = 'paramedico.nome_completo')
-    class Meta:
-        model = FichaPaciente
-        fields = ['anamnese', 'paramedico']
     

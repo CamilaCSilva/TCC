@@ -1,64 +1,82 @@
 
-<div class="perfilContainer d-flex flex-column align-items-center justify-content-center">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+<div class="perfilContainer d-flex flex-column align-items-center">
   <!-- HEADER -->
   <div class="headerGeral d-flex flex-column align-items-center justify-content-around">
     <div class="nav d-flex flex-row justify-content-between">
-      <h2>Bem vinda(o), {{ perfil?.nome_completo }}!</h2>
+      <h2>Bem vinda(o), {{ nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row justify-content-end">
-        <a routerLink="/home"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
-        <a routerLink="/login"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
+        <a (click)="home()"><img class="logo" src="../../../assets/images/home.png" alt="Perfil"></a>
+        <a (click)="logout()"><img class="exit" src="../../../assets/images/sair.png" alt="Sair"></a>
       </div>
     </div>
+  </div>
 
+  <div class="perfilInfos">
     <!-- CABEÇALHO FORM -->
     <div class="cabecalho d-flex justify-content-center">
       <h2>{{string}}</h2>
     </div>
-  </div>
 
-  <!-- INFOS -->
-  <div class="perfilInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center" >
-    <div class="d-flex flex-column align-items-start">
-      <!-- NOME COMPLETO -->
-      <div class="nomeCompleto d-flex flex-column">
-        <label for="nome">Nome Completo</label>
-        <p id="nome" name="nome">{{ perfil?.nome_completo }}</p>
+    <!-- INFOS -->
+    <div class="perfilInfosContainer d-flex flex-column align-items-center align-content-center justify-content-center" >
+
+      <div class="d-flex flex-column align-items-start">
+        <!-- NOME COMPLETO -->
+        <div class="nomeCompleto d-flex flex-column">
+          <label for="nome">Nome Completo</label>
+          <p id="nome" name="nome">{{ nome_completo }}</p>
+        </div>
+
+        <!-- ÁREA DE ATUAÇÃO -->
+        <div class="areaAtuacao d-flex flex-column">
+          <label>Área de Atuação</label>
+          <p>{{ campo_escolha }}</p>
+        </div>
+
+        <!-- Documento de Trabalho -->
+        <div class="docTrabalho d-flex flex-column">
+          <label for="doc">Documento de Trabalho</label>
+          <p type="text" id="doc" name="doc">{{ documento_trabalho }}</p>
+        </div>
+
+        <!-- CPF -->
+        <div class="cpf d-flex flex-column">
+          <label for="cpf">CPF</label>
+          <p type="text" id="cpf" name="cpf">{{ cpf }}</p>
+        </div>
+
+        <!-- UNIDADE ATENDIMENTO -->
+        <div class="unidadeAtendimento d-flex flex-column">
+          <label for="unidadeAtendimento">Unidade de Atendimento</label>
+          <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ unidade_de_atendimento }}</p>
+        </div>
+
+        <!-- CELULAR -->
+        <div class="celular d-flex flex-column">
+          <label for="celular">Celular</label>
+          <p type="tel" id="celular" name="celular">{{ celular }}</p>
+        </div>
       </div>
 
-      <!-- ÁREA DE ATUAÇÃO -->
-      <div class="sexo d-flex flex-column">
-        <label>Área de Atuação</label>
-        <p>{{ perfil?.campo_escolha }}</p>
-      </div>
-
-      <!-- CRM/COREN/DRF -->
-      <div class="crmCorenDrf d-flex flex-column">
-        <label for="doc">CRM/COREN/DRF</label>
-        <p type="text" id="doc" name="doc">{{ perfil?.documento_trabalho }}</p>
-      </div>
-
-      <!-- CPF -->
-      <div class="cpf d-flex flex-column">
-        <label for="cpf">CPF</label>
-        <p type="text" id="cpf" name="cpf">{{ perfil?.cpf }}</p>
-      </div>
-
-      <!-- UNIDADE ATENDIMENTO -->
-      <div class="unidadeAtendimento d-flex flex-column">
-        <label for="unidadeAtendimento">Unidade de Atendimento</label>
-        <p type="text" id="unidadeAtendimento" name="unidadeAtendimento">{{ perfil?.unidade_de_atendimento }}</p>
-      </div>
-
-      <!-- CELULAR -->
-      <div class="celular d-flex flex-column">
-        <label for="celular">Celular</label>
-        <p type="tel" id="celular" name="celular">{{ perfil?.celular }}</p>
+      <!-- BOTOES -->
+      <div class="btns d-flex flex-row justify-content-around">
+        <button (click)="editar()" class="btnEditar btn">EDITAR PERFIL</button>
+        <button class="btn btnDeletar d-flex align-items-center justify-content-center rounded-circle" type="button" (click)="modalConfirmacao.hidden = false"><span class="material-symbols-rounded">delete</span></button>
       </div>
     </div>
+  </div>
 
-    <!-- BOTOES -->
-    <div class="btns">
-      <button (click)="editar()" class="btnEditar">EDITAR PERFIL</button>
+  <!-- MODAL -->
+  <div #modalConfirmacao hidden>
+    <div class="modalContainer">
+      <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
+        <h3>Deseja deletar este usuário permanentemente?</h3>
+        <div class="btns d-flex flex-row align-items-center justify-content-around">
+          <button class="btnEnviar btn btn-primary" type="submit" (click)="deletarUser(cpf)">CONFIRMAR</button>
+          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

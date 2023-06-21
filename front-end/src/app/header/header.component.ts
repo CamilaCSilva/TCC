@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   login = 'FAÇA SEU LOGIN';
   @Input() signOptions: string[];
   @Input() signPaths: string[];
+  @Input() ids: string[];
 
   constructor(private router: Router) { }
 

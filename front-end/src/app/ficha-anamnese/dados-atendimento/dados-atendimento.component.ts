@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -18,20 +18,31 @@ export class DadosAtendimentoComponent implements OnInit {
   medicacoesUsadas: string;
   historicoDoencas: string;
   testResult: boolean = false;
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   tipo: string | null;
+  anamnese: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.anamnese = nav?.extras;
+  }
 
   ngOnInit(): void {
+    console.log(this.anamnese)
+    this.sexo = this.anamnese.paciente.sexo;
+    this.idade = this.anamnese.paciente.idade;
+    this.tipoSangue = this.anamnese.tipo_sanguineo;
+    this.alergias = this.anamnese.paciente.alergias;
+    this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
+    this.historicoDoencas = this.anamnese.paciente.historico_doencas;
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1);
+    this.router.navigateByUrl(this.path1, this.anamnese);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2);
+    this.router.navigateByUrl(this.path2, this.anamnese);
   }
 
 }

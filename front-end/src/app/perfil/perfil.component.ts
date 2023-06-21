@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfilService } from './perfil.service';
+import { PerfilInfo } from '../models/perfil.model';
 
 @Component({
   selector: 'app-perfil',
@@ -9,35 +10,77 @@ import { PerfilService } from './perfil.service';
 })
 export class PerfilComponent implements OnInit {
 
-  path: string = 'perfil/editar-perfil';
+
+  path1: string = '/home';
+  path2: string = '/login';
+  path3: string = 'home/perfil/editar-perfil';
+
   string = 'Perfil';
-  testResult: boolean = false;
-  perfil: any;
+  perfil: PerfilInfo;
+  nome_completo:String;
+  campo_escolha: String;
+  documento_trabalho: String;
+  cpf: String;
+  unidade_de_atendimento: String;
+  celular: String;
 
-  usuario: any = {
-    nome: 'Isabela',
-    funcao: 'Profissional de Saúde',
-    docmentro_trabalho: 78965,
-    cpf: '78965412320',
-    unidade_atendimento: 'Hospital Antônio Moreira da Costa',
-    celular: '(35)99123-4567'
-  };
+  usuario: any;
+  nome = 'Alessandra';
 
-  constructor(private router: Router, private perfilService: PerfilService) { }
+  constructor(private router: Router, private perfilService: PerfilService) {
+    const nav = this.router.getCurrentNavigation();
+    this.usuario = nav?.extras;
+  }
 
-  ngOnInit(){
+  ngOnInit() {
+    console.log(this.usuario)
     this.listarProfissional();
   }
 
-  listarProfissional(){
-    this.perfilService.getPerfilInfo(this.usuario.cpf).subscribe(perfilInfo => {
-    this.perfil = perfilInfo
+  logout(){
+    this.perfilService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path2);
+      }
+    );
+  }
+
+  listarProfissional() {
+    this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
+      this.perfil = perfilInfo;
+    if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
+    else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
+    else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
+    this.mostrarProfissional();
     }, err => {
       console.log('Erro ao listar o profissional', err)
     })
   }
 
-  editar(){
-    this.router.navigateByUrl(this.path);
+
+  mostrarProfissional() {
+    this.nome_completo = this.perfil.nome_completo;
+    this.campo_escolha = this.perfil.campo_escolha;
+    this.documento_trabalho = this.perfil.documento_trabalho;
+    this.cpf = this.perfil.cpf.slice(0,3) + "." + this.perfil.cpf.slice(3,6)+ "." + this.perfil.cpf.slice(6,9) + "-" + this.perfil.cpf.slice(9);
+    this.unidade_de_atendimento = this.perfil.unidade_de_atendimento;
+    this.celular = "(" + this.perfil.celular.slice(0, 2) + ") " + this.perfil.celular.slice(2,7) + "-" + this.perfil.celular.slice(7);
+  }
+
+  home() {
+    this.router.navigateByUrl(this.path1);
+  }
+
+  editar() {
+    this.router.navigateByUrl(this.path3);
+  }
+
+  deletarUser(cpf: String) {
+    this.perfilService.deleteUser(cpf).subscribe(
+      () => {
+        console.log('Deletou!')
+        this.router.navigateByUrl(this.path2);
+      }
+    );
   }
 }

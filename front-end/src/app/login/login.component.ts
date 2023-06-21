@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
-import { LoginInfoExistente, LoginInfoExistenteArray } from './login.model';
+import { LoginInfo } from '../models/login.model';
 
 @Component({
   selector: 'app-login',
@@ -10,58 +10,58 @@ import { LoginInfoExistente, LoginInfoExistenteArray } from './login.model';
 })
 export class LoginComponent implements OnInit {
 
+  mensagem(mensagem: any) {
+    throw new Error('Method not implemented.');
+  }
+  entrar(name: string) {
+    throw new Error('Method not implemented.');
+  }
+
   path = '/home';
   stringFacaLogin = 'Faça o login!';
-  cpf: string;
-  senha: string;
-  testResult: boolean = false;
-  loginInfoExistente: LoginInfoExistenteArray;
+  cpf_usuario: string = '';
+  password: string = '';
+
+  usuario: any;
+  perfil: LoginInfo;
 
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {}
 
   logar() {
-    this.verificaDados();
-    if(this.testResult) {
-      this.router.navigateByUrl(this.path);
-      // this.loginInfoExistente = this.getLoginInfo();
-      // if(this.loginInfoExistente) {
-      //   this.loginInfoExistente.map((data) => {
-      //     data.cpf == this.cpf &&
-      //     data.senha == this.senha &&
-      //     data.is_correct == this.testResult ?
-      //     this.router.navigateByUrl(this.path) :
-      //     new Error('Informações de Login incorretas');
-      //   });
-      // }
+    if(this.verificaDados()){
+      this.perfil = {
+        cpf: this.cpf_usuario.replace(/-/g, "").replace(".", "").replace(".", ""),
+        password: this.password
+      }      
+      this.getLoginInfo(this.perfil);
     }
   }
 
-  getLoginInfo(): any {
-    this.loginService.getLoginInfo().subscribe({
-      next: (data) => {
-        console.log(data);
-        return data;
+  getLoginInfo(login_info: LoginInfo) {
+    this.loginService.getLoginInfo(login_info).subscribe(
+      success => {
+        this.router.navigateByUrl(this.path);
       },
-      error: (error) => {
-        console.log(error);
-        return null;
-      }
-    });
+      error => console.log(error),
+      () => console.log('request completo')
+    );
   }
 
   private verificaDados() {
-    if(this.cpf && this.cpf.length < 11 || !this.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
+    let testResult = false
+    if(this.cpf_usuario.length < 11 || !this.cpf_usuario.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
       alert('CPF incompleto');
       throw new Error('CPF incompleto');
     }
-    else if(this.senha && !this.senha.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
+    else if(!this.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
       alert('Senha incompleta');
       throw new Error('Senha incompleta');
     }
     else {
-      this.testResult = true;
+      testResult = true;
     }
+    return testResult
   }
 }

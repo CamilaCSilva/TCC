@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import { PerfilInfoArray } from './editar-perfil.model';
 import { HttpClient } from '@angular/common/http';
+import { PerfilInfo } from '../models/perfil.model';
+import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EditarPerfilService {
 
-  profissionalUrl = 'http://127.0.0.1:8000/profissionaldesaude/?cpf='
+  url = 'https://medvida.up.railway.app/';
+  // url = 'http://localhost:8000/';
+
+  private profissionalUrl =  this.url + 'profissionaldesaude/';
 
   constructor(private http: HttpClient) { }
 
-  getPerfilInfo(cpf: any) {
-    return this.http.get(`${this.profissionalUrl}${cpf}`);
+  getPerfilInfo() {
+    return this.http.get(`${this.profissionalUrl}user`,{withCredentials: true}) as Observable<PerfilInfo>;
   }
 
-  updatePerfilInfo(cpf: any, perfilInfos: any) {
-    return this.http.put(`${this.profissionalUrl}${cpf}`, perfilInfos);
+  updatePerfilInfo(perfil: PerfilInfo) {
+    return this.http.put(`${this.profissionalUrl}edit/`, perfil  ,{withCredentials: true}).pipe(take(1));
+  }
+
+  getLogoutUser(){
+    return this.http.post(`${this.profissionalUrl}logout`, {}, {withCredentials: true});
   }
 }

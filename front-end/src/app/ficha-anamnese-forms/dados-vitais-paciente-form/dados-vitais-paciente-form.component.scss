@@ -20,10 +20,10 @@ $light-red: #b87676;
   height: 50px;
 }
 
-@media screen and (min-width:1025px) {
-
+@media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
+    min-height: 85vh;
 
     .dadosAtendimento {
       background-color: $light-red;
@@ -32,7 +32,7 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 30vw;
+      width: 28vw;
       height: 55vh;
       margin-top: 3em;
       padding: 3em;
@@ -47,6 +47,65 @@ $light-red: #b87676;
 
       & h3 {
         font-weight: bold;
+        text-align: center;
+        width: 12em;
+      }
+
+      .smallFields {
+        width: 30vw;
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 9.2em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        width: 20vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1024px) and (max-height: 700px) {
+  .main {
+    border-radius: 20px;
+    min-height: 85vh;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 35vw;
+      height: 65vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: 12em;
       }
 
       .smallFields {
@@ -66,18 +125,73 @@ $light-red: #b87676;
       }
 
       .btns {
-        width: 27.5vw;
+        width: 30vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
+        gap: 10px;
       }
     }
   }
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
-
+@media (max-width: 1023px) and (min-width: 481px) {
   .main {
+    border-radius: 20px;
 
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 55vw;
+      height: 35vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: 12em;
+      }
+
+      .smallFields {
+        width: 30vw;
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 9.5em;
+          font-size: 19px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        width: 50vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -102,6 +216,8 @@ $light-red: #b87676;
 
       & h3 {
         font-weight: bold;
+        text-align: center;
+        width: 12em;
       }
 
       .smallFields {
@@ -121,18 +237,17 @@ $light-red: #b87676;
       }
 
       .btns {
-        width: 27.5vw;
+        width: 65vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
+        gap: 100px;
       }
     }
   }
 }
 
-@media (max-width: 480px) and (min-width: 0px) {
-
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
-
     border-radius: 20px;
 
     .dadosAtendimento {
@@ -142,8 +257,8 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 90vw;
-      height: 75vh;
+      width: 35vw;
+      height: 55vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -157,6 +272,64 @@ $light-red: #b87676;
 
       & h3 {
         font-weight: bold;
+        text-align: center;
+        width: 12em;
+      }
+
+      .smallFields {
+        width: 30vw;
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 9.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .btns {
+        width: 30vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 90vw;
+      height: 55vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: 12em;
       }
 
       .smallFields {
@@ -169,16 +342,83 @@ $light-red: #b87676;
           align-items: center;
 
           & input {
-            width: 4em;
+            width: 5em;
+            height: 5vh;
             border-radius: 20px;
+          }
+
+          & label {
+            text-align: center;
           }
         }
       }
 
       .btns {
-        width: 27.5vw;
+        width: 65vw;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
+        gap: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosAtendimento {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 90vw;
+      height: 65vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: auto;
+      }
+
+      .smallFields {
+        width: 30vw;
+        align-items: center;
+
+        .pressao, .oxigenacao, .temperatura, .frequenciaRitmica {
+          width: 6.5em;
+          font-size: 18px;
+          align-items: center;
+
+          & input {
+            width: 4em;
+            height: 6vh;
+            border-radius: 20px;
+          }
+
+          & label {
+            text-align: center;
+          }
+        }
+      }
+
+      .btns {
+        width: 65vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 90px;
       }
     }
   }

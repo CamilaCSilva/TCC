@@ -1,6 +1,8 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { HomeService } from './home.service';
+import { Anamnese } from '../models/anamnese.model';
 
 @Component({
   selector: 'app-home',
@@ -11,104 +13,57 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('fichas') fichasElement: ElementRef;
 
-  pacientes = [
-    {
-      nome: 'Lucas Santos',
-      cpf: '987.234.567-45',
-      celular: '(35)99123-4567',
-      idade: 25,
-      tipo_sanguineo: 'O-',
-      sexo: 'M',
-      alegias: ['Polém', 'Aspirina'],
-      medicacoes_utilizadas: ['Ibuprofeno'],
-      historico_doencas: [ 'Fibromialgia'],
-      sintomas: ['Dor no estomago', 'Mal estar', 'Desmaios'],
-      nivel_dor: 8,
-      prioridade: 'Urgente',
-      observacao: 'O paciente não consegue ficar em pé',
-      data: '2020-03-22'
-    },
-    {
-      nome: 'Margaret Tate',
-      cpf: '727.254.687-35',
-      celular: '(22)99253-4568',
-      idade: 23,
-      tipo_sanguineo: 'A-',
-      sexo: 'F',
-      alegias: 'Nozes',
-      medicacoes_utilizadas: ['Loratadina'],
-      historico_doencas: [ 'Nenhuma'],
-      sintomas: ['Nausea', 'Tontura', 'Febre'],
-      nivel_dor: 6,
-      prioridade: 'Pouco Urgente',
-      observacao: 'O paciente está com tontura',
-      data: '2021-04-22'
-    },
-    {
-      nome: 'Bernardo Silva',
-      cpf: '127.274.697-75',
-      celular: '(13)99257-9567',
-      idade: 35,
-      tipo_sanguineo: 'AB+',
-      sexo: 'M',
-      alegias: 'Camarão',
-      medicacoes_utilizadas: ['Nenhuma'],
-      historico_doencas: [ 'Nenhuma'],
-      sintomas: ['Enxaqueca', 'Tontura', 'Mal estar'],
-      nivel_dor: 7,
-      prioridade: 'Pouco Urgente',
-      observacao: 'O paciente está com tontura e não consegue ficar com os olhos abertos',
-      data: '2020-03-08'
-    },
-    // {
-    //   nome: 'Mariana Dias',
-    //   cpf: '127.274.497-75',
-    //   celular: '(14)98227-9567',
-    //   idade: 15,
-    //   tipo_sanguineo: 'O+',
-    //   sexo: 'F',
-    //   alegias: 'Leite',
-    //   medicacoes_utilizadas: ['Nenhuma'],
-    //   historico_doencas: [ 'Nenhuma'],
-    //   sintomas: ['Falta de ar', 'Garganta Fechada'],
-    //   nivel_dor: 8,
-    //   prioridade: 'Urgente',
-    //   observacao: 'A paciente não consegue respirar',
-    //   data: '2020-03-21'
-    // }
-  ]
+  pacientes: Anamnese[];
 
-  usuario = {
-    nome: 'Isabela',
-    funcao: 'Profissional de Saúde',
-    docmentro_trabalho: 78965,
-    cpf: '123.456.789.10',
-    unidade_atendimento: 'Hospital Antônio Moreira da Costa',
-    celular: '(35)99123-4567'
+  usuario: any = {
+    nome_completo: '',
+    cpf: '',
+    documento_trabalho: '',
+  }
+  path = '/login';
+
+  data: Date = new Date();
+
+  constructor(private router: Router, private homeService: HomeService) {
+    const nav = this.router.getCurrentNavigation();
+    // this.usuario = nav?.extras;
   }
 
-  data: Date;
-  tipo: boolean;
-
-  constructor(private router: Router) { }
-
   ngOnInit(): void {
+    this.homeService.getUser().subscribe(
+      res => {
+        this.usuario = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   filtrarPorData(data: Date) {
-    if(data) {
-      this.pacientes = this.pacientes.filter(a => a.data == data.toString());
-    } else {
-      return;
-    }
+    this.homeService.getFichasDisponiveis(data).subscribe(anamneseData => this.pacientes = anamneseData);
   }
 
-  visualizarFicha() {
-    this.router.navigateByUrl('/home/fichas/identificacao-paciente');
+  visualizarPerfil(){
+    this.router.navigateByUrl('/home/perfil')
+  }
+
+  logout(){
+    this.homeService.getLogoutUser().subscribe(
+      res => {
+        this.router.navigateByUrl(this.path);
+      }
+    );
+  }
+
+  visualizarFicha(paciente: any) {
+    this.usuario.paciente = paciente;
+    console.log(this.usuario.paciente)
+    this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 
   adicionarFicha() {
-    this.router.navigateByUrl('/home/formularios/identificacao-paciente-form');
+    this.router.navigateByUrl('/home/formularios', this.usuario);
   }
 
 }

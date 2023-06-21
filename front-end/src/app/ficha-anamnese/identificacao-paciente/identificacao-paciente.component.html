@@ -6,7 +6,7 @@
     <div class="idPaciente d-flex flex-column align-items-center">
       <div class="d-flex flex-column align-items-start">
         <!-- NOME COMPLETO -->
-        <div class="nomeCompleto d-flex flex-column mt-3">
+        <div class="nomeCompleto d-flex flex-column mt-2">
           <label for="nomeCompleto">Nome Completo</label>
           <p>{{ nomeCompleto }}</p>
         </div>
@@ -18,7 +18,7 @@
         </div>
 
         <!-- CELULAR -->
-        <div class="celular d-flex flex-column mt-3">
+        <div class="celular d-flex flex-column">
           <label for="celular">Celular</label>
           <p>{{ celular }}</p>
         </div>
@@ -26,7 +26,7 @@
 
       <!-- BOTÕES -->
       <div class="btns d-flex flex-row justify-content-around">
-        <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">CANCELAR E VOLTAR</button>
+        <button class="btnVoltar btn btn-primary" type="button" (click)="voltar()">VOLTAR</button>
         <button class="btnProximo btn btn-primary rounded-circle" type="button" (click)="seguir()">></button>
       </div>
     </div>

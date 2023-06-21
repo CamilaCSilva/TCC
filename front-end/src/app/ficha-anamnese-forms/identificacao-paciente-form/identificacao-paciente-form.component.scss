@@ -25,11 +25,10 @@ $light-red: #b87676;
   height: 50px;
 }
 
-@media screen and (min-width:1025px) {
-
+@media screen and (min-width:1024px) {
   .main {
-
     border-radius: 20px;
+    min-height: 85vh;
 
     .idPaciente {
       background: $light-red;
@@ -39,7 +38,7 @@ $light-red: #b87676;
 
       //Spacing
       width: 30vw;
-      height: 70vh;
+      height: 75vh;
       margin-top: 3em;
       padding: 3em;
 
@@ -53,6 +52,7 @@ $light-red: #b87676;
 
       & h3 {
         font-weight: bold;
+        text-align: center;
       }
 
       .nomeCompleto, .cpf, .celular {
@@ -62,7 +62,7 @@ $light-red: #b87676;
 
         & input {
           width: 27.5vw;
-          height: 4vh;
+          height: 5vh;
           border-radius: 20px;
         }
 
@@ -80,10 +80,10 @@ $light-red: #b87676;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
+@media screen and (min-width:1024px) and (max-height: 700px) {
   .main {
-
     border-radius: 20px;
+    min-height: 85vh;
 
     .idPaciente {
       background: $light-red;
@@ -92,62 +92,7 @@ $light-red: #b87676;
       font-weight: bold;
 
       //Spacing
-      width: 60vw;
-      height: 70vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
-      & h3 {
-        font-weight: bold;
-      }
-
-      .nomeCompleto, .cpf, .celular {
-        & label {
-          font-size: 18px;
-        }
-
-        & input {
-          width: 15em;
-          height: 2.3em;
-          border-radius: 20px;
-        }
-
-        & p {
-          font-size: 10px;
-        }
-      }
-
-      .btns {
-        width: 50vw;
-        font-size: 18px;
-        margin-top: 40px;
-        gap: 20px;
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) and (min-width: 0px) {
-  .main {
-
-    border-radius: 20px;
-
-    .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 90vw;
+      width: 30vw;
       height: 80vh;
       margin-top: 3em;
       padding: 3em;
@@ -162,6 +107,281 @@ $light-red: #b87676;
 
       & h3 {
         font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 27.5vw;
+          height: 5vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 27.5vw;
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 481px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 60vw;
+      height: 50vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 55vw;
+          height: 3.5vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 60vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 60vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 50vw;
+          height: 4vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 60vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 35vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 30vw;
+          height: 5vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 30vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 90vw;
+      height: 60vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 70vw;
+          height: 4vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 70vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 90vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
       }
 
       .nomeCompleto, .cpf, .celular {
@@ -181,10 +401,20 @@ $light-red: #b87676;
       }
 
       .btns {
-        width: 50vw;
-        font-size: 18px;
-        margin-top: 40px;
-        gap: 20px;
+        width: 80vw;
+        font-size: 17px;
+        margin-top: 20px;
+        gap: 10px;
+
+        .btnVoltar {
+          width: 120px;
+          height: 50px;
+        }
+
+        .btnProximo {
+          width: 45px;
+          height: 45px;
+        }
       }
     }
   }

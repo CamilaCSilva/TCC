@@ -5,7 +5,7 @@
   </div>
 
   <div class="cabecalho-menu">
-    <a class="cabecalho-menu-item" (click)="avancar()">{{ signOptions[0] }}</a>
-    <a class="cabecalho-menu-item" (click)="maisInfos()">{{ signOptions[1] }}</a>
+    <a [id]="ids[0]" class="cabecalho-menu-item" (click)="avancar()">{{ signOptions[0] }}</a>
+    <a [id]="ids[1]" class="cabecalho-menu-item" (click)="maisInfos()">{{ signOptions[1] }}</a>
   </div>
 </header>

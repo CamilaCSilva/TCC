@@ -3,11 +3,9 @@ $white: #ffff;
 $light-red: #b87676;
 $black: black;
 
-
 .infosContainer {
   background: url(/assets/images/background.png);
   background-size: cover;
-  min-height: 55vh;
   padding: 2rem 0;
 
   .headerGeral {
@@ -36,31 +34,232 @@ $black: black;
       margin-top: 20px;
     }
   }
+}
 
-  .maisInfosContainer {
-    width: 30vw;
-    height: 30vh;
-    background: $light-red;
-    border-radius: 20px;
-    border: none;
-    padding: 1rem;
+@media screen and (min-width:1024px) {
+  .infosContainer {
+    min-height: 55vh;
 
-    .site, .telefone {
-      color: $white;
-      border: none;
+    .maisInfosContainer {
+      width: 28vw;
+      height: 30vh;
+      background: $light-red;
       border-radius: 20px;
+      border: none;
+      padding: 1rem;
 
-      & p {
-        font-size: 22px;
-        color: $dark-red;
-        font-weight: bold;
-      }
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
 
-      & a {
-        color: $black;
-        font-size: 18px;
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
       }
     }
   }
 }
+
+@media screen and (min-width:1024px) and (max-height: 700px) {
+  .infosContainer {
+    min-height: 55vh;
+
+    .maisInfosContainer {
+      width: 30vw;
+      height: 40vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 481px) and (min-height: 1024px) {
+  .infosContainer {
+    min-height: 55vh;
+
+    .maisInfosContainer {
+      width: 40vw;
+      height: 35vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .infosContainer {
+    min-height: 55vh;
+
+    .maisInfosContainer {
+      width: 40vw;
+      height: 40vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .infosContainer {
+    min-height: 55vh;
+
+    .maisInfosContainer {
+      width: 35vw;
+      height: 40vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+  .infosContainer {
+    min-height: 70vh;
+    width: 105vw;
+
+    .maisInfosContainer {
+      width: 65vw;
+      height: 40vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
+  .infosContainer {
+    min-height: 70vh;
+    width: 105vw;
+
+    .maisInfosContainer {
+      width: 65vw;
+      height: 45vh;
+      background: $light-red;
+      border-radius: 20px;
+      border: none;
+      padding: 1rem;
+
+      .site, .telefone {
+        color: $white;
+        border: none;
+        border-radius: 20px;
+
+        & p {
+          font-size: 22px;
+          color: $dark-red;
+          font-weight: bold;
+        }
+
+        & a {
+          color: $black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
 

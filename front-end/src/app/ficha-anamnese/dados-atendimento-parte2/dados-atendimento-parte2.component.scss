@@ -22,10 +22,10 @@ $black: black;
   height: 50px;
 }
 
-@media screen and (min-width:1025px) {
-
+@media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
+    min-height: 65vh;
 
     .dadosAtendimentoContainer {
       background-color: $light-red;
@@ -33,7 +33,7 @@ $black: black;
       border-radius: 20px;
 
       //Spacing
-      width: 30vw;
+      width: 25vw;
       height: 70vh;
       margin-top: 3em;
       padding: 3em;
@@ -46,13 +46,15 @@ $black: black;
       bottom: 0;
       margin: auto;
 
-      .dadosAtendimento {
-        & h3 {
-          font-weight: bold;
-        }
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
 
+      .dadosAtendimento {
         .nivelDor, .prioridade, .sintomas, .observacoes {
           & label {
+            margin-bottom: 3px;
             font-size: 20px;
             font-weight: bold;
           }
@@ -64,19 +66,130 @@ $black: black;
         }
 
         .btns {
-          width: 27.5vw;
+          width: 20vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
+          gap: 20px;
         }
       }
     }
   }
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
-
+@media screen and (min-width:1024px) and (max-height: 700px) {
   .main {
     border-radius: 20px;
+    min-height: 70vh;
+
+    .dadosAtendimentoContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 35vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: 12em;
+      }
+
+      .dadosAtendimento {
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 30vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 481px) {
+  .main {
+    border-radius: 20px;
+    min-height: 75vh;
+
+    .dadosAtendimentoContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 50vw;
+      height: 50vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+        width: 12em;
+      }
+
+      .dadosAtendimento {
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 45vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+    min-height: 65vh;
 
     .dadosAtendimentoContainer {
       background-color: $light-red;
@@ -85,6 +198,169 @@ $black: black;
 
       //Spacing
       width: 65vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .dadosAtendimento {
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 60vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+    min-height: 65vh;
+
+    .dadosAtendimentoContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 35vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .dadosAtendimento {
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 30vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    border-radius: 20px;
+    min-height: 70vh;
+
+    .dadosAtendimentoContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 85vw;
+      height: 60vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .dadosAtendimento {
+        .nivelDor, .prioridade, .sintomas, .observacoes {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .btns {
+          width: 70vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+    min-height: 80vh;
+
+    .dadosAtendimentoContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 85vw;
       height: 80vh;
       margin-top: 3em;
       padding: 3em;
@@ -97,64 +373,15 @@ $black: black;
       bottom: 0;
       margin: auto;
 
-      .dadosAtendimento {
-        & h3 {
-          font-weight: bold;
-        }
-
-        .nivelDor, .prioridade, .sintomas, .observacoes {
-          & label {
-            font-size: 20px;
-            font-weight: bold;
-          }
-
-          & p {
-            font-size: 18px;
-            color: $black;
-          }
-        }
-
-        .btns {
-          width: 27.5vw;
-          font-size: 18px;
-          margin-top: 40px;
-        }
+      & h3 {
+        font-weight: bold;
+        text-align: center;
       }
-    }
-  }
-}
-
-@media (max-width: 480px) and (min-width: 0px) {
-
-  .main {
-    border-radius: 20px;
-
-    .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 90vw;
-      height: 100vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
 
       .dadosAtendimento {
-        & h3 {
-          font-weight: bold;
-        }
-
         .nivelDor, .prioridade, .sintomas, .observacoes {
           & label {
+            margin-bottom: 3px;
             font-size: 20px;
             font-weight: bold;
           }
@@ -166,9 +393,10 @@ $black: black;
         }
 
         .btns {
-          width: 27.5vw;
+          width: 70vw;
           font-size: 18px;
-          margin-top: 40px;
+          margin-top: 20px;
+          gap: 10px;
         }
       }
     }

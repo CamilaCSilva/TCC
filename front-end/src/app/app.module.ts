@@ -19,7 +19,11 @@ import { HeaderComponent } from './header/header.component';
 import { MaisInfosComponent } from './mais-infos/mais-infos.component';
 import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-forms.module';
 
-import { PerfilService } from './perfil/perfil.service'
+import { PerfilService } from './perfil/perfil.service';
+import { FichaAnamneseService } from './ficha-anamnese/ficha-anamnese.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,7 @@ import { PerfilService } from './perfil/perfil.service'
     HomeComponent,
     PerfilComponent,
     HeaderComponent,
-    MaisInfosComponent
+    MaisInfosComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,11 +46,18 @@ import { PerfilService } from './perfil/perfil.service'
     FichaAnamneseFormsModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     HttpClientModule,
-    PerfilService
+    PerfilService,
+    FichaAnamneseService,
   ],
   bootstrap: [AppComponent]
 })
