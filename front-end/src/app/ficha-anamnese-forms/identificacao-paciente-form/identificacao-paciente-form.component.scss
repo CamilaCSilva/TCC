@@ -190,7 +190,7 @@ $light-red: #b87676;
   }
 }
 
-@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
 
@@ -237,6 +237,61 @@ $light-red: #b87676;
 
       .btns {
         width: 60vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .idPaciente {
+      background: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 35vw;
+      height: 75vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: 30vw;
+          height: 5vh;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 30vw;
         font-size: 18px;
         margin-top: 40px;
         gap: 20px;

@@ -352,7 +352,7 @@ $black: black;
   }
 }
 
-@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
 
@@ -439,6 +439,114 @@ $black: black;
         }
 
         .btns {
+          gap: 20px;
+
+          & button {
+            color: $white;
+            background-color: $dark-red;
+
+            &:hover {
+              background-color: $light-red;
+              color: $dark-red;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosGerais {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+      font-weight: bold;
+
+      //Spacing
+      width: 35vw;
+      height: 70vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeParamedico, .docTrabalho {
+        font-size: 18px;
+
+        & p {
+          font-size: 18px;
+          color: $black;
+        }
+      }
+
+      .dataEnd {
+        text-align: end;
+        font-size: 15px;
+        font-weight: bold;
+
+        .loc {
+          width: 18em;
+          border-radius: 20px;
+        }
+      }
+
+      .btns {
+        width: 30vw;
+        font-size: 18px;
+        margin-top: 20px;
+        gap: 20px;
+
+        .btnAssinar, .btnEnviar, .btnCancelar {
+          border-radius: 20px;
+        }
+      }
+
+    }
+    .modalContainer {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      .modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        background-color: $white;
+        border-radius: 20px;
+        width: 25em;
+        height: 10em;
+
+        & h3 {
+          color: $dark-red;
+        }
+
+        .btns {
+          width: 30vw;
+          font-size: 18px;
+          margin-top: 20px;
           gap: 20px;
 
           & button {

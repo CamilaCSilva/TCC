@@ -66,7 +66,7 @@ function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medica
 
 describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao MedVida', () => {
   // Cenários Positivo página formulario de idados de atendimento
-  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos e mostrar o modal ao clicar em Assinar e Enviar', () => {
+  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos e mostrar o modal ao clicar em Confirmar', () => {
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -87,7 +87,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       '12',
       'Rua Paralelepipedo'
     )
-    cy.get('.btnAssinarEnviar').click()
+    cy.get('.btnAssinar').click()
     cy.get('.modal').should('be.visible')
   })
 
@@ -112,36 +112,10 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       '12',
       'Rua Paralelepipedo'
     )
-    cy.get('.btnAssinarEnviar').click()
+    cy.get('.btnAssinar').click()
     cy.get('.btnEnviar').click()
     cy.wait(5000)
     cy.url().should('contain','/home')
-  })
-
-  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos voltar para Dados Gerais ao clicar em Cancelar no modal', () => {
-    preencher(
-      'Marcela Dias', 
-      '123.456.789-10', 
-      '35 93456-2456', 
-      '21', 
-      'o-', 
-      'F', 
-      'Pólen', 
-      'Loratadina', 
-      'Alergia', 
-      'Garganta fechada', 
-      '5', 
-      'urgente', 
-      'nenhuma',
-      '13/2', 
-      '10', 
-      '37.8', 
-      '12',
-      'Rua Paralelepípedo, n°22'
-    )
-    cy.get('.btnAssinarEnviar').click()
-    cy.get('.btnCancelar').click()
-    cy.url().should('contain','/home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form/dados-vitais-paciente-form/dados-gerais-form')
   })
 
   it('Cenario de Teste: Clicar no botão de voltar e voltar para o formulário de dados vitais', () => {
@@ -170,6 +144,33 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
   })
 
   // Cenários Negativos página formulario de identificacao do paciente
+  it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos, mostrar o modal  e ao clicar em Cancelar fechar o modal', () => {
+    preencher(
+      'Marcela Dias', 
+      '123.456.789-10', 
+      '35 93456-2456', 
+      '21', 
+      'o-', 
+      'F', 
+      'Pólen', 
+      'Loratadina', 
+      'Alergia', 
+      'Garganta fechada', 
+      '5', 
+      'urgente', 
+      'nenhuma',
+      '13/2', 
+      '10', 
+      '37.8', 
+      '12',
+      'Rua Paralelepipedo'
+    )
+    cy.get('.btnAssinar').click()
+    cy.get('.modal').should('be.visible')
+    cy.get('.btnCancelar').click()
+    cy.get('.modal').should('not.be.visible')
+  })
+
   it('Cenario de Teste: Preencher o formulário de dados gerais sem a localizacao', () => {
     preencher(
       'Marcela Dias', 
@@ -191,10 +192,11 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       '12',
       ''
     )
-    cy.get('.btnAssinarEnviar').click()
+    cy.get('.btnAssinar').click()
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Insira a localização do paciente')
     })
     cy.get('.modal').should('not.be.visible')
   })
+
 })

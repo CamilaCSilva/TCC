@@ -218,7 +218,7 @@ $black: black;
   }
 }
 
-@media screen and (max-width: 1023px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
 
@@ -268,6 +268,70 @@ $black: black;
 
         .btns {
           width: 60vw;
+          font-size: 18px;
+          margin-top: 20px;
+          gap: 20px;
+
+          .btnFechar, .btnAnterior {
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
+  .main {
+    border-radius: 20px;
+
+    .dadosGeraisContainer {
+      background-color: $light-red;
+      color: $dark-red;
+      border-radius: 20px;
+
+      //Spacing
+      width: 35vw;
+      height: 65vh;
+      margin-top: 3em;
+      padding: 3em;
+
+      //Position
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .dadosGerais {
+        .nomeParamedico, .docTrabalho {
+          & label {
+            margin-bottom: 3px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          & p {
+            font-size: 18px;
+            color: $black;
+          }
+        }
+
+        .dataEnd {
+          font-size: 15px;
+          font-weight: bold;
+          text-align: end;
+        }
+
+        .btns {
+          width: 30vw;
           font-size: 18px;
           margin-top: 20px;
           gap: 20px;
