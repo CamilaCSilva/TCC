@@ -14,7 +14,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   getLoginInfo(login_info: LoginInfo) {
-    console.log(login_info);
     return this.http.post(`${this.profissional_url}`, login_info, {withCredentials: true}).pipe(take(1));
   }
 }
