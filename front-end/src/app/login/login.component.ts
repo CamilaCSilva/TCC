@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
       success => {
+        console.log(success)
         this.router.navigateByUrl(this.path);
       },
       error => console.log(error),
