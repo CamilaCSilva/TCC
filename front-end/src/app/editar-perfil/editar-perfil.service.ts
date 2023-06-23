@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class EditarPerfilService {
 
-  url = 'https://medvida.up.railway.app/';
-  // url = 'http://localhost:8000/';
+  // url = 'https://medvida.up.railway.app/';
+  url = 'http://localhost:8000/';
 
   private profissionalUrl =  this.url + 'profissionaldesaude/';
 

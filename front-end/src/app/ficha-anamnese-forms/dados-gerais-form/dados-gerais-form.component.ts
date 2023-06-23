@@ -30,7 +30,7 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese.nome;
+    this.nomeParamedico = this.anamnese.nome_completo;
     this.documento_trabalho = this.anamnese.documento_trabalho;
     this.localizacao = this.anamnese.localizacao;
     if(this.alertMessage != "") {
@@ -64,28 +64,27 @@ export class DadosGeraisFormComponent implements OnInit {
 
   private coverteParaAnamnese(){
     this.anamneseEnviar = {
-      cpf: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.cpf,
+      cpf: this.anamnese.cpf_paciente == undefined ? 'N/A' : this.anamnese.cpf_paciente,
       nome_completo: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.nomeCompleto,
-      celular: this.anamnese.celular == undefined ? 'N/A' : this.anamnese.celular,
+      celular: this.anamnese.celular_paciente == undefined ? 'N/A' : this.anamnese.celular_paciente,
       sexo: this.anamnese.sexo == undefined ? 'N/A' : this.anamnese.sexo,
-      idade: this.anamnese.idade == undefined ? 'N/A' : this.anamnese.idade,
+      idade: this.anamnese.idade == undefined ? 'N/A' : this.anamnese.idade.toString(),
       tipo_sanguineo: this.anamnese.tipoSangue == undefined ? 'N/A' : this.anamnese.tipoSangue,
       alergias: this.anamnese.alergias == undefined ? 'N/A' : this.anamnese.alergias,
       medicacao_drogas: this.anamnese.medicacoesUsadas == undefined ? 'N/A' : this.anamnese.medicacoesUsadas,
       historico_doencas: this.anamnese.historicoDoencas == undefined ? 'N/A' : this.anamnese.historicoDoencas,
       queixa_principal: this.anamnese.sintomas == undefined ? 'N/A' : this.anamnese.sintomas,
-      nivel_dor: this.anamnese.nivelDor == undefined ? 'N/A' : this.anamnese.nivelDor,
+      nivel_dor: this.anamnese.nivelDor == undefined ? 'N/A' : this.anamnese.nivelDor.toString(),
       classificacao_risco: this.anamnese.prioridade == undefined ? 'N/A' : this.anamnese.prioridade,
       observacoes: this.anamnese.observacoes == undefined ? 'N/A' : this.anamnese.observacoes,
       pressao_sanguinea: this.anamnese.pressao == undefined ? 'N/A' : this.anamnese.pressao,
       oxigenacao: this.anamnese.oxigenacao == undefined ? 'N/A' : this.anamnese.oxigenacao,
       temperatura: this.anamnese.temperatura == undefined ? 'N/A' : this.anamnese.temperatura,
-      frequencia_ritmica: this.anamnese.frequenciaRitmica == undefined ? 'N/A' : this.anamnese.frequenciaRitmica,
+      frequencia_cardiaca: this.anamnese.frequenciaRitmica == undefined ? 'N/A' : this.anamnese.frequenciaRitmica,
       data: this.data,
       hora: this.horas,
       local: this.anamnese.localizacao == undefined ? 'N/A' : this.anamnese.localizacao,
-      nome_paramedico_responsavel: this.anamnese.nome == undefined ? 'N/A' : this.anamnese.nome,
-      documento_trabalho_paramedico: this.anamnese.documento_trabalho == undefined ? 'N/A' : this.anamnese.documento_trabalho,
+      paramedico: this.anamnese.cpf == undefined ? 'N/A' : this.anamnese.cpf
     }
   }
 
