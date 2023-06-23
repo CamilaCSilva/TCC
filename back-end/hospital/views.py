@@ -44,8 +44,10 @@ class DeleteProfissionalViewSet(APIView):
         try:
             profissional.delete()
             return Response("Deletado com Sucesso!!", status=status.HTTP_204_NO_CONTENT)
-        except:
-            return Response("Falha para deletar.", status=status.HTTP_400_BAD_REQUEST)
+        except ProfissionaldeSaude.DoesNotExist:
+            return Response("Usuário não existe", status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(e, status=status.HTTP_400_BAD_REQUEST)
 
 class EditProfissionalViewSet(APIView):
     def put(self, request):

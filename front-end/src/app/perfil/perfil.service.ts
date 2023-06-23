@@ -24,6 +24,7 @@ export class PerfilService {
   }
 
   deleteUser(cpf: String) {
+    cpf = cpf.replace(/-/g, "").replace(".", "").replace(".", "");
     return this.http.delete(`${this.profissional_url}delete/?cpf=${cpf}`, { withCredentials: true });
   }
 }

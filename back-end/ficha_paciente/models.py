@@ -25,7 +25,7 @@ class Anamnese(models.Model):
     data = models.CharField(max_length=10)
     hora = models.TimeField()
     local = models.CharField(max_length=250)
-    paramedico = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="fichas")
+    paramedico = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="fichas")
 
     def __str__(self):
         return self.nome_completo
