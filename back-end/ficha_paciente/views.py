@@ -59,7 +59,7 @@ class DeleteAnamneseViewSet(APIView):
         try:
             anamnese = Anamnese.objects.get(cpf = request.data['cpf'])
             anamnese.delete()
-            return Response("Deletado com Sucesso!!", status=status.HTTP_202_ACCEPTED)
+            return Response("Deletado com sucesso!!", status=status.HTTP_202_ACCEPTED)
         except:
             return Response("Falha para deletar.", status=status.HTTP_400_BAD_REQUEST)
 

@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  private url = 'https://medvida.up.railway.app/';
-  // private url = 'http://localhost:8000/'
+  // private url = 'https://medvida.up.railway.app/';
+  private url = 'http://localhost:8000/'
 
   private profissional_url = this.url + 'profissionaldesaude/' // trocar o ?cpf=13168035629 por user
 
@@ -24,6 +24,7 @@ export class PerfilService {
   }
 
   deleteUser(cpf: String) {
+    cpf = cpf.replace(/-/g, "").replace(".", "").replace(".", "");
     return this.http.delete(`${this.profissional_url}delete/?cpf=${cpf}`, { withCredentials: true });
   }
 }
