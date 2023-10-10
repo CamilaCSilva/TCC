@@ -42,7 +42,7 @@ describe('CadastroService', () => {
         password: 'Testando@1',
       };
       const urlMock = '/profissionaldesaude/';
-      // const urlMock = 'https://medvida.up.railway.app/profissionaldesaude/';
+      // const urlMock = 'https://medvidatcc.fly.dev/profissionaldesaude/';
 
       // When
       service.setCadastroInfo(cadastroInfoMock);
