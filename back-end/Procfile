@@ -1,1 +1,2 @@
-web: gunicorn config.wsgi --log-file -
+# TODO: Modify this Procfile to fit your needs
+web: gunicorn app:app
