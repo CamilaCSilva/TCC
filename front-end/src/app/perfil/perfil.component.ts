@@ -10,7 +10,6 @@ import { PerfilInfo } from '../models/perfil.model';
 })
 export class PerfilComponent implements OnInit {
 
-
   path1: string = '/home';
   path2: string = '/login';
   path3: string = 'home/perfil/editar-perfil';
@@ -27,13 +26,19 @@ export class PerfilComponent implements OnInit {
   usuario: any;
   nome = 'Alessandra';
 
+  notificacao: any = {
+    texto: '',
+    classe: '',
+    validacao: false
+  }
+
   constructor(private router: Router, private perfilService: PerfilService) {
     const nav = this.router.getCurrentNavigation();
     this.usuario = nav?.extras;
   }
 
   ngOnInit() {
-    console.log(this.usuario)
+    console.log(this.usuario);
     this.listarProfissional();
   }
 
@@ -53,10 +58,10 @@ export class PerfilComponent implements OnInit {
     else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
     this.mostrarProfissional();
     }, err => {
-      console.log('Erro ao listar o profissional', err)
+      console.log('Erro ao listar o profissional', err);
+      this.mostrarNotificacao('Erro ao listar o profissionar', 'alert-danger', true);
     })
   }
-
 
   mostrarProfissional() {
     this.nome_completo = this.perfil.nome_completo;
@@ -77,10 +82,34 @@ export class PerfilComponent implements OnInit {
 
   deletarUser(cpf: String) {
     this.perfilService.deleteUser(cpf).subscribe(
-      () => {
-        console.log('Deletou!')
+      success => {
+        console.log('Deletou!');
+        this.mostrarNotificacao('Usuário deletado com sucesso!', 'alert-success', true);
         this.router.navigateByUrl(this.path2);
+      },
+      error => {
+        console.log(error);
+        this.mostrarNotificacao('Erro ao tentar deletar usuário', 'alert-danger', true);
       }
     );
+  }
+
+  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
+    this.notificacao = {
+      texto: texto,
+      classe: classe,
+      validacao: validacao
+    };
+    this.limparNotificacao();
+  }
+
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        texto: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
   }
 }

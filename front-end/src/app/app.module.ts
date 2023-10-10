@@ -22,7 +22,8 @@ import { FichaAnamneseFormsModule } from './ficha-anamnese-forms/ficha-anamnese-
 import { PerfilService } from './perfil/perfil.service';
 import { FichaAnamneseService } from './ficha-anamnese/ficha-anamnese.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { NotificationComponent } from './notification/notification.component'
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { environment } from '../environments/environment'
     PerfilComponent,
     HeaderComponent,
     MaisInfosComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

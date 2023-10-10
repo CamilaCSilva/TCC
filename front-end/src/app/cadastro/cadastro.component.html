@@ -3,7 +3,7 @@
 <div class="cadastroContainer d-flex flex-column align-items-center justify-content-center">
   <!-- TITULO -->
   <div class="titulo d-flex justify-content-center m-2">
-    <h2>{{string}}</h2>
+    <h2>{{ string }}</h2>
   </div>
 
   <!-- FORMULÁRIO -->
@@ -80,4 +80,5 @@
     </div>
   </div>
 </div>
+<app-notification [mensagem]="notificacao.texto" [classe]="notificacao.classe"></app-notification>
 <app-footer></app-footer>

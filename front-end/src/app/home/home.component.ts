@@ -44,11 +44,11 @@ export class HomeComponent implements OnInit {
     this.homeService.getFichasDisponiveis(data).subscribe(anamneseData => this.pacientes = anamneseData);
   }
 
-  visualizarPerfil(){
-    this.router.navigateByUrl('/home/perfil')
+  visualizarPerfil() {
+    this.router.navigateByUrl('/home/perfil');
   }
 
-  logout(){
+  logout() {
     this.homeService.getLogoutUser().subscribe(
       res => {
         this.router.navigateByUrl(this.path);
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
-    console.log(this.usuario.paciente)
+    console.log(this.usuario.paciente);
     this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 

@@ -10,11 +10,10 @@ import { EditarPerfilService } from './editar-perfil.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
-
   path1: string = '/home';
   path2: string = '/login';
   path3: string = 'home/perfil';
-  
+
   string = 'Edição Perfil';
   perfil: PerfilInfo;
   password = '';
@@ -39,6 +38,12 @@ export class EditarPerfilComponent implements OnInit {
     campo_escolha:'',
     unidade_de_atendimento: '',
     password: '',
+  }
+
+  notificacao: any = {
+    texto: '',
+    classe: '',
+    validacao: false
   }
 
   constructor(private router: Router, private editarPerfilService: EditarPerfilService) {}
@@ -101,8 +106,14 @@ export class EditarPerfilComponent implements OnInit {
 
   updateProfissional(){
     this.editarPerfilService.updatePerfilInfo(this.perfil_atualizado).subscribe(
-      success => this.router.navigateByUrl(this.path3),
-      error => console.log(error),
+      success => {
+        this.router.navigateByUrl(this.path3);
+        this.mostrarNotificacao('Perfil atualizado com sucesso!', 'alert-success', true);
+      },
+      error => {
+        console.log(error);
+        this.mostrarNotificacao('Erro ao atualizar o perfil', 'alert-danger', true);
+      },
       () => console.log('request completo')
     );
   }
@@ -118,30 +129,45 @@ export class EditarPerfilComponent implements OnInit {
     return this.usuario.area_atuacao;
   }
 
+  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
+    this.notificacao = {
+      texto: texto,
+      classe: classe,
+      validacao: validacao
+    };
+    this.limparNotificacao();
+  }
+
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        texto: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
+  }
+
   private verificaDadosPerfil(dados: any) {
     let testResult: boolean = false;
     if(dados.nome_completo == '' || dados.nome_completo.length < 6 || dados.nome_completo.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
-      alert('Nome incompleto');
+      this.mostrarNotificacao('Nome incompleto', 'alert-danger', true);
       throw new Error('Nome incompleto');
     }
-    else if ( dados.campo_escolha == '' ){
-      alert('Escolha sua área de atuação');
+    else if ( dados.campo_escolha == '' ) {
+      this.mostrarNotificacao('Escolha sua área de atuação', 'alert-danger', true);
       throw new Error('Escolha sua área de atuação');
     }
-    else if(dados.documento_trabalho == ''){
-      alert('Preencha seu documento de trabalho');
+    else if(dados.documento_trabalho == '') {
+      this.mostrarNotificacao('Preencha seu documento de trabalho', 'alert-danger', true);
       throw new Error('Preencha seu documento de trabalho');
     }
-    else if (dados.cpf == '' || !dados.cpf.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      alert('CPF incompleto');
-      throw new Error('CPF incompleto');
-    }
-    else if(dados.unidade_de_atendimento == ''){
-      alert('Preencha o campo de qual unidade você atua');
+    else if(dados.unidade_de_atendimento == '') {
+      this.mostrarNotificacao('Preencha o campo de qual unidade você atua', 'alert-danger', true);
       throw new Error('Preencha o campo de qual unidade você atua');
     }
-    else if (dados.celular == '' || dados.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
-      alert('Celular no formato inesperado');
+    else if (dados.celular == '' || dados.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null) {
+      this.mostrarNotificacao('Celular no formato inesperado', 'alert-danger', true);
       throw new Error('Celular incorreto');
     }
     else {

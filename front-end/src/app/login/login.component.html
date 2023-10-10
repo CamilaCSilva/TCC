@@ -28,15 +28,20 @@
         </div>
 
         <!-- SENHA -->
-        <div class="d-flex flex-column">
+        <div class="senha d-flex flex-column">
           <label for="senha">Senha</label>
-          <input
-            class="form-control"
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Digite sua senha"
-            [(ngModel)]="password">
+          <div class="d-flex flex-row">
+            <input
+              #pass
+              class="form-control"
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Digite sua senha"
+              [(ngModel)]="password">
+              <i [hidden]="iconeMostrar" class="fa fa-eye-slash" id="pass" (click)="mostrarSenha(pass)"></i>
+              <i [hidden]="iconeEsconder" class="fa fa-eye" id="text" (click)="mostrarSenha(pass)"></i>
+          </div>
         </div>
 
         <!-- BOTÃO -->
@@ -47,4 +52,5 @@
     </div>
   </div>
 </div>
+<app-notification [mensagem]="notificacao.texto" [classe]="notificacao.classe"></app-notification>
 <app-footer></app-footer>

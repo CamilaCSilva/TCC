@@ -1,3 +1,5 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+
 $dark-red: #5c0505;
 $light-red: #b87676;
 $white: #ffff;
@@ -55,6 +57,14 @@ $white: #ffff;
               color: $dark-red;
               font-weight: bold;
             }
+          }
+        }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 15px;
+            cursor: pointer;
           }
         }
       }
@@ -118,6 +128,14 @@ $white: #ffff;
             }
           }
         }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 15px;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
@@ -177,6 +195,14 @@ $white: #ffff;
               color: $dark-red;
               font-weight: bold;
             }
+          }
+        }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 24px;
+            cursor: pointer;
           }
         }
       }
@@ -240,6 +266,14 @@ $white: #ffff;
             }
           }
         }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 24px;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
@@ -299,6 +333,14 @@ $white: #ffff;
               color: $dark-red;
               font-weight: bold;
             }
+          }
+        }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 24px;
+            cursor: pointer;
           }
         }
       }
@@ -363,6 +405,14 @@ $white: #ffff;
             }
           }
         }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 19px;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
@@ -423,6 +473,14 @@ $white: #ffff;
               color: $dark-red;
               font-weight: bold;
             }
+          }
+        }
+
+        .senha {
+          i {
+            margin-left: -25px;
+            margin-top: 19px;
+            cursor: pointer;
           }
         }
       }
