@@ -85,17 +85,19 @@ class LoginProfissionalViewSet(APIView):
         
         payload = {
             'cpf' : user.cpf,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=180),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=20),
             'iat': datetime.datetime.utcnow()
         }
 
         token = jwt.encode(payload, 'secret', algorithm='HS256')
 
         response = Response()
-        response.set_cookie(key='jwt', value=token, httponly=True)
+        # response.set_cookie(key='jwt', value=token, httponly=True)
         response.data = {
             'jwt': token
         }
+
+        response.set_cookie(key='jwt', value=token, httponly=True)
         
         return response
     

@@ -29,7 +29,11 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*',
+                 "https://medvida-efe79.web.app/"]
+
+# ALLOWED_HOSTS = ['hostname.fly.dev']
+# CSRF_TRUSTED_ORIGINS = ['https://hostname.fly.dev']
 
 
 # Application definition
