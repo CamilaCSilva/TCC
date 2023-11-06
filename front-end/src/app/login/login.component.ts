@@ -51,6 +51,9 @@ export class LoginComponent implements OnInit {
       success => {
         console.log(success);
         this.mostrarNotificacao('Login realizado com sucesso!', 'alert-success', true);
+        setTimeout(() => {
+          console.log("Temporizador de 1 segundo");
+        }, 1000);
         this.router.navigateByUrl(this.path);
       },
       error => {
