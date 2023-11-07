@@ -31,15 +31,15 @@
             <input ngModel type="text"  id="nome" name="nome_completo" [(ngModel)]="usuario.nome_completo" placeholder="Digite seu nome completo">
           </div>
 
-          <!-- ÁREA ATUAÇÃO -->
-        <div class="d-flex flex-column">
-          <label>Área de Atuação</label>
-          <select id="campo_escolha" class="minimal" [(ngModel)]="usuario.campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
-            <option value="CRM">Médico(a)</option>
-            <option value="COREN">Enfermeiro(a)</option>
-            <option value="DRF">Paramédico(a)</option>
-          </select>
-        </div>
+            <!-- ÁREA ATUAÇÃO -->
+          <div class="d-flex flex-column">
+            <label>Área de Atuação</label>
+            <select id="campo_escolha" class="minimal" [(ngModel)]="usuario.campo_escolha" name="campo_escolha" (change)="onAreaChange(getArea($event))">
+              <option value="CRM">Médico(a)</option>
+              <option value="COREN">Enfermeiro(a)</option>
+              <option value="DRF">Paramédico(a)</option>
+            </select>
+          </div>
 
           <!-- Documento de Trabalho -->
           <div class="d-flex flex-column">
@@ -66,9 +66,19 @@
           </div>
 
           <!-- SENHA -->
-          <div class="d-flex flex-column">
+          <div class="senha d-flex flex-column">
             <label for="senha">Senha</label>
-            <input [(ngModel)]="password" type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha">
+            <div class="d-flex flex-row align-items-center justify-content-end">
+              <input
+                #pass
+                name="senha"
+                type="password"
+                id="senha"
+                class="input"
+                placeholder="Digite sua senha"
+                [(ngModel)]="password">
+              <app-mostrar-senha [pass]="pass"></app-mostrar-senha>
+            </div>
           </div>
 
           <!-- BOTÕES -->

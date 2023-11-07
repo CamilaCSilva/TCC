@@ -6,6 +6,7 @@ $light-red: #d89b9b;
 @media screen and (min-width:1025px) {
   .ficha {
     position: absolute;
+    top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 86vh;
@@ -27,12 +28,15 @@ $light-red: #d89b9b;
       background-color: $white;
       width: 100vw;
       background-repeat: no-repeat;
+      align-self: flex-end;
     }
   }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {
   .ficha {
+    position: absolute;
+    top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 86vh;
@@ -53,12 +57,15 @@ $light-red: #d89b9b;
       background-color: $white;
       width: 100vw;
       background-repeat: no-repeat;
+      align-self: flex-end;
     }
   }
 }
 
 @media screen and (max-width: 480px) and (min-width: 0px)  {
   .ficha {
+    position: absolute;
+    top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
     min-height: 86vh;
@@ -78,7 +85,7 @@ $light-red: #d89b9b;
     .footer {
       background-color: $white;
       width: 100vw;
+      align-self: flex-end;
     }
   }
-
 }

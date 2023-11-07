@@ -26,9 +26,9 @@
 
     <!-- BOTÕES -->
     <div class="btns d-flex flex-row justify-content-around">
-      <button class="btnAnterior btn btn-primary rounded-circle" type="button" (click)="voltar(dadosGerais)"><</button>
+      <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar(dadosGerais)"><</button>
       <button
-        class="btnAssinar btn btn-primary"
+        class="btnAssinar btn"
         type="button"
         (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
         ASSINAR
@@ -42,8 +42,8 @@
       <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
         <h3>Assinar e Enviar</h3>
         <div class="btns d-flex flex-row align-items-center justify-content-around">
-          <button class="btnEnviar btn btn-primary" type="submit" (click)="enviar(dadosGerais)">CONFIRMAR</button>
-          <button class="btnCancelar btn btn-primary" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+          <button class="btnEnviar btn" type="submit" (click)="enviar(dadosGerais)">CONFIRMAR</button>
+          <button class="btnCancelar btn" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
         </div>
       </div>
     </div>

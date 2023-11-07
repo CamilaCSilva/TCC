@@ -82,17 +82,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+
+                input {
+                  &:focus {
+                    box-shadow: none;
+                    border: none;
+                  }
                 }
               }
             }
@@ -184,17 +191,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }
@@ -284,17 +298,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }
@@ -383,17 +404,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }
@@ -482,17 +510,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }
@@ -582,17 +617,24 @@ $light-red: #b87676;
             margin-bottom: 1.25em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }
@@ -682,17 +724,24 @@ $light-red: #b87676;
             margin-bottom: 2em;
             align-items: center;
 
-            & label {
+            label {
               font-size: 18px;
             }
 
-            & div {
+            .opcoes {
               height: 0.5em;
 
-              & div {
-                & label {
+              div {
+                label {
                   font-size: 15px;
                   margin-bottom: 0px;
+                }
+              }
+
+              input {
+                &:focus, &:focus-within, &:focus-within {
+                  box-shadow: none;
+                  border: none;
                 }
               }
             }

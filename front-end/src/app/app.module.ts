@@ -23,7 +23,7 @@ import { PerfilService } from './perfil/perfil.service';
 import { FichaAnamneseService } from './ficha-anamnese/ficha-anamnese.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { NotificationComponent } from './notification/notification.component'
+import { NotificationComponent } from './notification/notification.component';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { NotificationComponent } from './notification/notification.component'
     PerfilComponent,
     HeaderComponent,
     MaisInfosComponent,
-    NotificationComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

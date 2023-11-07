@@ -19,7 +19,7 @@ export class PerfilComponent implements OnInit {
   nome_completo:String;
   campo_escolha: String;
   documento_trabalho: String;
-  cpf: String;
+  cpf: String = '';
   unidade_de_atendimento: String;
   celular: String;
 
@@ -53,13 +53,13 @@ export class PerfilComponent implements OnInit {
   listarProfissional() {
     this.perfilService.getPerfilInfo().subscribe(perfilInfo => {
       this.perfil = perfilInfo;
-    if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
-    else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
-    else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
-    this.mostrarProfissional();
+      if(this.perfil?.campo_escolha == 'CRM') { this.perfil.campo_escolha = 'Médico(a)'; }
+      else if(this.perfil?.campo_escolha == 'COREN') { this.perfil.campo_escolha = 'Enfermeiro(a)'; }
+      else if(this.perfil?.campo_escolha == 'DRF') { this.perfil.campo_escolha = 'Paramédico(a)'; }
+      this.mostrarProfissional();
     }, err => {
       console.log('Erro ao listar o profissional', err);
-      this.mostrarNotificacao('Erro ao listar o profissionar', 'alert-danger', true);
+      this.mostrarNotificacao('Erro ao listar o profissional', 'alert-danger', true);
     })
   }
 
@@ -89,12 +89,13 @@ export class PerfilComponent implements OnInit {
       },
       error => {
         console.log(error);
+        this.fecharDialog();
         this.mostrarNotificacao('Erro ao tentar deletar usuário', 'alert-danger', true);
       }
     );
   }
 
-  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
+  mostrarNotificacao(texto: string, classe: string, validacao: boolean) {
     this.notificacao = {
       texto: texto,
       classe: classe,
@@ -111,5 +112,9 @@ export class PerfilComponent implements OnInit {
         validacao: false
       };
     }, 2000);
+  }
+
+  fecharDialog(): boolean {
+    return true;
   }
 }

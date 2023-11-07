@@ -30,7 +30,7 @@
         <!-- SENHA -->
         <div class="senha d-flex flex-column">
           <label for="senha">Senha</label>
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-row align-items-center justify-content-end">
             <input
               #pass
               class="form-control"
@@ -39,8 +39,7 @@
               name="senha"
               placeholder="Digite sua senha"
               [(ngModel)]="password">
-              <i [hidden]="iconeMostrar" class="fa fa-eye-slash" id="pass" (click)="mostrarSenha(pass)"></i>
-              <i [hidden]="iconeEsconder" class="fa fa-eye" id="text" (click)="mostrarSenha(pass)"></i>
+            <app-mostrar-senha [pass]="pass"></app-mostrar-senha>
           </div>
         </div>
 

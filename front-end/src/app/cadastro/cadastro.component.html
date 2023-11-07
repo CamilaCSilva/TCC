@@ -63,7 +63,17 @@
         <!-- SENHA -->
         <div class="d-flex flex-column">
           <label for="senha">Senha</label>
-          <input [(ngModel)]="password" type="password" class="input" id="senha" name="senha" placeholder="Digite sua senha">
+          <div class="d-flex flex-row align-items-center justify-content-end">
+            <input
+              #pass
+              name="senha"
+              type="password"
+              id="senha"
+              class="input"
+              placeholder="Digite sua senha"
+              [(ngModel)]="password">
+            <app-mostrar-senha [pass]="pass"></app-mostrar-senha>
+          </div>
         </div>
 
         <!-- CONFIRMAÇÃO SENHA -->

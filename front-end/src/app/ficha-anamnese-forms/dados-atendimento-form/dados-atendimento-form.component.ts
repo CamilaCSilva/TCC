@@ -12,6 +12,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
   path1: string = 'home/formularios/identificacao-paciente-form';
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form';
   sexo: string = '';
+  classeRadio: string = '';
   tipoSangue: string = '';
   alergias: string = '';
   medicacoesUsadas: string = '';
@@ -21,6 +22,7 @@ export class DadosAtendimentoFormComponent implements OnInit {
   formGroup: UntypedFormGroup;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
+  hintText: string = 'O significa Outros';
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute) {
     const nav = this.router.getCurrentNavigation();
@@ -62,12 +64,21 @@ export class DadosAtendimentoFormComponent implements OnInit {
   onSexChange() {
     if(this.sexo == 'F') {
       console.log('Feminino');
+      // document.getElementById('F')?.setAttribute('class', 'marked');
+      // document.getElementById('M')?.setAttribute('class', '');
+      // document.getElementById('O')?.setAttribute('class', '');
     }
     if(this.sexo == 'M') {
       console.log('Masculino');
+      // document.getElementById('M')?.setAttribute('class', 'marked');
+      // document.getElementById('F')?.setAttribute('class', '');
+      // document.getElementById('O')?.setAttribute('class', '');
     }
     if(this.sexo == 'O') {
       console.log('outro');
+      // document.getElementById('O')?.setAttribute('class', 'marked');
+      // document.getElementById('F')?.setAttribute('class', '');
+      // document.getElementById('M')?.setAttribute('class', '');
     }
   }
 

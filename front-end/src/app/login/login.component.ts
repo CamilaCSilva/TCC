@@ -23,8 +23,6 @@ export class LoginComponent implements OnInit {
   password: string = '';
   usuario: any;
   perfil: LoginInfo;
-  iconeMostrar: boolean = false;
-  iconeEsconder: boolean = true;
 
   notificacao: any = {
     texto: '',
@@ -81,18 +79,6 @@ export class LoginComponent implements OnInit {
       validacao: validacao
     };
     this.limparNotificacao();
-  }
-
-  mostrarSenha(event: any) {
-    if(event.type == 'password') {
-      event.type = 'text';
-      this.iconeMostrar = true;
-      this.iconeEsconder = false;
-    } else {
-      event.type = 'password';
-      this.iconeMostrar = false;
-      this.iconeEsconder = true;
-    }
   }
 
   private verificaDados() {
