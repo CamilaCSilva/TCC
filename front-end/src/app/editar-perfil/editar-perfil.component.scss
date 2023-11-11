@@ -1,7 +1,4 @@
-$font-family_1: 'Sarala', sans-serif;
-$dark-red: #5c0505;
-$white: #ffff;
-$light-red: #b87676;
+@import '../../assets/variables';
 
 .btnAnterior {
   background-color: $dark-red;

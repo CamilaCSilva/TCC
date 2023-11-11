@@ -1,9 +1,6 @@
-$dark-red: #5c0505;
-$white: #ffff;
-$light-red: #b87676;
-$black: black;
+@import '../../assets/variables';
 
-.btnDeletar, .btnEditar, .btnEnviar, .btnCancelar   {
+.btnDeletar, .btnEditar, .btnEnviar, .btnCancelar {
   width: 50px;
   height: 50px;
   border: none;
@@ -12,10 +9,25 @@ $black: black;
   color: $white;
   font-weight: bold;
   text-align: center;
+}
 
+.btnDeletar, .btnEditar {
   &:hover {
     background-color: $white;
     color:  $dark-red;
+  }
+}
+
+.btnEnviar, .btnCancelar {
+  &:hover {
+    background-color: $light-red;
+    color: $dark-red;
+  }
+
+  &:focus, &:focus-visible, &:focus-within {
+    background-color: $light-red;
+    color: $dark-red;
+    outline: 0;
   }
 }
 

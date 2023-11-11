@@ -1,8 +1,4 @@
-$dark-red: #5c0505;
-$white: #ffff;
-$light-red: #b87676;
-$black: black;
-// #ffd6d6;
+@import '../../../assets/variables';
 
 .btnProximo, .btnAnterior {
   background-color: $dark-red;

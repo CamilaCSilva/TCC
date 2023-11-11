@@ -1,18 +1,31 @@
-$dark-red: #5c0505;
-$white: #ffff;
-$light-red: #b87676;
-$black: black;
+@import '../../../assets/variables';
 
 .btnProximo, .btnAnterior, .btnAssinar, .btnEnviar, .btnCancelar {
   background-color: $dark-red;
   color: $white;
   border-style: none;
   border-radius: 20px;
+}
 
+.btnProximo, .btnAnterior, .btnAssinar {
   &:hover {
     background-color: $white;
     color: $dark-red;
     font-weight: bold;
+  }
+}
+
+.btnEnviar, .btnCancelar {
+  &:hover {
+    background-color: $light-red;
+    color: $dark-red;
+    font-weight: bold;
+  }
+
+  &:focus, &:focus-visible, &:focus-within {
+    background-color: $light-red;
+    color: $dark-red;
+    outline: 0;
   }
 }
 

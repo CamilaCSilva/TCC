@@ -1,7 +1,4 @@
-$dark-red: #5c0505;
-$white: #ffffff;
-$light-red: #b87676;
-$black: black;
+@import './assets/variables';
 
 $font-family_1: 'Inter', sans-serif;
 $font-family_2: 'Roboto Mono', monospace;
@@ -82,7 +79,8 @@ button {
   width: 250px;
   margin: 0 auto;
 
-  border: 2px solid #b83838;
+  // border: 2px solid #b83838;
+  border: none;
   border-radius: 20px;
   transition: 0.5s ease;
 
@@ -111,6 +109,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:focus-visible {
+    outline: 0;
+  }
 }
 
 input[type=radio]:checked {

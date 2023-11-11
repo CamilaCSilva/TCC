@@ -1,7 +1,4 @@
-$font-family_1: 'Sarala', sans-serif;
-$white: #ffffff;
-$dark-red: #5c0505;
-$light-red: #b87676;
+@import '../../assets/variables';
 
 @media screen and (min-width:1024px) {
   .cabecalho {
