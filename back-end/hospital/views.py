@@ -85,7 +85,7 @@ class LoginProfissionalViewSet(APIView):
         
         payload = {
             'cpf' : user.cpf,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=20),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=180),
             'iat': datetime.datetime.utcnow()
         }
 
