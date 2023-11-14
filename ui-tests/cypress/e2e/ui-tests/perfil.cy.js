@@ -1,12 +1,12 @@
 function visitperfil(){
   cy.visit('http://localhost:4200/')
   cy.get('#cpf').click()
-  cy.get('#cpf').type("131.680.356-29")
+  cy.get('#cpf').type('131.680.356-29')
   cy.get('#senha').click()
-  cy.get('#senha').type("Matheus123@")
+  cy.get('#senha').type('Matheus123@')
   cy.get('.btn').click()
+  cy.wait(5000)
   cy.get('.fotoPerfil > a > img').click()
-
 }
 
 describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida', () => {
@@ -71,7 +71,7 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
     cy.get('.logo').click()
     cy.url().should('contain','/home')
   })
-  
+
   it('Cenario de Teste: Clicar no icone de sair e ir para a página de login', () => {
     visitperfil()
     cy.get('.exit').click()

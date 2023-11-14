@@ -23,30 +23,36 @@
   height: 50px;
 }
 
+.dadosGeraisContainer {
+  background-color: $light-red;
+  color: $dark-red;
+  border-radius: 20px;
+
+  //Spacing
+  max-width: 450px;
+  min-height: 100%;
+  width: fit-content;
+  height: fit-content;
+  margin: 3em 1em 1em 1em;
+  padding: 2em;
+
+  .dataEnd {
+    align-self: flex-end;
+  }
+
+  .btns {
+    width: fit-content;
+    font-size: 18px;
+    margin-top: 20px;
+    gap: 80px;
+  }
+}
+
 @media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
-    min-height: 65vh;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 30vw;
-      height: 65vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -73,11 +79,6 @@
         }
 
         .btns {
-          width: 20vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-
           .btnFechar, .btnAnterior {
             border-radius: 20px;
           }
@@ -92,24 +93,6 @@
     border-radius: 20px;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 35vw;
-      height: 80vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -136,11 +119,6 @@
         }
 
         .btns {
-          width: 30vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 10px;
-
           .btnFechar, .btnAnterior {
             border-radius: 20px;
           }
@@ -153,27 +131,8 @@
 @media (max-width: 1023px) and (min-width: 481px) {
   .main {
     border-radius: 20px;
-    min-height: 75vh;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 50vw;
-      height: 40vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -200,11 +159,6 @@
         }
 
         .btns {
-          width: 45vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-
           .btnFechar, .btnEnviar, .btnCancelar {
             border-radius: 20px;
           }
@@ -220,24 +174,6 @@
     border-radius: 20px;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 70vw;
-      height: 65vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -264,11 +200,6 @@
         }
 
         .btns {
-          width: 60vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-
           .btnFechar, .btnAnterior {
             border-radius: 20px;
           }
@@ -284,24 +215,6 @@
     border-radius: 20px;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 35vw;
-      height: 65vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -328,11 +241,6 @@
         }
 
         .btns {
-          width: 30vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-
           .btnFechar, .btnAnterior {
             border-radius: 20px;
           }
@@ -346,27 +254,8 @@
 @media (max-width: 480px) and (min-width: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 70vh;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 85vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -393,11 +282,6 @@
         }
 
         .btns {
-          width: 70vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-
           .btnFechar  {
             width: 120px;
             height: 50px;
@@ -420,24 +304,6 @@
     min-height: 60vh;
 
     .dadosGeraisContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 90vw;
-      height: 85vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -466,11 +332,6 @@
         }
 
         .btns {
-          width: 70vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 10px;
-
           .btnFechar  {
             width: 120px;
             height: 50px;

@@ -24,6 +24,15 @@
   }
 }
 
+.editarPerfilForm {
+  width: fit-content;
+  height: fit-content;
+  background: $light-red;
+  border: none;
+  border-radius: 20px;
+  padding: 1em;
+}
+
 @media screen and (min-width:1024px) {
   .editarPerfilContainer {
     margin-right: auto;
@@ -73,13 +82,6 @@
     .editarPerfilForms {
       .editarPerfilInfosContainer {
         .editarPerfilForm {
-          width: 28vw;
-          height: 95vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1em;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -99,7 +101,7 @@
 
           & select {
             width: 25vw;
-            height: 4vh;
+            height: 5vh;
             background-color: $white;
             border: none;
             border-radius: 20px;
@@ -203,13 +205,6 @@
     .editarPerfilForms {
       .editarPerfilInfosContainer {
         .editarPerfilForm {
-          width: 40vw;
-          height: 125vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1em;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -334,13 +329,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 45vw;
-          height: 65vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -459,13 +447,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 60vw;
-          height: 75vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -584,13 +565,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 60vw;
-          height: 110vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -709,13 +683,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 35vw;
-          height: 110vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -832,13 +799,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 80vw;
-          height: 90vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;
@@ -955,13 +915,6 @@
       .editarPerfilInfosContainer {
         //Formulário
         .editarPerfilForm {
-          width: 85vw;
-          height: 115vh;
-          background: $light-red;
-          border: none;
-          border-radius: 20px;
-          padding: 1rem;
-
           & label {
             color: $dark-red;
             font-weight: bold;

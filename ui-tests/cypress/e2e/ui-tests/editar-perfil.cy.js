@@ -1,12 +1,31 @@
 function visiteditperfil(){
   cy.visit('http://localhost:4200/')
   cy.get('#cpf').click()
-  cy.get('#cpf').type("131.680.356-29")
+  cy.get('#cpf').type('131.680.356-29')
   cy.get('#senha').click()
-  cy.get('#senha').type("Matheus123@")
+  cy.get('#senha').type('Matheus123@')
   cy.get('.btn').click()
   cy.get('.fotoPerfil > a > img').click()
   cy.get('.btnEditar').click()
+}
+
+function limparCampo(campo, valor) {
+  visiteditperfil()
+  cy.get(campo).clear()
+  cy.get(campo).click()
+  cy.get(campo).type(valor)
+  cy.get('#senha').click()
+  cy.get('#senha').type('Matheus123@')
+  cy.get('.btnSalvar').click()
+}
+
+function preencherCampo(campo, valor) {
+  cy.get(campo).clear()
+  cy.get(campo).click()
+  cy.get(campo).type(valor)
+  cy.get('#senha').click()
+  cy.get('#senha').type('Matheus123@')
+  cy.get('.btnSalvar').click()
 }
 
 describe('Cenario de Teste:  Testar a página de editar perfil da aplicação MedVida', () => {
@@ -15,6 +34,7 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
     visiteditperfil()
     cy.url().should('contain','/home/perfil/editar-perfil')
   })
+
   //verificando todos os dados
   it('Cenario de Teste: Verificando o nome do usuario na aba editar perfil da aplicação MedVida', () => {
     visiteditperfil()
@@ -45,12 +65,13 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
     visiteditperfil()
     cy.get('#celular').should('have.value', '(35) 99262-1257')
   })
+
   //Ajustando o nome Caso positivo e negativo
   it('Cenario de Teste: Editando o nome do usuario na aba editar perfil da aplicação MedVida, Caso positivo', () => {
     visiteditperfil()
-    cy.get('#nome').type('Matheus Chagas')
-    cy.get('.btnSalvar').click()
+    preencherCampo('#nome', 'Matheus Chagas')
     cy.get('#nome').should('contain.text', 'Matheus Chagas')
+    limparCampo('#nome', 'Matheus Chagas da Silva')
   })
 
   it('Cenario de Teste: Editando o nome do usuario na aba editar perfil da aplicação MedVida,  Caso negativo', () => {
@@ -60,12 +81,13 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
       expect(str).to.equal('Nome incompleto')
     })
   })
+
   //Ajustando o celular Caso positivo e negativo
   it('Cenario de Teste: Editando o celular do usuario na aba editar perfil da aplicação MedVida, Caso positivo', () => {
     visiteditperfil()
-    cy.get('#celular').type('Matheus Chagas')
-    cy.get('.btnSalvar').click()
-    cy.get('#celular').should('contain.text', '(35) 99262-1257')
+    preencherCampo('#celular', '(35) 99367-1897')
+    cy.get('#celular').should('contain.text', '(35) 99367-1897')
+    limparCampo('#celular', '(35) 99262-1257')
   })
 
   it('Cenario de Teste: Editando o celular do usuario na aba editar perfil da aplicação MedVida,  Caso negativo', () => {
@@ -75,6 +97,7 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
       expect(str).to.equal('Celular incorreto')
     })
   })
+
   // Cenários de mudança de página
   it('Cenario de Teste: Clicar no botão de voltar e ir para a página de perfil', () => {
     visiteditperfil()

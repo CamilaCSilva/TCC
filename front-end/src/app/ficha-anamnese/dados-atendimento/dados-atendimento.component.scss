@@ -18,30 +18,32 @@
   height: 50px;
 }
 
+.dadosAtendimentoContainer {
+  background-color: $light-red;
+  color: $dark-red;
+  border-radius: 20px;
+
+  //Spacing
+  max-width: 350px;
+  min-height: 100%;
+  width: fit-content;
+  height: fit-content;
+  margin: 3em 1em 1em 1em;
+  padding: 2em;
+
+  .btns {
+    width: fit-content;
+    font-size: 18px;
+    margin-top: 20px;
+    gap: 80px;
+  }
+}
+
 @media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;
-    min-height: 65vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 25vw;
-      height: 80vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -59,12 +61,6 @@
             font-size: 18px;
             color: $black;
           }
-        }
-
-        .btns {
-          width: 20vw;
-          font-size: 18px;
-          margin-top: 20px;
         }
       }
     }
@@ -75,27 +71,8 @@
 @media screen and (min-width:1024px) and (max-height: 700px) {
   .main {
     border-radius: 20px;
-    min-height: 70vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 35vw;
-      height: 105vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -114,12 +91,6 @@
             color: $black;
           }
         }
-
-        .btns {
-          width: 30vw;
-          font-size: 18px;
-          margin-top: 20px;
-        }
       }
     }
   }
@@ -129,27 +100,8 @@
 @media screen and (max-width: 1023px) and (min-width: 481px) {
   .main {
     border-radius: 20px;
-    min-height: 80vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 50vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -169,13 +121,6 @@
             color: $black;
           }
         }
-
-        .btns {
-          width: 45vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
-        }
       }
     }
   }
@@ -184,27 +129,8 @@
 @media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 65vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 65vw;
-      height: 90vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -222,13 +148,6 @@
             font-size: 18px;
             color: $black;
           }
-        }
-
-        .btns {
-          width: 60vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
         }
       }
     }
@@ -238,27 +157,8 @@
 @media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 65vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 35vw;
-      height: 90vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -276,13 +176,6 @@
             font-size: 18px;
             color: $black;
           }
-        }
-
-        .btns {
-          width: 30vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
         }
       }
     }
@@ -292,27 +185,8 @@
 @media screen and (max-width: 480px) and (min-width: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 70vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 85vw;
-      height: 75vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -331,13 +205,6 @@
             font-size: 18px;
             color: $black;
           }
-        }
-
-        .btns {
-          width: 70vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 20px;
         }
       }
     }
@@ -347,27 +214,8 @@
 @media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
   .main {
     border-radius: 20px;
-    min-height: 60vh;
 
     .dadosAtendimentoContainer {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-
-      //Spacing
-      width: 85vw;
-      height: 105vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -385,13 +233,6 @@
             font-size: 18px;
             color: $black;
           }
-        }
-
-        .btns {
-          width: 70vw;
-          font-size: 18px;
-          margin-top: 20px;
-          gap: 10px;
         }
       }
     }

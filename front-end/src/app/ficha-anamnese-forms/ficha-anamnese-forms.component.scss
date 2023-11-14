@@ -1,14 +1,21 @@
 @import '../../assets/variables';
 
+.fichaContent {
+  margin-bottom: 1em;
+  min-height: 100%;
+  width: 100%;
+  height: fit-content;
+}
+
 @media screen and (min-width:1025px) {
   .ficha {
     position: absolute;
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 90vh;
-    width: 100vw;
-    height: auto;
+    min-height: 100%;
+    width: 100%;
+    height: fit-content;
 
     .header {
       .fotoPerfil {
@@ -35,9 +42,9 @@
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 90vh;
-    width: 100vw;
-    height: auto;
+    min-height: 100%;
+    width: 100%;
+    height: fit-content;
 
     .header {
       .fotoPerfil {
@@ -63,9 +70,9 @@
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 86vh;
-    width: 100vw;
-    height: auto;
+    min-height: 100%;
+    width: 100%;
+    height: fit-content;
 
     .header {
       .fotoPerfil {
