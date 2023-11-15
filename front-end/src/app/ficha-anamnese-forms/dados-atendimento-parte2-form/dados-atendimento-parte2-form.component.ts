@@ -24,11 +24,11 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.anamnese.nomeCompleto != ''){
-      this.sintomas = this.anamnese.sintomas;
-      this.nivelDor = this.anamnese.nivelDor;
-      this.prioridade = this.anamnese.prioridade;
-      this.observacoes = this.anamnese.observacoes;
+    if(this.anamnese.paciente.nomeCompleto != ''){
+      this.sintomas = this.anamnese.paciente.queixa_principal;
+      this.nivelDor = this.anamnese.paciente.nivel_dor;
+      this.prioridade = this.anamnese.paciente.classificacao_risco;
+      this.observacoes = this.anamnese.paciente.observacoes;
     }
   }
 

@@ -24,11 +24,11 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.anamnese.nomeCompleto != ''){
-      this.pressao = this.anamnese.pressao;
-      this.oxigenacao = this.anamnese.oxigenacao;
-      this.temperatura = this.anamnese.temperatura;
-      this.frequenciaRitmica = this.anamnese.frequenciaRitmica;
+    if(this.anamnese.paciente.nomeCompleto != '') {
+      this.pressao = this.anamnese.paciente.pressao_sanguinea;
+      this.oxigenacao = this.anamnese.paciente.oxigenacao;
+      this.temperatura = this.anamnese.paciente.temperatura;
+      this.frequenciaRitmica = this.anamnese.paciente.frequencia_cardiaca;
     }
   }
 

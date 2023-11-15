@@ -30,13 +30,13 @@ export class DadosAtendimentoFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.anamnese.nomeCompleto != ''){
-      this.sexo = this.anamnese.sexo;
-      this.idade = this.anamnese.idade;
-      this.tipoSangue = this.anamnese.tipoSangue;
-      this.alergias = this.anamnese.alergias;
-      this.medicacoesUsadas = this.anamnese.medicacoesUsadas;
-      this.historicoDoencas = this.anamnese.historicoDoencas;
+    if(this.anamnese.paciente.nomeCompleto != ''){
+      this.sexo = this.anamnese.paciente.sexo;
+      this.idade = this.anamnese.paciente.idade;
+      this.tipoSangue = this.anamnese.paciente.tipo_sanguineo;
+      this.alergias = this.anamnese.paciente.alergias;
+      this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
+      this.historicoDoencas = this.anamnese.paciente.historico_doencas;
     }
   }
 

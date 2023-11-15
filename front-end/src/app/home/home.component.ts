@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   usuario: any = {
     nome_completo: '',
     cpf: '',
-    documento_trabalho: '',
+    documento_trabalho: ''
   }
   path = '/login';
 
@@ -59,11 +59,15 @@ export class HomeComponent implements OnInit {
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
     console.log(this.usuario.paciente);
-    this.router.navigateByUrl('/home/fichas', this.usuario);
+    this.router.navigateByUrl('/home/fichas', this.usuario );
+  }
+
+  editarFicha(paciente: any) {
+    this.usuario.paciente = paciente
+    this.router.navigateByUrl('/home/formularios', this.usuario );
   }
 
   adicionarFicha() {
     this.router.navigateByUrl('/home/formularios', this.usuario);
   }
-
 }

@@ -33,6 +33,13 @@ export class DadosGeraisFormComponent implements OnInit {
     this.nomeParamedico = this.anamnese.nome_completo;
     this.documento_trabalho = this.anamnese.documento_trabalho;
     this.localizacao = this.anamnese.localizacao;
+
+    if(this.anamnese.paciente.nomeCompleto != '') {
+      this.data = this.anamnese.paciente.data;
+      this.horas = this.anamnese.paciente.hora;
+      this.localizacao = this.anamnese.paciente.local;
+    }
+
     if(this.alertMessage != "") {
       alert(this.alertMessage);
     }
@@ -48,13 +55,19 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   enviar(dadosGerais: any) {
-    this.criarAnamnese(dadosGerais);
-    if(this.verificaDados(this.anamnese)){
-      this.anamnese.data = this.data;
-      this.anamnese.hora = this.horas;
-      this.coverteParaAnamnese();
-      this.setAnamneseInfo()
-      this.getuser();
+    if(this.anamnese.paciente.nomeCompleto == '') {
+      this.criarAnamnese(dadosGerais);
+      if(this.verificaDados(this.anamnese)){
+        this.anamnese.data = this.data;
+        this.anamnese.hora = this.horas;
+        this.converteParaAnamnese();
+        this.setAnamneseInfo();
+        this.getuser();
+      }
+    } else {
+      if(this.verificaDados(this.anamnese)) {
+        // this.editAnamneseInfo();
+      }
     }
   }
 
@@ -62,7 +75,7 @@ export class DadosGeraisFormComponent implements OnInit {
     this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
   }
 
-  private coverteParaAnamnese(){
+  private converteParaAnamnese(){
     this.anamneseEnviar = {
       cpf: this.anamnese.cpf_paciente == undefined ? 'N/A' : this.anamnese.cpf_paciente,
       nome_completo: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.nomeCompleto,
@@ -95,6 +108,14 @@ export class DadosGeraisFormComponent implements OnInit {
       () => console.log('request completo')
     );
   }
+
+  // private editAnamneseInfo() {
+  //   this.dadosGeraisFormService.editAnamneseInfo(this.).subscribe(
+  //     success => this.router.navigateByUrl(this.path2, this.usuario),
+  //     error => console.log(error),
+  //     () => console.log('request completo')
+  //   );
+  // }
 
   private verificaDados(dadosAtendimento: any) {
     let testResult: boolean = false;

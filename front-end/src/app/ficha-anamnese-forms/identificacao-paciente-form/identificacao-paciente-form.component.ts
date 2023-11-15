@@ -20,13 +20,14 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
     const nav = this.router.getCurrentNavigation();
     console.log(nav?.extras)
     this.anamnese = nav?.extras;
-   }
+  }
 
   ngOnInit(): void {
-    if(this.anamnese.nomeCompleto != ''){
-      this.nomeCompleto = this.anamnese.nomeCompleto;
-      this.cpf_paciente = this.anamnese.cpf_paciente;
-      this.celular_paciente = this.anamnese.celular_paciente;
+    if(this.anamnese.paciente.nomeCompleto != '') {
+      console.log('entrou');
+      this.nomeCompleto = this.anamnese.paciente.nome_completo;
+      this.cpf_paciente = this.anamnese.paciente.cpf;
+      this.celular_paciente = this.anamnese.paciente.celular;
     }
   }
 
