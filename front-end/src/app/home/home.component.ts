@@ -14,11 +14,12 @@ export class HomeComponent implements OnInit {
   @ViewChild('fichas') fichasElement: ElementRef;
 
   pacientes: Anamnese[];
+  tipoAcao: string = '';
 
   usuario: any = {
     nome_completo: '',
     cpf: '',
-    documento_trabalho: '',
+    documento_trabalho: ''
   }
   path = '/login';
 
@@ -59,11 +60,16 @@ export class HomeComponent implements OnInit {
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
     console.log(this.usuario.paciente);
-    this.router.navigateByUrl('/home/fichas', this.usuario);
+    this.tipoAcao = 'visualizar';
+    this.router.navigate(['/home/fichas', { outlets: { 'visualizar': ['identificacao-paciente'] } }], this.usuario);
   }
 
   adicionarFicha() {
     this.router.navigateByUrl('/home/formularios', this.usuario);
   }
 
+  editarFicha() {
+    this.tipoAcao = 'editar';
+    this.router.navigate(['/home/fichas', { outlets: { 'editar': ['identificacao-paciente-form'] } }], this.usuario);
+  }
 }

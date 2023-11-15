@@ -26,6 +26,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { DadosAtendimentoComponent } from './dados-atendimento/dados-atendimento.component';
 import { IdentificacaoPacienteComponent } from './identificacao-paciente/identificacao-paciente.component';
+import { IdentificacaoPacienteFormComponent } from '../ficha-anamnese-forms/identificacao-paciente-form/identificacao-paciente-form.component';
+import { FichaAnamneseFormsModule } from '../ficha-anamnese-forms/ficha-anamnese-forms.module';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { IdentificacaoPacienteComponent } from './identificacao-paciente/identif
     RouterModule,
     ReactiveFormsModule,
     SharedModule,
+    FichaAnamneseFormsModule
   ],
   exports: [ FichaAnamneseComponent ],
   providers: [

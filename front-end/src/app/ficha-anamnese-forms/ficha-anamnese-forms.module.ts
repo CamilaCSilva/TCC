@@ -45,7 +45,10 @@ import { DadosGeraisFormComponent } from './dados-gerais-form/dados-gerais-form.
     ReactiveFormsModule,
     SharedModule,
   ],
-  exports: [ FichaAnamneseFormsComponent ],
+  exports: [
+    FichaAnamneseFormsComponent,
+    IdentificacaoPacienteFormComponent,
+  ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-br' },
   ]

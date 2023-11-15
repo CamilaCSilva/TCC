@@ -28,15 +28,16 @@ const routes: Routes = [
   {
     path: 'home/fichas',
     component: FichaAnamneseComponent,
+    outlet: 'visualizar',
     children: [
       {
-        path: 'fichas',
+        path: 'formularios',
         redirectTo: 'identificacao-paciente',
         pathMatch: 'full'
       },
       { //FICHA DE IDENTIFICAÇÃO
         path: 'identificacao-paciente', // child route path
-        component: IdentificacaoPacienteComponent // child route component that the router renders
+        component: IdentificacaoPacienteComponent, // child route component that the router renders
       },
       { //FICHA DE DADOS DE ATENDIMENTO
         path: 'identificacao-paciente/dados-atendimento',
@@ -59,6 +60,7 @@ const routes: Routes = [
   {
     path: 'home/formularios',
     component: FichaAnamneseFormsComponent,
+    outlet: 'editar',
     children: [
       {
         path: 'formularios',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,9 +12,9 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form';
   message: string = '';
   anamnese: any;
-  nomeCompleto: string = '';
-  cpf_paciente: string = '';
-  celular_paciente: string = '';
+  @Input() nomeCompleto: string = '';
+  @Input() cpf_paciente: string = '';
+  @Input() celular_paciente: string = '';
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute) {
     const nav = this.router.getCurrentNavigation();

@@ -1,6 +1,6 @@
 <div class="main">
   <!-- INFOS -->
-  <div class="idPacienteContainer d-flex flex-column align-items-center justify-content-center align-content-center">
+  <div *ngIf="tipoAcao == 'identificacao-paciente'; else edit" class="idPacienteContainer d-flex flex-column align-items-center justify-content-center align-content-center">
     <h3>Identificação do Paciente</h3>
 
     <div class="idPaciente d-flex flex-column align-items-center">
@@ -31,4 +31,13 @@
       </div>
     </div>
   </div>
+
+  <ng-template #edit>
+    <app-identificacao-paciente-form
+      [nomeCompleto]="nomeCompleto"
+      [cpf_paciente]="cpf"
+      [celular_paciente]="celular"
+    >
+    </app-identificacao-paciente-form>
+  </ng-template>
 </div>
