@@ -1,5 +1,17 @@
+function logar() {
+  cy.visit('http://localhost:4200/login')
+  cy.get('#cpf').click()
+  cy.get('#cpf').type('77777777771')
+  cy.get('#senha').click()
+  cy.get('#senha').type('nogueirA@23')
+  cy.get('.btn').click()
+  cy.wait(500)
+}
+
+
 function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medicacoes, doencas, sintomas, nivelDor, prioridade, observacoes, pressao, oxigenacao, temperatura, frequenciaRitmica, localizacao) {
-  cy.visit('http://localhost:4200/home/formularios/identificacao-paciente-form/dados-atendimento-form')
+  logar()
+  cy.get('#btnAdicionarFicha').click()
 
   cy.get('#nome').click()
   cy.get('#nome').type(nome)
@@ -114,7 +126,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
     )
     cy.get('.btnAssinar').click()
     cy.get('.btnEnviar').click()
-    cy.wait(5000)
+    cy.wait(500)
     cy.url().should('contain','/home')
   })
 

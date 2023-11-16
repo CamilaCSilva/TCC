@@ -58,7 +58,7 @@ export class CadastroComponent {
       },
       error => {
         console.log(error);
-        this.mostrarNotificacao('Erro de autenticação','alert-danger', true);
+        this.mostrarNotificacao('Erro ao cadastrar','alert-danger', true);
       },
       () => console.log('request completo')
     );

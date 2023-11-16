@@ -44,6 +44,7 @@ describe('Cenario de Teste:  Testar a página de cadastro da aplicação MedVida
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Nome incompleto')
     })
+    cy.get('#notificacao').should('contain.text', 'Nome incompleto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com o cpf menor que 11 digitos', () => {
@@ -51,6 +52,7 @@ describe('Cenario de Teste:  Testar a página de cadastro da aplicação MedVida
     cy.on('window:alert', (str) => {
       expect(str).to.equal('CPF incompleto')
     })
+    cy.get('#notificacao').should('contain.text', 'CPF incompleto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com o celular em formato inválido', () => {
@@ -58,6 +60,7 @@ describe('Cenario de Teste:  Testar a página de cadastro da aplicação MedVida
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Celular incorreto')
     })
+    cy.get('#notificacao').should('contain.text', 'Celular incorreto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com a senha menor que 8 digitos', () => {
@@ -65,6 +68,7 @@ describe('Cenario de Teste:  Testar a página de cadastro da aplicação MedVida
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Senha incompleta')
     })
+    cy.get('#notificacao').should('contain.text', 'Senha incompleta' || 'Erro ao cadastrar')
   })
 
   // Cenários de mudança de página

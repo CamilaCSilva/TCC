@@ -1,10 +1,20 @@
+function logar() {
+  cy.visit('http://localhost:4200/login')
+  cy.get('#cpf').click()
+  cy.get('#cpf').type('77777777771')
+  cy.get('#senha').click()
+  cy.get('#senha').type('nogueirA@23')
+  cy.get('.btn').click()
+  cy.wait(500)
+}
+
 function navegar() {
-  cy.visit('http://localhost:4200/home')
+  logar()
   cy.get('#filtroData').click()
   cy.get('#filtroData').type('2023-05-23')
   cy.get('#filtroData').type('2023-05-23')
   cy.get('#filtroData').type('2023-05-23')
-  cy.get(':nth-child(1) > .nomeData > h3 > a').click()
+  cy.get('#visualizar').click()
   cy.get('.btnProximo').click()
   cy.get('.btnProximo').click()
 }
