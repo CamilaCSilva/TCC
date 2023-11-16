@@ -24,18 +24,18 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.anamnese.paciente.nomeCompleto != ''){
-      this.sintomas = this.anamnese.paciente.queixa_principal;
-      this.nivelDor = this.anamnese.paciente.nivel_dor;
-      this.prioridade = this.anamnese.paciente.classificacao_risco;
-      this.observacoes = this.anamnese.paciente.observacoes;
+    if(this.anamnese?.paciente?.nome_completo != ''){
+      this.sintomas = this.anamnese?.paciente?.queixa_principal;
+      this.nivelDor = this.anamnese?.paciente?.nivel_dor;
+      this.prioridade = this.anamnese?.paciente?.classificacao_risco;
+      this.observacoes = this.anamnese?.paciente?.observacoes;
     }
   }
 
   onSubmit(dadosAtendimentoParte2: any){
     this.criarAnamnese(dadosAtendimentoParte2);
     if(this.bSeguir == true){
-      if(this.verificaDados(this.anamnese)){
+      if(this.verificaDados(this.anamnese)) {
         this.router.navigateByUrl(this.path2, this.anamnese);
       }
     }

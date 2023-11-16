@@ -20,8 +20,8 @@
 
     <!-- DATA E ENDEREÇO -->
     <div class="dataEnd d-flex flex-column align-items-end mt-3">
-      <p [hidden]="anamnese.paciente.nomeCompleto != ''">{{ date | date : 'medium' }}</p>
-      <p [hidden]="anamnese.paciente.nomeCompleto == ''">{{ (data | date : 'mediumDate') + ' ' + horas }}</p>
+      <p [hidden]="localizacao == ''">{{ date | date : 'medium' }}</p>
+      <p [hidden]="localizacao != ''">{{ (data | date : 'mediumDate') + ' ' + horas }}</p>
       <input class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" id="localizacao" placeholder="Digite a sua localização">
     </div>
 
@@ -31,14 +31,14 @@
       <button
         class="btnAssinar btn"
         type="button"
-        [hidden]="anamnese.paciente.nomeCompleto != ''"
+        [hidden]="localizacao == ''"
         (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
         ASSINAR
       </button>
       <button
-        class="btnAssinar btn"
+        class="btnSalvarEdicao btn"
         type="button"
-        [hidden]="anamnese.paciente.nomeCompleto == ''"
+        [hidden]="localizacao != ''"
         (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
         SALVAR EDIÇÃO
       </button>

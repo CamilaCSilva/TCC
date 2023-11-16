@@ -16,7 +16,7 @@ export class DadosGeraisFormComponent implements OnInit {
   date: Date = new Date();
   data = this.date.getFullYear() + '-' + String(this.date.getMonth()+1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
-  localizacao: string;
+  localizacao: string = '';
   anamnese: any;
   anamneseEnviar: any;
   usuario: any;
@@ -32,12 +32,13 @@ export class DadosGeraisFormComponent implements OnInit {
   ngOnInit(): void {
     this.nomeParamedico = this.anamnese.nome_completo;
     this.documento_trabalho = this.anamnese.documento_trabalho;
-    this.localizacao = this.anamnese.localizacao;
+    // this.localizacao = this.anamnese.localizacao;
+    // console.log(this.localizacao);
 
-    if(this.anamnese.paciente.nomeCompleto != '') {
-      this.data = this.anamnese.paciente.data;
-      this.horas = this.anamnese.paciente.hora;
-      this.localizacao = this.anamnese.paciente.local;
+    if(this.anamnese?.paciente?.nome_completo != '') {
+      this.data = this.anamnese?.paciente?.data;
+      this.horas = this.anamnese?.paciente?.hora;
+      this.localizacao = this.anamnese?.paciente?.local;
     }
 
     if(this.alertMessage != "") {
@@ -55,7 +56,7 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   enviar(dadosGerais: any) {
-    if(this.anamnese.paciente.nomeCompleto == '') {
+    if(this.anamnese?.paciente?.nome_completo == '') {
       this.criarAnamnese(dadosGerais);
       if(this.verificaDados(this.anamnese)){
         this.anamnese.data = this.data;

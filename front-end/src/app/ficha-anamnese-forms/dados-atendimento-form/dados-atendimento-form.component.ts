@@ -30,23 +30,24 @@ export class DadosAtendimentoFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.anamnese.paciente.nomeCompleto != ''){
-      this.sexo = this.anamnese.paciente.sexo;
-      this.idade = this.anamnese.paciente.idade;
-      this.tipoSangue = this.anamnese.paciente.tipo_sanguineo;
-      this.alergias = this.anamnese.paciente.alergias;
-      this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
-      this.historicoDoencas = this.anamnese.paciente.historico_doencas;
+    if(this.anamnese?.paciente?.nome_completo != ''){
+      this.sexo = this.anamnese?.paciente?.sexo;
+      this.idade = this.anamnese?.paciente?.idade;
+      this.tipoSangue = this.anamnese?.paciente?.tipo_sanguineo;
+      this.alergias = this.anamnese?.paciente?.alergias;
+      this.medicacoesUsadas = this.anamnese?.paciente?.medicacao_drogas;
+      this.historicoDoencas = this.anamnese?.paciente?.historico_doencas;
     }
   }
 
   onSubmit(dadosAtendimento: any){
     this.criarAnamnese(dadosAtendimento);
     if(this.bSeguir == true){
-      if(this.verificaDados(this.anamnese))
+      if(this.verificaDados(this.anamnese)) {
         this.router.navigateByUrl(this.path2, this.anamnese);
+      }
     }
-    else if(this.bVoltar == true){
+    else if(this.bVoltar == true) {
       this.router.navigateByUrl(this.path1, this.anamnese);
     }
   }

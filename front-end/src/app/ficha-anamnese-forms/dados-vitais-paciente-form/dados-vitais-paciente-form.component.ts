@@ -24,22 +24,22 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if(this.anamnese.paciente.nomeCompleto != '') {
-      this.pressao = this.anamnese.paciente.pressao_sanguinea;
-      this.oxigenacao = this.anamnese.paciente.oxigenacao;
-      this.temperatura = this.anamnese.paciente.temperatura;
-      this.frequenciaRitmica = this.anamnese.paciente.frequencia_cardiaca;
+    if(this.anamnese?.paciente?.nome_completo != '') {
+      this.pressao = this.anamnese?.paciente?.pressao_sanguinea;
+      this.oxigenacao = this.anamnese?.paciente?.oxigenacao;
+      this.temperatura = this.anamnese?.paciente?.temperatura;
+      this.frequenciaRitmica = this.anamnese?.paciente?.frequencia_cardiaca;
     }
   }
 
   onSubmit(dadosAtendimentoParte2: any){
     this.criarAnamnese(dadosAtendimentoParte2);
     if(this.bSeguir == true){
-      if(this.verificaDados()){
+      if(this.verificaDados()) {
         this.router.navigateByUrl(this.path2, this.anamnese);
       }
     }
-    else if(this.bVoltar == true){
+    else if(this.bVoltar == true) {
       this.router.navigateByUrl(this.path1, this.anamnese);
     }
   }

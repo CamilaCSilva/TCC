@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
   }
 
   editarFicha(paciente: any) {
-    this.usuario.paciente = paciente
+    this.usuario.paciente = paciente;
     this.router.navigateByUrl('/home/formularios', this.usuario );
   }
 

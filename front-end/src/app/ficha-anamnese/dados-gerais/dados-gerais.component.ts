@@ -27,15 +27,15 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese.paciente.nomeParamedico;
-    this.documento_trabalho = this.anamnese.paciente.documento_trabalho;
-    this.localizacao = this.anamnese.paciente.local;
-    const year = this.anamnese.paciente.data.slice(0, 4) * 1;
-    const month = this.anamnese.paciente.data.slice(5, 7);
-    const day = this.anamnese.paciente.data.slice(8) * 1;
-    const hora = this.anamnese.paciente.hora.slice(0, 2);
-    const min = this.anamnese.paciente.hora.slice(3, 5);
-    const seg = this.anamnese.paciente.hora.slice(6);
+    this.nomeParamedico = this.anamnese?.paciente?.nomeParamedico;
+    this.documento_trabalho = this.anamnese?.paciente?.documento_trabalho;
+    this.localizacao = this.anamnese?.paciente?.local;
+    const year = this.anamnese?.paciente?.data.slice(0, 4) * 1;
+    const month = this.anamnese?.paciente?.data.slice(5, 7);
+    const day = this.anamnese?.paciente?.data.slice(8) * 1;
+    const hora = this.anamnese?.paciente?.hora.slice(0, 2);
+    const min = this.anamnese?.paciente?.hora.slice(3, 5);
+    const seg = this.anamnese?.paciente?.hora.slice(6);
     const data_atendimento = `${year}-${month}-${day}T${hora}:${min}:${seg}`;
     this.data = new Date(data_atendimento);
     if(this.alertMessage != "") {

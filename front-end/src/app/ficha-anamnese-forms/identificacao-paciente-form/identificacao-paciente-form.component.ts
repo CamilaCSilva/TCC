@@ -23,11 +23,11 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.anamnese.paciente.nomeCompleto != '') {
-      console.log('entrou');
-      this.nomeCompleto = this.anamnese.paciente.nome_completo;
-      this.cpf_paciente = this.anamnese.paciente.cpf;
-      this.celular_paciente = this.anamnese.paciente.celular;
+    // console.log(this.anamnese);
+    if(this.anamnese?.paciente?.nome_completo != '') {
+      this.nomeCompleto = this.anamnese?.paciente?.nome_completo;
+      this.cpf_paciente = this.anamnese?.paciente?.cpf;
+      this.celular_paciente = this.anamnese?.paciente?.celular;
     }
   }
 
@@ -37,6 +37,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
       this.anamnese.nomeCompleto = this.nomeCompleto;
       this.anamnese.cpf_paciente = this.cpf_paciente.replace(/-/g, "").replace(".", "").replace(".", "");
       this.anamnese.celular_paciente = this.celular_paciente.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
+      // this.anamnese.tipoAcao = this.anamnese.usuario.tipoAcao;
       this.router.navigateByUrl(this.path2, this.anamnese);
     }
   }

@@ -25,21 +25,21 @@
     <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
       <li id="fichas" *ngFor="let paciente of pacientes">
         <div class="nomeData d-flex flex-row justify-content-between">
-          <h3><a (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
+          <h3><a id="visualizar" (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
           <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
         </div>
 
         <div class="observacoes">
           <p class="pri">{{ paciente.classificacao_risco }}</p>
           <p class="obs">{{ paciente.observacoes }}</p>
-          <p><a (click)="editarFicha(paciente)">Editar</a></p>
+          <p><a id="editar" (click)="editarFicha(paciente)">Editar</a></p>
         </div>
       </li>
     </ul>
   </div>
 
   <div class="btns">
-    <button (click)="adicionarFicha()" class="btn botao">+</button>
+    <button (click)="adicionarFicha()" id="btnAdicionarFicha" class="btn botao">+</button>
   </div>
 </div>
 <app-footer></app-footer>

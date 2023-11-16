@@ -22,10 +22,10 @@ export class DadosVitaisPacienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pressao = this.anamnese.paciente.pressao_sanguinea;
-    this.oxigenacao = this.anamnese.paciente.oxigenacao;
-    this.temperatura = this.anamnese.paciente.temperatura;
-    this.frequenciaRitmica = this.anamnese.paciente.frequencia_ritmica;
+    this.pressao = this.anamnese?.paciente?.pressao_sanguinea;
+    this.oxigenacao = this.anamnese?.paciente?.oxigenacao;
+    this.temperatura = this.anamnese?.paciente?.temperatura;
+    this.frequenciaRitmica = this.anamnese?.paciente?.frequencia_ritmica;
   }
 
   voltar(){

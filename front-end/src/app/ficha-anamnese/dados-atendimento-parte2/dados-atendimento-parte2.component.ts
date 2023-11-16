@@ -22,10 +22,10 @@ export class DadosAtendimentoParte2Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sintomas = this.anamnese.paciente.queixa_principal;
-    this.nivelDor = this.anamnese.paciente.nivel_dor;
-    this.prioridade = this.anamnese.paciente.classificacao_risco;
-    this.observacoes = this.anamnese.paciente.observacoes;
+    this.sintomas = this.anamnese?.paciente?.queixa_principal;
+    this.nivelDor = this.anamnese?.paciente?.nivel_dor;
+    this.prioridade = this.anamnese?.paciente?.classificacao_risco;
+    this.observacoes = this.anamnese?.paciente?.observacoes;
   }
 
   voltar() {
