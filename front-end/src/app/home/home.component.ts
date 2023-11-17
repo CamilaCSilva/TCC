@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
-    // this.usuario = nav?.extras;
   }
 
   ngOnInit(): void {
@@ -58,7 +57,8 @@ export class HomeComponent implements OnInit {
 
   visualizarFicha(paciente: any) {
     this.usuario.paciente = paciente;
-    console.log(this.usuario.paciente);
+    this.homeService.set(this.usuario.nome_completo, this.usuario.paciente)
+    this.homeService.changeValue(this.usuario.nome_completo)
     this.router.navigateByUrl('/home/fichas', this.usuario);
   }
 

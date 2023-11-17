@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { throwError } from 'rxjs';
+import {Anamnese} from 'src/app/models/anamnese.model';
+import { HomeService } from 'src/app/home/home.service';
+import { FichaAnamneseService } from '../ficha-anamnese.service';
 
 @Component({
   selector: 'app-identificacao-paciente',
@@ -11,23 +13,28 @@ export class IdentificacaoPacienteComponent implements OnInit {
 
   path1: string = 'home';
   path2: string = 'home/fichas/identificacao-paciente/dados-atendimento';
-  nomeCompleto: string;
-  cpf: string;
-  celular: string;
-  message: string = '';
+  nomeCompleto: String;
+  cpf: String;
+  celular: String;
+  message: String = '';
   testResult: boolean = false;
-  tipo: string | null;
+  tipo: String | null;
   anamnese: any;
+  nome: string;
+  ficha: Anamnese;
 
-  constructor(private router: Router) {
-    const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+  constructor(private router: Router, private homeService: HomeService, private fichaAnamneseService: FichaAnamneseService) {
+    
   }
 
   ngOnInit(): void {
-    this.nomeCompleto = this.anamnese.paciente.nome_completo;
-    this.cpf = this.anamnese.paciente.cpf.slice(0,3) + "." + this.anamnese.paciente.cpf.slice(3,6)+ "." + this.anamnese.paciente.cpf.slice(6,9) + "-" + this.anamnese.paciente.cpf.slice(9);
-    this.celular = "(" + this.anamnese.paciente.celular.slice(0, 2) + ") " + this.anamnese.paciente.celular.slice(2,7) + "-" + this.anamnese.paciente.celular.slice(7);
+    this.homeService.value.subscribe(
+      value => this.nome = value
+    );
+    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.nomeCompleto = this.ficha.nome_completo;
+    this.cpf = this.ficha.cpf.slice(0,3) + "." + this.ficha.cpf.slice(3,6)+ "." + this.ficha.cpf.slice(6,9) + "-" + this.ficha.cpf.slice(9);
+    this.celular = "(" + this.ficha.celular.slice(0, 2) + ") " + this.ficha.celular.slice(2,7) + "-" + this.ficha.celular.slice(7);
   }
 
   seguir() {

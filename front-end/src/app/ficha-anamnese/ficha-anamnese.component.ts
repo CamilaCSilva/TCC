@@ -1,8 +1,9 @@
 import { Component, OnInit, createNgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FichaAnamneseService } from './ficha-anamnese.service';
-import { Anamnese } from '../models/anamnese.model';
 import { PerfilInfo } from '../models/perfil.model';
+import {Anamnese} from '../models/anamnese.model';
+import { HomeService } from '../home/home.service';
 
 @Component({
   selector: 'app-ficha-anamnese',
@@ -15,15 +16,20 @@ export class FichaAnamneseComponent implements OnInit {
   path1: string = "home/fichas/identificacao-paciente";
   anamnese: any;
   perfil: PerfilInfo;
+  ficha: string;
 
-  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) {
+  constructor(private router: Router,
+    private fichaAnamneseService: FichaAnamneseService,
+    private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
     this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
-    console.log(this.anamnese);
     this.listarProfissional()
+    this.homeService.value.subscribe(
+      value => this.ficha = value
+    );
   }
   
   listarProfissional() {
