@@ -32,9 +32,6 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.homeService.value.subscribe(
-      value => this.nome = value
-    );
     this.ficha = this.fichaAnamneseService.get('ficha')
     this.nomeParamedico =  this.ficha.nome_paramedico_responsavel;
     this.documento_trabalho =  this.ficha.documento_trabalho_paramedico;

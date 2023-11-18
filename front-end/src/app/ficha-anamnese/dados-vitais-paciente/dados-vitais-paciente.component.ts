@@ -27,9 +27,6 @@ export class DadosVitaisPacienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.homeService.value.subscribe(
-      value => this.nome = value
-    );
     this.ficha = this.fichaAnamneseService.get('ficha')
     this.pressao = this.ficha.pressao_sanguinea;
     this.oxigenacao = this.ficha.oxigenacao;

@@ -27,9 +27,6 @@ export class DadosAtendimentoParte2Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.homeService.value.subscribe(
-      value => this.nome = value
-    );
     this.ficha = this.fichaAnamneseService.get('ficha')
     this.sintomas = this.ficha.queixa_principal;
     this.nivelDor = this.ficha.nivel_dor;
