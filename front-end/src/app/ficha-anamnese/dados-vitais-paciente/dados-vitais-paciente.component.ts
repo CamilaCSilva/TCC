@@ -30,11 +30,11 @@ export class DadosVitaisPacienteComponent implements OnInit {
     this.homeService.value.subscribe(
       value => this.nome = value
     );
-    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.pressao = this.ficha.pressao_sanguinea;
     this.oxigenacao = this.ficha.oxigenacao;
     this.temperatura = this.ficha.temperatura;
-    this.frequenciaRitmica = this.ficha.frequencia_ritmica;
+    this.frequenciaRitmica = this.ficha.frequencia_cardiaca;
   }
 
   voltar(){

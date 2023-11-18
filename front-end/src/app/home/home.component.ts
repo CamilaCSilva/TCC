@@ -56,10 +56,11 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarFicha(paciente: any) {
-    this.usuario.paciente = paciente;
-    this.homeService.set(this.usuario.nome_completo, this.usuario.paciente)
+   const localpaciente = paciente;
+    localpaciente.nome_usuario = this.usuario.nome_completo
+    this.homeService.set('ficha', localpaciente)
     this.homeService.changeValue(this.usuario.nome_completo)
-    this.router.navigateByUrl('/home/fichas', this.usuario);
+    this.router.navigateByUrl('/home/fichas', localpaciente);
   }
 
   adicionarFicha() {

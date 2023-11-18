@@ -33,10 +33,7 @@ export class DadosAtendimentoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.homeService.value.subscribe(
-      value => this.nome = value
-    );
-    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.sexo = this.ficha.sexo;
     this.idade = this.ficha.idade;
     this.tipoSangue = this.ficha.tipo_sanguineo;

@@ -23,15 +23,12 @@ export class IdentificacaoPacienteComponent implements OnInit {
   nome: string;
   ficha: Anamnese;
 
-  constructor(private router: Router, private homeService: HomeService, private fichaAnamneseService: FichaAnamneseService) {
+  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) {
     
   }
 
   ngOnInit(): void {
-    this.homeService.value.subscribe(
-      value => this.nome = value
-    );
-    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.nomeCompleto = this.ficha.nome_completo;
     this.cpf = this.ficha.cpf.slice(0,3) + "." + this.ficha.cpf.slice(3,6)+ "." + this.ficha.cpf.slice(6,9) + "-" + this.ficha.cpf.slice(9);
     this.celular = "(" + this.ficha.celular.slice(0, 2) + ") " + this.ficha.celular.slice(2,7) + "-" + this.ficha.celular.slice(7);
@@ -42,6 +39,7 @@ export class IdentificacaoPacienteComponent implements OnInit {
   }
 
   voltar() {
+    this.fichaAnamneseService.delete('ficha')
     this.router.navigateByUrl(this.path1);
   }
 

@@ -30,7 +30,7 @@ export class DadosAtendimentoParte2Component implements OnInit {
     this.homeService.value.subscribe(
       value => this.nome = value
     );
-    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.sintomas = this.ficha.queixa_principal;
     this.nivelDor = this.ficha.nivel_dor;
     this.prioridade = this.ficha.classificacao_risco;

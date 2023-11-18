@@ -18,13 +18,27 @@ export class FichaAnamneseService {
     this.storage = window.localStorage;
   }
 
-  get(usuario: string): any{
+  get(key_ficha: string): any{
     if(this.storage){
-      const anamneseJSON = this.storage.getItem(usuario)
+      const anamneseJSON = this.storage.getItem(key_ficha)
       this.anamnese = anamneseJSON !== null ? JSON.parse(anamneseJSON) : new Anamnese();
       return this.anamnese
     }
     return null;
+  }
+
+  set(key_ficha: string, paciente: any): boolean{
+    if(this.storage){
+      this.storage.setItem(key_ficha, JSON.stringify(paciente));
+      console.log("Paciente armazenado com sucesso")
+      return true
+    }
+    console.log("Erro ao armazenar paciente")
+    return false
+  }
+
+  delete(key_ficha: string) {
+    this.storage.removeItem(key_ficha)
   }
 
   getParamedicoInfo(cpf: String) {

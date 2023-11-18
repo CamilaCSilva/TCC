@@ -35,17 +35,18 @@ export class DadosGeraisComponent implements OnInit {
     this.homeService.value.subscribe(
       value => this.nome = value
     );
-    this.ficha = this.fichaAnamneseService.get(this.nome)
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.nomeParamedico =  this.ficha.nome_paramedico_responsavel;
     this.documento_trabalho =  this.ficha.documento_trabalho_paramedico;
     this.localizacao =  this.ficha.local;
-    const year = this.anamnese.paciente.data.slice(0, 4) * 1;
-    const month = this.anamnese.paciente.data.slice(5, 7);
-    const day = this.anamnese.paciente.data.slice(8) * 1;
-    const hora = this.anamnese.paciente.hora.slice(0, 2);
-    const min = this.anamnese.paciente.hora.slice(3, 5);
-    const seg = this.anamnese.paciente.hora.slice(6);
-    const data_atendimento = `${year}-${month}-${day}T${hora}:${min}:${seg}`;
+    const data_atendimento_aux = this.ficha.data.toString()
+    const ano = data_atendimento_aux.slice(0, 4);
+    const mes = data_atendimento_aux.slice(5, 7);
+    const dia = data_atendimento_aux.slice(8);
+    const hora = this.ficha.hora.slice(0, 2);
+    const min = this.ficha.hora.slice(3, 5);
+    const seg = this.ficha.hora.slice(6);
+    const data_atendimento = `${ano}-${mes}-${dia}T${hora}:${min}:${seg}`;
     this.data = new Date(data_atendimento);
     if(this.alertMessage != "") {
       alert(this.alertMessage);
@@ -61,6 +62,7 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   fechar() {
+    this.fichaAnamneseService.delete('ficha')
     this.router.navigateByUrl(this.path2, this.usuario);
   }
 

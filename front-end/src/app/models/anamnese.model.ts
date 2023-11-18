@@ -1,6 +1,7 @@
 // VOU PEGAR AS INFOS DIGITADAS
 export class Anamnese {
   cpf: String;
+  paramedico: String;
   nome_completo: String;
   celular: String;
   sexo: String;
@@ -16,11 +17,11 @@ export class Anamnese {
   pressao_sanguinea: String;
   oxigenacao: String;
   temperatura: String;
-  frequencia_ritmica: String;
+  frequencia_cardiaca: String;
   data: Date;
   hora: String;
   local: String;
   nome_paramedico_responsavel: String;
   documento_trabalho_paramedico: String;
-
+  nome_usuario: String
 }

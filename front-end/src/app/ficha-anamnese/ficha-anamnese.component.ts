@@ -14,29 +14,30 @@ export class FichaAnamneseComponent implements OnInit {
 
   tipo: string | null;
   path1: string = "home/fichas/identificacao-paciente";
-  anamnese: any;
+  // anamnese: any;
   perfil: PerfilInfo;
-  ficha: string;
+  nome_usuario: string;
+  ficha: Anamnese;
 
   constructor(private router: Router,
     private fichaAnamneseService: FichaAnamneseService,
     private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    // this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.listarProfissional()
-    this.homeService.value.subscribe(
-      value => this.ficha = value
-    );
   }
   
   listarProfissional() {
-    this.fichaAnamneseService.getParamedicoInfo(this.anamnese.paciente.paramedico).subscribe(perfilInfo => {
-      this.anamnese.paciente.nomeParamedico = perfilInfo.nome_completo
-      this.anamnese.paciente.documento_trabalho = perfilInfo.documento_trabalho
-      this.router.navigateByUrl(this.path1, this.anamnese);
+    this.fichaAnamneseService.getParamedicoInfo(this.ficha.paramedico).subscribe(perfilInfo => {
+      this.ficha.nome_paramedico_responsavel = perfilInfo.nome_completo
+      this.ficha.documento_trabalho_paramedico = perfilInfo.documento_trabalho
+      console.log(this.ficha)
+      this.fichaAnamneseService.set('ficha', this.ficha)
+      this.router.navigateByUrl(this.path1);
     }, err => {
       console.log('Erro ao listar o profissional', err);
     })
