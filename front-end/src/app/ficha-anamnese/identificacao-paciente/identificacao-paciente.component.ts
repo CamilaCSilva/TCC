@@ -22,9 +22,7 @@ export class IdentificacaoPacienteComponent implements OnInit {
   nome: string;
   ficha: Anamnese;
 
-  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) {
-    
-  }
+  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) { }
 
   ngOnInit(): void {
     this.ficha = this.fichaAnamneseService.get('ficha')

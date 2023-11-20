@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('fichas') fichasElement: ElementRef;
 
   pacientes: Anamnese[];
+  ficha: Anamnese;
 
   usuario: any = {
     nome_completo: '',
@@ -56,10 +57,10 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarFicha(paciente: any) {
-   const localpaciente = paciente;
+    const localpaciente = paciente;
     localpaciente.nome_usuario = this.usuario.nome_completo
     this.homeService.set('ficha', localpaciente)
-    this.router.navigateByUrl('/home/fichas', localpaciente);
+    this.router.navigateByUrl('/home/fichas');
   }
 
   adicionarFicha() {

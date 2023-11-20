@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FichaAnamneseService } from './ficha-anamnese.service';
 import { PerfilInfo } from '../models/perfil.model';
 import {Anamnese} from '../models/anamnese.model';
-import { HomeService } from '../home/home.service';
 
 @Component({
   selector: 'app-ficha-anamnese',
@@ -14,16 +13,12 @@ export class FichaAnamneseComponent implements OnInit {
 
   tipo: string | null;
   path1: string = "home/fichas/identificacao-paciente";
-  // anamnese: any;
   perfil: PerfilInfo;
   nome_usuario: string;
   ficha: Anamnese;
 
   constructor(private router: Router,
-    private fichaAnamneseService: FichaAnamneseService,
-    private homeService: HomeService) {
-    const nav = this.router.getCurrentNavigation();
-    // this.anamnese = nav?.extras;
+    private fichaAnamneseService: FichaAnamneseService) {
   }
 
   ngOnInit(): void {
