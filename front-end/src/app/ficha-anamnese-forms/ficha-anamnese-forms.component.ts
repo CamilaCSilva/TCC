@@ -13,32 +13,7 @@ export class FichaAnamneseFormsComponent implements OnInit {
   path1: string = 'home/formularios/identificacao-paciente-form'
   usuario: any;
   tipo: string | null;
-  ficha: Anamnese = {
-    cpf: '',
-    paramedico: '',
-    nome_completo:'',
-    celular: '',
-  sexo: '',
-  idade: new Int16Array,
-  tipo_sanguineo: '',
-  alergias: '',
-  medicacao_drogas: '',
-  historico_doencas: '',
-  queixa_principal: '',
-  nivel_dor: '',
-  classificacao_risco: '',
-  observacoes: '',
-  pressao_sanguinea: '',
-  oxigenacao: '',
-  temperatura: '',
-  frequencia_cardiaca: '',
-  data: new Date,
-  hora: '',
-  local: '',
-  nome_paramedico_responsavel: '',
-  documento_trabalho_paramedico: '',
-  nome_usuario: ''
-  }
+  ficha: Anamnese;
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
@@ -46,7 +21,6 @@ export class FichaAnamneseFormsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.fichaFormsService.set('paciente', this.ficha)
     this.router.navigateByUrl(this.path1, this.usuario);
   }
 

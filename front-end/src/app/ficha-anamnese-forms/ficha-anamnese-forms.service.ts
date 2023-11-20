@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PerfilInfo } from '../models/perfil.model';
+import { Anamnese } from '../models/anamnese.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +8,17 @@ import { PerfilInfo } from '../models/perfil.model';
 export class FichaAnamneseService {
 
   private storage: Storage;
-  perfil: PerfilInfo;
+  ficha: Anamnese;
 
   constructor(private http: HttpClient) {
     this.storage = window.localStorage;
    }
 
-   get(key_usuario: string): any{
+   get(key_ficha: string): any{
     if(this.storage){
-      const usuarioJSON = this.storage.getItem(key_usuario)
-      this.perfil = usuarioJSON !== null ? JSON.parse(usuarioJSON) : new PerfilInfo();
-      return this.perfil
+      const fichaJSON = this.storage.getItem(key_ficha)
+      this.ficha = fichaJSON !== null ? JSON.parse(fichaJSON) : new Anamnese();
+      return this.ficha
     }
     return null;
   }

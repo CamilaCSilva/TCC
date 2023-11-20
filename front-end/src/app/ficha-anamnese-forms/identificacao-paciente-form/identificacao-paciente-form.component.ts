@@ -27,6 +27,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.ficha = this.fichaFormsService.get('paciente')
+    console.log( this.ficha)
     if(this.ficha.nome_completo != '' && this.ficha.nome_completo != undefined){
       this.nomeCompleto = this.ficha.nome_completo;
       this.cpf_paciente = this.ficha.cpf;
