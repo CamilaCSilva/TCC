@@ -59,7 +59,6 @@ export class HomeComponent implements OnInit {
    const localpaciente = paciente;
     localpaciente.nome_usuario = this.usuario.nome_completo
     this.homeService.set('ficha', localpaciente)
-    this.homeService.changeValue(this.usuario.nome_completo)
     this.router.navigateByUrl('/home/fichas', localpaciente);
   }
 

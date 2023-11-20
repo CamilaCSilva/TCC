@@ -35,7 +35,6 @@ export class FichaAnamneseComponent implements OnInit {
     this.fichaAnamneseService.getParamedicoInfo(this.ficha.paramedico).subscribe(perfilInfo => {
       this.ficha.nome_paramedico_responsavel = perfilInfo.nome_completo
       this.ficha.documento_trabalho_paramedico = perfilInfo.documento_trabalho
-      console.log(this.ficha)
       this.fichaAnamneseService.set('ficha', this.ficha)
       this.router.navigateByUrl(this.path1);
     }, err => {

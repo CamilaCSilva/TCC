@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators'
 import { Anamnese } from '../models/anamnese.model';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +13,6 @@ export class HomeService {
 
   private storage: Storage;
   nome: string = '';
-  private valueSource = new BehaviorSubject<string>(this.nome);
-  public value = this.valueSource.asObservable();
 
   private profissionalUrl = this.url + 'profissionaldesaude/'
   private anamineseUrl = this.url + 'anamnese/?data='
@@ -32,10 +29,6 @@ export class HomeService {
     }
     console.log("Erro ao armazenar paciente")
     return false
-  }
-
-  changeValue(value: string){
-    this.valueSource.next(value)
   }
 
   getUser(){

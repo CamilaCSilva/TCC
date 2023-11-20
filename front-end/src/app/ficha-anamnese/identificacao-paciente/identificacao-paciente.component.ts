@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Anamnese} from 'src/app/models/anamnese.model';
-import { HomeService } from 'src/app/home/home.service';
 import { FichaAnamneseService } from '../ficha-anamnese.service';
 
 @Component({
