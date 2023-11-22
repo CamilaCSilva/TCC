@@ -17,11 +17,11 @@ export class FichaAnamneseFormsComponent implements OnInit {
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.usuario = nav?.extras;
    }
 
   ngOnInit(): void {
-    this.router.navigateByUrl(this.path1, this.usuario);
+    this.ficha = this.fichaFormsService.get('paciente')
+    this.router.navigateByUrl(this.path1);
   }
 
 }

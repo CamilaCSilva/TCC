@@ -21,14 +21,14 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
   bSeguir: boolean = false;
   ficha: Anamnese;
 
-  constructor(private router: Router,  private fichaFormsService: FichaAnamneseService) {
+  constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
-   }
+
+  }
 
   ngOnInit(): void {
     this.ficha = this.fichaFormsService.get('paciente')
-    if(this.ficha.queixa_principal != '' && this.ficha.queixa_principal != undefined){
+    if (this.ficha.queixa_principal != '' && this.ficha.queixa_principal != undefined) {
       this.sintomas = this.ficha.queixa_principal;
       this.nivelDor = this.ficha.nivel_dor;
       this.prioridade = this.ficha.classificacao_risco;
@@ -36,28 +36,28 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
     }
   }
 
-  onSubmit(dadosAtendimentoParte2: any){
+  onSubmit(dadosAtendimentoParte2: any) {
     this.criarAnamnese(dadosAtendimentoParte2);
-    if(this.bSeguir == true){
-      if(this.verificaDados(this.ficha)){
-        this.router.navigateByUrl(this.path2, this.anamnese);
+    if (this.bSeguir == true) {
+      if (this.verificaDados(this.ficha)) {
+        this.router.navigateByUrl(this.path2);
       }
     }
-    else if(this.bVoltar == true){
-      this.router.navigateByUrl(this.path1, this.anamnese);
+    else if (this.bVoltar == true) {
+      this.router.navigateByUrl(this.path1);
     }
   }
 
-  botaoVoltar(){
+  botaoVoltar() {
     this.bVoltar = true;
     this.bSeguir = false;
   }
-  botaoSeguir(){
+  botaoSeguir() {
     this.bSeguir = true;
     this.bVoltar = false;
   }
 
-  private criarAnamnese(dadosAtendimento: any){
+  private criarAnamnese(dadosAtendimento: any) {
     this.ficha.queixa_principal = dadosAtendimento.value.sintomas
     this.ficha.nivel_dor = dadosAtendimento.value.nivelDor
     this.ficha.classificacao_risco = dadosAtendimento.value.prioridade
@@ -67,16 +67,16 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
 
   private verificaDados(ficha: Anamnese) {
     let testResult: boolean = false;
-    if(ficha.queixa_principal == undefined) {
+    if (ficha.queixa_principal == undefined) {
       alert('Insira os sintomas');
       throw new Error('Insira os sintomas');
     }
-    else if(ficha.nivel_dor == undefined || ficha.nivel_dor == ''){
+    else if (ficha.nivel_dor == undefined || ficha.nivel_dor == '') {
       alert('Insira o nivel de dor do paciente');
       throw new Error('Insira o nivel de dor do paciente');
 
     }
-    else if(ficha.classificacao_risco == undefined || ficha.classificacao_risco == ''){
+    else if (ficha.classificacao_risco == undefined || ficha.classificacao_risco == '') {
       alert('Insira a prioridade do paciente');
       throw new Error('Insira a prioridade do paciente');
     }
@@ -87,16 +87,16 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
   }
 
   onPrioridadeChange(prioridade: String) {
-    if(prioridade == 'nao-urgente') {
+    if (prioridade == 'nao-urgente') {
       console.log('Não urgente');
-      }
-    else if(prioridade == 'pouco-urgente') {
+    }
+    else if (prioridade == 'pouco-urgente') {
       console.log('Pouco urgente');
     }
-    else if(prioridade == 'urgente') {
+    else if (prioridade == 'urgente') {
       console.log('Urgente');
     }
-    else if(prioridade == 'emergencia') {
+    else if (prioridade == 'emergencia') {
       console.log('Emergência');
     }
   }

@@ -23,7 +23,7 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    
    }
 
   ngOnInit(): void {
@@ -40,11 +40,11 @@ export class DadosVitaisPacienteFormComponent implements OnInit {
     this.criarAnamnese(dadosAtendimentoParte2);
     if(this.bSeguir == true){
       if(this.verificaDados()){
-        this.router.navigateByUrl(this.path2, this.anamnese);
+        this.router.navigateByUrl(this.path2);
       }
     }
     else if(this.bVoltar == true){
-      this.router.navigateByUrl(this.path1, this.anamnese);
+      this.router.navigateByUrl(this.path1);
     }
   }
 

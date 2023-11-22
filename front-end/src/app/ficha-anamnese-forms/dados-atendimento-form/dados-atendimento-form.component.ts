@@ -29,7 +29,6 @@ export class DadosAtendimentoFormComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
@@ -48,10 +47,10 @@ export class DadosAtendimentoFormComponent implements OnInit {
     this.criarAnamnese(dadosAtendimento);
     if(this.bSeguir == true){
       if(this.verificaDados(this.ficha))
-        this.router.navigateByUrl(this.path2, this.anamnese);
+        this.router.navigateByUrl(this.path2);
     }
     else if(this.bVoltar == true){
-      this.router.navigateByUrl(this.path1, this.anamnese);
+      this.router.navigateByUrl(this.path1);
     }
   }
 
@@ -85,7 +84,6 @@ export class DadosAtendimentoFormComponent implements OnInit {
     this.ficha.medicacao_drogas = dadosAtendimento.value.medicacoesUsadas
     this.ficha.historico_doencas = dadosAtendimento.value.historicoDoencas
     this.ficha.alergias = dadosAtendimento.value.alergias
-    console.log(this.ficha)
     this.fichaFormsService.set('paciente', this.ficha)
 
   }
@@ -104,13 +102,17 @@ export class DadosAtendimentoFormComponent implements OnInit {
       alert('Escolha o sexo');
       throw new Error('Escolha o sexo');
     }
+    else if (ficha.alergias == undefined || ficha.alergias == ''){
+      alert('Escreva sobre as alergias');
+      throw new Error('Escreva sobre as alergias');
+    }
     else if (ficha.medicacao_drogas == undefined || ficha.medicacao_drogas == ''){
       alert('Escreva sobre os medicamentos');
       throw new Error('Escreva sobre os medicamentos');
     }
     else if (ficha.historico_doencas == undefined || ficha.historico_doencas == ''){
-      alert('Escreva sobre o hitórico médico');
-      throw new Error('Escreva sobre os medicamentos');
+      alert('Escreva sobre o histórico médico');
+      throw new Error('Escreva sobre o histórico medicamentos');
     }
     else {
       testResult = true;

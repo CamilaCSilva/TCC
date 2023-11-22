@@ -32,7 +32,7 @@ export class IdentificacaoPacienteComponent implements OnInit {
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2, this.anamnese);
+    this.router.navigateByUrl(this.path2);
   }
 
   voltar() {

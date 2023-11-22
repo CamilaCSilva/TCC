@@ -29,7 +29,7 @@ export class DadosAtendimentoComponent implements OnInit {
 
   constructor(private router: Router, private homeService: HomeService, private fichaAnamneseService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    
   }
 
   ngOnInit(): void {
@@ -43,11 +43,11 @@ export class DadosAtendimentoComponent implements OnInit {
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1, this.anamnese);
+    this.router.navigateByUrl(this.path1);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2, this.anamnese);
+    this.router.navigateByUrl(this.path2);
   }
 
 }

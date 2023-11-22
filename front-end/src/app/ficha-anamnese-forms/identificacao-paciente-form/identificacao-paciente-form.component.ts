@@ -22,12 +22,11 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    
    }
 
   ngOnInit(): void {
     this.ficha = this.fichaFormsService.get('paciente')
-    console.log( this.ficha)
     if(this.ficha.nome_completo != '' && this.ficha.nome_completo != undefined){
       this.nomeCompleto = this.ficha.nome_completo;
       this.cpf_paciente = this.ficha.cpf;
@@ -42,7 +41,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
       this.ficha.cpf = this.cpf_paciente.replace(/-/g, "").replace(".", "").replace(".", "");
       this.ficha.celular = this.celular_paciente.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
       this.fichaFormsService.set('paciente', this.ficha)
-      this.router.navigateByUrl(this.path2, this.anamnese);
+      this.router.navigateByUrl(this.path2);
     }
   }
 
