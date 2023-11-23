@@ -116,7 +116,7 @@ export class CadastroComponent {
       this.mostrarNotificacao('Preencha o campo de qual unidade você atua', 'alert-danger', true);
       throw new Error('Preencha o campo de qual unidade você atua');
     }
-    else if (cadastro.celular?.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null) {
+    else if (cadastro.celular?.match(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/) == null) {
       this.mostrarNotificacao('Celular no formato inesperado', 'alert-danger', true);
       throw new Error('Celular incorreto');
     }
