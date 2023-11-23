@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeService } from 'src/app/home/home.service';
+import { FichaAnamneseService } from '../ficha-anamnese.service';
+import { Anamnese } from 'src/app/models/anamnese.model';
 
 @Component({
   selector: 'app-dados-atendimento',
@@ -11,38 +14,40 @@ export class DadosAtendimentoComponent implements OnInit {
 
   path1: string = 'home/fichas/identificacao-paciente';
   path2: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2';
-  idade: number;
-  tipoSangue: string;
-  sexo: string;
-  alergias: string;
-  medicacoesUsadas: string;
-  historicoDoencas: string;
+  idade: Int16Array;
+  tipoSangue: String;
+  sexo: String;
+  alergias: String;
+  medicacoesUsadas: String;
+  historicoDoencas: String;
   testResult: boolean = false;
   formGroup: UntypedFormGroup;
-  tipo: string | null;
+  tipo: String | null;
   anamnese: any;
+  nome: string;
+  ficha: Anamnese;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private homeService: HomeService, private fichaAnamneseService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    
   }
 
   ngOnInit(): void {
-    console.log(this.anamnese)
-    this.sexo = this.anamnese.paciente.sexo;
-    this.idade = this.anamnese.paciente.idade;
-    this.tipoSangue = this.anamnese.paciente.tipo_sanguineo;
-    this.alergias = this.anamnese.paciente.alergias;
-    this.medicacoesUsadas = this.anamnese.paciente.medicacao_drogas;
-    this.historicoDoencas = this.anamnese.paciente.historico_doencas;
+    this.ficha = this.fichaAnamneseService.get('ficha')
+    this.sexo = this.ficha.sexo;
+    this.idade = this.ficha.idade;
+    this.tipoSangue = this.ficha.tipo_sanguineo;
+    this.alergias = this.ficha.alergias;
+    this.medicacoesUsadas = this.ficha.medicacao_drogas;
+    this.historicoDoencas = this.ficha.historico_doencas;
   }
 
   voltar(){
-    this.router.navigateByUrl(this.path1, this.anamnese);
+    this.router.navigateByUrl(this.path1);
   }
 
   seguir() {
-    this.router.navigateByUrl(this.path2, this.anamnese);
+    this.router.navigateByUrl(this.path2);
   }
 
 }

@@ -38,7 +38,6 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.usuario);
     this.listarProfissional();
   }
 

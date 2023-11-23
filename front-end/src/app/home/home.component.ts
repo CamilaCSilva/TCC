@@ -14,7 +14,32 @@ export class HomeComponent implements OnInit {
   @ViewChild('fichas') fichasElement: ElementRef;
 
   pacientes: Anamnese[];
-
+  ficha: Anamnese = {
+    cpf: '',
+    paramedico: '',
+    nome_completo: '',
+    celular: '',
+    sexo: '',
+    idade: new Int16Array,
+    tipo_sanguineo: '',
+    alergias: '',
+    medicacao_drogas: '',
+    historico_doencas: '',
+    queixa_principal: '',
+    nivel_dor: '',
+    classificacao_risco: '',
+    observacoes: '',
+    pressao_sanguinea: '',
+    oxigenacao: '',
+    temperatura: '',
+    frequencia_cardiaca: '',
+    data: new Date,
+    hora: '',
+    local: '',
+    nome_paramedico_responsavel: '',
+    documento_trabalho_paramedico: '',
+    nome_usuario: ''
+  }
   usuario: any = {
     nome_completo: '',
     cpf: '',
@@ -22,11 +47,11 @@ export class HomeComponent implements OnInit {
   }
   path = '/login';
 
+
   data: Date = new Date();
 
   constructor(private router: Router, private homeService: HomeService) {
     const nav = this.router.getCurrentNavigation();
-    // this.usuario = nav?.extras;
   }
 
   ngOnInit(): void {
@@ -57,13 +82,19 @@ export class HomeComponent implements OnInit {
   }
 
   visualizarFicha(paciente: any) {
-    this.usuario.paciente = paciente;
-    console.log(this.usuario.paciente);
-    this.router.navigateByUrl('/home/fichas', this.usuario);
+    const localpaciente = paciente;
+    localpaciente.nome_usuario = this.usuario.nome_completo
+    this.homeService.set('ficha', localpaciente)
+    this.router.navigateByUrl('/home/fichas');
   }
 
   adicionarFicha() {
-    this.router.navigateByUrl('/home/formularios', this.usuario);
+    this.ficha.nome_paramedico_responsavel = this.usuario.nome_completo;
+    this.ficha.documento_trabalho_paramedico = this.usuario.documento_trabalho;
+    this.ficha.paramedico = this.usuario.cpf
+    this.ficha.nome_usuario = this.usuario.nome_completo;
+    this.homeService.set('paciente', this.ficha)
+    this.router.navigateByUrl('/home/formularios');
   }
 
 }
