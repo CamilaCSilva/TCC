@@ -47,18 +47,14 @@ export class LoginComponent implements OnInit {
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
       success => {
-        console.log(success);
         this.mostrarNotificacao('Login realizado com sucesso!', 'alert-success', true);
-        setTimeout(() => {
-          console.log("Temporizador de 1 segundo");
-        }, 1000);
         this.router.navigateByUrl(this.path);
       },
       error => {
         console.log(error);
         this.mostrarNotificacao('Erro de autenticação', 'alert-danger', true);
       },
-      () => console.log('request completo')
+      () => {}
     );
   }
 

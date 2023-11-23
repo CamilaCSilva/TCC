@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PerfilInfo } from 'src/app/models/perfil.model';
+import { FichaAnamneseService } from '../ficha-anamnese-forms.service';
+import { Anamnese } from 'src/app/models/anamnese.model';
 
 @Component({
   selector: 'app-identificacao-paciente-form',
@@ -12,35 +15,38 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form';
   message: string = '';
   anamnese: any;
-  nomeCompleto: string = '';
-  cpf_paciente: string = '';
-  celular_paciente: string = '';
+  nomeCompleto: String = '';
+  cpf_paciente: String = '';
+  celular_paciente: String = '';
+  ficha: Anamnese;
 
-  constructor(private router: Router, private activatedRoute : ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute : ActivatedRoute, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    console.log(nav?.extras)
-    this.anamnese = nav?.extras;
+    
    }
 
   ngOnInit(): void {
-    if(this.anamnese.nomeCompleto != ''){
-      this.nomeCompleto = this.anamnese.nomeCompleto;
-      this.cpf_paciente = this.anamnese.cpf_paciente;
-      this.celular_paciente = this.anamnese.celular_paciente;
+    this.ficha = this.fichaFormsService.get('paciente')
+    if(this.ficha.nome_completo != '' && this.ficha.nome_completo != undefined){
+      this.nomeCompleto = this.ficha.nome_completo;
+      this.cpf_paciente = this.ficha.cpf;
+      this.celular_paciente = this.ficha.celular;
     }
   }
 
   seguir() {
-    this.anamnese = Object.assign({}, this.anamnese);
     if(this.verificaDados()){
-      this.anamnese.nomeCompleto = this.nomeCompleto;
-      this.anamnese.cpf_paciente = this.cpf_paciente.replace(/-/g, "").replace(".", "").replace(".", "");
-      this.anamnese.celular_paciente = this.celular_paciente.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
-      this.router.navigateByUrl(this.path2, this.anamnese);
+      // SETANDO INFORMAÇÕES LOCALMENTE
+      this.ficha.nome_completo = this.nomeCompleto;
+      this.ficha.cpf = this.cpf_paciente.replace(/-/g, "").replace(".", "").replace(".", "");
+      this.ficha.celular = this.celular_paciente.toString().replace(/-/g, "").replace(/ /g, "").replace("(", "").replace(")", "");
+      this.fichaFormsService.set('paciente', this.ficha)
+      this.router.navigateByUrl(this.path2);
     }
   }
 
   voltar() {
+    this.fichaFormsService.delete('paciente')
     this.router.navigateByUrl(this.path1);
   }
 
@@ -52,7 +58,6 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
     }
     else if(this.cpf_paciente == undefined || this.cpf_paciente.length < 11 || this.cpf_paciente.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$')) == null) {
       alert('CPF no formato errado ou com menos caracteres do que esperado');
-      console.log(this.cpf_paciente)
       throw new Error('CPF incompleto');
     }
     else if(this.celular_paciente == undefined || this.celular_paciente.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null){
