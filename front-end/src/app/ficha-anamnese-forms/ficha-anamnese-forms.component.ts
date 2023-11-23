@@ -21,6 +21,7 @@ export class FichaAnamneseFormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ficha = this.fichaFormsService.get('paciente')
+    // console.log(this.ficha)
     this.router.navigateByUrl(this.path1);
   }
 

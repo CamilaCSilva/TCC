@@ -97,7 +97,7 @@ export class DadosGeraisFormComponent implements OnInit {
       data: this.data,
       hora: this.horas,
       local: this.ficha.local == undefined ? 'N/A' : this.ficha.local,
-      paramedico: this.ficha.cpf == undefined ? 'N/A' : this.ficha.cpf
+      paramedico: this.ficha.paramedico == undefined ? 'N/A' : this.ficha.paramedico
     }
   }
 
