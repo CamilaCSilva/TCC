@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs/operators';
 import { Anamnese } from 'src/app/models/anamnese.model';
 import { PerfilInfo } from 'src/app/models/perfil.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class DadosGeraisFormService {
   setAnamneseInfo(anamneseInfos: Anamnese) {
     console.log(anamneseInfos);
     return this.http.post(`${this.anamneseUrl}`, anamneseInfos).pipe(take(1));
+  }
+
+  getEndereço(lat: String, long: String) {
+    return this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyCbm9YN7rGCxHM4EhAtxs7c8S1nmCA8ljk`) as Observable<any>
   }
 
 }

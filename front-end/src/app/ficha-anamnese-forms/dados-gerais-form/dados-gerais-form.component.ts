@@ -97,7 +97,7 @@ export class DadosGeraisFormComponent implements OnInit {
       data: this.data,
       hora: this.horas,
       local: this.ficha.local == undefined ? 'N/A' : this.ficha.local,
-      paramedico: this.ficha.cpf == undefined ? 'N/A' : this.ficha.cpf
+      paramedico: this.ficha.paramedico == undefined ? 'N/A' : this.ficha.paramedico
     }
   }
 
@@ -127,7 +127,21 @@ export class DadosGeraisFormComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.long = position.coords.longitude;
-        this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
+        const key = true
+        if (key) {
+          this.dadosGeraisFormService.getEndereço(this.lat.toString(), this.long.toString()).subscribe(
+            res => {
+              console.log('Localização encontrada')
+              this.ficha.local = this.localizacao = res.results[4]["formatted_address"]
+            }, err => {
+              console.log('Erro ao listar o endereço', err);
+              this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
+            }
+          )
+          console.log(this.ficha.local)
+        } else {
+          console.log('ativar a key')
+        }
       });
     }
     else {
