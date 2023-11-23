@@ -46,6 +46,7 @@ export class IdentificacaoPacienteFormComponent implements OnInit {
   }
 
   voltar() {
+    this.fichaFormsService.delete('paciente')
     this.router.navigateByUrl(this.path1);
   }
 

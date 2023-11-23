@@ -75,7 +75,7 @@ export class DadosGeraisFormComponent implements OnInit {
     this.dadosGeraisFormService.set('paciente', this.ficha)
   }
 
-  private coverteParaAnamnese(){
+  private coverteParaAnamnese() {
     this.anamneseEnviar = {
       cpf: this.ficha.cpf == undefined ? 'N/A' : this.ficha.cpf,
       nome_completo: this.ficha.nome_completo == undefined ? 'N/A' : this.ficha.nome_completo,
@@ -103,7 +103,7 @@ export class DadosGeraisFormComponent implements OnInit {
 
   private setAnamneseInfo() {
     this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
-      success => this.router.navigateByUrl(this.path2),
+      success => { this.router.navigateByUrl(this.path2); this.dadosGeraisFormService.delete('paciente') },
       error => console.log(error),
       () => console.log('request completo')
     );
