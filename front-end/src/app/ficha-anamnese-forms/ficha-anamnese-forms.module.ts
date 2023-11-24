@@ -25,6 +25,9 @@ import { DadosAtendimentoFormComponent } from './dados-atendimento-form/dados-at
 import { DadosAtendimentoParte2FormComponent } from './dados-atendimento-parte2-form/dados-atendimento-parte2-form.component';
 import { DadosVitaisPacienteFormComponent } from './dados-vitais-paciente-form/dados-vitais-paciente-form.component';
 import { DadosGeraisFormComponent } from './dados-gerais-form/dados-gerais-form.component';
+import { AppModule } from '../app.module';
+import { NotificationComponent } from '../shared/notification/notification.component';
+import { NotificacaoFormComponent } from './notificacao-form/notificacao-form.component';
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { DadosGeraisFormComponent } from './dados-gerais-form/dados-gerais-form.
     DadosAtendimentoFormComponent,
     DadosAtendimentoParte2FormComponent,
     DadosVitaisPacienteFormComponent,
-    DadosGeraisFormComponent
+    DadosGeraisFormComponent,
+    NotificacaoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { DadosGeraisFormComponent } from './dados-gerais-form/dados-gerais-form.
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule
   ],
   exports: [ FichaAnamneseFormsComponent ],
   providers: [

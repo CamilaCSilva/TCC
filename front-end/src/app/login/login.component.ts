@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { LoginInfo } from '../models/login.model';
+import { Notification } from '../shared/shared.model';
 
 @Component({
   selector: 'app-login',
@@ -24,8 +25,8 @@ export class LoginComponent implements OnInit {
   usuario: any;
   perfil: LoginInfo;
 
-  notificacao: any = {
-    texto: '',
+  notificacao: Notification = {
+    mensagem: '',
     classe: '',
     validacao: false
   }
@@ -47,12 +48,22 @@ export class LoginComponent implements OnInit {
   getLoginInfo(login_info: LoginInfo) {
     this.loginService.getLoginInfo(login_info).subscribe(
       success => {
-        this.mostrarNotificacao('Login realizado com sucesso!', 'alert-success', true);
+        this.notificacao = {
+          mensagem: 'Login realizado com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true
+        };
+        this.limparNotificacao();
         this.router.navigateByUrl(this.path);
       },
       error => {
         console.log(error);
-        this.mostrarNotificacao('Erro de autenticação', 'alert-danger', true);
+        this.notificacao = {
+          mensagem: 'Erro de autenticação', 
+          classe: 'alert-danger', 
+          validacao: true
+        };
+        this.limparNotificacao();
       },
       () => {}
     );
@@ -61,30 +72,31 @@ export class LoginComponent implements OnInit {
   limparNotificacao() {
     setTimeout(() => {
       this.notificacao = {
-        texto: '',
+        mensagem: '',
         classe: '',
         validacao: false
       };
     }, 2000);
   }
 
-  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
-    this.notificacao = {
-      texto: texto,
-      classe: classe,
-      validacao: validacao
-    };
-    this.limparNotificacao();
-  }
-
   private verificaDados() {
     let testResult = false
     if(this.cpf_usuario.length < 11 || !this.cpf_usuario.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      this.mostrarNotificacao('CPF incompleto', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'CPF incompleto', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('CPF incompleto');
     }
     else if(!this.password.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))){
-      this.mostrarNotificacao('Senha incompleta', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Senha incompleta',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Senha incompleta');
     }
     else {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Anamnese } from 'src/app/models/anamnese.model';
 import { FichaAnamneseService } from '../ficha-anamnese-forms.service';
+import { Notification } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-dados-atendimento-parte2-form',
@@ -20,10 +21,14 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
   bVoltar: boolean = false;
   bSeguir: boolean = false;
   ficha: Anamnese;
+  notificacao: Notification = {
+    mensagem: '',
+    classe: '',
+    validacao: false
+  }
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-
   }
 
   ngOnInit(): void {
@@ -52,38 +57,20 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
     this.bVoltar = true;
     this.bSeguir = false;
   }
+
   botaoSeguir() {
     this.bSeguir = true;
     this.bVoltar = false;
   }
 
-  private criarAnamnese(dadosAtendimento: any) {
-    this.ficha.queixa_principal = dadosAtendimento.value.sintomas
-    this.ficha.nivel_dor = dadosAtendimento.value.nivelDor
-    this.ficha.classificacao_risco = dadosAtendimento.value.prioridade
-    this.ficha.observacoes = dadosAtendimento.value.observacoes
-    this.fichaFormsService.set('paciente', this.ficha)
-  }
-
-  private verificaDados(ficha: Anamnese) {
-    let testResult: boolean = false;
-    if (ficha.queixa_principal == undefined) {
-      alert('Insira os sintomas');
-      throw new Error('Insira os sintomas');
-    }
-    else if (ficha.nivel_dor == undefined || ficha.nivel_dor == '') {
-      alert('Insira o nivel de dor do paciente');
-      throw new Error('Insira o nivel de dor do paciente');
-
-    }
-    else if (ficha.classificacao_risco == undefined || ficha.classificacao_risco == '') {
-      alert('Insira a prioridade do paciente');
-      throw new Error('Insira a prioridade do paciente');
-    }
-    else {
-      testResult = true;
-    }
-    return testResult;
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        mensagem: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
   }
 
   onPrioridadeChange(prioridade: String) {
@@ -104,5 +91,48 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
   getPrioridade(event: Event) {
     this.prioridade = (event.target as HTMLInputElement).value;
     return this.prioridade;
+  }
+
+  private criarAnamnese(dadosAtendimento: any) {
+    this.ficha.queixa_principal = dadosAtendimento.value.sintomas;
+    this.ficha.nivel_dor = dadosAtendimento.value.nivelDor;
+    this.ficha.classificacao_risco = dadosAtendimento.value.prioridade;
+    this.ficha.observacoes = dadosAtendimento.value.observacoes;
+    this.fichaFormsService.set('paciente', this.ficha);
+  }
+
+  private verificaDados(ficha: Anamnese) {
+    let testResult: boolean = false;
+    if (ficha.queixa_principal == undefined) {
+      this.notificacao = {
+        mensagem: 'Insira os sintomas', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Insira os sintomas');
+    }
+    else if (ficha.nivel_dor == undefined || ficha.nivel_dor == '') {
+      this.notificacao = {
+        mensagem: 'Insira o nivel de dor do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Insira o nivel de dor do paciente');
+    }
+    else if (ficha.classificacao_risco == undefined || ficha.classificacao_risco == '') {
+      this.notificacao = {
+        mensagem: 'Insira a prioridade do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Insira a prioridade do paciente');
+    }
+    else {
+      testResult = true;
+    }
+    return testResult;
   }
 }

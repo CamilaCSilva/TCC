@@ -5,7 +5,7 @@
       <h2>Bem vinda(o), {{ usuario.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
         <!-- DATA -->
-        <input type="date" name="data" id="filtroData" [(ngModel)]=data (input)="filtrarPorData(data)">
+        <input type="date" name="data" id="filtroData" [(ngModel)]="data" (input)="filtrarPorData(data)">
 
         <!-- PERFIL LINK -->
         <div class="fotoPerfil d-flex align-items-center justify-content-center">
@@ -47,4 +47,5 @@
     </button>
   </div> 
 </div>
+<app-notification [notificacao]="notificacao"></app-notification>
 <app-footer></app-footer>

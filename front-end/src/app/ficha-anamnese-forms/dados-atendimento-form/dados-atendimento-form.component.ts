@@ -3,6 +3,7 @@ import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FichaAnamneseService } from '../ficha-anamnese-forms.service';
 import { Anamnese } from 'src/app/models/anamnese.model';
+import { Notification } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-dados-atendimento-form',
@@ -26,6 +27,11 @@ export class DadosAtendimentoFormComponent implements OnInit {
   bSeguir: boolean = false;
   hintText: string = 'O significa Outros';
   ficha: Anamnese;
+  notificacao: Notification = {
+    mensagem: '',
+    classe: '',
+    validacao: false
+  }
 
   constructor(private router: Router, private activatedRoute : ActivatedRoute, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
@@ -76,43 +82,82 @@ export class DadosAtendimentoFormComponent implements OnInit {
     }
   }
 
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        mensagem: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
+  }
+
   private criarAnamnese(dadosAtendimento: any){
     // SETANDO INFORMAÇÕES LOCALMENTE
     this.ficha.idade = dadosAtendimento.value.idade;
-    this.ficha.tipo_sanguineo = dadosAtendimento.value.tipoSangue
-    this.ficha.sexo = dadosAtendimento.value.sexo
-    this.ficha.medicacao_drogas = dadosAtendimento.value.medicacoesUsadas
-    this.ficha.historico_doencas = dadosAtendimento.value.historicoDoencas
-    this.ficha.alergias = dadosAtendimento.value.alergias
-    this.fichaFormsService.set('paciente', this.ficha)
-
+    this.ficha.tipo_sanguineo = dadosAtendimento.value.tipoSangue;
+    this.ficha.sexo = dadosAtendimento.value.sexo;
+    this.ficha.medicacao_drogas = dadosAtendimento.value.medicacoesUsadas;
+    this.ficha.historico_doencas = dadosAtendimento.value.historicoDoencas;
+    this.ficha.alergias = dadosAtendimento.value.alergias;
+    this.fichaFormsService.set('paciente', this.ficha);
   }
 
   private verificaDados(ficha: Anamnese) {
     let testResult: boolean = false;
     if(ficha.idade == undefined || ficha.idade == null){
-      alert('Insira a idade')
+      this.notificacao = {
+        mensagem: 'Insira a idade', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Insira a idade');
     }
     else if(ficha.tipo_sanguineo == undefined || ficha.tipo_sanguineo == '' || ficha.tipo_sanguineo.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
-      alert('Tipo sanguíneo inválido');
+      this.notificacao = {
+        mensagem: 'Tipo sanguíneo inválido', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Tipo sanguíneo inválido');
     }
     else if(ficha.sexo == undefined || ficha.sexo == ''){
-      alert('Escolha o sexo');
+      this.notificacao = {
+        mensagem: 'Escolha o sexo', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Escolha o sexo');
     }
     else if (ficha.alergias == undefined || ficha.alergias == ''){
-      alert('Escreva sobre as alergias');
+      this.notificacao = {
+        mensagem: 'Escreva sobre as alergias', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Escreva sobre as alergias');
     }
     else if (ficha.medicacao_drogas == undefined || ficha.medicacao_drogas == ''){
-      alert('Escreva sobre os medicamentos');
+      this.notificacao = {
+        mensagem: 'Escreva sobre os medicamentos', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Escreva sobre os medicamentos');
     }
     else if (ficha.historico_doencas == undefined || ficha.historico_doencas == ''){
-      alert('Escreva sobre o histórico médico');
-      throw new Error('Escreva sobre o histórico medicamentos');
+      this.notificacao = {
+        mensagem: 'Escreva sobre o histórico médico', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Escreva sobre o histórico médico');
     }
     else {
       testResult = true;

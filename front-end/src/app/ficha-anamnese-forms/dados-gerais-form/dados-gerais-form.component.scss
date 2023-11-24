@@ -39,6 +39,14 @@
   height: 50px;
 }
 
+.container {
+  width: 100vw;
+  gap: 20px;
+}
+
+.notificacao {
+  align-self: flex-start;
+}
 
 @media screen and (min-width:1024px) {
   .main {
