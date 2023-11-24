@@ -9,6 +9,34 @@ function visitperfil(){
   cy.get('.fotoPerfil > a > img').click()
 }
 
+function cadastrar(nome, area, doc, cpf, unidade, celular, senha){
+  cy.visit('http://localhost:4200/cadastro')
+  cy.get('#nome').click()
+  cy.get('#nome').type(nome)
+
+  cy.get('#areaAtuacao').select(area)
+
+  cy.get('#doc').click()
+  cy.get('#doc').type(doc)
+
+  cy.get('#cpf').click()
+  cy.get('#cpf').type(cpf)
+
+  cy.get('#unidadeAtendimento').click()
+  cy.get('#unidadeAtendimento').type(unidade)
+
+  cy.get('#celular').click()
+  cy.get('#celular').type(celular)
+
+  cy.get('#senha').click()
+  cy.get('#senha').type(senha)
+
+  cy.get('#confirmaSenha').click()
+  cy.get('#confirmaSenha').type(senha)
+
+  cy.get('.botao').click()
+}
+
 describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida', () => {
   // Cenários Positivos de Cadastro
   it('Cenario de Teste: Fazer login, passar pela home e acessar o perfil na aplicação MedVida', () => {
@@ -63,9 +91,13 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
     visitperfil()
     cy.get('.btnDeletar').click()
     cy.get('.btnEnviar').click()
+    cy.wait(2000)
     cy.get('#notificacao').invoke('text').then((str) => {     
       expect(str).to.equal('Usuário deletado com sucesso!' || 'Erro ao deletar usuário')  
     }) 
+    cy.wait(2000)
+    cy.url().should('contain','/login')
+    cadastrar('Matheus Chagas da Silva', 'Médico(a)', '759143', '131.680.356-29', 'HAMC', '(35) 99262-1257', 'Matheus123@')
   })
 
   // Cenários de mudança de página

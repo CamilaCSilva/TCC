@@ -83,8 +83,11 @@ export class PerfilComponent implements OnInit {
     this.perfilService.deleteUser(cpf).subscribe(
       success => {
         console.log('Deletou!');
+        this.fecharDialog();
         this.mostrarNotificacao('Usuário deletado com sucesso!', 'alert-success', true);
-        this.router.navigateByUrl(this.path2);
+        setTimeout(() => {
+          this.router.navigateByUrl(this.path2);
+        }, 2000);
       },
       error => {
         console.log(error);

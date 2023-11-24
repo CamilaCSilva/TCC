@@ -76,10 +76,7 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
 
   it('Cenario de Teste: Editando o nome do usuario na aba editar perfil da aplicação MedVida,  Caso negativo', () => {
     visitperfil()
-    cy.get('#nome').type('Math')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Nome incompleto')
-    })
+    preencherCampo('#nome', 'Math')
     cy.get('#notificacao').invoke('text').then((str) => {      
       expect(str).to.equal('Nome incompleto')  
     }) 
@@ -95,12 +92,9 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
 
   it('Cenario de Teste: Editando o celular do usuario na aba editar perfil da aplicação MedVida,  Caso negativo', () => {
     visitperfil()
-    cy.get('#celular').type('35-98485-3455')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Celular incorreto')
-    })
+    preencherCampo('#celular', '35-98485-3455')
     cy.get('#notificacao').invoke('text').then((str) => {      
-      expect(str).to.equal('Celular incorreto')  
+      expect(str).to.equal('Celular no formato inesperado')  
     }) 
   })
 
