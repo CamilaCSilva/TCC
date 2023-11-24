@@ -63,6 +63,9 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
     visitperfil()
     cy.get('.btnDeletar').click()
     cy.get('.btnEnviar').click()
+    cy.get('#notificacao').invoke('text').then((str) => {     
+      expect(str).to.equal('Usuário deletado com sucesso!' || 'Erro ao deletar usuário')  
+    }) 
   })
 
   // Cenários de mudança de página

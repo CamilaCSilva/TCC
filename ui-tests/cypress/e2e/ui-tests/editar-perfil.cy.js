@@ -80,6 +80,9 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Nome incompleto')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Nome incompleto')  
+    }) 
   })
 
   //Ajustando o celular Caso positivo e negativo
@@ -96,6 +99,9 @@ describe('Cenario de Teste:  Testar a página de editar perfil da aplicação Me
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Celular incorreto')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Celular incorreto')  
+    }) 
   })
 
   // Cenários de mudança de página
