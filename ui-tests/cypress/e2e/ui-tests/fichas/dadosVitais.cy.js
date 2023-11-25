@@ -45,4 +45,24 @@ describe('Cenario de Teste:  Testar a ficha de dados vitais da aplicacao MedVida
     cy.get('a > img').click()
     cy.url().should('contain', '/home/perfil')
   })
+
+  it('Cenario de Teste: Na página de dados vitais do paciente conferir pressão sanguínea o usuário', () => {
+    navegar()
+    cy.get('.pressao > p').should('contain', '189 mmHg')
+  })
+
+  it('Cenario de Teste: Na página de dados vitais do paciente conferir oxigenação o usuário', () => {
+    navegar()
+    cy.get('.oxigenacao > p').should('contain', '151 %')
+  })
+
+  it('Cenario de Teste: Na página de dados vitais do paciente conferir temperatura o usuário', () => {
+    navegar()
+    cy.get('.temperatura > p').should('contain', '36.80 °C')
+  })
+
+  it('Cenario de Teste: Na página de dados vitais do paciente conferir frequência ritmíca o usuário', () => {
+    navegar()
+    cy.get('.frequenciaRitmica > p').should('contain', '89 ppm')
+  })
 })

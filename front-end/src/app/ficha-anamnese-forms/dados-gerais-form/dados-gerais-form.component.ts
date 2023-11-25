@@ -49,8 +49,6 @@ export class DadosGeraisFormComponent implements OnInit {
       this.localizacao = this.ficha.local;
     if (this.alertMessage != "") {
       alert(this.alertMessage);
-      //   if (this.ficha.local != '' && this.ficha.local != undefined) {
-      // }
     }
   }
 
@@ -94,7 +92,7 @@ export class DadosGeraisFormComponent implements OnInit {
               this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
             }
           )
-          console.log(this.ficha.local)
+          this.setAnamneseInfo();
         } else {
           console.log('ativar a key')
         }
