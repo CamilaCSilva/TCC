@@ -46,4 +46,24 @@ describe('Cenario de Teste:  Testar a ficha de dados gerais da aplicacao MedVida
     cy.get('a > img').click()
     cy.url().should('contain', '/home/perfil')
   })
+
+  it('Cenario de Teste: Na página de dados gerais conferir o nome do paramedico que atendeu o usuário', () => {
+    navegar()
+    cy.get('.nomeParamedico > p').should('contain', 'Isadora Nogueira')
+  })
+
+  it('Cenario de Teste: Na página de dados gerais conferir o documento de trabalho do paramedico que atendeu o usuário', () => {
+    navegar()
+    cy.get('.docTrabalho > p').should('contain', '78967')
+  })
+
+  it('Cenario de Teste: Na página de dados gerais conferir a data e hora que o usuário foi socorrido', () => {
+    navegar()
+    cy.get('.dataEnd > :nth-child(1)').should('contain', '23 de mai. de 2023 09:03:46')
+  })
+
+  it('Cenario de Teste: Na página de dados gerais conferir o local que o usuário foi socorrido', () => {
+    navegar()
+    cy.get('.dataEnd > :nth-child(2)').should('contain', 'Rua Antonio XXX, 58')
+  })
 })

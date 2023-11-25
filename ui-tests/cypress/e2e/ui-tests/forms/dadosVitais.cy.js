@@ -148,7 +148,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a pressão do paciente')
     })
   })
@@ -174,7 +174,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a oxigenação do paciente')
     })
   })
@@ -200,7 +200,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a temperatura do paciente')
     })
   })
@@ -226,7 +226,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       ''
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a frequência ritmica do paciente')
     })
   })

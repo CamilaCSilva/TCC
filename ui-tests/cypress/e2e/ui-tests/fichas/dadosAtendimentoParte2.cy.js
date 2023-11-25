@@ -43,4 +43,24 @@ describe('Cenario de Teste:  Testar a ficha de dados para atendimento 2 da aplic
     cy.get('a > img').click()
     cy.url().should('contain', '/home/perfil')
   })
+
+  it('Cenario de Teste: Na página de dados para atendimento 2 conferir o sintomas/queixas do usuário', () => {
+    navegar()
+    cy.get('.sintomas > p').should('contain', 'Braço quebrada')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 2 conferir o nivel de dor do usuário', () => {
+    navegar()
+    cy.get('.nivelDor > p').should('contain', '5')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 2 conferir a prioridade do usuário', () => {
+    navegar()
+    cy.get('.prioridade > p').should('contain', 'urgente')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 2 conferir alguma observação sobre o usuário', () => {
+    navegar()
+    cy.get('.observacoes > p').should('contain', 'Sem tala')
+  })
 })

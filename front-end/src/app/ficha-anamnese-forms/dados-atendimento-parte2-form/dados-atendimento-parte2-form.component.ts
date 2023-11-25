@@ -130,6 +130,15 @@ export class DadosAtendimentoParte2FormComponent implements OnInit {
       this.limparNotificacao();
       throw new Error('Insira a prioridade do paciente');
     }
+    else if (ficha.observacoes == undefined || ficha.observacoes == '') {
+      this.notificacao = {
+        mensagem: 'Insira uma observação sobre o paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Insira uma observação sobre o paciente');
+    }
     else {
       testResult = true;
     }

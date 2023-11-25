@@ -71,6 +71,7 @@ export class HomeComponent implements OnInit {
           validacao: true
         };
         this.limparNotificacao();
+        this.router.navigateByUrl('/login');
       }
     );
   }
