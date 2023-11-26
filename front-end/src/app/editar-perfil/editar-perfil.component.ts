@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfilInfo } from '../models/perfil.model';
+import { Notification } from '../shared/shared.model';
 import { EditarPerfilService } from './editar-perfil.service';
 
 @Component({
@@ -40,10 +41,11 @@ export class EditarPerfilComponent implements OnInit {
     password: '',
   }
 
-  notificacao: any = {
-    texto: '',
-    classe: '',
-    validacao: false
+  // notificacao: NotificationComponent;
+  notificacao: Notification = {
+   mensagem: '',
+   classe: '',
+   validacao: false
   }
 
   constructor(private router: Router, private editarPerfilService: EditarPerfilService) {}
@@ -100,7 +102,16 @@ export class EditarPerfilComponent implements OnInit {
     this.editarPerfilService.getLogoutUser().subscribe(
       res => {
         this.router.navigateByUrl(this.path2);
-      }
+      },
+      error => {
+        console.log(error);
+        this.notificacao = { 
+          mensagem: 'Erro ao deslogar', 
+          classe: 'alert-danger', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+      },
     );
   }
 
@@ -108,11 +119,21 @@ export class EditarPerfilComponent implements OnInit {
     this.editarPerfilService.updatePerfilInfo(this.perfil_atualizado).subscribe(
       success => {
         this.router.navigateByUrl(this.path3);
-        this.mostrarNotificacao('Perfil atualizado com sucesso!', 'alert-success', true);
+        this.notificacao = { 
+          mensagem: 'Perfil atualizado com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true 
+        };
+        this.limparNotificacao();
       },
       error => {
         console.log(error);
-        this.mostrarNotificacao('Erro ao atualizar o perfil', 'alert-danger', true);
+        this.notificacao = { 
+          mensagem: 'Erro ao atualizar o perfil', 
+          classe: 'alert-danger', 
+          validacao: true 
+        };
+        this.limparNotificacao();
       },
       () => console.log('request completo')
     );
@@ -129,19 +150,10 @@ export class EditarPerfilComponent implements OnInit {
     return this.usuario.area_atuacao;
   }
 
-  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
-    this.notificacao = {
-      texto: texto,
-      classe: classe,
-      validacao: validacao
-    };
-    this.limparNotificacao();
-  }
-
   limparNotificacao() {
     setTimeout(() => {
       this.notificacao = {
-        texto: '',
+        mensagem: '',
         classe: '',
         validacao: false
       };
@@ -151,28 +163,53 @@ export class EditarPerfilComponent implements OnInit {
   private verificaDadosPerfil(dados: any) {
     let testResult: boolean = false;
     if(dados.nome_completo == '' || dados.nome_completo.length < 6 || dados.nome_completo.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
-      this.mostrarNotificacao('Nome incompleto', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Nome incompleto', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Nome incompleto');
     }
     else if ( dados.campo_escolha == '' ) {
-      this.mostrarNotificacao('Escolha sua área de atuação', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Escolha sua área de atuação',
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Escolha sua área de atuação');
     }
     else if(dados.documento_trabalho == '') {
-      this.mostrarNotificacao('Preencha seu documento de trabalho', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Preencha seu documento de trabalho',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Preencha seu documento de trabalho');
     }
     else if(dados.unidade_de_atendimento == '') {
-      this.mostrarNotificacao('Preencha o campo de qual unidade você atua', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Preencha o campo de qual unidade você atua',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Preencha o campo de qual unidade você atua');
     }
-    else if (dados.celular == '' || dados.celular.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null) {
-      this.mostrarNotificacao('Celular no formato inesperado', 'alert-danger', true);
+    else if (dados.celular == '' || dados.celular.match(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/) == null) {
+      this.notificacao = {
+        mensagem: 'Celular no formato inesperado', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Celular incorreto');
     }
     else {
       testResult = true;
     }
-    return testResult
+    return testResult;
   }
 }

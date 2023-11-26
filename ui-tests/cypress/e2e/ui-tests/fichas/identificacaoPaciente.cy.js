@@ -45,4 +45,14 @@ describe('Cenario de Teste:  Testar a ficha de identificacao do paciente da apli
     navegar()
     cy.get('.nomeCompleto > p').should('contain', 'Antonio Olavo Fernandes')
   })
+
+  it('Cenario de Teste: Na página de identificação do paciente conferir o cpf do usuário', () => {
+    navegar()
+    cy.get('.cpf > p').should('contain', '333.222.222-28')
+  })
+
+  it('Cenario de Teste: Na página de identificação do paciente conferir o celular do usuário', () => {
+    navegar()
+    cy.get('.celular > p').should('contain', '(35) 99123-4567')
+  })
 })

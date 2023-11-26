@@ -183,6 +183,54 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
     cy.get('.modal').should('not.be.visible')
   })
 
+  it('Cenario de Teste: Na página de dados gerais conferir o nome do paramedico que está atendendo o usuário', () => {
+    preencher(
+      'Marcela Dias', 
+      '123.456.789-10', 
+      '35 93456-2456', 
+      '21', 
+      'o-', 
+      'F', 
+      'Pólen', 
+      'Loratadina', 
+      'Alergia', 
+      'Garganta fechada', 
+      '5', 
+      'urgente', 
+      'nenhuma',
+      '13/2', 
+      '10', 
+      '37.8', 
+      '12',
+      'Rua Paralelepipedo'
+    )
+    cy.get('.nomeParamedico > p').should('contain', 'Yasmin Nogueira Silva')
+  })
+
+  it('Cenario de Teste: Na página de dados gerais conferir o documento de trabalho do paramedico que está atendendo o usuário', () => {
+    preencher(
+      'Marcela Dias', 
+      '123.456.789-10', 
+      '35 93456-2456', 
+      '21', 
+      'o-', 
+      'F', 
+      'Pólen', 
+      'Loratadina', 
+      'Alergia', 
+      'Garganta fechada', 
+      '5', 
+      'urgente', 
+      'nenhuma',
+      '13/2', 
+      '10', 
+      '37.8', 
+      '12',
+      'Rua Paralelepipedo'
+    )
+    cy.get('.docTrabalho > p').should('contain', '66611')
+  })
+
   it('Cenario de Teste: Preencher o formulário de dados gerais sem a localizacao', () => {
     preencher(
       'Marcela Dias', 
@@ -205,7 +253,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       ''
     )
     cy.get('.btnAssinar').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a localização do paciente')
     })
     cy.get('.modal').should('not.be.visible')

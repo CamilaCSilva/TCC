@@ -41,34 +41,30 @@ describe('Cenario de Teste:  Testar a página de cadastro da aplicação MedVida
   // Cenários Negativos de Cadastro
   it('Cenario de Teste: Fazer o cadastro com o nome menor que 6 digitos', () => {
     cadastrar('Marco', 'COREN', '123456', '123.456.789-10', 'HMAC', '35 98485-3455', 'Testando@1')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Nome incompleto')
+    cy.get('#notificacao').invoke('text').then((str) => { 
+      expect(str).to.equal('Nome incompleto' || 'Erro ao cadastrar')
     })
-    cy.get('#notificacao').should('contain.text', 'Nome incompleto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com o cpf menor que 11 digitos', () => {
     cadastrar('Marcela Dias', 'COREN', '123456', '123.456.789-1', 'HMAC', '35 98485-3455', 'Testando@1')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('CPF incompleto')
+    cy.get('#notificacao').invoke('text').then((str) => { 
+      expect(str).to.equal('CPF incompleto' || 'Erro ao cadastrar')
     })
-    cy.get('#notificacao').should('contain.text', 'CPF incompleto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com o celular em formato inválido', () => {
     cadastrar('Marcela Dias', 'COREN', '123456', '123.456.789-10', 'HMAC', '35-98485-3455', 'Testando@1')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Celular incorreto')
+    cy.get('#notificacao').invoke('text').then((str) => { 
+      expect(str).to.equal('Celular no formato inesperado' || 'Erro ao cadastrar')
     })
-    cy.get('#notificacao').should('contain.text', 'Celular incorreto' || 'Erro ao cadastrar')
   })
 
   it('Cenario de Teste: Fazer o cadastro com a senha menor que 8 digitos', () => {
     cadastrar('Marcela Dias', 'COREN', '123456', '123.456.789-10', 'HMAC', '35 98485-3455', 'Test@1')
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Senha incompleta')
+    cy.get('#notificacao').invoke('text').then((str) => { 
+      expect(str).to.equal('Senha incompleta' || 'Erro ao cadastrar')
     })
-    cy.get('#notificacao').should('contain.text', 'Senha incompleta' || 'Erro ao cadastrar')
   })
 
   // Cenários de mudança de página

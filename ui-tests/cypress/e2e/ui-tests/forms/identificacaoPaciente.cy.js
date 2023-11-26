@@ -64,7 +64,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente com nome menor que 6 caracteres', () => {
     preencher('Marco', '123.456.789-10', '35 93456-2456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Nome incompleto')
     })
   })
@@ -72,7 +72,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente com cpf menor que 11 caracteres', () => {
     preencher('Marcela Dias', '123.456.789-1', '35 93456-2456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('CPF no formato errado ou com menos caracteres do que esperado')
     })
   })
@@ -80,7 +80,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente com cpf formato errado', () => {
     preencher('Marcela Dias', '123.456.789.10', '35 93456-2456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('CPF no formato errado ou com menos caracteres do que esperado')
     })
   })
@@ -88,7 +88,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente com celular formato errado', () => {
     preencher('Marcela Dias', '123.456.789-10', '123456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Celular no formato inesperado')
     })
   })
@@ -96,7 +96,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente sem o nome', () => {
     preencher('', '123.456.789-10', '123456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Nome incompleto')
     })
   })
@@ -104,7 +104,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente sem o cpf', () => {
     preencher('Marcela Dias', '', '123456')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('CPF no formato errado ou com menos caracteres do que esperado')
     })
   })
@@ -112,7 +112,7 @@ describe('Cenario de Teste:  Testar o formulário de identificacao do paciente d
   it('Cenario de Teste: Preencher o formulário de identificacao do paciente sem o celular', () => {
     preencher('Marcela Dias', '123.456.789-10', '')
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Celular no formato inesperado')
     })
   })

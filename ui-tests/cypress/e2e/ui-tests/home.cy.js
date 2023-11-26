@@ -14,6 +14,7 @@ describe('Cenario de Teste:  Testar a página de home da aplicação MedVida', (
     logar()
     cy.get('#filtroData').click()
     cy.get('#filtroData').type('2023-05-23')
+    cy.get('#filtroData').type('2023-05-23')
     cy.wait(500)
     cy.get('.nomeData > p').should('contain.text', '23/05/2023')
   })

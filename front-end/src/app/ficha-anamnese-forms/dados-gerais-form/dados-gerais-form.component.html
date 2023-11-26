@@ -1,51 +1,54 @@
-<div class="main">
-  <form
-    #dadosGerais="ngForm"
-    class="dadosGerais d-flex flex-column justify-content-center align-items-center">
-    <h3>Dados Gerais</h3>
-
-    <div class="d-flex flex-column align-items-start">
-      <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
-      <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
-        <label for="nomeParamedico">Nome do Paramédico Responsável</label>
-        <p>{{ nomeParamedico }}</p>
+<div class="container d-flex flex-column align-items-center justify-content-between">
+  <div class="main">
+    <form
+      #dadosGerais="ngForm"
+      class="dadosGerais d-flex flex-column justify-content-center align-items-center">
+      <h3>Dados Gerais</h3>
+  
+      <div class="d-flex flex-column align-items-start">
+        <!-- NOME DO PARAMÉDICO RESPONSÁVEL -->
+        <div class="nomeParamedico d-flex flex-column mt-3 align-items-center">
+          <label for="nomeParamedico">Nome do Paramédico Responsável</label>
+          <p>{{ nomeParamedico }}</p>
+        </div>
+  
+        <!-- DOCUMENTO DE TRABALHO -->
+        <div class="docTrabalho d-flex flex-column mt-3 align-items-center">
+          <label for="docTrabalho">Documento de Trabalho</label>
+          <p>{{ documento_trabalho }}</p>
+        </div>
       </div>
-
-      <!-- DOCUMENTO DE TRABALHO -->
-      <div class="docTrabalho d-flex flex-column mt-3 align-items-center">
-        <label for="docTrabalho">Documento de Trabalho</label>
-        <p>{{ documento_trabalho }}</p>
+  
+      <!-- DATA E ENDEREÇO -->
+      <div class="dataEnd d-flex flex-column align-items-end mt-3">
+        <p>{{ date | date : 'medium' }}</p>
+        <input class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" id="localizacao" placeholder="Digite a sua localização">
       </div>
-    </div>
-
-    <!-- DATA E ENDEREÇO -->
-    <div class="dataEnd d-flex flex-column align-items-end mt-3">
-      <p>{{ date | date : 'medium' }}</p>
-      <input class="loc form-control" [(ngModel)]="localizacao" type="text" name="localizacao" id="localizacao" placeholder="Digite a sua localização">
-    </div>
-
-    <!-- BOTÕES -->
-    <div class="btns d-flex flex-row justify-content-around">
-      <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar(dadosGerais)"><</button>
-      <button
-        class="btnAssinar btn"
-        type="button"
-        (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
-        ASSINAR
-      </button>
-    </div>
-  </form>
-
-  <!-- MODAL -->
-  <div #modalConfirmacao hidden>
-    <div class="modalContainer">
-      <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
-        <h3>Assinar e Enviar</h3>
-        <div class="btns d-flex flex-row align-items-center justify-content-around">
-          <button class="btnEnviar btn" type="submit" (click)="enviar(dadosGerais)">CONFIRMAR</button>
-          <button class="btnCancelar btn" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+  
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-around">
+        <button class="btnAnterior btn rounded-circle" type="button" (click)="voltar(dadosGerais)"><</button>
+        <button
+          class="btnAssinar btn"
+          type="button"
+          (click)="localizacao.length === 0 ? modalConfirmacao.hidden = true : modalConfirmacao.hidden = false">
+          ASSINAR
+        </button>
+      </div>
+    </form>
+  
+    <!-- MODAL -->
+    <div #modalConfirmacao hidden>
+      <div class="modalContainer">
+        <div class="modal d-flex flex-column align-items-center align-content-center justify-content-center">
+          <h3>Assinar e Enviar</h3>
+          <div class="btns d-flex flex-row align-items-center justify-content-around">
+            <button class="btnEnviar btn" type="submit" (click)="enviar(dadosGerais)">CONFIRMAR</button>
+            <button class="btnCancelar btn" type="button" (click)="modalConfirmacao.hidden = true">CANCELAR</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <app-notificacao-form class="notificacao" [notificacao]="notificacao"></app-notificacao-form>
 </div>

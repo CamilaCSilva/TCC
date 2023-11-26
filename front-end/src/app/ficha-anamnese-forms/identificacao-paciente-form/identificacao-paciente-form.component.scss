@@ -23,6 +23,22 @@
   height: 50px;
 }
 
+.container {
+  width: 100vw;
+  gap: 30px;
+}
+
+.notificacao {
+  // position: absolute;
+  // left: 0;
+  // bottom: 10px;
+  align-self: flex-start;
+
+  > div {
+    width: 90vw;
+  }
+}
+
 @media screen and (min-width:1024px) {
   .main {
     border-radius: 20px;

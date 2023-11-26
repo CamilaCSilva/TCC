@@ -5,7 +5,7 @@
       <h2>Bem vinda(o), {{ usuario.nome_completo }}!</h2>
       <div class="botoesHeader d-flex flex-row align-items-center justify-content-end">
         <!-- DATA -->
-        <input type="date" name="data" id="filtroData" [(ngModel)]=data (input)="filtrarPorData(data)">
+        <input type="date" name="data" id="filtroData" [(ngModel)]="data" (input)="filtrarPorData(data)">
 
         <!-- PERFIL LINK -->
         <div class="fotoPerfil d-flex align-items-center justify-content-center">
@@ -25,7 +25,7 @@
     <ul #fichas class="anamnese d-flex flex-column align-items-center justify-content-center" (scroll)="true">
       <li id="fichas" *ngFor="let paciente of pacientes">
         <div class="nomeData d-flex flex-row justify-content-between">
-          <h3><a (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
+          <h3><a id="visualizar" (click)="visualizarFicha(paciente)">{{ paciente.nome_completo }}</a></h3>
           <p>{{ paciente.data | date: 'dd/MM/yyyy' }}</p>
         </div>
 
@@ -38,7 +38,14 @@
   </div>
 
   <div class="btns">
-    <button (click)="adicionarFicha()" class="btn botao">+</button>
-  </div>
+    <button 
+      type="button"
+      id="btnAdicionarFicha" 
+      class="btn botao d-flex align-items-center justify-content-center"
+      (click)="adicionarFicha()">
+      +
+    </button>
+  </div> 
 </div>
+<app-notification [notificacao]="notificacao"></app-notification>
 <app-footer></app-footer>

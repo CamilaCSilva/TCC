@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DadosGeraisFormService } from './dados-gerais-form.service';
 import { Anamnese } from 'src/app/models/anamnese.model';
+import { Notification } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-dados-gerais-form',
@@ -27,10 +28,14 @@ export class DadosGeraisFormComponent implements OnInit {
   lat: number = 0;
   long: number = 0;
   anamnese: any;
+  notificacao: Notification = {
+    mensagem: '',
+    classe: '',
+    validacao: false
+  }
 
   constructor(private router: Router, private dadosGeraisFormService: DadosGeraisFormService) {
     const nav = this.router.getCurrentNavigation();
-
   }
 
   ngOnInit(): void {
@@ -41,11 +46,9 @@ export class DadosGeraisFormComponent implements OnInit {
       this.getCurrentLocation();
     }
     else
-      this.localizacao = this.ficha.local
+      this.localizacao = this.ficha.local;
     if (this.alertMessage != "") {
       alert(this.alertMessage);
-      //   if (this.ficha.local != '' && this.ficha.local != undefined) {
-      // }
     }
   }
 
@@ -54,16 +57,49 @@ export class DadosGeraisFormComponent implements OnInit {
     this.router.navigateByUrl(this.path1);
   }
 
-  alert() {
-    alert('Dados incompletos');
-  }
-
   enviar(dadosGerais: any) {
     this.criarAnamnese(dadosGerais);
     if (this.verificaDados(this.ficha)) {
       this.coverteParaAnamnese();
       this.setAnamneseInfo();
       // this.getuser();
+    }
+  }
+
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        mensagem: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
+  }
+
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.long = position.coords.longitude;
+        const key = true
+        if (key) {
+          this.dadosGeraisFormService.getEndereço(this.lat.toString(), this.long.toString()).subscribe(
+            res => {
+              console.log('Localização encontrada')
+              this.ficha.local = this.localizacao = res.results[4]["formatted_address"]
+            }, err => {
+              console.log('Erro ao listar o endereço', err);
+              this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
+            }
+          )
+          this.setAnamneseInfo();
+        } else {
+          console.log('ativar a key')
+        }
+      });
+    }
+    else {
+      alert("Geolocation is not supported by this browser.");
     }
   }
 
@@ -103,35 +139,45 @@ export class DadosGeraisFormComponent implements OnInit {
 
   private setAnamneseInfo() {
     this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
-      success => { this.router.navigateByUrl(this.path2); this.dadosGeraisFormService.delete('paciente') },
-      error => console.log(error),
+      success => { 
+        this.notificacao = {
+          mensagem: 'Ficha salva com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+        setTimeout(() => {
+          this.router.navigateByUrl(this.path2);
+        }, 2000);
+        this.dadosGeraisFormService.delete('paciente');
+      },
+      error => {
+        console.log(error);
+        this.notificacao = {
+          mensagem: 'Erro ao salvar ficha', 
+          classe: 'alert-danger', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+      },
       () => console.log('request completo')
     );
   }
 
   private verificaDados(dadosAtendimento: Anamnese) {
     let testResult: boolean = false;
-    console.log(dadosAtendimento.local)
     if (dadosAtendimento.local == undefined || dadosAtendimento.local == '') {
-      alert('Insira a localização do paciente');
+      this.notificacao = {
+        mensagem: 'Insira a localização do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Insira a localização do paciente');
     }
     else {
       testResult = true;
     }
     return testResult;
-  }
-
-  getCurrentLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.long = position.coords.longitude;
-        this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
-      });
-    }
-    else {
-      alert("Geolocation is not supported by this browser.");
-    }
   }
 }

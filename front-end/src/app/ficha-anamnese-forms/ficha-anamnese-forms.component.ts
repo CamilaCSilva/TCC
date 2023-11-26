@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Anamnese } from '../models/anamnese.model';
+import { Notification } from '../shared/shared.model';
 import { FichaAnamneseService } from './ficha-anamnese-forms.service';
 
 @Component({
@@ -17,12 +18,10 @@ export class FichaAnamneseFormsComponent implements OnInit {
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-   }
-
-  ngOnInit(): void {
-    this.ficha = this.fichaFormsService.get('paciente')
-    // console.log(this.ficha)
-    this.router.navigateByUrl(this.path1);
   }
 
+  ngOnInit(): void {
+    this.ficha = this.fichaFormsService.get('paciente');
+    this.router.navigateByUrl(this.path1);
+  }
 }

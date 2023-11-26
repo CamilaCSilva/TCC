@@ -2,7 +2,7 @@
 
 <div class="cadastroContainer d-flex flex-column align-items-center justify-content-center">
   <!-- TITULO -->
-  <div class="titulo d-flex justify-content-center m-2">
+  <div class="titulo d-flex align-items-center justify-content-center m-2">
     <h2>{{ string }}</h2>
   </div>
 
@@ -65,21 +65,31 @@
           <label for="senha">Senha</label>
           <div class="d-flex flex-row align-items-center justify-content-end">
             <input
-              #pass
+              #pass1
               name="senha"
               type="password"
               id="senha"
               class="input"
               placeholder="Digite sua senha"
               [(ngModel)]="password">
-            <app-mostrar-senha [pass]="pass"></app-mostrar-senha>
+            <app-mostrar-senha [pass]="pass1"></app-mostrar-senha>
           </div>
         </div>
 
         <!-- CONFIRMAÇÃO SENHA -->
         <div class="d-flex flex-column">
           <label for="confirmaSenha">Confirmar Senha</label>
-          <input [(ngModel)]="confirmar_senha" type="password" class="input" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha">
+          <div class="d-flex flex-row align-items-center justify-content-end">
+            <input
+              #pass2 
+              name="confirmaSenha" 
+              type="password" 
+              id="confirmaSenha" 
+              class="input" 
+              placeholder="Confirme sua senha"
+              [(ngModel)]="confirmar_senha">
+            <app-mostrar-senha [pass]="pass2"></app-mostrar-senha>
+          </div>
         </div>
 
         <!-- BOTÃO -->
@@ -90,5 +100,5 @@
     </div>
   </div>
 </div>
-<app-notification [mensagem]="notificacao.texto" [classe]="notificacao.classe"></app-notification>
+<app-notification [notificacao]="notificacao"></app-notification>
 <app-footer></app-footer>
