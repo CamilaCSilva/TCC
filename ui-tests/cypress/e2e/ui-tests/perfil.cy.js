@@ -80,14 +80,14 @@ describe('Cenario de Teste:  Testar a página de perfil da aplicação MedVida',
     cy.get('.modal').should('be.visible')
   })
 
-  it('Cenario de Teste: Verificando o botão de cancelar do modal na página de perfil fecha o modal', () => {
+  it('Cenario de Teste: Verificando se o botão de cancelar do modal na página de perfil fecha o modal', () => {
     visitperfil()
     cy.get('.btnDeletar').click()
     cy.get('.btnCancelar').click()
     cy.get('.modal').should('not.be.visible')
   })
 
-  it('Cenario de Teste: Verificando o botão de confirmar do modal na página de perfil deleta o usuário', () => {
+  it('Cenario de Teste: Verificando se o botão de confirmar do modal na página de perfil deleta o usuário', () => {
     visitperfil()
     cy.get('.btnDeletar').click()
     cy.get('.btnEnviar').click()
