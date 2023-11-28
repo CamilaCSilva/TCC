@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Anamnese } from '../models/anamnese.model';
 import { Notification } from '../shared/shared.model';
@@ -15,12 +15,14 @@ export class FichaAnamneseFormsComponent implements OnInit {
   usuario: any;
   tipo: string | null;
   ficha: Anamnese;
+  innerWidth: any;
 
   constructor(private router: Router, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
   }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
     this.ficha = this.fichaFormsService.get('paciente');
     this.router.navigateByUrl(this.path1);
   }

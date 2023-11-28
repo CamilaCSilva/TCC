@@ -1,16 +1,18 @@
 <div class="ficha d-flex flex-column align-items-center align-content-center">
   <div class="fichaContent d-flex flex-column align-items-center align-content-center">
-    <div class="header d-flex flex-row align-items-center justify-content-around mb-4 mt-4 w-100">
-      <h2>Bem-vinda(o), {{ ficha.nome_usuario }}!</h2>
-      <div class="fotoPerfil d-flex align-items-center justify-content-center"><a routerLink="/home/perfil"><img src="../../assets/do-utilizador.png"></a></div>
+    <div class="header d-flex flex-row align-items-center justify-content-around mb-3 mt-4 w-100">
+      <p>Bem-vinda(o), {{ ficha.nome_usuario }}!</p>
+      <div class="fotoPerfil d-flex align-items-center justify-content-center">
+        <a routerLink="/home/perfil"><img src="../../assets/do-utilizador.png"></a>
+      </div>
     </div>
 
-    <h2 class="mb-4">Ficha de Anamnese</h2>
+    <h2 class="mb-3">Ficha de Anamnese</h2>
 
-    <div class="content mb-5">
+    <div class="content mb-4">
       <router-outlet></router-outlet>
     </div>
   </div>
 
-  <app-footer class="footer"></app-footer> 
+  <app-footer class="footer align-self-end"></app-footer> 
 </div>

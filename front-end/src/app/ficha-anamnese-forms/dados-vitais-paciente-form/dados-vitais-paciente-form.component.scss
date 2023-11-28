@@ -23,35 +23,33 @@
   gap: 20px;
 }
 
+.main {
+  border-radius: 20px;
+  width: 100vw;
+  padding: 1em 1em;
+}
+
+.dadosAtendimento {
+  background: $light-red;
+  color: $dark-red;
+  border-radius: 20px;
+  font-weight: bold;
+
+  width: fit-content;
+  height: fit-content;
+  background: $light-red;
+  border: none;
+  border-radius: 20px;
+  padding: 1em;
+}
+
 .notificacao {
   align-self: flex-start;
 }
 
 @media screen and (min-width:1024px) {
   .main {
-    border-radius: 20px;
-    min-height: 85vh;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 28vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -86,29 +84,7 @@
 
 @media screen and (min-width:1024px) and (max-height: 700px) {
   .main {
-    border-radius: 20px;
-    min-height: 85vh;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 35vw;
-      height: 65vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -143,28 +119,7 @@
 
 @media (max-width: 1023px) and (min-width: 481px) {
   .main {
-    border-radius: 20px;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 55vw;
-      height: 35vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -199,28 +154,7 @@
 
 @media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 75vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -255,28 +189,7 @@
 
 @media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 35vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -311,28 +224,7 @@
 
 @media (max-width: 480px) and (min-width: 0px) {
   .main {
-    border-radius: 20px;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 90vw;
-      height: 55vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -372,28 +264,7 @@
 
 @media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 740px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .dadosAtendimento {
-      background-color: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 90vw;
-      height: 65vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;

@@ -8,6 +8,25 @@
   margin-bottom: 5em;
 }
 
+.header {
+  padding: 1em;
+
+  p {
+    color: $dark-red;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-red;
+    border-radius: 100%;
+    padding: 1em;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media screen and (min-width:1025px) {
   .ficha {
     position: absolute;
@@ -21,16 +40,12 @@
 
     .fichaContent {
       .header {
-        .fotoPerfil {
-          background-color: $white;
-          color: $dark-red;
-          border-radius: 100%;
-          width: 40px;
-          height: 40px;
-          cursor: pointer;
+        p {
+          font-size: 2rem;
         }
       }
     }
+
     .footer {
       background-color: $white;
       background-repeat: no-repeat;
@@ -56,12 +71,8 @@
 
     .fichaContent {
       .header {
-        .fotoPerfil {
-          background-color: $white;
-          color: $dark-red;
-          border-radius: 100%;
-          width: 40px;
-          height: 40px;
+        p {
+          font-size: 2rem;
         }
       }
     }
@@ -91,12 +102,10 @@
 
     .fichaContent {
       .header {
-        .fotoPerfil {
-          background-color: $white;
-          color: $dark-red;
-          border-radius: 100%;
-          width: 40px;
-          height: 40px;
+        margin: 2em 0;
+        
+        p {
+          font-size: 2rem;
         }
       }
     }
