@@ -8,7 +8,6 @@ function logar() {
   cy.wait(500)
 }
 
-
 function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medicacoes, doencas, sintomas, nivelDor, prioridade, observacoes, pressao, oxigenacao, temperatura, frequenciaRitmica, localizacao) {
   logar()
   cy.get('#btnAdicionarFicha').click()

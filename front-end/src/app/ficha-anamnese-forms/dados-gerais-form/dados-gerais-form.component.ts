@@ -39,7 +39,7 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ficha = this.dadosGeraisFormService.get('paciente')
+    this.ficha = this.dadosGeraisFormService.get('paciente');
     this.nomeParamedico = this.ficha.nome_paramedico_responsavel;
     this.documento_trabalho = this.ficha.documento_trabalho_paramedico;
     if (this.ficha.local == '' || this.ficha.local == undefined) {
