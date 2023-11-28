@@ -18,7 +18,7 @@ export class DadosGeraisFormComponent implements OnInit {
   date: Date = new Date();
   data = this.date.getFullYear() + '-' + String(this.date.getMonth() + 1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
-  localizacao: String;
+  localizacao: String = "";
   anamneseEnviar: any;
   usuario: any;
   bVoltar: boolean = false;
@@ -104,8 +104,8 @@ export class DadosGeraisFormComponent implements OnInit {
   }
 
   private criarAnamnese(dadosAtendimento: any) {
-    console.log(dadosAtendimento)
-    this.ficha.local = dadosAtendimento.value.localizacao.toString()
+    console.log(dadosAtendimento.value)
+    this.ficha.local = dadosAtendimento.value.localizacao == undefined ? '' : dadosAtendimento.value.localizacao.toString()
     this.ficha.data = this.date;
     this.ficha.hora = this.horas;
     this.dadosGeraisFormService.set('paciente', this.ficha)
