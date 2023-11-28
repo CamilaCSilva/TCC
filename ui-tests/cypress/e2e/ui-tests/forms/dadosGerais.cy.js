@@ -5,13 +5,10 @@ function logar() {
   cy.get('#senha').click()
   cy.get('#senha').type('nogueirA@23')
   cy.get('.btn').click()
-  cy.wait(500)
 }
 
 function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medicacoes, doencas, sintomas, nivelDor, prioridade, observacoes, pressao, oxigenacao, temperatura, frequenciaRitmica, localizacao) {
-  logar()
   cy.get('#btnAdicionarFicha').click()
-
   cy.get('#nome').click()
   cy.get('#nome').type(nome)
 
@@ -77,6 +74,13 @@ function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medica
 
 describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao MedVida', () => {
   // Cenários Positivo página formulario de idados de atendimento
+  beforeEach(() => {
+    cy.intercept('POST', '**/login').as('postLogin')
+    cy.intercept('GET', '**/user').as('getUser')
+    logar()
+    cy.wait('@postLogin')
+    cy.wait('@getUser')
+  })
   it('Cenario de Teste: Preencher o formulário de dados gerais com dados válidos e mostrar o modal ao clicar em Confirmar', () => {
     preencher(
       'Marcela Dias', 
@@ -183,6 +187,7 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
   })
 
   it('Cenario de Teste: Na página de dados gerais conferir o nome do paramedico que está atendendo o usuário', () => {
+    
     preencher(
       'Marcela Dias', 
       '123.456.789-10', 
@@ -201,9 +206,9 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       '10', 
       '37.8', 
       '12',
-      'Rua Paralelepipedo'
+      ''
     )
-    cy.get('.nomeParamedico > p').should('contain', 'Yasmin Nogueira Silva')
+    cy.get('.nomeParamedico > p').should('contain.text', 'Yasmin Nogueira Silva')
   })
 
   it('Cenario de Teste: Na página de dados gerais conferir o documento de trabalho do paramedico que está atendendo o usuário', () => {
@@ -225,9 +230,9 @@ describe('Cenario de Teste:  Testar o formulário de dados gerais da aplicacao M
       '10', 
       '37.8', 
       '12',
-      'Rua Paralelepipedo'
+      ''
     )
-    cy.get('.docTrabalho > p').should('contain', '66611')
+    cy.get('.docTrabalho > p').should('contain.text', '66611')
   })
 
   it('Cenario de Teste: Preencher o formulário de dados gerais sem a localizacao', () => {
