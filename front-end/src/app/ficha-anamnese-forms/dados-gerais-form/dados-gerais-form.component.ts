@@ -19,6 +19,7 @@ export class DadosGeraisFormComponent implements OnInit {
   data = this.date.getFullYear() + '-' + String(this.date.getMonth() + 1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
   localizacao: String = "";
+  localCheck: boolean = false;
   anamneseEnviar: any;
   usuario: any;
   bVoltar: boolean = false;
@@ -100,6 +101,18 @@ export class DadosGeraisFormComponent implements OnInit {
     }
     else {
       alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  confereLocalizacao(localizacao: String, modalConfirm: any) {
+    modalConfirm.hidden = localizacao.length === 0 ? true : false;
+    if(modalConfirm.hidden) {
+      this.notificacao = {
+        mensagem: 'Insira a localização do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
     }
   }
 
