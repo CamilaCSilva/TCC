@@ -5,6 +5,7 @@ function login(username, pass){
   cy.get('#senha').click()
   cy.get('#senha').type(pass)
   cy.get('.btn').click()
+  cy.wait(500)
 }
 
 describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', () => {

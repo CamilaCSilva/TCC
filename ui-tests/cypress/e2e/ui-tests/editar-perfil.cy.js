@@ -5,6 +5,7 @@ function visitperfil(){
   cy.get('#senha').click()
   cy.get('#senha').type('Matheus123@')
   cy.get('.btn').click()
+  cy.wait(500)
   cy.get('.fotoPerfil > a > img').click()
   cy.get('.btnEditar').click()
 }
