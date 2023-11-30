@@ -62,7 +62,11 @@ export class DadosGeraisFormComponent implements OnInit {
     this.criarAnamnese(dadosGerais);
     if (this.verificaDados(this.ficha)) {
       this.coverteParaAnamnese();
-      this.setAnamneseInfo();
+      if (this.ficha.edit) {
+        this.editAnamneseInfo();
+      } else {
+        this.setAnamneseInfo();
+      }
       // this.getuser();
     }
   }
@@ -177,13 +181,32 @@ export class DadosGeraisFormComponent implements OnInit {
     );
   }
 
-  // private editAnamneseInfo() {
-  //   this.dadosGeraisFormService.editAnamneseInfo(this.).subscribe(
-  //     success => this.router.navigateByUrl(this.path2, this.usuario),
-  //     error => console.log(error),
-  //     () => console.log('request completo')
-  //   );
-  // }
+  private editAnamneseInfo() {
+    this.dadosGeraisFormService.editAnamneseInfo(this.anamneseEnviar).subscribe(
+      success => { 
+        this.notificacao = {
+          mensagem: 'Ficha salva com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+        setTimeout(() => {
+          this.router.navigateByUrl(this.path2);
+        }, 2000);
+        this.dadosGeraisFormService.delete('paciente');
+      },
+      error => {
+        console.log(error);
+        this.notificacao = {
+          mensagem: 'Erro ao salvar ficha', 
+          classe: 'alert-danger', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+      },
+      () => console.log('request completo')
+    );
+  }
 
   private verificaDados(dadosAtendimento: Anamnese) {
     let testResult: boolean = false;

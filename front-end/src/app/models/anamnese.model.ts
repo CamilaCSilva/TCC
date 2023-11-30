@@ -1,5 +1,6 @@
 // VOU PEGAR AS INFOS DIGITADAS
 export class Anamnese {
+  edit: boolean;
   cpf: String;
   paramedico: String;
   nome_completo: String;
