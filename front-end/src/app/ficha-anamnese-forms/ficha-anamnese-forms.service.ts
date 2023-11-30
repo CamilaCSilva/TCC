@@ -6,8 +6,6 @@ import { Anamnese } from '../models/anamnese.model';
   providedIn: 'root'
 })
 export class FichaAnamneseService {
-  private url = 'https://medvidatcc.fly.dev/profissionaldesaude/?cpf=';
-  // private url = 'http://localhost:8000/profissionaldesaude/?cpf=
 
   private storage: Storage;
   ficha: Anamnese;
