@@ -177,6 +177,14 @@ export class DadosGeraisFormComponent implements OnInit {
     );
   }
 
+  // private editAnamneseInfo() {
+  //   this.dadosGeraisFormService.editAnamneseInfo(this.).subscribe(
+  //     success => this.router.navigateByUrl(this.path2, this.usuario),
+  //     error => console.log(error),
+  //     () => console.log('request completo')
+  //   );
+  // }
+
   private verificaDados(dadosAtendimento: Anamnese) {
     let testResult: boolean = false;
     if (dadosAtendimento.local == undefined || dadosAtendimento.local == '') {

@@ -1,13 +1,13 @@
 @import '../../../assets/variables';
 
-.btnProximo, .btnAnterior, .btnAssinar, .btnEnviar, .btnCancelar {
+.btnProximo, .btnAnterior, .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
   background-color: $dark-red;
   color: $white;
   border-style: none;
   border-radius: 20px;
 }
 
-.btnProximo, .btnAnterior, .btnAssinar {
+.btnProximo, .btnAnterior, .btnAssinar, .btnSalvarEdicao {
   &:hover {
     background-color: $white;
     color: $dark-red;
@@ -29,7 +29,7 @@
   }
 }
 
-.btnAssinar, .btnEnviar, .btnCancelar  {
+.btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar  {
   width: 200px;
   height: 50px;
 }
@@ -109,7 +109,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -188,7 +188,7 @@
         font-size: 18px;
         margin-top: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -263,7 +263,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -338,7 +338,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -413,7 +413,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -491,7 +491,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar, .btnEnviar, .btnCancelar {
+        .btnAssinar, .btnSalvarEdicao, .btnEnviar, .btnCancelar {
           border-radius: 20px;
         }
       }
@@ -575,7 +575,7 @@
         margin-top: 20px;
         gap: 20px;
 
-        .btnAssinar {
+        .btnAssinar, .btnSalvarEdicao {
           width: 120px;
           height: 50px;
           border-radius: 20px;

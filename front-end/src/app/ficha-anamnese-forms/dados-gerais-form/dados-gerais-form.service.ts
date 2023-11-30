@@ -13,7 +13,8 @@ export class DadosGeraisFormService {
   url = 'https://medvidatcc.fly.dev/';
   // url = 'http://localhost:8000/'
 
-  private anamneseUrl = this.url + 'anamnese/add'
+  private anamneseAddUrl = this.url + 'anamnese/add';
+  private anamneseEditUrl = this.url+ 'anamnese/edit';
 
   private storage: Storage;
   perfil: PerfilInfo;
@@ -47,7 +48,12 @@ export class DadosGeraisFormService {
 
   setAnamneseInfo(anamneseInfos: Anamnese) {
     console.log(anamneseInfos);
-    return this.http.post(`${this.anamneseUrl}`, anamneseInfos).pipe(take(1));
+    return this.http.post(`${this.anamneseAddUrl}`, anamneseInfos).pipe(take(1));
+  }
+
+  editAnamneseInfo(anamneseInfos: Anamnese) {
+    console.log(anamneseInfos);
+    return this.http.put(`${this.anamneseEditUrl}`, anamneseInfos).pipe(take(1));
   }
 
   getEndereço(lat: String, long: String) {

@@ -32,6 +32,7 @@
         <div class="observacoes">
           <p class="pri">{{ paciente.classificacao_risco }}</p>
           <p class="obs">{{ paciente.observacoes }}</p>
+          <p><a id="editar" (click)="editarFicha(paciente)">Editar</a></p>
         </div>
       </li>
     </ul>

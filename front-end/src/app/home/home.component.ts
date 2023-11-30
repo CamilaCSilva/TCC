@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   usuario: any = {
     nome_completo: '',
     cpf: '',
-    documento_trabalho: '',
+    documento_trabalho: ''
   }
   path = '/login';
   data: Date = new Date();
@@ -105,6 +105,15 @@ export class HomeComponent implements OnInit {
     localpaciente.nome_usuario = this.usuario.nome_completo;
     this.homeService.set('ficha', localpaciente);
     this.router.navigateByUrl('/home/fichas');
+  }
+
+  editarFicha(paciente: any) {
+    const localpaciente = paciente;
+    localpaciente.nome_paramedico_responsavel = localpaciente.nome_paramedico_responsavel + ', ' + this.usuario.nome_completo;
+    localpaciente.documento_trabalho_paramedico = localpaciente.documento_trabalho_paramedico + ', ' + this.usuario.documento_trabalho;
+    localpaciente.nome_usuario = this.usuario.nome_completo;
+    this.homeService.set('paciente', localpaciente);
+    this.router.navigateByUrl('/home/formularios', this.usuario );
   }
 
   adicionarFicha() {

@@ -25,7 +25,7 @@ export class FichaAnamneseComponent implements OnInit {
     this.ficha = this.fichaAnamneseService.get('ficha')
     this.listarProfissional()
   }
-  
+
   listarProfissional() {
     this.fichaAnamneseService.getParamedicoInfo(this.ficha.paramedico).subscribe(perfilInfo => {
       this.ficha.nome_paramedico_responsavel = perfilInfo.nome_completo
