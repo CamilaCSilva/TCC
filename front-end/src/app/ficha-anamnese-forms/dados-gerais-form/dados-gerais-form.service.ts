@@ -14,7 +14,7 @@ export class DadosGeraisFormService {
   // url = 'http://localhost:8000/'
 
   private anamneseAddUrl = this.url + 'anamnese/add';
-  private anamneseEditUrl = this.url+ 'anamnese/edit';
+  private anamneseEditUrl = this.url+ 'anamnese/edit/';
 
   private storage: Storage;
   perfil: PerfilInfo;

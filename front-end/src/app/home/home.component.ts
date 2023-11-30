@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   pacientes: Anamnese[];
   ficha: Anamnese = {
+    edit: false,
     cpf: '',
     paramedico: '',
     nome_completo: '',
@@ -107,11 +108,13 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/home/fichas');
   }
 
-  editarFicha(paciente: any) {
+  editarFicha(paciente: Anamnese) {
     const localpaciente = paciente;
-    localpaciente.nome_paramedico_responsavel = localpaciente.nome_paramedico_responsavel + ', ' + this.usuario.nome_completo;
-    localpaciente.documento_trabalho_paramedico = localpaciente.documento_trabalho_paramedico + ', ' + this.usuario.documento_trabalho;
+    localpaciente.edit = true;
+    localpaciente.nome_paramedico_responsavel = this.usuario.nome_completo;
+    localpaciente.documento_trabalho_paramedico = this.usuario.documento_trabalho;
     localpaciente.nome_usuario = this.usuario.nome_completo;
+    localpaciente.paramedico = this.usuario.cpf
     this.homeService.set('paciente', localpaciente);
     this.router.navigateByUrl('/home/formularios', this.usuario );
   }
