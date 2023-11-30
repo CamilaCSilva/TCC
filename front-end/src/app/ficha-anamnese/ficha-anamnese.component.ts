@@ -1,8 +1,8 @@
 import { Component, OnInit, createNgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FichaAnamneseService } from './ficha-anamnese.service';
-import { Anamnese } from '../models/anamnese.model';
 import { PerfilInfo } from '../models/perfil.model';
+import {Anamnese} from '../models/anamnese.model';
 
 @Component({
   selector: 'app-ficha-anamnese',
@@ -13,24 +13,25 @@ export class FichaAnamneseComponent implements OnInit {
 
   tipo: string | null;
   path1: string = "home/fichas/identificacao-paciente";
-  anamnese: any;
   perfil: PerfilInfo;
+  nome_usuario: string;
+  ficha: Anamnese;
 
-  constructor(private router: Router, private fichaAnamneseService: FichaAnamneseService) {
-    const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+  constructor(private router: Router,
+    private fichaAnamneseService: FichaAnamneseService) {
   }
 
   ngOnInit(): void {
-    console.log(this.anamnese);
+    this.ficha = this.fichaAnamneseService.get('ficha')
     this.listarProfissional()
   }
 
   listarProfissional() {
-    this.fichaAnamneseService.getParamedicoInfo(this.anamnese?.paciente?.paramedico).subscribe(perfilInfo => {
-      this.anamnese.paciente.nomeParamedico = perfilInfo.nome_completo
-      this.anamnese.paciente.documento_trabalho = perfilInfo.documento_trabalho
-      this.router.navigateByUrl(this.path1, this.anamnese);
+    this.fichaAnamneseService.getParamedicoInfo(this.ficha.paramedico).subscribe(perfilInfo => {
+      this.ficha.nome_paramedico_responsavel = perfilInfo.nome_completo
+      this.ficha.documento_trabalho_paramedico = perfilInfo.documento_trabalho
+      this.fichaAnamneseService.set('ficha', this.ficha)
+      this.router.navigateByUrl(this.path1);
     }, err => {
       console.log('Erro ao listar o profissional', err);
     })

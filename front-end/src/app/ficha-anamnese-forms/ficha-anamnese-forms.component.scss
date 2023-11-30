@@ -2,9 +2,28 @@
 
 .fichaContent {
   margin-bottom: 1em;
-  min-height: 100%;
-  width: 100%;
+  min-height: 89vh;
+  width: 100vw;
   height: fit-content;
+}
+
+.header {
+  padding: 1em;
+
+  p {
+    color: $dark-red;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .fotoPerfil {
+    background-color: $white;
+    color: $dark-red;
+    border-radius: 100%;
+    padding: 1em;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media screen and (min-width:1025px) {
@@ -13,27 +32,22 @@
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 100%;
-    width: 100%;
+    min-height: 90vh;
+    width: 100vw;
     height: fit-content;
 
     .header {
-      .fotoPerfil {
-        background-color: $white;
-        color: $dark-red;
-        border-radius: 100%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
+      p {
+        font-size: 2rem;
       }
     }
-  }
 
-  .footer {
-    background-color: $white;
-    width: 100vw;
-    background-repeat: no-repeat;
-    align-self: flex-end;
+    .footer {
+      background-color: $white;
+      width: 100vw;
+      background-repeat: no-repeat;
+      height: fit-content;
+    }
   }
 }
 
@@ -42,26 +56,26 @@
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 100%;
-    width: 100%;
+    min-height: 90vh;
+    width: 103vw;
     height: fit-content;
 
-    .header {
-      .fotoPerfil {
-        background-color: $white;
-        color: $dark-red;
-        border-radius: 100%;
-        width: 40px;
-        height: 40px;
+    .fichaContent {
+      min-height: 92vh;
+
+      .header {
+        p {
+          font-size: 2rem;
+        }
       }
     }
-  }
 
-  .footer {
-    background-color: $white;
-    width: 100vw;
-    background-repeat: no-repeat;
-    align-self: flex-end;
+    .footer {
+      background-color: $white;
+      width: 103vw;
+      background-repeat: no-repeat;
+      height: fit-content;
+    }
   }
 }
 
@@ -70,24 +84,22 @@
     top: 0;
     background: url(/assets/images/background.png);
     background-size: cover;
-    min-height: 100%;
-    width: 100%;
+    min-height: 90vh;
+    width: 100vw;
     height: fit-content;
 
     .header {
-      .fotoPerfil {
-        background-color: $white;
-        color: $dark-red;
-        border-radius: 100%;
-        width: 40px;
-        height: 40px;
+      margin: 2em 0;
+
+      p {
+        font-size: 1.80rem;
       }
     }
-  }
 
-  .footer {
-    background-color: $white;
-    width: 100vw;
-    align-self: flex-end;
+    .footer {
+      background-color: $white;
+      width: 100vw;
+      height: fit-content;
+    }
   }
 }

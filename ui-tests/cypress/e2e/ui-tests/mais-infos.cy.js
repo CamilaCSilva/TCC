@@ -1,7 +1,6 @@
-function maisinfos(){
+function maisinfos() {
   cy.visit('http://localhost:4200/')
   cy.get('#mais-infos').click()
-
 }
 
 describe('Cenario de Teste:  Testar a página de mais infos da aplicação MedVida', () => {

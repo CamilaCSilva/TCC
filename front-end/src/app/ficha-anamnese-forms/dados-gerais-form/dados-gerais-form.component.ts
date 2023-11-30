@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DadosGeraisFormService } from './dados-gerais-form.service';
+import { Anamnese } from 'src/app/models/anamnese.model';
+import { Notification } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-dados-gerais-form',
@@ -11,101 +13,166 @@ export class DadosGeraisFormComponent implements OnInit {
 
   path1: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form/dados-vitais-paciente-form';
   path2: string = 'home';
-  nomeParamedico: string;
-  documento_trabalho: string;
+  nomeParamedico: String;
+  documento_trabalho: String;
   date: Date = new Date();
-  data = this.date.getFullYear() + '-' + String(this.date.getMonth()+1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
+  data = this.date.getFullYear() + '-' + String(this.date.getMonth() + 1).padStart(2, '0') + '-' + String(this.date.getDate()).padStart(2, '0');
   horas = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds();
-  localizacao: string = '';
-  anamnese: any;
+  localizacao: String = "";
+  localCheck: boolean = false;
   anamneseEnviar: any;
   usuario: any;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
   alertMessage: string = "";
+  ficha: Anamnese;
+  lat: number = 0;
+  long: number = 0;
+  anamnese: any;
+  notificacao: Notification = {
+    mensagem: '',
+    classe: '',
+    validacao: false
+  }
 
   constructor(private router: Router, private dadosGeraisFormService: DadosGeraisFormService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese.nome_completo;
-    this.documento_trabalho = this.anamnese.documento_trabalho;
-    // this.localizacao = this.anamnese.localizacao;
-    // console.log(this.localizacao);
-
-    if(this.anamnese?.paciente?.nome_completo != '') {
-      this.data = this.anamnese?.paciente?.data;
-      this.horas = this.anamnese?.paciente?.hora;
-      this.localizacao = this.anamnese?.paciente?.local;
+    this.ficha = this.dadosGeraisFormService.get('paciente');
+    this.nomeParamedico = this.ficha.nome_paramedico_responsavel;
+    this.documento_trabalho = this.ficha.documento_trabalho_paramedico;
+    if (this.ficha.local == '' || this.ficha.local == undefined) {
+      this.getCurrentLocation();
     }
-
-    if(this.alertMessage != "") {
+    else
+      this.localizacao = this.ficha.local;
+    if (this.alertMessage != "") {
       alert(this.alertMessage);
     }
   }
 
   voltar(dadosGerais: any) {
     this.criarAnamnese(dadosGerais);
-    this.router.navigateByUrl(this.path1, this.anamnese);
-  }
-
-  alert() {
-    alert('Dados incompletos');
+    this.router.navigateByUrl(this.path1);
   }
 
   enviar(dadosGerais: any) {
-    if(this.anamnese?.paciente?.nome_completo == '') {
-      this.criarAnamnese(dadosGerais);
-      if(this.verificaDados(this.anamnese)){
-        this.anamnese.data = this.data;
-        this.anamnese.hora = this.horas;
-        this.converteParaAnamnese();
-        this.setAnamneseInfo();
-        this.getuser();
-      }
-    } else {
-      if(this.verificaDados(this.anamnese)) {
-        // this.editAnamneseInfo();
-      }
+    this.criarAnamnese(dadosGerais);
+    if (this.verificaDados(this.ficha)) {
+      this.coverteParaAnamnese();
+      this.setAnamneseInfo();
+      // this.getuser();
     }
   }
 
-  private criarAnamnese(dadosAtendimento: any){
-    this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        mensagem: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
   }
 
-  private converteParaAnamnese(){
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.long = position.coords.longitude;
+        const key = true
+        if (key) {
+          this.dadosGeraisFormService.getEndereço(this.lat.toString(), this.long.toString()).subscribe(
+            res => {
+              console.log('Localização encontrada')
+              this.ficha.local = this.localizacao = res.results[4]["formatted_address"]
+            }, err => {
+              console.log('Erro ao listar o endereço', err);
+              this.ficha.local = this.localizacao = this.lat.toString() + ' ' + this.long.toString()
+            }
+          )
+          this.setAnamneseInfo();
+        } else {
+          console.log('ativar a key')
+        }
+      });
+    }
+    else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  confereLocalizacao(localizacao: String, modalConfirm: any) {
+    modalConfirm.hidden = localizacao.length === 0 ? true : false;
+    if(modalConfirm.hidden) {
+      this.notificacao = {
+        mensagem: 'Insira a localização do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+    }
+  }
+
+  private criarAnamnese(dadosAtendimento: any) {
+    console.log(dadosAtendimento.value)
+    this.ficha.local = dadosAtendimento.value.localizacao == undefined ? '' : dadosAtendimento.value.localizacao.toString()
+    this.ficha.data = this.date;
+    this.ficha.hora = this.horas;
+    this.dadosGeraisFormService.set('paciente', this.ficha)
+  }
+
+  private coverteParaAnamnese() {
     this.anamneseEnviar = {
-      cpf: this.anamnese.cpf_paciente == undefined ? 'N/A' : this.anamnese.cpf_paciente,
-      nome_completo: this.anamnese.nomeCompleto == undefined ? 'N/A' : this.anamnese.nomeCompleto,
-      celular: this.anamnese.celular_paciente == undefined ? 'N/A' : this.anamnese.celular_paciente,
-      sexo: this.anamnese.sexo == undefined ? 'N/A' : this.anamnese.sexo,
-      idade: this.anamnese.idade == undefined ? 'N/A' : this.anamnese.idade.toString(),
-      tipo_sanguineo: this.anamnese.tipoSangue == undefined ? 'N/A' : this.anamnese.tipoSangue,
-      alergias: this.anamnese.alergias == undefined ? 'N/A' : this.anamnese.alergias,
-      medicacao_drogas: this.anamnese.medicacoesUsadas == undefined ? 'N/A' : this.anamnese.medicacoesUsadas,
-      historico_doencas: this.anamnese.historicoDoencas == undefined ? 'N/A' : this.anamnese.historicoDoencas,
-      queixa_principal: this.anamnese.sintomas == undefined ? 'N/A' : this.anamnese.sintomas,
-      nivel_dor: this.anamnese.nivelDor == undefined ? 'N/A' : this.anamnese.nivelDor.toString(),
-      classificacao_risco: this.anamnese.prioridade == undefined ? 'N/A' : this.anamnese.prioridade,
-      observacoes: this.anamnese.observacoes == undefined ? 'N/A' : this.anamnese.observacoes,
-      pressao_sanguinea: this.anamnese.pressao == undefined ? 'N/A' : this.anamnese.pressao,
-      oxigenacao: this.anamnese.oxigenacao == undefined ? 'N/A' : this.anamnese.oxigenacao,
-      temperatura: this.anamnese.temperatura == undefined ? 'N/A' : this.anamnese.temperatura,
-      frequencia_cardiaca: this.anamnese.frequenciaRitmica == undefined ? 'N/A' : this.anamnese.frequenciaRitmica,
+      cpf: this.ficha.cpf == undefined ? 'N/A' : this.ficha.cpf,
+      nome_completo: this.ficha.nome_completo == undefined ? 'N/A' : this.ficha.nome_completo,
+      celular: this.ficha.celular == undefined ? 'N/A' : this.ficha.celular,
+      sexo: this.ficha.sexo == undefined ? 'N/A' : this.ficha.sexo,
+      idade: this.ficha.idade == undefined ? 'N/A' : this.ficha.idade.toString(),
+      tipo_sanguineo: this.ficha.tipo_sanguineo == undefined ? 'N/A' : this.ficha.tipo_sanguineo,
+      alergias: this.ficha.alergias == undefined ? 'N/A' : this.ficha.alergias,
+      medicacao_drogas: this.ficha.medicacao_drogas == undefined ? 'N/A' : this.ficha.medicacao_drogas,
+      historico_doencas: this.ficha.historico_doencas == undefined ? 'N/A' : this.ficha.historico_doencas,
+      queixa_principal: this.ficha.queixa_principal == undefined ? 'N/A' : this.ficha.queixa_principal,
+      nivel_dor: this.ficha.nivel_dor == undefined ? 'N/A' : this.ficha.nivel_dor.toString(),
+      classificacao_risco: this.ficha.classificacao_risco == undefined ? 'N/A' : this.ficha.classificacao_risco,
+      observacoes: this.ficha.observacoes == undefined ? 'N/A' : this.ficha.observacoes,
+      pressao_sanguinea: this.ficha.pressao_sanguinea == undefined ? 'N/A' : this.ficha.pressao_sanguinea,
+      oxigenacao: this.ficha.oxigenacao == undefined ? 'N/A' : this.ficha.oxigenacao,
+      temperatura: this.ficha.temperatura == undefined ? 'N/A' : this.ficha.temperatura,
+      frequencia_cardiaca: this.ficha.frequencia_cardiaca == undefined ? 'N/A' : this.ficha.frequencia_cardiaca,
       data: this.data,
       hora: this.horas,
-      local: this.anamnese.localizacao == undefined ? 'N/A' : this.anamnese.localizacao,
-      paramedico: this.anamnese.cpf == undefined ? 'N/A' : this.anamnese.cpf
+      local: this.ficha.local == undefined ? 'N/A' : this.ficha.local,
+      paramedico: this.ficha.paramedico == undefined ? 'N/A' : this.ficha.paramedico
     }
   }
 
   private setAnamneseInfo() {
     this.dadosGeraisFormService.setAnamneseInfo(this.anamneseEnviar).subscribe(
-      success => this.router.navigateByUrl(this.path2, this.usuario),
-      error => console.log(error),
+      success => { 
+        this.notificacao = {
+          mensagem: 'Ficha salva com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+        setTimeout(() => {
+          this.router.navigateByUrl(this.path2);
+        }, 2000);
+        this.dadosGeraisFormService.delete('paciente');
+      },
+      error => {
+        console.log(error);
+        this.notificacao = {
+          mensagem: 'Erro ao salvar ficha', 
+          classe: 'alert-danger', 
+          validacao: true 
+        };
+        this.limparNotificacao();
+      },
       () => console.log('request completo')
     );
   }
@@ -118,26 +185,20 @@ export class DadosGeraisFormComponent implements OnInit {
   //   );
   // }
 
-  private verificaDados(dadosAtendimento: any) {
+  private verificaDados(dadosAtendimento: Anamnese) {
     let testResult: boolean = false;
-    console.log(dadosAtendimento.localizacao)
-    if(dadosAtendimento.localizacao == undefined || dadosAtendimento.localizacao == '') {
-      alert('Insira a localização do paciente');
+    if (dadosAtendimento.local == undefined || dadosAtendimento.local == '') {
+      this.notificacao = {
+        mensagem: 'Insira a localização do paciente', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Insira a localização do paciente');
     }
-    else{
+    else {
       testResult = true;
     }
     return testResult;
-  }
-
-  private getuser(){
-    this.usuario = {
-      nome: this.anamnese.nome,
-      cpfUsuario: this.anamnese.cpfUsuario,
-      documento_trabalho: this.anamnese.documento_trabalho,
-      tokem: this.anamnese.tokem,
-      cpfPaciente: '',
-    }
   }
 }

@@ -1,9 +1,19 @@
+function logar() {
+  cy.visit('http://localhost:4200/login')
+  cy.get('#cpf').click()
+  cy.get('#cpf').type('77777777771')
+  cy.get('#senha').click()
+  cy.get('#senha').type('nogueirA@23')
+  cy.get('.btn').click()
+  cy.wait(500)
+}
+
 function navegar() {
-  cy.visit('http://localhost:4200/home')
+  logar()
   cy.get('#filtroData').click()
   cy.get('#filtroData').type('2023-05-23')
   cy.get('#filtroData').type('2023-05-23')
-  cy.get(':nth-child(1) > .nomeData > h3 > a').click()
+  cy.get('#visualizar').click()
   cy.get('.btnProximo').click()
 }
 
@@ -30,5 +40,35 @@ describe('Cenario de Teste:  Testar a ficha de dados para atendimento 1 da aplic
     navegar()
     cy.get('a > img').click()
     cy.url().should('contain', '/home/perfil')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir a idade do usuário', () => {
+    navegar()
+    cy.get('.idade > p').should('contain', '71')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir o tipo sanguíneo do usuário', () => {
+    navegar()
+    cy.get('.tipoSangue > p').should('contain', 'AB-')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir o sexo do usuário', () => {
+    navegar()
+    cy.get('.sexo > p').should('contain', 'F')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir a alergia do usuário', () => {
+    navegar()
+    cy.get('.alergias > p').should('contain', 'Alergia a aspirina')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir as medicações utilizadas do usuário', () => {
+    navegar()
+    cy.get('.medicacoesUsadas > p').should('contain', 'Sem Medicamentos')
+  })
+
+  it('Cenario de Teste: Na página de dados para atendimento 1 conferir o histórico de doenças do usuário', () => {
+    navegar()
+    cy.get('.historicoDoencas > p').should('contain', 'Sem doenças')
   })
 })

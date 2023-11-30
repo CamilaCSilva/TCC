@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CadastroService } from './cadastro.service';
 import { Router } from '@angular/router';
 import { PerfilInfo } from '../models/perfil.model';
+import { Notification } from '../shared/shared.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -22,8 +23,8 @@ export class CadastroComponent {
   confirmar_senha: string;
   cadastro_info: PerfilInfo;
 
-  notificacao: any = {
-    texto: '',
+  notificacao: Notification = {
+    mensagem: '',
     classe: '',
     validacao: false
   }
@@ -53,12 +54,22 @@ export class CadastroComponent {
     this.cadastroService.setCadastroInfo(cadastro_info).subscribe(
       success => {
         console.log(success);
-        this.mostrarNotificacao('Cadastro realizado com sucesso!', 'alert-success', true);
+        this.notificacao = { 
+          mensagem: 'Cadastro realizado com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true
+        };
+        this.limparNotificacao();
         this.router.navigateByUrl(this.path);
       },
       error => {
         console.log(error);
-        this.mostrarNotificacao('Erro de autenticação','alert-danger', true);
+        this.notificacao = {
+          mensagem: 'Erro ao cadastrar',
+          classe: 'alert-danger', 
+          validacao: true
+        };
+        this.limparNotificacao();
       },
       () => console.log('request completo')
     );
@@ -75,19 +86,10 @@ export class CadastroComponent {
     return this.areaAtuacao;
   }
 
-  mostrarNotificacao(texto: string, classe: string, validacao: boolean){
-    this.notificacao = {
-      texto: texto,
-      classe: classe,
-      validacao: validacao
-    };
-    this.limparNotificacao();
-  }
-
   limparNotificacao() {
     setTimeout(() => {
       this.notificacao = {
-        texto: '',
+        mensagem: '',
         classe: '',
         validacao: false
       };
@@ -97,35 +99,75 @@ export class CadastroComponent {
   private verificaDadosPerfil(cadastro: PerfilInfo, confirma_senha: String) {
     let testResult: boolean = false;
     if(cadastro.nome_completo?.length < 6 || cadastro.nome_completo?.match(/([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+)|([a-záàâãéèêíïóôõöúçñ ]+)/) == null) {
-      this.mostrarNotificacao('Nome incompleto', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Nome incompleto',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Nome incompleto');
     }
     else if ( cadastro.campo_escolha == '' || cadastro.campo_escolha == undefined) {
-      this.mostrarNotificacao('Escolha sua área de atuação', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Escolha sua área de atuação', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Escolha sua área de atuação');
     }
     else if(cadastro.documento_trabalho == ''  || cadastro.documento_trabalho == undefined) {
-      this.mostrarNotificacao('Preencha seu documento de trabalho', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Preencha seu documento de trabalho', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Preencha seu documento de trabalho');
     }
     else if (!cadastro.cpf?.match(new RegExp('^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$'))) {
-      this.mostrarNotificacao('CPF incompleto', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'CPF incompleto', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('CPF incompleto');
     }
     else if(cadastro.unidade_de_atendimento == '' || cadastro.unidade_de_atendimento == undefined) {
-      this.mostrarNotificacao('Preencha o campo de qual unidade você atua', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Preencha o campo de qual unidade você atua',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Preencha o campo de qual unidade você atua');
     }
-    else if (cadastro.celular?.match(/(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))/) == null) {
-      this.mostrarNotificacao('Celular no formato inesperado', 'alert-danger', true);
+    else if (cadastro.celular?.match(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/) == null) {
+      this.notificacao = {
+        mensagem: 'Celular no formato inesperado', 
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Celular incorreto');
     }
     else if (!cadastro.password?.match(new RegExp('^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,}$'))) {
-      this.mostrarNotificacao('Senha incompleta', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Senha incompleta',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('Senha incompleta');
     }
     else if(this.cadastro_info.password != confirma_senha) {
-      this.mostrarNotificacao('As senha não são iguais', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'As senha não são iguais',
+        classe: 'alert-danger',
+        validacao: true
+      };
+      this.limparNotificacao();
       throw new Error('As senha não são iguais');
     }
     else {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfilService } from './perfil.service';
 import { PerfilInfo } from '../models/perfil.model';
+import { NotificationComponent } from '../shared/notification/notification.component';
+import { Notification } from '../shared/shared.model';
 
 @Component({
   selector: 'app-perfil',
@@ -26,8 +28,8 @@ export class PerfilComponent implements OnInit {
   usuario: any;
   nome = 'Alessandra';
 
-  notificacao: any = {
-    texto: '',
+  notificacao: Notification = {
+    mensagem: '',
     classe: '',
     validacao: false
   }
@@ -38,7 +40,6 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.usuario);
     this.listarProfissional();
   }
 
@@ -46,6 +47,14 @@ export class PerfilComponent implements OnInit {
     this.perfilService.getLogoutUser().subscribe(
       res => {
         this.router.navigateByUrl(this.path2);
+      }, err => {
+        console.log(err);
+        this.notificacao = {
+          mensagem: 'Erro ao deslogar', 
+          classe: 'alert-danger', 
+          validacao: true
+        };
+        this.limparNotificacao();
       }
     );
   }
@@ -59,7 +68,12 @@ export class PerfilComponent implements OnInit {
       this.mostrarProfissional();
     }, err => {
       console.log('Erro ao listar o profissional', err);
-      this.mostrarNotificacao('Erro ao listar o profissional', 'alert-danger', true);
+      this.notificacao = {
+        mensagem: 'Erro ao listar o profissional', 
+        classe: 'alert-danger', 
+        validacao: true
+      };
+      this.limparNotificacao();
     })
   }
 
@@ -84,30 +98,34 @@ export class PerfilComponent implements OnInit {
     this.perfilService.deleteUser(cpf).subscribe(
       success => {
         console.log('Deletou!');
-        this.mostrarNotificacao('Usuário deletado com sucesso!', 'alert-success', true);
-        this.router.navigateByUrl(this.path2);
+        this.fecharDialog();
+        this.notificacao = {
+          mensagem: 'Usuário deletado com sucesso!', 
+          classe: 'alert-success', 
+          validacao: true
+        };
+        this.limparNotificacao();
+        setTimeout(() => {
+          this.router.navigateByUrl(this.path2);
+        }, 2000);
       },
       error => {
         console.log(error);
         this.fecharDialog();
-        this.mostrarNotificacao('Erro ao tentar deletar usuário', 'alert-danger', true);
+        this.notificacao = {
+          mensagem: 'Erro ao tentar deletar usuário', 
+          classe: 'alert-danger', 
+          validacao: true
+        };
+        this.limparNotificacao();
       }
     );
-  }
-
-  mostrarNotificacao(texto: string, classe: string, validacao: boolean) {
-    this.notificacao = {
-      texto: texto,
-      classe: classe,
-      validacao: validacao
-    };
-    this.limparNotificacao();
   }
 
   limparNotificacao() {
     setTimeout(() => {
       this.notificacao = {
-        texto: '',
+        mensagem: '',
         classe: '',
         validacao: false
       };

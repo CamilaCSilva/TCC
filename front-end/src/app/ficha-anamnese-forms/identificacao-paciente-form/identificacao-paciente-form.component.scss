@@ -14,7 +14,7 @@
 }
 
 .btnVoltar {
-  width: 200px;
+  width: 150px;
   height: 50px;
 }
 
@@ -23,31 +23,46 @@
   height: 50px;
 }
 
+.container {
+  width: 100vw;
+  gap: 30px;
+}
+
+.notificacao {
+  // position: absolute;
+  // left: 0;
+  // bottom: 10px;
+  align-self: flex-start;
+
+  > div {
+    width: 90vw;
+  }
+}
+
+.main {
+  border-radius: 20px;
+  width: 100vw;
+  padding: 1em 1em;
+}
+
+.idPaciente {
+  background: $light-red;
+  color: $dark-red;
+  border-radius: 20px;
+  font-weight: bold;
+
+  max-width: 450px;
+  width: fit-content;
+  height: fit-content;
+  background: $light-red;
+  border: none;
+  border-radius: 20px;
+  padding: 1em;
+}
+
 @media screen and (min-width:1024px) {
   .main {
-    border-radius: 20px;
-    min-height: 85vh;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 30vw;
-      height: 75vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -59,8 +74,8 @@
         }
 
         & input {
-          width: 27.5vw;
-          height: 5vh;
+          width: $input-width-1;
+          height: $input-height-1;
           border-radius: 20px;
         }
 
@@ -80,29 +95,7 @@
 
 @media screen and (min-width:1024px) and (max-height: 700px) {
   .main {
-    border-radius: 20px;
-    min-height: 85vh;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 30vw;
-      height: 80vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -114,8 +107,8 @@
         }
 
         & input {
-          width: 27.5vw;
-          height: 5vh;
+          width: $input-width-2;
+          height: $input-height-2;
           border-radius: 20px;
         }
 
@@ -135,28 +128,7 @@
 
 @media (max-width: 1023px) and (min-width: 481px) {
   .main {
-    border-radius: 20px;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 60vw;
-      height: 50vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -168,63 +140,8 @@
         }
 
         & input {
-          width: 55vw;
-          height: 3.5vh;
-          border-radius: 20px;
-        }
-
-        & p {
-          font-size: 10px;
-        }
-      }
-
-      .btns {
-        width: 60vw;
-        font-size: 18px;
-        margin-top: 40px;
-        gap: 20px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
-  .main {
-    border-radius: 20px;
-
-    .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 60vw;
-      height: 75vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
-      & h3 {
-        font-weight: bold;
-        text-align: center;
-      }
-
-      .nomeCompleto, .cpf, .celular {
-        & label {
-          font-size: 18px;
-        }
-
-        & input {
-          width: 50vw;
-          height: 4vh;
+          width: $input-width-3;
+          height: $input-height-3;
           border-radius: 20px;
         }
 
@@ -245,28 +162,7 @@
 
 @media screen and (max-width: 1023px) and (min-width: 801px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 35vw;
-      height: 75vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -278,8 +174,8 @@
         }
 
         & input {
-          width: 30vw;
-          height: 5vh;
+          width: $input-width-4;
+          height: $input-height-4;
           border-radius: 20px;
         }
 
@@ -298,30 +194,9 @@
   }
 }
 
-@media (max-width: 480px) and (min-width: 0px) {
+@media screen and (max-width: 800px) and (min-width: 481px) and (max-height: 1023px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 90vw;
-      height: 60vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -333,8 +208,42 @@
         }
 
         & input {
-          width: 70vw;
-          height: 4vh;
+          width:$input-width-5;
+          height: $input-height-5;
+          border-radius: 20px;
+        }
+
+        & p {
+          font-size: 10px;
+        }
+      }
+
+      .btns {
+        width: 60vw;
+        font-size: 18px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) and (min-width: 0px) {
+  .main {
+    .idPaciente {
+      & h3 {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .nomeCompleto, .cpf, .celular {
+        & label {
+          font-size: 18px;
+        }
+
+        & input {
+          width: $input-width-6;
+          height: $input-height-6;
           border-radius: 20px;
         }
 
@@ -355,28 +264,7 @@
 
 @media screen and (max-width: 480px) and (min-width: 0px) and (max-height: 700px) and (min-height: 0px) {
   .main {
-    border-radius: 20px;
-
     .idPaciente {
-      background: $light-red;
-      color: $dark-red;
-      border-radius: 20px;
-      font-weight: bold;
-
-      //Spacing
-      width: 90vw;
-      height: 75vh;
-      margin-top: 3em;
-      padding: 3em;
-
-      //Position
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
       & h3 {
         font-weight: bold;
         text-align: center;
@@ -388,8 +276,8 @@
         }
 
         & input {
-          width: 15em;
-          height: 2.3em;
+          width: $input-width-7;
+          height: $input-height-7;
           border-radius: 20px;
         }
 
@@ -403,16 +291,6 @@
         font-size: 17px;
         margin-top: 20px;
         gap: 10px;
-
-        .btnVoltar {
-          width: 120px;
-          height: 50px;
-        }
-
-        .btnProximo {
-          width: 45px;
-          height: 45px;
-        }
       }
     }
   }

@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/home/home.service';
+import { FichaAnamneseService } from '../ficha-anamnese.service';
+import { Anamnese } from 'src/app/models/anamnese.model';
 
 @Component({
   selector: 'app-dados-gerais',
@@ -11,32 +14,36 @@ export class DadosGeraisComponent implements OnInit {
 
   path1: string = 'home/fichas/identificacao-paciente/dados-atendimento/dados-atendimento-parte2/dados-vitais-paciente';
   path2: string = 'home';
-  nomeParamedico: string;
-  documento_trabalho: string;
+  nomeParamedico: String;
+  documento_trabalho: String;
   data: Date;
   hora: String;
   anamnese: any;
   num: Int16Array
-  alertMessage: string = "";
-  localizacao: string = 'My House on Broadway Street apt 6';
+  alertMessage: String = "";
+  localizacao: String = 'My House on Broadway Street apt 6';
   usuario:any;
+  nome: string;
+  ficha: Anamnese;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private homeService: HomeService, private fichaAnamneseService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
+    
   }
 
   ngOnInit(): void {
-    this.nomeParamedico = this.anamnese?.paciente?.nomeParamedico;
-    this.documento_trabalho = this.anamnese?.paciente?.documento_trabalho;
-    this.localizacao = this.anamnese?.paciente?.local;
-    const year = this.anamnese?.paciente?.data.slice(0, 4) * 1;
-    const month = this.anamnese?.paciente?.data.slice(5, 7);
-    const day = this.anamnese?.paciente?.data.slice(8) * 1;
-    const hora = this.anamnese?.paciente?.hora.slice(0, 2);
-    const min = this.anamnese?.paciente?.hora.slice(3, 5);
-    const seg = this.anamnese?.paciente?.hora.slice(6);
-    const data_atendimento = `${year}-${month}-${day}T${hora}:${min}:${seg}`;
+    this.ficha = this.fichaAnamneseService.get('ficha')
+    this.nomeParamedico =  this.ficha.nome_paramedico_responsavel;
+    this.documento_trabalho =  this.ficha.documento_trabalho_paramedico;
+    this.localizacao =  this.ficha.local;
+    const data_atendimento_aux = this.ficha.data.toString()
+    const ano = data_atendimento_aux.slice(0, 4);
+    const mes = data_atendimento_aux.slice(5, 7);
+    const dia = data_atendimento_aux.slice(8);
+    const hora = this.ficha.hora.slice(0, 2);
+    const min = this.ficha.hora.slice(3, 5);
+    const seg = this.ficha.hora.slice(6);
+    const data_atendimento = `${ano}-${mes}-${dia}T${hora}:${min}:${seg}`;
     this.data = new Date(data_atendimento);
     if(this.alertMessage != "") {
       alert(this.alertMessage);
@@ -44,7 +51,7 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigateByUrl(this.path1, this.anamnese);
+    this.router.navigateByUrl(this.path1);
   }
 
   alert() {
@@ -52,6 +59,7 @@ export class DadosGeraisComponent implements OnInit {
   }
 
   fechar() {
+    this.fichaAnamneseService.delete('ficha')
     this.router.navigateByUrl(this.path2, this.usuario);
   }
 

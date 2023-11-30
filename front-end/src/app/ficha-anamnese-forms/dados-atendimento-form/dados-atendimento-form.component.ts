@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FichaAnamneseService } from '../ficha-anamnese-forms.service';
+import { Anamnese } from 'src/app/models/anamnese.model';
+import { Notification } from 'src/app/shared/shared.model';
 
 @Component({
   selector: 'app-dados-atendimento-form',
@@ -11,44 +14,49 @@ export class DadosAtendimentoFormComponent implements OnInit {
 
   path1: string = 'home/formularios/identificacao-paciente-form';
   path2: string = 'home/formularios/identificacao-paciente-form/dados-atendimento-form/dados-atendimento-parte2-form';
-  sexo: string = '';
-  classeRadio: string = '';
-  tipoSangue: string = '';
-  alergias: string = '';
-  medicacoesUsadas: string = '';
-  historicoDoencas: string = '';
-  idade: String = '';
+  sexo: String = '';
+  classeRadio: String = '';
+  tipoSangue: String = '';
+  alergias: String = '';
+  medicacoesUsadas: String = '';
+  historicoDoencas: String = '';
+  idade: Int16Array;
   anamnese: any;
   formGroup: UntypedFormGroup;
   bVoltar: boolean = false;
   bSeguir: boolean = false;
   hintText: string = 'O significa Outros';
+  ficha: Anamnese;
+  notificacao: Notification = {
+    mensagem: '',
+    classe: '',
+    validacao: false
+  }
 
-  constructor(private router: Router, private activatedRoute : ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute : ActivatedRoute, private fichaFormsService: FichaAnamneseService) {
     const nav = this.router.getCurrentNavigation();
-    this.anamnese = nav?.extras;
   }
 
   ngOnInit(): void {
-    if(this.anamnese?.paciente?.nome_completo != ''){
-      this.sexo = this.anamnese?.paciente?.sexo;
-      this.idade = this.anamnese?.paciente?.idade;
-      this.tipoSangue = this.anamnese?.paciente?.tipo_sanguineo;
-      this.alergias = this.anamnese?.paciente?.alergias;
-      this.medicacoesUsadas = this.anamnese?.paciente?.medicacao_drogas;
-      this.historicoDoencas = this.anamnese?.paciente?.historico_doencas;
+    this.ficha = this.fichaFormsService.get('paciente')
+    if(this.ficha.sexo != '' && this.ficha.sexo != undefined){
+      this.sexo = this.ficha.sexo;
+      this.idade = this.ficha.idade;
+      this.tipoSangue = this.ficha.tipo_sanguineo;
+      this.alergias = this.ficha.alergias;
+      this.medicacoesUsadas = this.ficha.medicacao_drogas;
+      this.historicoDoencas = this.ficha.historico_doencas;
     }
   }
 
   onSubmit(dadosAtendimento: any){
     this.criarAnamnese(dadosAtendimento);
     if(this.bSeguir == true){
-      if(this.verificaDados(this.anamnese)) {
-        this.router.navigateByUrl(this.path2, this.anamnese);
-      }
+      if(this.verificaDados(this.ficha))
+        this.router.navigateByUrl(this.path2);
     }
-    else if(this.bVoltar == true) {
-      this.router.navigateByUrl(this.path1, this.anamnese);
+    else if(this.bVoltar == true){
+      this.router.navigateByUrl(this.path1);
     }
   }
 
@@ -65,45 +73,91 @@ export class DadosAtendimentoFormComponent implements OnInit {
   onSexChange() {
     if(this.sexo == 'F') {
       console.log('Feminino');
-      // document.getElementById('F')?.setAttribute('class', 'marked');
-      // document.getElementById('M')?.setAttribute('class', '');
-      // document.getElementById('O')?.setAttribute('class', '');
     }
     if(this.sexo == 'M') {
       console.log('Masculino');
-      // document.getElementById('M')?.setAttribute('class', 'marked');
-      // document.getElementById('F')?.setAttribute('class', '');
-      // document.getElementById('O')?.setAttribute('class', '');
     }
     if(this.sexo == 'O') {
       console.log('outro');
-      // document.getElementById('O')?.setAttribute('class', 'marked');
-      // document.getElementById('F')?.setAttribute('class', '');
-      // document.getElementById('M')?.setAttribute('class', '');
     }
+  }
+
+  limparNotificacao() {
+    setTimeout(() => {
+      this.notificacao = {
+        mensagem: '',
+        classe: '',
+        validacao: false
+      };
+    }, 2000);
   }
 
   private criarAnamnese(dadosAtendimento: any){
-    this.anamnese = Object.assign({}, this.anamnese, dadosAtendimento.value);
+    // SETANDO INFORMAÇÕES LOCALMENTE
+    this.ficha.idade = dadosAtendimento.value.idade;
+    this.ficha.tipo_sanguineo = dadosAtendimento.value.tipoSangue;
+    this.ficha.sexo = dadosAtendimento.value.sexo;
+    this.ficha.medicacao_drogas = dadosAtendimento.value.medicacoesUsadas;
+    this.ficha.historico_doencas = dadosAtendimento.value.historicoDoencas;
+    this.ficha.alergias = dadosAtendimento.value.alergias;
+    this.fichaFormsService.set('paciente', this.ficha);
   }
 
-  private verificaDados(dadosAtendimento: any) {
+  private verificaDados(ficha: Anamnese) {
     let testResult: boolean = false;
-    if(dadosAtendimento.idade == undefined || dadosAtendimento.idade == ''){
-      alert('Insira a idade')
+    if(ficha.idade == undefined || ficha.idade == null){
+      this.notificacao = {
+        mensagem: 'Insira a idade', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Insira a idade');
     }
-    else if(dadosAtendimento.tipoSangue == undefined || dadosAtendimento.tipoSangue == '' || dadosAtendimento.tipoSangue.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
-      alert('Tipo sanguíneo inválido');
+    else if(ficha.tipo_sanguineo == undefined || ficha.tipo_sanguineo == '' || ficha.tipo_sanguineo.match(/((A|B|AB|O)|(a|b|ab|o))([+|-])/) == null) {
+      this.notificacao = {
+        mensagem: 'Tipo sanguíneo inválido', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Tipo sanguíneo inválido');
     }
-    else if(dadosAtendimento.sexo == undefined || dadosAtendimento.sexo == ''){
-      alert('Escolha o sexo');
+    else if(ficha.sexo == undefined || ficha.sexo == ''){
+      this.notificacao = {
+        mensagem: 'Escolha o sexo', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Escolha o sexo');
     }
-    else if (dadosAtendimento.medicacoesUsadas == undefined || dadosAtendimento.medicacoesUsadas == ''){
-      alert('Escreva sobre os medicamentos');
+    else if (ficha.alergias == undefined || ficha.alergias == ''){
+      this.notificacao = {
+        mensagem: 'Escreva sobre as alergias', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Escreva sobre as alergias');
+    }
+    else if (ficha.medicacao_drogas == undefined || ficha.medicacao_drogas == ''){
+      this.notificacao = {
+        mensagem: 'Escreva sobre os medicamentos', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
       throw new Error('Escreva sobre os medicamentos');
+    }
+    else if (ficha.historico_doencas == undefined || ficha.historico_doencas == ''){
+      this.notificacao = {
+        mensagem: 'Escreva sobre o histórico médico', 
+        classe: 'alert-danger', 
+        validacao: true 
+      };
+      this.limparNotificacao();
+      throw new Error('Escreva sobre o histórico médico');
     }
     else {
       testResult = true;

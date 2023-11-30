@@ -1,5 +1,16 @@
+function logar() {
+  cy.visit('http://localhost:4200/login')
+  cy.get('#cpf').click()
+  cy.get('#cpf').type('77777777771')
+  cy.get('#senha').click()
+  cy.get('#senha').type('nogueirA@23')
+  cy.get('.btn').click()
+  cy.wait(500)
+}
+
 function preencher(nome, cpf, celular, idade, tipoSangue, sexo, alergias, medicacoes, doencas, sintomas, nivelDor, prioridade, observacoes, pressao, oxigenacao, temperatura, frequenciaRitmica) {
-  cy.visit('http://localhost:4200/home/formularios/identificacao-paciente-form/dados-atendimento-form')
+  logar()
+  cy.get('#btnAdicionarFicha').click()
 
   cy.get('#nome').click()
   cy.get('#nome').type(nome)
@@ -137,7 +148,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a pressão do paciente')
     })
   })
@@ -163,7 +174,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a oxigenação do paciente')
     })
   })
@@ -189,7 +200,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       '12'
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a temperatura do paciente')
     })
   })
@@ -215,7 +226,7 @@ describe('Cenario de Teste:  Testar o formulário de dados vitais da aplicacao M
       ''
     )
     cy.get('.btnProximo').click()
-    cy.on('window:alert', (str) => {
+    cy.get('#notificacao').invoke('text').then((str) => {
       expect(str).to.equal('Insira a frequência ritmica do paciente')
     })
   })

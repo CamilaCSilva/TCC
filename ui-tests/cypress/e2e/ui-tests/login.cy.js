@@ -5,6 +5,7 @@ function login(username, pass){
   cy.get('#senha').click()
   cy.get('#senha').type(pass)
   cy.get('.btn').click()
+  cy.wait(500)
 }
 
 describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', () => {
@@ -25,6 +26,9 @@ describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', 
     cy.on('window:alert', (str) =>{
       expect(str).to.equal('CPF incompleto')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {        
+      expect(str).to.equal('CPF incompleto' || 'Erro ao cadastrar')  
+    }) 
   })
 
   it('Cenario de Teste: Fazer o login com senha menor que 8 caracteres e dar um alert escrito Cpf Incompleto', () => {
@@ -32,6 +36,9 @@ describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', 
     cy.on('window:alert', (str) =>{
       expect(str).to.equal('Senha incompleta')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Senha incompleta' || 'Erro ao cadastrar') 
+    }) 
   })
 
   it('Cenario de Teste: Fazer o login com senha sem letra maiuscula e dar um alert escrito Cpf Incompleto', () => {
@@ -39,6 +46,9 @@ describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', 
     cy.on('window:alert', (str) =>{
       expect(str).to.equal('Senha incompleta')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Senha incompleta' || 'Erro ao cadastrar')  
+    }) 
   })
 
   it('Cenario de Teste: Fazer o login com senha sem numero e dar um alert escrito Cpf Incompleto', () => {
@@ -46,6 +56,9 @@ describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', 
     cy.on('window:alert', (str) =>{
       expect(str).to.equal('Senha incompleta')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Senha incompleta' || 'Erro ao cadastrar')  
+    }) 
   })
 
   it('Cenario de Teste: Fazer o login com senha sem caracter especial e dar um alert escrito Cpf Incompleto', () => {
@@ -53,6 +66,9 @@ describe('Cenario de Teste:  Testar a página de login da aplicação MedVida', 
     cy.on('window:alert', (str) =>{
       expect(str).to.equal('Senha incompleta')
     })
+    cy.get('#notificacao').invoke('text').then((str) => {      
+      expect(str).to.equal('Senha incompleta' || 'Erro ao cadastrar') 
+    }) 
   })
 
   // Cenários de mudança de página

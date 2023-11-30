@@ -1,33 +1,36 @@
-<div class="main">
-  <form
-    #idPaciente="ngForm"
-    class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
-    (ngSubmit)="seguir()">
-    <h3>Identificação do Paciente</h3>
-
-    <!-- NOME COMPLETO -->
-    <div class="nomeCompleto d-flex flex-column mt-3">
-      <label for="nomeCompleto">Nome Completo</label>
-      <input ngModel name="nomeCompleto" class="form-control" id= "nome" type="text" [(ngModel)]="nomeCompleto" placeholder="Digite seu Nome Completo">
-    </div>
-    <p class="text-danger">{{ message }}</p>
-
-    <!-- CPF -->
-    <div class="cpf d-flex flex-column">
-      <label for="cpf">CPF</label>
-      <input ngModel name="cpf" class="form-control" type="text" id="cpf" [(ngModel)]="cpf_paciente" placeholder="Digite seu CPF">
-    </div>
-
-    <!-- CELULAR -->
-    <div class="celular d-flex flex-column mt-3">
-      <label for="celular">Celular</label>
-      <input ngModel name="celular" class="form-control" type="text" id="celular" [(ngModel)]="celular_paciente" placeholder="Digite seu celular">
-    </div>
-
-    <!-- BOTÕES -->
-    <div class="btns d-flex flex-row justify-content-around">
-      <button class="btnVoltar btn" type="button" (click)="voltar()">CANCELAR</button>
-      <button class="btnProximo btn rounded-circle" type="submit">></button>
-    </div>
-  </form>
+<div class="container d-flex flex-column align-items-center align-content-center justify-content-between">
+  <div class="main d-flex flex-column align-items-center align-content-center justify-content-between">
+    <form
+      #idPaciente="ngForm"
+      class="idPaciente d-flex flex-column justify-content-center align-content-center align-items-center"
+      (ngSubmit)="seguir()">
+      <h3>Identificação do Paciente</h3>
+  
+      <!-- NOME COMPLETO -->
+      <div class="nomeCompleto d-flex flex-column mt-3">
+        <label for="nomeCompleto">Nome Completo</label>
+        <input ngModel name="nomeCompleto" class="form-control" id= "nome" type="text" [(ngModel)]="nomeCompleto" placeholder="Digite seu Nome Completo">
+      </div>
+      <p class="text-danger">{{ message }}</p>
+  
+      <!-- CPF -->
+      <div class="cpf d-flex flex-column">
+        <label for="cpf">CPF</label>
+        <input ngModel name="cpf" class="form-control" type="text" id="cpf" [(ngModel)]="cpf_paciente" placeholder="Digite seu CPF">
+      </div>
+  
+      <!-- CELULAR -->
+      <div class="celular d-flex flex-column mt-3">
+        <label for="celular">Celular</label>
+        <input ngModel name="celular" class="form-control" type="text" id="celular" [(ngModel)]="celular_paciente" placeholder="Digite seu celular">
+      </div>
+  
+      <!-- BOTÕES -->
+      <div class="btns d-flex flex-row justify-content-around">
+        <button class="btnVoltar btn" type="button" (click)="voltar()">CANCELAR</button>
+        <button class="btnProximo btn rounded-circle" type="submit">></button>
+      </div>
+    </form>
+  </div>
+  <app-notificacao-form class="notificacao" [notificacao]="notificacao"></app-notificacao-form>
 </div>
