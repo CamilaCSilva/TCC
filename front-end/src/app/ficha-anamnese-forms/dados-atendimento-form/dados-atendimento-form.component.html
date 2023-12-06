@@ -34,31 +34,21 @@
             </div>
   
             <!-- SEXO -->
-            <div class="sexo d-flex flex-column">
+            <div class="sexo d-flex flex-column align-items-center">
               <label>Sexo</label>
   
-              <div class="opcoes d-flex flex-row ml-3">
-                <div class="ml-2 d-flex flex-column">
+              <div class="opcoes d-flex flex-row">
+                <div class="d-flex flex-column align-items-center">
                   <label for="f">F</label>
                   <input type="radio" id="F" name="sexo" value="F" [(ngModel)]="sexo" (change)="onSexChange()">
                 </div>
   
-                <div class="ml-2 d-flex flex-column">
+                <div class="d-flex flex-column align-items-center">
                   <label for="m">M</label>
                   <input type="radio" id="M" name="sexo" value="M" [(ngModel)]="sexo" (change)="onSexChange()">
                 </div>
-  
-                <div class="ml-2 d-flex flex-column">
-                  <label for="o">O</label>
-                  <input type="radio" id="O" name="sexo" value="O" [(ngModel)]="sexo" (change)="onSexChange()">
-                </div>
               </div>
             </div>
-          </div>
-  
-          <!-- OBSERVAÇÃO -->
-          <div class="mt-2 d-flex justify-content-end">
-            <p>Obs. 'O' significa outro</p>
           </div>
         </div>
   

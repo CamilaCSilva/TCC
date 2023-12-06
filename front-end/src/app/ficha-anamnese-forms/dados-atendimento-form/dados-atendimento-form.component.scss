@@ -48,6 +48,10 @@
   align-self: flex-start;
 }
 
+.opcoes {
+  gap: 10px;
+}
+
 @media screen and (min-width:1024px) {
   .main {
     .dadosAtendimento {
